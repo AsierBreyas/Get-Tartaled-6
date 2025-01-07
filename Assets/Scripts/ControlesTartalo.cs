@@ -7,6 +7,7 @@ public class ControlesTartalo : MonoBehaviour
     [SerializeField]
     float velocidadBase = 10f;
     float velocidad;
+    bool estoyCorriendo;
     [SerializeField]
     float velocidadRotacion = 10f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,11 +19,16 @@ public class ControlesTartalo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ProcesarVelocidad();
         ProcesarMovimiento();
     }
     void OnMoverse(InputValue value)
     {
         movimiento = value.Get<Vector3>();
+    }
+    void OnCorrer(InputValue value)
+    {
+        estoyCorriendo = value.isPressed;
     }
     void ProcesarMovimiento()
     {
@@ -33,8 +39,13 @@ public class ControlesTartalo : MonoBehaviour
         Quaternion rotacion = Quaternion.LookRotation(direccionMovimiento);
         rotacion = Quaternion.RotateTowards(transform.rotation, rotacion, 360 * Time.fixedDeltaTime);
         transform.localRotation = Quaternion.Lerp(transform.localRotation, rotacion, velocidadRotacion);
-
-        //Quaternion toRotation = Quaternion.Euler(-movimiento.z * velocidad, transform.localRotation.y, -movimiento.x * velocidad);
-        //transform.localRotation = Quaternion.Lerp(transform.localRotation, toRotation, velocidadRotacion * Time.deltaTime);
+    }
+    void ProcesarVelocidad()
+    {
+        if (estoyCorriendo)
+            velocidad = velocidadBase * 2;
+            //Debug.Log("Soy uno con el viento wiiiii");
+        else
+            velocidad = velocidadBase;
     }
 }
