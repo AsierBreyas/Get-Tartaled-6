@@ -18,21 +18,23 @@ public class ControlesTartalo : MonoBehaviour
     bool estaEnAtaqueNormal;
     bool estaEnAtaqueFuerte;
     bool botonDelAtaqueFuerteMantenido;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    bool botonDelAtaqueAreaMantenido;
+    bool estaEnAtaqueArea;
     void Start()
     {
         velocidad = velocidadBase;
     }
 
-    // Update is called once per frame
     void Update()
     {
      ProcesarVelocidad();
      ProcesarMovimiento();
-     if (estaEnAtaqueNormal)
-        GolpeNormal();
-     if (estaEnAtaqueFuerte)
-        GolpeFuerte();
+        if (estaEnAtaqueNormal)
+            GolpeNormal();
+        else if (estaEnAtaqueFuerte)
+            GolpeFuerte();
+        else if (estaEnAtaqueArea)
+            AtaqueArea();
     }
     void OnMoverse(InputValue value)
     {
@@ -48,6 +50,13 @@ public class ControlesTartalo : MonoBehaviour
         Debug.Log("PUM! Te pego");
         if(!estaEnAtaque)
             ProcesarAtaqueNormal();
+    }
+    void OnAtaqueArea(InputValue value)
+    {
+        botonDelAtaqueAreaMantenido = value.isPressed;
+        Debug.Log("AAAAAAAAAAAAAAAAAAA");
+        if (!estaEnAtaque)
+            ProcesarAtaqueEnArea();
     }
     void ProcesarMovimiento()
     {
@@ -80,6 +89,13 @@ public class ControlesTartalo : MonoBehaviour
         Arma.transform.Rotate(new Vector3(-75, 0, 0));
         Debug.Log("MADA MADA");
     }
+    void ProcesarAtaqueEnArea()
+    {
+        estaEnAtaque = true;
+        estaEnAtaqueArea = true;
+        Arma.transform.Rotate(new Vector3(0, -60, 0));
+
+    }
     void GolpeNormal()
     {
         //Debug.Log("Rotacion de x: "+ Arma.transform.rotation.eulerAngles);
@@ -109,6 +125,28 @@ public class ControlesTartalo : MonoBehaviour
         else
         {
             Arma.transform.Rotate(new Vector3(75, 0, 0) * 6 * Time.deltaTime);
+        }
+    }
+    void AtaqueArea()
+    {
+        if (botonDelAtaqueAreaMantenido)
+        {
+            Debug.Log("Dalta Faño");
+        }
+        else
+        {
+            //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles.y);
+            if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 92f)
+            {
+                Debug.Log("Ya no me sale :(");
+                estaEnAtaque = false;
+                estaEnAtaqueArea = false;
+                Arma.transform.Rotate(new Vector3(0, -90, 0));
+            }
+            else
+            {
+                Arma.transform.Rotate(new Vector3(0, 60, 0) * 10 * Time.deltaTime);
+            }
         }
     }
 }
