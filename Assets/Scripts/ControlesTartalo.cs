@@ -30,9 +30,9 @@ public class ControlesTartalo : MonoBehaviour
      ProcesarVelocidad();
      ProcesarMovimiento();
      if (estaEnAtaqueNormal)
-     {
         GolpeNormal();
-     }
+     if (estaEnAtaqueFuerte)
+        GolpeFuerte();
     }
     void OnMoverse(InputValue value)
     {
@@ -78,6 +78,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaque = true;
         estaEnAtaqueFuerte = true;
         Arma.transform.Rotate(new Vector3(-75, 0, 0));
+        Debug.Log("MADA MADA");
     }
     void GolpeNormal()
     {
@@ -97,6 +98,17 @@ public class ControlesTartalo : MonoBehaviour
     }
     void GolpeFuerte()
     {
-
+        if (Arma.transform.rotation.eulerAngles.x >= 70f && Arma.transform.rotation.eulerAngles.x <= 75f)
+        {
+            estaEnAtaque = false;
+            estaEnAtaqueFuerte = false;
+            Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            if (botonDelAtaqueFuerteMantenido)
+                ProcesarGolpeFuerte();
+        }
+        else
+        {
+            Arma.transform.Rotate(new Vector3(75, 0, 0) * 6 * Time.deltaTime);
+        }
     }
 }
