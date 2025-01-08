@@ -62,6 +62,11 @@ public class ControlesTartalo : MonoBehaviour
     {
         float xOffSet = movimiento.x * velocidad * Time.deltaTime;
         float zOffSet = movimiento.z * velocidad * Time.deltaTime;
+        if (estaEnAtaque && !estoyCorriendo)
+        {
+            zOffSet /= 2;
+            xOffSet /= 2;
+        }
         Vector3 direccionMovimiento = new Vector3(transform.localPosition.x + xOffSet, transform.localPosition.y, transform.localPosition.z + zOffSet);
         transform.localPosition = direccionMovimiento;
         Quaternion rotacion = Quaternion.LookRotation(direccionMovimiento);
