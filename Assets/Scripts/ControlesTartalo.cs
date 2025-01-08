@@ -10,6 +10,14 @@ public class ControlesTartalo : MonoBehaviour
     bool estoyCorriendo;
     [SerializeField]
     float velocidadRotacion = 10f;
+    [SerializeField]
+    GameObject Arma;
+
+    //Booleanos para los ataques
+    bool estaEnAtaque;
+    bool estaEnAtaqueNormal;
+    bool estaEnAtaqueFuerte;
+    bool botonDelAtaqueFuerteMantenido;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,8 +27,12 @@ public class ControlesTartalo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcesarVelocidad();
-        ProcesarMovimiento();
+     ProcesarVelocidad();
+     ProcesarMovimiento();
+     if (estaEnAtaqueNormal)
+     {
+        GolpeNormal();
+     }
     }
     void OnMoverse(InputValue value)
     {
@@ -29,6 +41,13 @@ public class ControlesTartalo : MonoBehaviour
     void OnCorrer(InputValue value)
     {
         estoyCorriendo = value.isPressed;
+    }
+    void OnAtaqueNormal(InputValue value)
+    {
+        botonDelAtaqueFuerteMantenido = value.isPressed;
+        Debug.Log("PUM! Te pego");
+        if(!estaEnAtaque)
+            ProcesarAtaqueNormal();
     }
     void ProcesarMovimiento()
     {
@@ -47,5 +66,37 @@ public class ControlesTartalo : MonoBehaviour
             //Debug.Log("Soy uno con el viento wiiiii");
         else
             velocidad = velocidadBase;
+    }
+    void ProcesarAtaqueNormal()
+    {
+        estaEnAtaque = true;
+        estaEnAtaqueNormal = true;
+        Arma.transform.Rotate(new Vector3(-75, 0, 0));
+    }
+    void ProcesarGolpeFuerte()
+    {
+        estaEnAtaque = true;
+        estaEnAtaqueFuerte = true;
+        Arma.transform.Rotate(new Vector3(-75, 0, 0));
+    }
+    void GolpeNormal()
+    {
+        //Debug.Log("Rotacion de x: "+ Arma.transform.rotation.eulerAngles);
+        if (Arma.transform.rotation.eulerAngles.x >= 70f && Arma.transform.rotation.eulerAngles.x <= 75f)
+        {
+            estaEnAtaque = false;
+            estaEnAtaqueNormal = false;
+            Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            if (botonDelAtaqueFuerteMantenido)
+                ProcesarGolpeFuerte();
+        }
+        else
+        {
+            Arma.transform.Rotate(new Vector3(75, 0, 0) * 3 * Time.deltaTime);
+        }
+    }
+    void GolpeFuerte()
+    {
+
     }
 }
