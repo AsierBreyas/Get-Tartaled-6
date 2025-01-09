@@ -12,14 +12,17 @@ public class ControlesTartalo : MonoBehaviour
     float velocidadRotacion = 10f;
     [SerializeField]
     GameObject Arma;
+    int contadorMovimientoDefensa;
 
     //Booleanos para los ataques
+    bool estaHaciendoMovimiento;
     bool estaEnAtaque;
     bool estaEnAtaqueNormal;
     bool estaEnAtaqueFuerte;
     bool botonDelAtaqueFuerteMantenido;
     bool botonDelAtaqueAreaMantenido;
     bool estaEnAtaqueArea;
+    bool estaEnDefensa;
     void Start()
     {
         velocidad = velocidadBase;
@@ -27,14 +30,18 @@ public class ControlesTartalo : MonoBehaviour
 
     void Update()
     {
-     ProcesarVelocidad();
-     ProcesarMovimiento();
-        if (estaEnAtaqueNormal)
-            GolpeNormal();
-        else if (estaEnAtaqueFuerte)
-            GolpeFuerte();
-        else if (estaEnAtaqueArea)
-            AtaqueArea();
+        if (!estaEnDefensa)
+        {
+            ProcesarVelocidad();
+            ProcesarMovimiento();
+            if (estaEnAtaqueNormal)
+                GolpeNormal();
+            else if (estaEnAtaqueFuerte)
+                GolpeFuerte();
+            else if (estaEnAtaqueArea)
+                AtaqueArea();
+        }
+        Defensa();
     }
     void OnMoverse(InputValue value)
     {
@@ -48,15 +55,24 @@ public class ControlesTartalo : MonoBehaviour
     {
         botonDelAtaqueFuerteMantenido = value.isPressed;
         Debug.Log("PUM! Te pego");
-        if(!estaEnAtaque)
+        if(!estaHaciendoMovimiento)
             ProcesarAtaqueNormal();
     }
     void OnAtaqueArea(InputValue value)
     {
         botonDelAtaqueAreaMantenido = value.isPressed;
         Debug.Log("AAAAAAAAAAAAAAAAAAA");
-        if (!estaEnAtaque)
+        if (!estaHaciendoMovimiento)
             ProcesarAtaqueEnArea();
+    }
+    void OnDefender(InputValue value)
+    {
+        if (!estaEnAtaque)
+        {
+            estaEnDefensa = value.isPressed;
+            Debug.Log("No puedes golpear lo que no puedes ver");
+            ProcesarDefensa();
+        }
     }
     void ProcesarMovimiento()
     {
@@ -85,12 +101,14 @@ public class ControlesTartalo : MonoBehaviour
     {
         estaEnAtaque = true;
         estaEnAtaqueNormal = true;
+        estaHaciendoMovimiento = true;
         Arma.transform.Rotate(new Vector3(-75, 0, 0));
     }
     void ProcesarGolpeFuerte()
     {
         estaEnAtaque = true;
         estaEnAtaqueFuerte = true;
+        estaHaciendoMovimiento = true;
         Arma.transform.Rotate(new Vector3(-75, 0, 0));
         Debug.Log("MADA MADA");
     }
@@ -98,7 +116,18 @@ public class ControlesTartalo : MonoBehaviour
     {
         estaEnAtaque = true;
         estaEnAtaqueArea = true;
+        estaHaciendoMovimiento = true;
         Arma.transform.Rotate(new Vector3(0, -60, 0));
+
+    }
+    void ProcesarDefensa()
+    {
+        estaHaciendoMovimiento = true;
+        if(contadorMovimientoDefensa == 0)
+        {
+            Arma.transform.Rotate(new Vector3(0, 90, 0));
+            contadorMovimientoDefensa++;
+        }
 
     }
     void GolpeNormal()
@@ -108,6 +137,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             estaEnAtaque = false;
             estaEnAtaqueNormal = false;
+            estaHaciendoMovimiento = false;
             Arma.transform.Rotate(new Vector3(-75, 0, 0));
             if (botonDelAtaqueFuerteMantenido)
                 ProcesarGolpeFuerte();
@@ -123,6 +153,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             estaEnAtaque = false;
             estaEnAtaqueFuerte = false;
+            estaHaciendoMovimiento = false;
             Arma.transform.Rotate(new Vector3(-75, 0, 0));
             if (botonDelAtaqueFuerteMantenido)
                 ProcesarGolpeFuerte();
@@ -146,12 +177,30 @@ public class ControlesTartalo : MonoBehaviour
                 Debug.Log("Ya no me sale :(");
                 estaEnAtaque = false;
                 estaEnAtaqueArea = false;
+                estaHaciendoMovimiento = false;
                 Arma.transform.Rotate(new Vector3(0, -90, 0));
             }
             else
             {
                 Arma.transform.Rotate(new Vector3(0, 60, 0) * 10 * Time.deltaTime);
             }
+        }
+    }
+    void Defensa()
+    {
+        if (!estaEnDefensa && estaHaciendoMovimiento && !estaEnAtaque)
+        {
+            Debug.Log("No more defensa");
+            estaHaciendoMovimiento = false;
+            if(contadorMovimientoDefensa == 1)
+            {
+                Arma.transform.Rotate(new Vector3(0, -90, 0));
+                contadorMovimientoDefensa--;
+            }
+        }
+        else if(estaHaciendoMovimiento && !estaEnAtaque)
+        {
+            Debug.Log(">:D");
         }
     }
 }
