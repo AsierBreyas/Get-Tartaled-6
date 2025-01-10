@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pig : MonoBehaviour
 {
+    Rigidbody rb;
+    // Variables de ataque
     [SerializeField] Transform targetPlayer;
     [SerializeField] float visionRadius = 10f;
     [SerializeField]  float chaseRadius = 15f;
@@ -16,6 +19,22 @@ public class Pig : MonoBehaviour
 
     bool isChasing = false;
     private bool isSpittingFire = false;
+
+    // Variables vida
+    [SerializeField] float health, maxHealth = 3f;
+    [SerializeField] EnemyHealthBar healthBar;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        healthBar = GetComponentInChildren<EnemyHealthBar>();
+    }
+
+    private void Start()
+    {
+        health = maxHealth;
+        healthBar.UpdateHealthBar(health, maxHealth);
+    }
 
     // Update is called once per frame
     void Update()
@@ -84,5 +103,21 @@ public class Pig : MonoBehaviour
 
         // Opcional: Orienta al cerdo hacia el jugador
         transform.LookAt(new Vector3(targetPlayer.position.x, transform.position.y, targetPlayer.position.z));
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+        healthBar.UpdateHealthBar(health, maxHealth);
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        // Animacion de morir aqui
+        Destroy(gameObject);
     }
 }
