@@ -3,10 +3,19 @@ using UnityEngine;
 public class Pig : MonoBehaviour
 {
     [SerializeField] Transform targetPlayer;
-    float visionRadius = 10f;
-    float chaseRadius = 15f;
-    float movementSpeed = 3f;
+    [SerializeField] float visionRadius = 10f;
+    [SerializeField]  float chaseRadius = 15f;
+    [SerializeField]  float movementSpeed = 3f;
+    [SerializeField]  float stopDistance = 1f;
+    [SerializeField] float fireSpitDistance = 3f; // Distancia para intentar escupir fuego
+    [SerializeField] ParticleSystem fireParticles; // Sistema de partículas para el fuego
+    [SerializeField] float fireSpitProbability = 0.7f; // Probabilidad de escupir fuego (70%)
+    [SerializeField] float timeStopWhenFlame = 3f; // Tiempo parado escupiendo fuego
+    [SerializeField] float fireCooldown = 5f;
+    float nextFireTime = 0f; // Momento en el que puede volver a escupir fuego
+
     bool isChasing = false;
+    private bool isSpittingFire = false;
 
     // Update is called once per frame
     void Update()
@@ -24,9 +33,46 @@ public class Pig : MonoBehaviour
             isChasing = false;
         }
 
-        if (isChasing)
+        if (isChasing && distanceToPlayer > stopDistance && !isSpittingFire)
         {
             FollowPlayer();
+        }
+
+        // Intentar escupir fuego si está lo suficientemente cerca
+        if (distanceToPlayer <= fireSpitDistance && !isSpittingFire && Time.time >= nextFireTime)
+        {
+            TrySpitFire();
+        }
+
+        void TrySpitFire()
+        {
+            float randomChance = Random.Range(0f, 1f);
+            if (randomChance <= fireSpitProbability)
+            {
+                // Detener el movimiento y escupir fuego
+                isSpittingFire = true;
+                StartCoroutine(SpitFire());
+            }
+        }
+
+        System.Collections.IEnumerator SpitFire()
+        {
+            // Detener el movimiento mientras escupe fuego
+            isChasing = false;
+            
+            // Activa las partículas de fuego
+            fireParticles.Play();
+
+            // Establecer el cooldown
+            nextFireTime = Time.time + fireCooldown;
+
+            // Espera mientras escupe fuego (por ejemplo, 2 segundos)
+            yield return new WaitForSeconds(timeStopWhenFlame);
+
+            // Detiene las partículas y permite volver a moverse
+            fireParticles.Stop();
+            isSpittingFire = false;
+            isChasing = true;
         }
     }
 
