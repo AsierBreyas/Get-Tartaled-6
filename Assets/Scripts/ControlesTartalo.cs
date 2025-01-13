@@ -295,18 +295,18 @@ public class ControlesTartalo : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("OMG HIIIII");
         if(other.tag == "Roca" && !tenemosPiedra)
         {
-            Debug.Log("OMG HIIIII");
             piedra = other.gameObject;
             tenemosPiedra = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Troste");
         if (other.tag == "Roca" && tenemosPiedra)
         {
-            Debug.Log("Troste");
             piedra = null;
             tenemosPiedra = false;
         }
