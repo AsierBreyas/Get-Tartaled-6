@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ControlesTartalo : MonoBehaviour
 {
     Vector3 movimiento;
+    Vector2 movimientoMirilla;
+    Vector2 posicionRaton;
     [SerializeField]
     float velocidadBase = 10f;
     float velocidad;
@@ -12,7 +15,23 @@ public class ControlesTartalo : MonoBehaviour
     float velocidadRotacion = 10f;
     [SerializeField]
     GameObject Arma;
+    [SerializeField]
+    Transform posicionOtraMano;
     int contadorMovimientoDefensa;
+    GameObject piedra;
+    float contadorPiedra;
+    [SerializeField]
+    Transform boloncho;
+    [SerializeField]
+    float targetDistance = 100f;
+    [SerializeField]
+    Image mirilla;
+    [SerializeField]
+    RectTransform mirillaPosicion;
+    Vector2 mirillaPosOriginal;
+    bool hayMando;
+    Vector2 trasladoMirilla;
+
 
     //Booleanos para los ataques
     bool estaHaciendoMovimiento;
@@ -23,9 +42,15 @@ public class ControlesTartalo : MonoBehaviour
     bool botonDelAtaqueAreaMantenido;
     bool estaEnAtaqueArea;
     bool estaEnDefensa;
+    bool tenemosPiedra;
+    bool piedraEnMano;
+    bool estaTirandoPiedra;
     void Start()
     {
         velocidad = velocidadBase;
+        mirillaPosOriginal = mirillaPosicion.position;
+        ResetMirilla();
+        Cursor.visible = false;
     }
 
     void Update()
@@ -40,6 +65,8 @@ public class ControlesTartalo : MonoBehaviour
                 GolpeFuerte();
             else if (estaEnAtaqueArea)
                 AtaqueArea();
+            else if (estaTirandoPiedra)
+                TirarPiedra();
         }
         Defensa();
     }
@@ -72,6 +99,28 @@ public class ControlesTartalo : MonoBehaviour
             estaEnDefensa = value.isPressed;
             Debug.Log("No puedes golpear lo que no puedes ver");
             ProcesarDefensa();
+        }
+    }
+    void OnTirarPiedra(InputValue input)
+    {
+        piedraEnMano = input.isPressed;
+        if (tenemosPiedra && input.isPressed)
+        {
+            ProcesarTirada();
+        }
+    }
+    void OnMoverMirillaGamepad(InputValue value)
+    {
+        movimientoMirilla = value.Get<Vector2>();
+        hayMando = true;
+    }
+    void OnMoverMirillaRaton(InputValue value)
+    {
+        if(posicionRaton != value.Get<Vector2>())
+        {
+            posicionRaton = value.Get<Vector2>();
+            movimientoMirilla = value.Get<Vector2>();
+            hayMando = false;
         }
     }
     void ProcesarMovimiento()
@@ -128,6 +177,14 @@ public class ControlesTartalo : MonoBehaviour
             Arma.transform.Rotate(new Vector3(0, 90, 0));
             contadorMovimientoDefensa++;
         }
+
+    }
+    void ProcesarTirada()
+    {
+        estaHaciendoMovimiento = true;
+        estaEnAtaque = true;
+        estaTirandoPiedra = true;
+        piedra.transform.position = posicionOtraMano.position;
 
     }
     void GolpeNormal()
@@ -201,6 +258,57 @@ public class ControlesTartalo : MonoBehaviour
         else if(estaHaciendoMovimiento && !estaEnAtaque)
         {
             Debug.Log(">:D");
+        }
+    }
+    void TirarPiedra()
+    {
+        contadorPiedra += +Time.deltaTime * 1.5f;
+        if (!piedraEnMano)
+        {
+            Debug.Log(mirillaPosicion.position);
+            boloncho.position = Camera.main.ScreenToWorldPoint(new Vector3(mirillaPosicion.position.x, mirillaPosicion.position.y, targetDistance));
+            piedra.GetComponent<Proyectil>().añadirDestino(boloncho.position);
+            estaHaciendoMovimiento = false;
+            estaEnAtaque = false;
+            estaTirandoPiedra = false;
+            ResetMirilla();
+        }
+        else
+        {
+            if(contadorPiedra > 1)
+            {
+                Debug.Log("Empezo mi tirania");
+                if (hayMando)
+                    trasladoMirilla = new Vector2(mirillaPosicion.position.x + movimientoMirilla.x, mirillaPosicion.position.y + movimientoMirilla.y);
+                else
+                    trasladoMirilla = movimientoMirilla;
+                mirillaPosicion.position = trasladoMirilla;
+                mirilla.enabled = true;
+            }
+        }
+    }
+    void ResetMirilla()
+    {
+        mirilla.enabled = false;
+        mirillaPosicion.position = mirillaPosOriginal;
+        boloncho.position = Camera.main.ScreenToWorldPoint(new Vector3(mirillaPosicion.position.x, mirillaPosicion.position.y, targetDistance));
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Roca" && !tenemosPiedra)
+        {
+            Debug.Log("OMG HIIIII");
+            piedra = other.gameObject;
+            tenemosPiedra = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Roca" && tenemosPiedra)
+        {
+            Debug.Log("Troste");
+            piedra = null;
+            tenemosPiedra = false;
         }
     }
 }

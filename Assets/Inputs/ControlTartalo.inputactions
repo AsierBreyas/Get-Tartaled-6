@@ -15,6 +15,24 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Mover Mirilla Gamepad",
+                    "type": "PassThrough",
+                    "id": "27713667-073d-4d89-bc10-f0a517282ef7",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Mover Mirilla Raton",
+                    "type": "PassThrough",
+                    "id": "0f36f165-4113-47b7-81c1-845f751d5c01",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Correr",
                     "type": "PassThrough",
                     "id": "5b4e862a-dbba-4359-ac17-2b143198b3db",
@@ -45,6 +63,15 @@
                     "name": "Defender",
                     "type": "PassThrough",
                     "id": "123c0520-3e8a-4ff8-b973-b0789de65c01",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Tirar Piedra",
+                    "type": "PassThrough",
+                    "id": "54e55174-516b-41b9-b148-ff311575962f",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -219,6 +246,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a6491b5c-fdbf-4c81-b2ad-f3595e200bbc",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ataque Area",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c0961aae-289a-4a53-85d6-298dfda05113",
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
@@ -236,6 +274,94 @@
                     "processors": "",
                     "groups": "",
                     "action": "Defender",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "039414a2-d17d-4521-a7cf-8668a35d22ac",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mover Mirilla Gamepad",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "a4627f64-4c1b-405f-92b8-0d968cd6e946",
+                    "path": "<Gamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mover Mirilla Gamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "14fb453b-6930-44da-b46a-6cb689b2aee3",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mover Mirilla Gamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "88f6a231-9c06-4ecd-89e4-67e716bf7cb7",
+                    "path": "<Gamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mover Mirilla Gamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "e7f2d99d-03a5-4d97-8e3e-88b25fae245c",
+                    "path": "<Gamepad>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mover Mirilla Gamepad",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0f84e48a-448b-4ca2-bad3-95e9f4205046",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tirar Piedra",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e1493ae-eb19-4b33-89bd-d2207365e2d8",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tirar Piedra",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9e5f8b6c-8465-4679-9b8f-4b833f75201a",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mover Mirilla Raton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
