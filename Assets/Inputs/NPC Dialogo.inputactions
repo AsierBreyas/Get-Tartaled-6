@@ -1,0 +1,45 @@
+{
+    "name": "NPC Dialogo",
+    "maps": [
+        {
+            "name": "NPC",
+            "id": "883f998e-2c4b-4994-9146-c19846845299",
+            "actions": [
+                {
+                    "name": "Hablar",
+                    "type": "Button",
+                    "id": "e990dc32-f5ab-46c3-b31e-beb0d8420cda",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1d7147b0-faa3-4f6c-97ab-cbf6de4aae59",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hablar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e38bc17a-6d3f-44e5-9eb0-8201e3176c0d",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hablar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

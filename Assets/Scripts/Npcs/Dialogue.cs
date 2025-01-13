@@ -10,13 +10,14 @@ public class Dialogue : MonoBehaviour
     [SerializeField, TextArea(4, 6)] string[] dialogueLines;
     bool isPlayerInRange;
     bool didDialogueStart;
+    bool playerPulsedBoton;
     int lineIndex;
     float typingTime = 0.05f;
 
     // Update is called once per frame
     void Update()
     {
-        if (isPlayerInRange && Input.GetButtonDown("Fire1"))
+        if (isPlayerInRange && playerPulsedBoton)
         {
             if (!didDialogueStart)
             {
@@ -31,19 +32,26 @@ public class Dialogue : MonoBehaviour
                 StopAllCoroutines();
                 dialogueText.text = dialogueLines[lineIndex];
             }
+            playerPulsedBoton = false;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        isPlayerInRange = true;
-        dialogueMark.SetActive(true);
+        if(other.tag == "Player")
+        {
+            isPlayerInRange = true;
+            dialogueMark.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isPlayerInRange = false;
-        dialogueMark.SetActive(false);
+        if(other.tag == "Player")
+        {
+            isPlayerInRange = false;
+            dialogueMark.SetActive(false);
+        }
     }
 
     void StartDialogue()
@@ -81,5 +89,9 @@ public class Dialogue : MonoBehaviour
             dialogueMark.SetActive(true);
             Time.timeScale = 1f;
         }
+    }
+    void OnHablar()
+    {
+        playerPulsedBoton = true;
     }
 }
