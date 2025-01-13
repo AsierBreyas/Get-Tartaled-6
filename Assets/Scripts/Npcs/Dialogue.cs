@@ -32,6 +32,7 @@ public class Dialogue : MonoBehaviour
                 StopAllCoroutines();
                 dialogueText.text = dialogueLines[lineIndex];
             }
+            FindAnyObjectByType<ControlesTartalo>().puedeSeguirHablando();
             playerPulsedBoton = false;
         }
     }
@@ -90,7 +91,7 @@ public class Dialogue : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
-    void OnHablar()
+    public void interactButtonPulsed()
     {
         playerPulsedBoton = true;
     }
