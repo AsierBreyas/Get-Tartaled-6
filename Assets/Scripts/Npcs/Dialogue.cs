@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour
     bool isPlayerInRange;
     bool didDialogueStart;
     int lineIndex;
+    float typingTime = 0.05f;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +21,10 @@ public class Dialogue : MonoBehaviour
             if (!didDialogueStart)
             {
                 StartDialogue();
+            }
+            else if (dialogueText.text == dialogueLines[lineIndex])
+            {
+                NextDialogueLine();
             }
         }
     }
@@ -39,5 +44,35 @@ public class Dialogue : MonoBehaviour
     void StartDialogue()
     {
         didDialogueStart = true;
+        dialoguePanel.SetActive(true);
+        dialogueMark.SetActive(false);
+        lineIndex = 0;
+        StartCoroutine(ShowLine());
+    }
+
+    IEnumerator ShowLine()
+    {
+        dialogueText.text = string.Empty;
+
+        foreach (char ch in dialogueLines[lineIndex])
+        {
+            dialogueText.text += ch;
+            yield return new WaitForSeconds(typingTime);
+        }
+    }
+
+    void NextDialogueLine()
+    {
+        lineIndex++;
+        if (lineIndex < dialogueLines.Length)
+        {
+            StartCoroutine(ShowLine());
+        }
+        else
+        {
+            didDialogueStart = true;
+            dialoguePanel.SetActive(true);
+            dialogueMark.SetActive(false);
+        }
     }
 }
