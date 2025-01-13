@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 58b678a4053cfa24e91fad366df5cab1
+guid: d7e750b3786711f4eaf7b1c33e8b3d83
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Pig
-    second: {fileID: 2100000, guid: 5ffbca0db93928947b11f6ced6cae1cb, type: 2}
+      name: Exclamation_of_Mision_Nulo__Nulo_1_NURBS_ForroMat
+    second: {fileID: 2100000, guid: 94012c5abb4872f49a68e61f8a312e1c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Saddle
-    second: {fileID: 2100000, guid: 58553b3361cec624a8ee560f98eaaa7b, type: 2}
+      name: Exclamation_of_Mision_Nulo__Nulo_1_NURBS_Forro_1Mat
+    second: {fileID: 2100000, guid: 94012c5abb4872f49a68e61f8a312e1c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -43,7 +43,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.4
+    globalScale: 0.01
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -98,7 +98,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.004
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
