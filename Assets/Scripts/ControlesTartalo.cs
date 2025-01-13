@@ -31,6 +31,8 @@ public class ControlesTartalo : MonoBehaviour
     Vector2 mirillaPosOriginal;
     bool hayMando;
     Vector2 trasladoMirilla;
+    Dialogue npcDialogo;
+    bool puedeHablar;
 
 
     //Booleanos para los ataques
@@ -121,6 +123,14 @@ public class ControlesTartalo : MonoBehaviour
             posicionRaton = value.Get<Vector2>();
             movimientoMirilla = value.Get<Vector2>();
             hayMando = false;
+        }
+    }
+    void OnInteractuar()
+    {
+        if (puedeHablar)
+        {
+            npcDialogo.interactButtonPulsed();
+            puedeHablar = false;
         }
     }
     void ProcesarMovimiento()
@@ -301,6 +311,11 @@ public class ControlesTartalo : MonoBehaviour
             piedra = other.gameObject;
             tenemosPiedra = true;
         }
+        else if(other.tag == "NPC")
+        {
+            npcDialogo = other.gameObject.GetComponent<Dialogue>();
+            puedeHablar = true;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -310,5 +325,14 @@ public class ControlesTartalo : MonoBehaviour
             piedra = null;
             tenemosPiedra = false;
         }
+        else if (other.tag == "NPC")
+        {
+            npcDialogo = null;
+            puedeHablar = false;
+        }
+    }
+    public void puedeSeguirHablando()
+    {
+        puedeHablar = true;
     }
 }
