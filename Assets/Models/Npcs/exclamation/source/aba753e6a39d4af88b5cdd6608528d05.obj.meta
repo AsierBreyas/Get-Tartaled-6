@@ -3,7 +3,17 @@ guid: d7e750b3786711f4eaf7b1c33e8b3d83
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Exclamation_of_Mision_Nulo__Nulo_1_NURBS_ForroMat
+    second: {fileID: 2100000, guid: 94012c5abb4872f49a68e61f8a312e1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Exclamation_of_Mision_Nulo__Nulo_1_NURBS_Forro_1Mat
+    second: {fileID: 2100000, guid: 94012c5abb4872f49a68e61f8a312e1c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
