@@ -26,6 +26,11 @@ public class Dialogue : MonoBehaviour
             {
                 NextDialogueLine();
             }
+            else
+            {
+                StopAllCoroutines();
+                dialogueText.text = dialogueLines[lineIndex];
+            }
         }
     }
 
