@@ -28,7 +28,9 @@ public class ControlesTartalo : MonoBehaviour
     Image mirilla;
     [SerializeField]
     RectTransform mirillaPosicion;
+    Vector2 mirillaPosOriginal;
     bool hayMando;
+    Vector2 trasladoMirilla;
 
 
     //Booleanos para los ataques
@@ -46,7 +48,9 @@ public class ControlesTartalo : MonoBehaviour
     void Start()
     {
         velocidad = velocidadBase;
-        mirilla.enabled = false;
+        mirillaPosOriginal = mirillaPosicion.position;
+        ResetMirilla();
+        Cursor.visible = false;
     }
 
     void Update()
@@ -99,11 +103,10 @@ public class ControlesTartalo : MonoBehaviour
     }
     void OnTirarPiedra(InputValue input)
     {
+        piedraEnMano = input.isPressed;
         if (tenemosPiedra && input.isPressed)
         {
-            piedraEnMano = input.isPressed;
             ProcesarTirada();
-
         }
     }
     void OnMoverMirillaGamepad(InputValue value)
@@ -262,31 +265,33 @@ public class ControlesTartalo : MonoBehaviour
         contadorPiedra += +Time.deltaTime * 1.5f;
         if (!piedraEnMano)
         {
-            Vector2 trasladoMirilla;
-            if (hayMando)
-                trasladoMirilla = new Vector2(mirillaPosicion.position.x + movimientoMirilla.x, mirillaPosicion.position.y + movimientoMirilla.y);
-            else
-                trasladoMirilla = movimientoMirilla;
-            mirillaPosicion.position = trasladoMirilla;
-            //Debug.Log(mirillaPosicion.position);
+            Debug.Log(mirillaPosicion.position);
             boloncho.position = Camera.main.ScreenToWorldPoint(new Vector3(mirillaPosicion.position.x, mirillaPosicion.position.y, targetDistance));
             piedra.GetComponent<Proyectil>().añadirDestino(boloncho.position);
-            //Lanzar la roca
-            piedraEnMano = false;
             estaHaciendoMovimiento = false;
             estaEnAtaque = false;
             estaTirandoPiedra = false;
-            mirilla.enabled = false;
+            ResetMirilla();
         }
         else
         {
             if(contadorPiedra > 1)
             {
                 Debug.Log("Empezo mi tirania");
-                Debug.Log(movimientoMirilla);
+                if (hayMando)
+                    trasladoMirilla = new Vector2(mirillaPosicion.position.x + movimientoMirilla.x, mirillaPosicion.position.y + movimientoMirilla.y);
+                else
+                    trasladoMirilla = movimientoMirilla;
+                mirillaPosicion.position = trasladoMirilla;
                 mirilla.enabled = true;
             }
         }
+    }
+    void ResetMirilla()
+    {
+        mirilla.enabled = false;
+        mirillaPosicion.position = mirillaPosOriginal;
+        boloncho.position = Camera.main.ScreenToWorldPoint(new Vector3(mirillaPosicion.position.x, mirillaPosicion.position.y, targetDistance));
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -26,7 +26,7 @@
                 {
                     "name": "Mover Mirilla Raton",
                     "type": "PassThrough",
-                    "id": "a027fd94-e06d-403e-ac76-314cd4a9e649",
+                    "id": "0f36f165-4113-47b7-81c1-845f751d5c01",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -334,17 +334,6 @@
                 },
                 {
                     "name": "",
-                    "id": "cffd7749-e71a-4129-9f43-3287b086e50d",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mover Mirilla Raton",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "0f84e48a-448b-4ca2-bad3-95e9f4205046",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
@@ -362,6 +351,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Tirar Piedra",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9e5f8b6c-8465-4679-9b8f-4b833f75201a",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mover Mirilla Raton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
