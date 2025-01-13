@@ -117,10 +117,7 @@ public class Pig : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.tag == "Player")
-        {
-            Debug.Log("PUM quemao");
-        }
+        Debug.Log("PUM quemao");
     }
 
     void Die()
