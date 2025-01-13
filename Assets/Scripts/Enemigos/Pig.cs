@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Pig : MonoBehaviour
 {
@@ -113,11 +112,6 @@ public class Pig : MonoBehaviour
         {
             Die();
         }
-    }
-
-    private void OnParticleCollision(GameObject other)
-    {
-        Debug.Log("PUM quemao");
     }
 
     void Die()
