@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Pig : MonoBehaviour
 {
@@ -112,14 +111,6 @@ public class Pig : MonoBehaviour
         if (health <= 0)
         {
             Die();
-        }
-    }
-
-    private void OnParticleCollision(GameObject other)
-    {
-        if (other.tag == "Player")
-        {
-            Debug.Log("PUM quemao");
         }
     }
 
