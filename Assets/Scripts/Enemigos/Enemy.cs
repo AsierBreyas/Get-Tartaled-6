@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Wolve : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Transform player;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
+    [SerializeField] float health, maxHealth;
+    [SerializeField] EnemyHealthBar healthBar;
 
     // Patroling
     [SerializeField] Vector3 walkPoint;
@@ -19,6 +21,10 @@ public class Wolve : MonoBehaviour
     // States
     [SerializeField] float sightRange, attackRange;
     [SerializeField] bool playerInSightRange, playerInAttackRange;
+
+    // Cerdo
+    [SerializeField] ParticleSystem fireParticles;
+    [SerializeField] float fireAttackRange = 3f;
 
     private void Awake()
     {
@@ -71,6 +77,8 @@ public class Wolve : MonoBehaviour
 
     void ChasePlayer()
     {
+        // Animation of walk
+
         agent.SetDestination(player.position);
     }
 
@@ -83,15 +91,48 @@ public class Wolve : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            // Attack code here
-            Debug.Log("Pum te ataco");
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            if (this.tag  == "Wolve")
+            {
+                // Attack code here
+                Debug.Log("Soy un lobo, pum te ataco");
+                alreadyAttacked = true;
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            }
+            else if (this.tag == "Pig")
+            {
+                // Check if player is within fire attack range
+                if (Vector3.Distance(transform.position, player.position) <= fireAttackRange)
+                {
+                    // Play fire particles
+                    fireParticles.Play();
+
+                    Debug.Log("Soy un cerdo, te escupo fuego!");
+
+                    // Cooldown for the attack
+                    alreadyAttacked = true;
+                    Invoke(nameof(ResetAttack), timeBetweenAttacks);
+                }
+            }
         }
     }
 
     void ResetAttack()
     {
         alreadyAttacked = false;
+    }
+
+    void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            // Animation of enemy dying
+            Invoke(nameof(DestroyEnemy), 0.5f);
+        }
+    }
+
+    void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 }
