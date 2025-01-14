@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 
 public class Dialogue : MonoBehaviour
@@ -7,6 +8,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] GameObject dialogueMark;
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TMP_Text dialogueText;
+    [SerializeField] ListaDialogos[] listOfDialogues;
     [SerializeField, TextArea(4, 6)] string[] dialogueLines;
     bool isPlayerInRange;
     bool didDialogueStart;
