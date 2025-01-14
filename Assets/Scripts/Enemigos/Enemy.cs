@@ -29,6 +29,13 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.Find("Tartalo").transform;
         agent = GetComponent<NavMeshAgent>();
+        healthBar = GetComponentInChildren<EnemyHealthBar>();
+    }
+
+    private void Start()
+    {
+        //health = maxHealth;
+        //healthBar.UpdateHealthBar(health, maxHealth);
     }
 
     private void Update()
@@ -119,6 +126,7 @@ public class Enemy : MonoBehaviour
     void TakeDamage(int damage)
     {
         health -= damage;
+        healthBar.UpdateHealthBar(health, maxHealth);
         if (health <= 0)
         {
             // Animation of enemy dying
