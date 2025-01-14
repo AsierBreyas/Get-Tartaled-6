@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
 
     // Cerdo
     [SerializeField] ParticleSystem fireParticles;
-    [SerializeField] float fireAttackRange = 3f;
 
     private void Awake()
     {
@@ -100,18 +99,14 @@ public class Enemy : MonoBehaviour
             }
             else if (this.tag == "Pig")
             {
-                // Check if player is within fire attack range
-                if (Vector3.Distance(transform.position, player.position) <= fireAttackRange)
-                {
-                    // Play fire particles
-                    fireParticles.Play();
+                // Play fire particles
+                fireParticles.Play();
 
-                    Debug.Log("Soy un cerdo, te escupo fuego!");
+                Debug.Log("Soy un cerdo, te escupo fuego!");
 
-                    // Cooldown for the attack
-                    alreadyAttacked = true;
-                    Invoke(nameof(ResetAttack), timeBetweenAttacks);
-                }
+                // Cooldown for the attack
+                alreadyAttacked = true;
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
         }
     }
