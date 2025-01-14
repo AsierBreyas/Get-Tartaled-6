@@ -93,6 +93,7 @@ public class Enemy : MonoBehaviour
             if (this.tag  == "Wolve")
             {
                 // Attack code here
+                enemyParticles.Play();
                 Debug.Log("Soy un lobo, pum te ataco");
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
