@@ -9,7 +9,6 @@ public class Dialogue : MonoBehaviour
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] Dialogos[] listOfDialogues;
-    [SerializeField] bool haveResume;
     Dialogos dialogueLines;
     bool isPlayerInRange;
     bool didDialogueStart;
@@ -40,8 +39,10 @@ public class Dialogue : MonoBehaviour
             {
                 StopAllCoroutines();
                 dialogueText.text = dialogueLines.dialgos[lineIndex];
-                if (haveResume && dialogueLines.isResume != true && listOfDialogues[currentDialogue].isResume != false)
+                if (dialogueLines.isResume == false && listOfDialogues[currentDialogue].isResume)
                     setNextDialogue();
+                if (dialogueLines.isTrigger)
+                    FindAnyObjectByType<MisionManager>().AvanzarMision(dialogueLines.misionCode);
             }
             FindAnyObjectByType<ControlesTartalo>().puedeSeguirHablando();
             playerPulsedBoton = false;
