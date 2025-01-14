@@ -35,7 +35,7 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
     public void AvanzarMision()
     {
         seguimiento[misionActual].MisionCompletada();
-        if(misionActual + 1 != seguimiento.Count)
+        if(misionActual != seguimiento.Count)
         {
             misionActual++;
         }

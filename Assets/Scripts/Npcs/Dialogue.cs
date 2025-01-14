@@ -8,13 +8,20 @@ public class Dialogue : MonoBehaviour
     [SerializeField] GameObject dialogueMark;
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TMP_Text dialogueText;
-    [SerializeField] ListaDialogos[] listOfDialogues;
-    [SerializeField, TextArea(4, 6)] string[] dialogueLines;
+    [SerializeField] Dialogos[] listOfDialogues;
+    [SerializeField] bool haveResume;
+    Dialogos dialogueLines;
     bool isPlayerInRange;
     bool didDialogueStart;
     bool playerPulsedBoton;
     int lineIndex;
+    int currentDialogue;
     float typingTime = 0.05f;
+
+    void Start()
+    {
+        dialogueLines = listOfDialogues[currentDialogue];
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,14 +32,16 @@ public class Dialogue : MonoBehaviour
             {
                 StartDialogue();
             }
-            else if (dialogueText.text == dialogueLines[lineIndex])
+            else if (dialogueText.text == dialogueLines.dialgos[lineIndex])
             {
                 NextDialogueLine();
             }
             else
             {
                 StopAllCoroutines();
-                dialogueText.text = dialogueLines[lineIndex];
+                dialogueText.text = dialogueLines.dialgos[lineIndex];
+                if (haveResume && dialogueLines.isResume != true && listOfDialogues[currentDialogue].isResume != false)
+                    setNextDialogue();
             }
             FindAnyObjectByType<ControlesTartalo>().puedeSeguirHablando();
             playerPulsedBoton = false;
@@ -71,7 +80,7 @@ public class Dialogue : MonoBehaviour
     {
         dialogueText.text = string.Empty;
 
-        foreach (char ch in dialogueLines[lineIndex])
+        foreach (char ch in dialogueLines.dialgos[lineIndex])
         {
             dialogueText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);
@@ -81,7 +90,7 @@ public class Dialogue : MonoBehaviour
     void NextDialogueLine()
     {
         lineIndex++;
-        if (lineIndex < dialogueLines.Length)
+        if (lineIndex < dialogueLines.dialgos.Count)
         {
             StartCoroutine(ShowLine());
         }
@@ -96,5 +105,13 @@ public class Dialogue : MonoBehaviour
     public void interactButtonPulsed()
     {
         playerPulsedBoton = true;
+    }
+    public void setNextDialogue()
+    {
+        if(listOfDialogues.Length != currentDialogue)
+        {
+            currentDialogue++;
+            dialogueLines = listOfDialogues[currentDialogue];
+        }
     }
 }

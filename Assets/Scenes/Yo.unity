@@ -428,7 +428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f898f827af13a5459af385580c27ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seguimiento: 00
 --- !u!4 &628060451
 Transform:
   m_ObjectHideFlags: 0
@@ -842,6 +841,44 @@ PrefabInstance:
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 1060574708}
+    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
+      propertyPath: listOfDialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
+      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
+      propertyPath: listOfDialogues.Array.data[1].dialgos.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
+      propertyPath: 'listOfDialogues.Array.data[0].dialgos.Array.data[0]'
+      value: HELLO MY BOY TARTALO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
+      propertyPath: 'listOfDialogues.Array.data[0].dialgos.Array.data[1]'
+      value: Esto es un texto extremadamente largo para probar el tipado bien guapardo
+        que he implementado jaja. Odio mi vida acaba con ella por favor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
+      propertyPath: 'listOfDialogues.Array.data[0].dialgos.Array.data[2]'
+      value: MATANEEEE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
+      propertyPath: 'listOfDialogues.Array.data[1].dialgos.Array.data[0]'
+      value: HELLO MY BOY TARTALO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
+      propertyPath: 'listOfDialogues.Array.data[1].dialgos.Array.data[1]'
+      value: Esto es un texto extremadamente largo para probar el tipado bien guapardo
+        que he implementado jaja. Odio mi vida acaba con ella por favor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
+      propertyPath: 'listOfDialogues.Array.data[1].dialgos.Array.data[2]'
+      value: MATANEEEE
+      objectReference: {fileID: 0}
     - target: {fileID: 5265754942720727943, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.9097223
