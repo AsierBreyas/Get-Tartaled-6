@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] bool playerInSightRange, playerInAttackRange;
 
     // Particles for each enemy, in case of the pig, fire, in most cases, blood
-    [SerializeField] ParticleSystem fireParticles;
+    [SerializeField] ParticleSystem enemyParticles;
 
     private void Awake()
     {
@@ -100,11 +100,10 @@ public class Enemy : MonoBehaviour
             else if (this.tag == "Pig")
             {
                 // Play fire particles
-                fireParticles.Play();
+                enemyParticles.Play();
 
                 Debug.Log("Soy un cerdo, te escupo fuego!");
 
-                // Cooldown for the attack
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
