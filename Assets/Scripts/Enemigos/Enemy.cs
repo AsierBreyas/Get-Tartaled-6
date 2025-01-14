@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float sightRange, attackRange;
     [SerializeField] bool playerInSightRange, playerInAttackRange;
 
-    // Cerdo
+    // Particles for each enemy, in case of the pig, fire, in most cases, blood
     [SerializeField] ParticleSystem fireParticles;
 
     private void Awake()
