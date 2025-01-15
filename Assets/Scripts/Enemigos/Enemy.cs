@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour
             {
                 StartCoroutine(PerformDashAttack());
                 enemyParticles.Play();
-                Debug.Log("Soy un lobo, pum te ataco");
+                //Debug.Log("Soy un lobo, pum te ataco");
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
@@ -116,7 +116,7 @@ public class Enemy : MonoBehaviour
             {
                 enemyParticles.Play();
 
-                Debug.Log("Soy un cerdo, te escupo fuego!");
+                //Debug.Log("Soy un cerdo, te escupo fuego!");
 
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -129,10 +129,10 @@ public class Enemy : MonoBehaviour
         alreadyAttacked = false;
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        healthBar.UpdateHealthBar(currentHealth, maxHealth);
+        healthBar.UpdateHealthbar(currentHealth, maxHealth);
         if (currentHealth <= 0)
         {
             // Animacion de enemigo muriendo

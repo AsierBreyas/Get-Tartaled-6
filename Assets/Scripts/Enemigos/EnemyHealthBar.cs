@@ -8,7 +8,7 @@ public class EnemyHealthBar : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] Vector3 offset;
 
-    public void UpdateHealthBar(float currentValue, float maxValue)
+    public void UpdateHealthbar(float currentValue, float maxValue)
     {
         slider.value = currentValue / maxValue;
     }

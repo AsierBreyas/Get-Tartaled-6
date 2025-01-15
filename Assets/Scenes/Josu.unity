@@ -1059,8 +1059,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146903918}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.14788514, y: 0.69028115, z: -0.1473493, w: -0.6927698}
-  m_LocalPosition: {x: 408.09106, y: 3.412327, z: 618.1615}
+  m_LocalRotation: {x: 0.24818593, y: 0.0046572685, z: -0.0012007301, w: 0.96870047}
+  m_LocalPosition: {x: 394.8601, y: 5.1268263, z: 609.0964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7886,6 +7886,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1600890794550019441, guid: 9dd35259b1c1532488b2a59243cb8102, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1815077418038929369, guid: 9dd35259b1c1532488b2a59243cb8102, type: 3}
       propertyPath: m_LocalPosition.x
       value: 395.37
@@ -9649,6 +9653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Girl_3
       objectReference: {fileID: 0}
+    - target: {fileID: 5265754942721214375, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9912,11 +9920,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2302527189591103674, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2302527189591103674, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4538182597646060188, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: target
@@ -9972,7 +9980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6185082576756994649, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9210096633168735003, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: player
@@ -10002,6 +10010,10 @@ PrefabInstance:
     - target: {fileID: 1629982923405767758, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067187662602362265, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
+      propertyPath: m_Speed
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4485985694107872759, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: player

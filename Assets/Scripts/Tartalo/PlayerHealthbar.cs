@@ -18,6 +18,5 @@ public class PlayerHealthbar : MonoBehaviour
     {
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-    }
-    
+    } 
 }
