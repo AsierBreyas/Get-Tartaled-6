@@ -215,18 +215,18 @@ public class ControlesTartalo : MonoBehaviour
         //Debug.Log("Rotacion de x: "+ Arma.transform.rotation.eulerAngles);
         if (Arma.transform.rotation.eulerAngles.x >= 70f && Arma.transform.rotation.eulerAngles.x <= 75f)
         {
-            estaEnAtaque = false;
-            estaEnAtaqueNormal = false;
-            estaHaciendoMovimiento = false;
-            Arma.transform.Rotate(new Vector3(-75, 0, 0));
-            if (botonDelAtaqueFuerteMantenido)
-                ProcesarGolpeFuerte();
             if (heGolpeado)
             {
                 ProcesarDañosHechos();
                 //Damages
                 heGolpeado = false;
             }
+            estaEnAtaque = false;
+            estaEnAtaqueNormal = false;
+            estaHaciendoMovimiento = false;
+            Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            if (botonDelAtaqueFuerteMantenido)
+                ProcesarGolpeFuerte();
         }
         else
         {
@@ -363,11 +363,20 @@ public class ControlesTartalo : MonoBehaviour
     public void HeGolpeado()
     {
         heGolpeado = true;
-        Debug.Log("heGolpeado: " + heGolpeado.ToString());
     }
     void ProcesarDañosHechos()
     {
-        Debug.Log("hacer daño");
-        FindFirstObjectByType<Enemy>().TakeDamage(15f);
+        if (estaEnAtaqueNormal)
+        {
+            FindFirstObjectByType<Enemy>().TakeDamage(15f);
+        }
+        else if (estaEnAtaqueFuerte)
+        {
+            FindFirstObjectByType<Enemy>().TakeDamage(30f);
+        }
+        else if (estaEnAtaqueArea)
+        {
+            FindFirstObjectByType<Enemy>().TakeDamage(15f);
+        }
     }
 }
