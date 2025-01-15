@@ -12,7 +12,7 @@ public class ColisionesTartalo : MonoBehaviour
     {
         if (other.gameObject.tag == "Wolve")
         {
-            FindFirstObjectByType<ControlesTartalo>().TakeDamage(10f);
+            FindFirstObjectByType<ControlesTartalo>().TakeDamage(20f);
         }
     }
 }

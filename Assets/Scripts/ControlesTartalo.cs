@@ -52,6 +52,7 @@ public class ControlesTartalo : MonoBehaviour
     [SerializeField] PlayerHealthbar healthbar;
     void Start()
     {
+        Time.timeScale = 1;
         velocidad = velocidadBase;
         mirillaPosOriginal = mirillaPosicion.position;
         ResetMirilla();
@@ -76,8 +77,10 @@ public class ControlesTartalo : MonoBehaviour
                 TirarPiedra();
         }
         Defensa();
-        //Solo para probar, quitar esto antes de exportar
-        QuitarVidaDebug();
+        if (currentHealth <= 0)
+        {
+            FindFirstObjectByType<GameManager>().ItsGameOver();
+        }
     }
     void OnMoverse(InputValue value)
     {
@@ -325,13 +328,5 @@ public class ControlesTartalo : MonoBehaviour
     {
         currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
-    }
-
-    void QuitarVidaDebug()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
     }
 }
