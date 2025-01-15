@@ -7946,6 +7946,10 @@ PrefabInstance:
       propertyPath: mirillaPosicion
       value: 
       objectReference: {fileID: 678470699}
+    - target: {fileID: 8768705308179973602, guid: 9dd35259b1c1532488b2a59243cb8102, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9670,6 +9674,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 941719257368508939, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2538189740883763299, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
       propertyPath: m_Pivot.x
       value: 0

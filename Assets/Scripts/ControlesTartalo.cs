@@ -367,9 +367,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     void ProcesarDañosHechos()
     {
-        if (estaEnAtaqueNormal)
-        {
-            FindFirstObjectByType<Enemy>().TakeDamage(15f);
-        }
+        Debug.Log("hacer daño");
+        FindFirstObjectByType<Enemy>().TakeDamage(15f);
     }
 }
