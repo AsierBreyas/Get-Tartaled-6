@@ -9912,11 +9912,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2302527189591103674, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2302527189591103674, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4538182597646060188, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: target
@@ -9972,7 +9972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6185082576756994649, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9210096633168735003, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: player
@@ -9998,6 +9998,10 @@ PrefabInstance:
     - target: {fileID: 1629982923405767758, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: m_Name
       value: Wolve
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629982923405767758, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4485985694107872759, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: player

@@ -104,7 +104,7 @@ public class Enemy : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            if (this.tag  == "Wolve")
+            if (this.tag  == "Lobo")
             {
                 StartCoroutine(PerformDashAttack());
                 enemyParticles.Play();
@@ -112,9 +112,8 @@ public class Enemy : MonoBehaviour
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
-            else if (this.tag == "Pig")
+            else if (this.tag == "Cerdo")
             {
-                // Play fire particles
                 enemyParticles.Play();
 
                 Debug.Log("Soy un cerdo, te escupo fuego!");
@@ -136,7 +135,7 @@ public class Enemy : MonoBehaviour
         healthBar.UpdateHealthBar(currentHealth, maxHealth);
         if (currentHealth <= 0)
         {
-            // Animation of enemy dying
+            // Animacion de enemigo muriendo
             Invoke(nameof(DestroyEnemy), 0.5f);
         }
     }

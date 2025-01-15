@@ -4844,7 +4844,7 @@ GameObject:
   - component: {fileID: 5561147376312705086}
   m_Layer: 0
   m_Name: pig
-  m_TagString: Pig
+  m_TagString: Cerdo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4883,7 +4883,7 @@ GameObject:
   - component: {fileID: 2923433449228165810}
   m_Layer: 0
   m_Name: pig_01
-  m_TagString: Pig
+  m_TagString: Cerdo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
