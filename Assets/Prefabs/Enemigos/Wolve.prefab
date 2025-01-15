@@ -164,7 +164,7 @@ MonoBehaviour:
   walkPointRange: 5
   timeBetweenAttacks: 2
   sightRange: 20
-  attackRange: 0.5
+  attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
   enemyParticles: {fileID: 2287319820850606037}

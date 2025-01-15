@@ -7870,6 +7870,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2066453179953113005, guid: 9dd35259b1c1532488b2a59243cb8102, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735714328077616723, guid: 9dd35259b1c1532488b2a59243cb8102, type: 3}
       propertyPath: mirilla
       value: 
@@ -9686,6 +9690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Dialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 4796171092271232793, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5652820603565107977, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9715,11 +9723,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2302527189591103674, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2302527189591103674, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4538182597646060188, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: target
@@ -9772,6 +9780,10 @@ PrefabInstance:
     - target: {fileID: 6185082576756994649, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: m_Name
       value: pig
+      objectReference: {fileID: 0}
+    - target: {fileID: 6185082576756994649, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9210096633168735003, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
       propertyPath: player

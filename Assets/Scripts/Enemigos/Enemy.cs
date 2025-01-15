@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
@@ -85,13 +86,19 @@ public class Enemy : MonoBehaviour
     {
         // Animation of walk
 
-        agent.SetDestination(player.position);
+        if (agent.enabled)
+        {
+            agent.SetDestination(player.position);
+        }
     }
 
     void AttackPlayer()
     {
         // Make sure enemy dosen't move
-        agent.SetDestination(transform.position);
+        if (agent.enabled)
+        {
+            agent.SetDestination(transform.position);
+        }
 
         transform.LookAt(player);
 
@@ -99,7 +106,7 @@ public class Enemy : MonoBehaviour
         {
             if (this.tag  == "Wolve")
             {
-                // Attack code here
+                StartCoroutine(PerformDashAttack());
                 enemyParticles.Play();
                 Debug.Log("Soy un lobo, pum te ataco");
                 alreadyAttacked = true;
@@ -137,5 +144,42 @@ public class Enemy : MonoBehaviour
     void DestroyEnemy()
     {
         Destroy(gameObject);
+    }
+
+    // Corrutina para la embestida del lobo
+    IEnumerator PerformDashAttack()
+    {
+        // Desactivar temporalmente el NavMeshAgent
+        agent.enabled = false;
+
+        // Variables de la embestida
+        float dashSpeed = 7f; // Velocidad de la embestida
+        float dashDuration = 0.3f; // Duración de la embestida
+        float backwardSpeed = 5f; // Velocidad del retroceso
+        float backwardDuration = 0.2f; // Duración del retroceso
+
+        Vector3 dashDirection = (player.position - transform.position).normalized;
+
+        // Embestida hacia el jugador
+        float elapsedTime = 0f;
+        while (elapsedTime < dashDuration)
+        {
+            transform.position += dashDirection * dashSpeed * Time.deltaTime;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Retroceso
+        elapsedTime = 0f;
+        Vector3 backwardDirection = -dashDirection;
+        while (elapsedTime < backwardDuration)
+        {
+            transform.position += backwardDirection * backwardSpeed * Time.deltaTime;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Reactivar el NavMeshAgent
+        agent.enabled = true;
     }
 }

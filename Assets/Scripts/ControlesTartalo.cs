@@ -321,7 +321,7 @@ public class ControlesTartalo : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
