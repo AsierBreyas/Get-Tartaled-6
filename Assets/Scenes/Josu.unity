@@ -9686,6 +9686,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Dialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 5652820603565107977, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
