@@ -85,19 +85,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100008, guid: 24a4f034039cd4f8db3d911d9422b571, type: 3}
       propertyPath: m_Name
-      value: Girl_3
+      value: npc prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 24a4f034039cd4f8db3d911d9422b571, type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 24a4f034039cd4f8db3d911d9422b571, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.97
+      value: 0.9097223
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 24a4f034039cd4f8db3d911d9422b571, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.658285
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 24a4f034039cd4f8db3d911d9422b571, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.91
+      value: 4.7834682
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 24a4f034039cd4f8db3d911d9422b571, type: 3}
       propertyPath: m_LocalRotation.w
@@ -667,8 +671,16 @@ MonoBehaviour:
   dialogueMark: {fileID: 711928774935616987}
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
-  dialogueLines:
-  - Hola Tartalo
-  - Esto es un texto extremadamente largo para probar el tipado bien guapardo que
-    he implementado jaja
-  - Adios tontito
+  listOfDialogues:
+  - isResume: 0
+    isTrigger: 0
+    misionCode: 
+    hablador: Murabito
+    dialgos:
+    - hablador: 
+      texto: Hello my boy Tartalo
+    - hablador: 
+      texto: 'Este dialogo se suponia que era extremadamente largo pero me he olvidado
+        que puso Josu. '
+    - hablador: 
+      texto: MATANEEEE
