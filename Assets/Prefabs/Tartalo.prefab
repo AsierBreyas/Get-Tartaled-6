@@ -17,13 +17,13 @@ GameObject:
   - component: {fileID: 6735714328077616723}
   - component: {fileID: 2066453179953113005}
   - component: {fileID: -7920029132118105154}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tartalo
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1815077418038929369
 Transform:
   m_ObjectHideFlags: 0
@@ -191,6 +191,9 @@ MonoBehaviour:
   targetDistance: 100
   mirilla: {fileID: 0}
   mirillaPosicion: {fileID: 0}
+  maxHealth: 100
+  currentHealth: 100
+  healthbar: {fileID: 0}
 --- !u!54 &2066453179953113005
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -239,7 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2199041291323880719}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Garrote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +277,7 @@ GameObject:
   - component: {fileID: 7677353645421227439}
   - component: {fileID: 5116785473070462349}
   - component: {fileID: 1407297352117924406}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +385,7 @@ GameObject:
   - component: {fileID: 2874109313502249514}
   - component: {fileID: 8124678355332692996}
   - component: {fileID: 4837835920099727551}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Boloncho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3009058466140844449}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: La otra mano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6445510070026359222}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mango
   m_TagString: Untagged
   m_Icon: {fileID: 0}

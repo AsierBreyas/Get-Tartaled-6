@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Transform player;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
-    [SerializeField] float health, maxHealth;
+    [SerializeField] float currentHealth, maxHealth;
     [SerializeField] EnemyHealthBar healthBar;
 
     // Patroling
@@ -125,9 +125,9 @@ public class Enemy : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-        health -= damage;
-        healthBar.UpdateHealthBar(health, maxHealth);
-        if (health <= 0)
+        currentHealth -= damage;
+        healthBar.UpdateHealthBar(currentHealth, maxHealth);
+        if (currentHealth <= 0)
         {
             // Animation of enemy dying
             Invoke(nameof(DestroyEnemy), 0.5f);

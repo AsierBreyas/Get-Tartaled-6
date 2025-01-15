@@ -45,12 +45,19 @@ public class ControlesTartalo : MonoBehaviour
     bool tenemosPiedra;
     bool piedraEnMano;
     bool estaTirandoPiedra;
+
+    //Sistema de vida
+    [SerializeField] float maxHealth = 100;
+    [SerializeField] float currentHealth;
+    [SerializeField] PlayerHealthbar healthbar;
     void Start()
     {
         velocidad = velocidadBase;
         mirillaPosOriginal = mirillaPosicion.position;
         ResetMirilla();
         Cursor.visible = false;
+        currentHealth = maxHealth;
+        healthbar.SetMaxHealth(maxHealth);
     }
 
     void Update()
@@ -69,6 +76,8 @@ public class ControlesTartalo : MonoBehaviour
                 TirarPiedra();
         }
         Defensa();
+        //Solo para probar, quitar esto antes de exportar
+        QuitarVidaDebug();
     }
     void OnMoverse(InputValue value)
     {
@@ -309,6 +318,20 @@ public class ControlesTartalo : MonoBehaviour
             Debug.Log("Troste");
             piedra = null;
             tenemosPiedra = false;
+        }
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthbar.SetHealth(currentHealth);
+    }
+
+    void QuitarVidaDebug()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
         }
     }
 }
