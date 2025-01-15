@@ -12,6 +12,8 @@ public class ControlesTartalo : MonoBehaviour
     float velocidad;
     bool estoyCorriendo;
     [SerializeField]
+    Transform playerRingPos;
+    [SerializeField]
     float velocidadRotacion = 10f;
     [SerializeField]
     GameObject Arma;
@@ -155,8 +157,8 @@ public class ControlesTartalo : MonoBehaviour
             zOffSet /= 2;
             xOffSet /= 2;
         }
-        Vector3 direccionMovimiento = new Vector3(transform.localPosition.x + xOffSet, transform.localPosition.y, transform.localPosition.z + zOffSet);
-        transform.localPosition = direccionMovimiento;
+        Vector3 direccionMovimiento = new Vector3(playerRingPos.localPosition.x + xOffSet, playerRingPos.localPosition.y, playerRingPos.localPosition.z + zOffSet);
+        playerRingPos.localPosition = direccionMovimiento;
         Quaternion rotacion = Quaternion.LookRotation(direccionMovimiento);
         rotacion = Quaternion.RotateTowards(transform.rotation, rotacion, 360 * Time.fixedDeltaTime);
         transform.localRotation = Quaternion.Lerp(transform.localRotation, rotacion, velocidadRotacion);
