@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Roca
-  - NPC
+  - Lobo
+  - Cerdo
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - Terrain
   - 
   - 
   - 

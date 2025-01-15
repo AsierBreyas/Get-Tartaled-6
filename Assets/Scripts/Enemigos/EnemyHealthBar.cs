@@ -4,18 +4,18 @@ using UnityEngine.UI;
 public class EnemyHealthBar : MonoBehaviour
 {
     [SerializeField] Slider slider;
-    [SerializeField] Camera camera;
+    [SerializeField] Camera mainCamera;
     [SerializeField] Transform target;
     [SerializeField] Vector3 offset;
 
-    public void UpdateHealthBar(float currentValue, float maxValue)
+    public void UpdateHealthbar(float currentValue, float maxValue)
     {
         slider.value = currentValue / maxValue;
     }
 
     private void Update()
     {
-        transform.rotation = camera.transform.rotation;
+        transform.rotation = mainCamera.transform.rotation;
         transform.position = target.position + offset;
     }
 }

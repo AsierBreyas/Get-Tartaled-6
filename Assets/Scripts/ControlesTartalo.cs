@@ -47,12 +47,21 @@ public class ControlesTartalo : MonoBehaviour
     bool tenemosPiedra;
     bool piedraEnMano;
     bool estaTirandoPiedra;
+    bool heGolpeado;
+
+    //Sistema de vida
+    [SerializeField] float maxHealth = 100;
+    [SerializeField] float currentHealth;
+    [SerializeField] PlayerHealthbar healthbar;
     void Start()
     {
+        Time.timeScale = 1;
         velocidad = velocidadBase;
         mirillaPosOriginal = mirillaPosicion.position;
         ResetMirilla();
         Cursor.visible = false;
+        currentHealth = maxHealth;
+        healthbar.SetMaxHealth(maxHealth);
     }
 
     void Update()
@@ -71,6 +80,10 @@ public class ControlesTartalo : MonoBehaviour
                 TirarPiedra();
         }
         Defensa();
+        if (currentHealth <= 0)
+        {
+            FindFirstObjectByType<GameManager>().ItsGameOver();
+        }
     }
     void OnMoverse(InputValue value)
     {
@@ -80,17 +93,17 @@ public class ControlesTartalo : MonoBehaviour
     {
         estoyCorriendo = value.isPressed;
     }
-    void OnAtaqueNormal(InputValue value)
+    public void OnAtaqueNormal(InputValue value)
     {
         botonDelAtaqueFuerteMantenido = value.isPressed;
-        Debug.Log("PUM! Te pego");
+        //Debug.Log("PUM! Te pego");
         if(!estaHaciendoMovimiento)
             ProcesarAtaqueNormal();
     }
     void OnAtaqueArea(InputValue value)
     {
         botonDelAtaqueAreaMantenido = value.isPressed;
-        Debug.Log("AAAAAAAAAAAAAAAAAAA");
+        //Debug.Log("AAAAAAAAAAAAAAAAAAA");
         if (!estaHaciendoMovimiento)
             ProcesarAtaqueEnArea();
     }
@@ -99,7 +112,7 @@ public class ControlesTartalo : MonoBehaviour
         if (!estaEnAtaque)
         {
             estaEnDefensa = value.isPressed;
-            Debug.Log("No puedes golpear lo que no puedes ver");
+            //Debug.Log("No puedes golpear lo que no puedes ver");
             ProcesarDefensa();
         }
     }
@@ -169,7 +182,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaqueFuerte = true;
         estaHaciendoMovimiento = true;
         Arma.transform.Rotate(new Vector3(-75, 0, 0));
-        Debug.Log("MADA MADA");
+        //Debug.Log("MADA MADA");
     }
     void ProcesarAtaqueEnArea()
     {
@@ -208,6 +221,12 @@ public class ControlesTartalo : MonoBehaviour
             Arma.transform.Rotate(new Vector3(-75, 0, 0));
             if (botonDelAtaqueFuerteMantenido)
                 ProcesarGolpeFuerte();
+            if (heGolpeado)
+            {
+                ProcesarDañosHechos();
+                //Damages
+                heGolpeado = false;
+            }
         }
         else
         {
@@ -234,14 +253,14 @@ public class ControlesTartalo : MonoBehaviour
     {
         if (botonDelAtaqueAreaMantenido)
         {
-            Debug.Log("Dalta Faño");
+            //Debug.Log("Dalta Faño");
         }
         else
         {
             //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles.y);
             if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 92f)
             {
-                Debug.Log("Ya no me sale :(");
+                //Debug.Log("Ya no me sale :(");
                 estaEnAtaque = false;
                 estaEnAtaqueArea = false;
                 estaHaciendoMovimiento = false;
@@ -257,7 +276,7 @@ public class ControlesTartalo : MonoBehaviour
     {
         if (!estaEnDefensa && estaHaciendoMovimiento && !estaEnAtaque)
         {
-            Debug.Log("No more defensa");
+            //Debug.Log("No more defensa");
             estaHaciendoMovimiento = false;
             if(contadorMovimientoDefensa == 1)
             {
@@ -267,7 +286,7 @@ public class ControlesTartalo : MonoBehaviour
         }
         else if(estaHaciendoMovimiento && !estaEnAtaque)
         {
-            Debug.Log(">:D");
+            //Debug.Log(">:D");
         }
     }
     void TirarPiedra()
@@ -275,7 +294,7 @@ public class ControlesTartalo : MonoBehaviour
         contadorPiedra += +Time.deltaTime * 1.5f;
         if (!piedraEnMano)
         {
-            Debug.Log(mirillaPosicion.position);
+            //Debug.Log(mirillaPosicion.position);
             boloncho.position = Camera.main.ScreenToWorldPoint(new Vector3(mirillaPosicion.position.x, mirillaPosicion.position.y, targetDistance));
             piedra.GetComponent<Proyectil>().añadirDestino(boloncho.position);
             estaHaciendoMovimiento = false;
@@ -287,7 +306,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             if(contadorPiedra > 1)
             {
-                Debug.Log("Empezo mi tirania");
+                //Debug.Log("Empezo mi tirania");
                 if (hayMando)
                     trasladoMirilla = new Vector2(mirillaPosicion.position.x + movimientoMirilla.x, mirillaPosicion.position.y + movimientoMirilla.y);
                 else
@@ -334,5 +353,23 @@ public class ControlesTartalo : MonoBehaviour
     public void puedeSeguirHablando()
     {
         puedeHablar = true;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        healthbar.SetHealth(currentHealth);
+    }
+    public void HeGolpeado()
+    {
+        heGolpeado = true;
+        Debug.Log("heGolpeado: " + heGolpeado.ToString());
+    }
+    void ProcesarDañosHechos()
+    {
+        if (estaEnAtaqueNormal)
+        {
+            FindFirstObjectByType<Enemy>().TakeDamage(15f);
+        }
     }
 }
