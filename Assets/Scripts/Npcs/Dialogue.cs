@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] GameObject dialogueMark;
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TMP_Text dialogueText;
+    [SerializeField] TMP_Text speakerNameText;
     [SerializeField] Dialogos[] listOfDialogues;
     Dialogos dialogueLines;
     bool isPlayerInRange;
@@ -31,18 +32,14 @@ public class Dialogue : MonoBehaviour
             {
                 StartDialogue();
             }
-            else if (dialogueText.text == dialogueLines.dialgos[lineIndex])
+            else if (dialogueText.text == dialogueLines.dialgos[lineIndex].texto)
             {
                 NextDialogueLine();
             }
             else
             {
                 StopAllCoroutines();
-                dialogueText.text = dialogueLines.dialgos[lineIndex];
-                if (dialogueLines.isResume == false && listOfDialogues[currentDialogue].isResume)
-                    setNextDialogue();
-                if (dialogueLines.isTrigger)
-                    FindAnyObjectByType<MisionManager>().AvanzarMision(dialogueLines.misionCode);
+                dialogueText.text = dialogueLines.dialgos[lineIndex].texto;
             }
             FindAnyObjectByType<ControlesTartalo>().puedeSeguirHablando();
             playerPulsedBoton = false;
@@ -80,8 +77,9 @@ public class Dialogue : MonoBehaviour
     IEnumerator ShowLine()
     {
         dialogueText.text = string.Empty;
+        SetSpeakerName();
 
-        foreach (char ch in dialogueLines.dialgos[lineIndex])
+        foreach (char ch in dialogueLines.dialgos[lineIndex].texto)
         {
             dialogueText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);
@@ -101,6 +99,13 @@ public class Dialogue : MonoBehaviour
             dialoguePanel.SetActive(false);
             dialogueMark.SetActive(true);
             Time.timeScale = 1f;
+            if (dialogueLines.isTrigger)
+                FindAnyObjectByType<MisionManager>().AvanzarMision(dialogueLines.misionCode);
+            if (dialogueLines.isResume == false)
+            {
+                Debug.Log("MIRA COMO LA POCA SALUD MENTAL QUE ME QUEDA SE ESTA TIRANDO POR LA TXIRRISTRA DEL TXIKIPARK");
+                setNextDialogue();
+            }
         }
     }
     public void interactButtonPulsed()
@@ -114,5 +119,15 @@ public class Dialogue : MonoBehaviour
             currentDialogue++;
             dialogueLines = listOfDialogues[currentDialogue];
         }
+    }
+    public void SetSpeakerName()
+    {
+        if (dialogueLines.dialgos[lineIndex].hablador != "" && dialogueLines.dialgos[lineIndex].hablador != dialogueLines.hablador)
+        {
+            //Debug.Log(dialogueLines.dialgos[lineIndex].hablador);
+            speakerNameText.text = dialogueLines.dialgos[lineIndex].hablador;
+        }
+        else
+            speakerNameText.text = dialogueLines.hablador;
     }
 }

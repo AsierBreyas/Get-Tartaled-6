@@ -42,5 +42,6 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
             misionActual++;
             seguimiento[misionActual].MisionAceptada();
         }
+        Debug.Log(seguimiento[misionActual].GetNombre());
     }
 }

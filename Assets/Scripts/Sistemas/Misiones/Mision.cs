@@ -29,4 +29,8 @@ public class Mision
     {
         return aceptada;
     }
+    public string GetNombre()
+    {
+        return nombre;
+    }
 }

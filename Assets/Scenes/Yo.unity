@@ -399,6 +399,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &499827848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4796171092271232793, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
+  m_PrefabInstance: {fileID: 1060574706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &628060449
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,11 +539,11 @@ GameObject:
   - component: {fileID: 984186373}
   - component: {fileID: 984186372}
   - component: {fileID: 984186371}
-  - component: {fileID: 984186370}
   - component: {fileID: 984186369}
+  - component: {fileID: 984186374}
   m_Layer: 0
   m_Name: "Amo\xF1a"
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -556,32 +561,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueMark: {fileID: 1871207873}
-  dialoguePanel: {fileID: 1060574708}
+  dialoguePanel: {fileID: 499827848}
   dialogueText: {fileID: 1060574707}
-  listOfDialogues: []
---- !u!136 &984186370
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984186368}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  speakerNameText: {fileID: 1102323740}
+  listOfDialogues:
+  - isResume: 0
+    isTrigger: 1
+    misionCode: P-000
+    hablador: "Amo\xF1a"
+    dialgos:
+    - hablador: Tartalo
+      texto: "Hola amo\xF1a, \xBFhas visto a Izaro?"
+    - hablador: 
+      texto: "Hola peque\xF1in, si te soy sincera le pedi que me trajese unas lechugas
+        de la huerta y unos huevos de gallina"
+    - hablador: 
+      texto: "Pero la verdad es que hace tiempo que se ha ido y todav\xEDa no ha
+        vuelto."
+    - hablador: Tartalo
+      texto: "\xBFSabes donde se encuentra? He so\xF1ado algo incre\xEDble y quiero
+        contarselo"
+    - hablador: 
+      texto: "Lo \xFAnico que se es que sin huevos no puedo desayunar y sin lechuga
+        no puedo hacer de comer"
+    - hablador: 
+      texto: "\xBFPuedes ir a la huerta? Seguramente se haya entretenido con algo
+        de ah\xED"
+    - hablador: Aldeano
+      texto: "\xA1Hola Maria Angeles! \xBFQu\xE9 tal la ma\xF1ana?"
+    - hablador: 
+      texto: "Bueno, te lo encargo peque\xF1in que voy a darle palique a Jose Ignacio"
+  - isResume: 1
+    isTrigger: 0
+    misionCode: 
+    hablador: "Amo\xF1a"
+    dialgos:
+    - hablador: 
+      texto: "\xBFTodav\xEDa sigues aqu\xED? \xA1Yo que tu ir\xEDa yendo que se le
+        van las vitaminas a los huevos!"
 --- !u!23 &984186371
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -644,13 +661,34 @@ Transform:
   m_GameObject: {fileID: 984186368}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.559117, y: -0.103512235, z: 2.1649077}
+  m_LocalPosition: {x: 4.94, y: -0.103512235, z: -0.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1871207874}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &984186374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984186368}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.347354, y: 2, z: 3.28161}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1018817471
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,9 +898,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2703857355170972796, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
+      propertyPath: m_Name
+      value: SpeakerName
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540391335362825116, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4796171092271232793, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
       propertyPath: m_Name
       value: Canvas Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796171092271232793, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652820603565107977, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -880,11 +934,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1060574708 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5652820603565107977, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
+--- !u!114 &1102323740 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1767209080480043088, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
   m_PrefabInstance: {fileID: 1060574706}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1294943488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,57 +1148,11 @@ PrefabInstance:
     - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
       propertyPath: dialoguePanel
       value: 
-      objectReference: {fileID: 1060574708}
+      objectReference: {fileID: 499827848}
     - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: listOfDialogues.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].isResume
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].isTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: listOfDialogues.Array.data[1].dialgos.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: 'listOfDialogues.Array.data[0].dialgos.Array.data[0]'
-      value: HELLO MY BOY TARTALO
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: 'listOfDialogues.Array.data[0].dialgos.Array.data[1]'
-      value: Esto es un texto extremadamente largo para probar el tipado bien guapardo
-        que he implementado jaja. Odio mi vida acaba con ella por favor
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: 'listOfDialogues.Array.data[0].dialgos.Array.data[2]'
-      value: MATANEEEE
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: 'listOfDialogues.Array.data[0].dialgos.Array.data[3]'
-      value: MATANEEEE
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: 'listOfDialogues.Array.data[1].dialgos.Array.data[0]'
-      value: Esto es un texto extremadamente largo para probar el tipado bien guapardo
-        que he implementado jaja. Odio mi vida acaba con ella por favor
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: 'listOfDialogues.Array.data[1].dialgos.Array.data[1]'
-      value: MATANEEEE
-      objectReference: {fileID: 0}
-    - target: {fileID: 1793516480322259754, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: 'listOfDialogues.Array.data[1].dialgos.Array.data[2]'
-      value: MATANEEEE
-      objectReference: {fileID: 0}
+      propertyPath: speakerNameText
+      value: 
+      objectReference: {fileID: 1102323740}
     - target: {fileID: 5265754942720727943, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.9097223
@@ -1182,10 +1196,6 @@ PrefabInstance:
     - target: {fileID: 5265754942721214375, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
       propertyPath: m_Name
       value: npc prefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 5265754942721214375, guid: 717ad1a37e0a358408a63903c4d43b1f, type: 3}
-      propertyPath: m_TagString
-      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
