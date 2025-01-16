@@ -132,15 +132,14 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-            currentHealth -= damage;
-            healthBar.UpdateHealthbar(currentHealth, maxHealth);
-            if (currentHealth <= 0)
-            {
-                if (horda != null)
-                    horda.EnemigoMuerto();
-                // Animacion de enemigo muriendo
-                Invoke(nameof(DestroyEnemy), 0.5f);
-            }
+        currentHealth -= damage;
+        healthBar.UpdateHealthbar(currentHealth, maxHealth);
+        if (currentHealth <= 0)
+        {
+           if (horda != null)
+              horda.EnemigoMuerto();
+           // Animacion de enemigo muriendo
+           Invoke(nameof(DestroyEnemy), 0.5f);
         }
     }
 

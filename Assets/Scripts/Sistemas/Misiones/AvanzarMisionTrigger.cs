@@ -12,6 +12,7 @@ public class AvanzarMisionTrigger : MonoBehaviour
     GameObject cosaQueSpawnear;
     [SerializeField]
     Transform[] lugaresDondeSpawnear;
+    bool cague;
 
     private void Start()
     {
@@ -32,8 +33,14 @@ public class AvanzarMisionTrigger : MonoBehaviour
     }
     private void SpawnearCosas()
     {
+        if (!cague)
+        {
         foreach (Transform sitio in lugaresDondeSpawnear)
-            Instantiate(cosaQueSpawnear,sitio);
+            {
+                Instantiate(cosaQueSpawnear,sitio);
+                cague = true;
+            }
+        }
     }
 
 }
