@@ -326,9 +326,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   codigoMision: P-001
   spawneaCosas: 1
-  cosaQueSpawnear: {fileID: 3703917162392687001, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
+  cosaQueSpawnear: {fileID: 1828891304721788204, guid: 724dbd8f4e5d6184095e4949f48693ce, type: 3}
   lugaresDondeSpawnear:
-  - {fileID: 647963692}
+  - {fileID: 0}
 --- !u!4 &354346394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8777448259021338091, guid: 91034042f9e7f6c48bac3087cb49d032, type: 3}
@@ -384,51 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae94b92eb366fbc4a92e5da0adbed014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &647963691
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 647963692}
-  - component: {fileID: 647963693}
-  m_Layer: 0
-  m_Name: Horda
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &647963692
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647963691}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.56, y: 3.1224456, z: 1.29}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &647963693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647963691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf503e4c92a7aa4e91cf37d367717b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  codigoMision: 
 --- !u!1 &791213366
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,7 +807,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1333,4 +1288,3 @@ SceneRoots:
   - {fileID: 3334162759193232802}
   - {fileID: 7923250289094593392}
   - {fileID: 8432523607474889084}
-  - {fileID: 647963692}
