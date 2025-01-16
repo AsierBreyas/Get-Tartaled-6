@@ -131,12 +131,19 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
-        healthBar.UpdateHealthbar(currentHealth, maxHealth);
-        if (currentHealth <= 0)
+        if (this.gameObject.activeInHierarchy)
         {
-            // Animacion de enemigo muriendo
-            Invoke(nameof(DestroyEnemy), 0.5f);
+            currentHealth -= damage;
+            healthBar.UpdateHealthbar(currentHealth, maxHealth);
+            if (currentHealth <= 0)
+            {
+                // Animacion de enemigo muriendo
+                Invoke(nameof(DestroyEnemy), 0.5f);
+            }
+        }
+        else
+        {
+            Debug.Log("No existe");
         }
     }
 

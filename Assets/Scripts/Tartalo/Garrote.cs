@@ -2,11 +2,8 @@ using UnityEngine;
 
 public class Garrote : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Lobo")
-        {
-            FindFirstObjectByType<ControlesTartalo>().HeGolpeado();
-        }
+        FindFirstObjectByType<ControlesTartalo>().HeGolpeado();
     }
 }
