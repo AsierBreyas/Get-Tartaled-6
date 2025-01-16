@@ -19,7 +19,30 @@ public class MisionManager : MonoBehaviour
     {
         if(codigo[0] == 'P')
         {
-            FindAnyObjectByType<SeguimientoMisionPrincipal>().AvanzarMision();
+            FindAnyObjectByType<SeguimientoMisionPrincipal>().AvanzarMision(codigo);
+        }
+        else
+        {
+            //Misiones secundaria
+        }
+    }
+    public bool GetEstadoMision(string codigo)
+    {
+        if (codigo[0] == 'P')
+        {
+            return FindAnyObjectByType<SeguimientoMisionPrincipal>().GetEstadoMision(codigo);
+        }
+        else
+        {
+            //Misiones secundaria
+            return false;
+        }
+    }
+    public void ActualizarEstadoMision(string codigo)
+    {
+        if (codigo[0] == 'P')
+        {
+            FindAnyObjectByType<SeguimientoMisionPrincipal>().ActualizarMision(codigo);
         }
         else
         {
