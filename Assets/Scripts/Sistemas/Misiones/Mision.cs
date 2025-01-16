@@ -33,4 +33,12 @@ public class Mision
     {
         return nombre;
     }
+    public string GetCodigo()
+    {
+        return codigo;
+    }
+    public string GetDescripcion()
+    {
+        return descripcion;
+    }
 }
