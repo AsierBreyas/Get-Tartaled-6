@@ -9293,6 +9293,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 758335250}
     m_Modifications:
+    - target: {fileID: 133220132670490043, guid: 7859d6caf2520f24b852243e1e3e3720, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 8820982526169062496}
+    - target: {fileID: 133220132670490043, guid: 7859d6caf2520f24b852243e1e3e3720, type: 3}
+      propertyPath: sightRange
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 133220132670490043, guid: 7859d6caf2520f24b852243e1e3e3720, type: 3}
+      propertyPath: attackRange
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1061951163783415132, guid: 7859d6caf2520f24b852243e1e3e3720, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -9345,6 +9357,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8641127187059417442, guid: 7859d6caf2520f24b852243e1e3e3720, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 8213204303728178885}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9418,6 +9434,10 @@ PrefabInstance:
       propertyPath: mirillaPosicion
       value: 
       objectReference: {fileID: 678470699}
+    - target: {fileID: 8744620701653562732, guid: e36b653f1888d594b85eda7ff8f44fe6, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9861,7 +9881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1629982923405767758, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4067187662602362265, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: m_Speed
@@ -9897,11 +9917,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337456047344450639, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8337456047344450639, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9040617691697207492, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: m_LocalPosition.x

@@ -368,17 +368,21 @@ public class ControlesTartalo : MonoBehaviour
     }
     void ProcesarDañosHechos()
     {
-        if (estaEnAtaqueNormal)
+        Enemy enemy = FindFirstObjectByType<Enemy>();
+        if (enemy != null)
         {
-            FindFirstObjectByType<Enemy>().TakeDamage(15f);
-        }
-        else if (estaEnAtaqueFuerte)
-        {
-            FindFirstObjectByType<Enemy>().TakeDamage(30f);
-        }
-        else if (estaEnAtaqueArea)
-        {
-            FindFirstObjectByType<Enemy>().TakeDamage(15f);
+            if (estaEnAtaqueNormal)
+            {
+                enemy.TakeDamage(15f);
+            }
+            else if (estaEnAtaqueFuerte)
+            {
+                enemy.TakeDamage(30f);
+            }
+            else if (estaEnAtaqueArea)
+            {
+                enemy.TakeDamage(15f);
+            }
         }
     }
 }
