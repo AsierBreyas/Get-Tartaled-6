@@ -17,7 +17,7 @@ public class MisionManager : MonoBehaviour
     }
     public void AvanzarMision(string codigo)
     {
-        if(codigo == "P-000")
+        if(codigo[0] == 'P')
         {
             FindAnyObjectByType<SeguimientoMisionPrincipal>().AvanzarMision();
         }
