@@ -10,9 +10,9 @@ public class ColisionesTartalo : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Wolve")
+        if (other.gameObject.tag == "Lobo")
         {
-            FindFirstObjectByType<ControlesTartalo>().TakeDamage(20f);
+            FindFirstObjectByType<ControlesTartalo>().TakeDamage(5f);
         }
     }
 }

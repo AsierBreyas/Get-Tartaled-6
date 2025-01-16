@@ -132,14 +132,15 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
-        healthBar.UpdateHealthbar(currentHealth, maxHealth);
-        if (currentHealth <= 0)
-        {
-            // Animacion de enemigo muriendo
-            if (horda != null)
-                horda.EnemigoMuerto();
-            Invoke(nameof(DestroyEnemy), 0.5f);
+            currentHealth -= damage;
+            healthBar.UpdateHealthbar(currentHealth, maxHealth);
+            if (currentHealth <= 0)
+            {
+                if (horda != null)
+                    horda.EnemigoMuerto();
+                // Animacion de enemigo muriendo
+                Invoke(nameof(DestroyEnemy), 0.5f);
+            }
         }
     }
 
@@ -156,9 +157,9 @@ public class Enemy : MonoBehaviour
 
         // Variables de la embestida
         float dashSpeed = 7f; // Velocidad de la embestida
-        float dashDuration = 0.3f; // Duración de la embestida
+        float dashDuration = 0.3f; // DuraciÃ³n de la embestida
         float backwardSpeed = 5f; // Velocidad del retroceso
-        float backwardDuration = 0.2f; // Duración del retroceso
+        float backwardDuration = 0.2f; // DuraciÃ³n del retroceso
 
         Vector3 dashDirection = (player.position - transform.position).normalized;
 
