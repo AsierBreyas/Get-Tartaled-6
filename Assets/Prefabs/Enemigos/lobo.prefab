@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4485985694107872759}
   - component: {fileID: 6577475435124302347}
   m_Layer: 0
-  m_Name: Wolve
+  m_Name: lobo
   m_TagString: Lobo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

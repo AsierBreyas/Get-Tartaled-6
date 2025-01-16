@@ -4843,7 +4843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5561147376312705086}
   m_Layer: 0
-  m_Name: pig
+  m_Name: cerdo
   m_TagString: Cerdo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
