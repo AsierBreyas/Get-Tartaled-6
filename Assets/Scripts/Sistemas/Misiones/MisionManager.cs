@@ -38,4 +38,15 @@ public class MisionManager : MonoBehaviour
             return false;
         }
     }
+    public void ActualizarEstadoMision(string codigo)
+    {
+        if (codigo[0] == 'P')
+        {
+            FindAnyObjectByType<SeguimientoMisionPrincipal>().ActualizarMision(codigo);
+        }
+        else
+        {
+            //Misiones secundaria
+        }
+    }
 }

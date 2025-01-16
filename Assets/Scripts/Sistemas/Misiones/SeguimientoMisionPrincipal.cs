@@ -19,6 +19,7 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
         seguimiento.Add(new Mision("Hablar con Izaro", "Ve al pueblo a contarle lo que has soñado a Izaro", "P-000"));
         seguimiento.Add(new Mision("Ve a la huerta", "Ve a la huerta de amoña a recoger las lechugas y los huevos, seguramente Izaro este alli", "P-001"));
         seguimiento.Add(new Mision("Mata a los jabalís", "Mata a los jabalís que se estan comiendo las cosechas", "P-002"));
+        seguimiento[2].SetEnemigosAMatar(3, 0);
         seguimiento.Add(new Mision("Llevale las sobras a amoña y preguntarle por la amiga", "Entregale la lechuga y el huevo a amoña", "P-003"));
         seguimiento.Add(new Mision("Busca a amiga de Izaro", "Explora el pueblo en busca de Zaloa", "P-004"));
         seguimiento.Add(new Mision("¡Protege la aldea!", "Acaba con los cerdos", "P-005"));
@@ -57,5 +58,13 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
                 return mision.GetEstadoMision();
         }
         return false;
+    }
+    public void ActualizarMision(string codigo)
+    {
+        foreach (Mision mision in seguimiento)
+        {
+            if (mision.GetCodigo() == codigo)
+                mision.EnemigoMuerto();
+        }
     }
 }
