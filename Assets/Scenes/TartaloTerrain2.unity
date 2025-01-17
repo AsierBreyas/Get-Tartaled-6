@@ -381,6 +381,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9087498041537459947, guid: cd5f641b19fa02d4f9b42d5e564285d4, type: 3}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 1973009365}
+    - target: {fileID: 9087498041537459947, guid: cd5f641b19fa02d4f9b42d5e564285d4, type: 3}
+      propertyPath: healthbarCanvas
+      value: 
+      objectReference: {fileID: 1506831899}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2458,7 +2466,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9163882654795606192, guid: cf75cb68630df7c4fa7735c2314ea044, type: 3}
   m_PrefabInstance: {fileID: 1327437332}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1506831899}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e45b719b6e7754f4b8e6cb8d0a182e4e, type: 3}
@@ -2682,6 +2690,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1506831899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1142591904971532365, guid: cf75cb68630df7c4fa7735c2314ea044, type: 3}
+  m_PrefabInstance: {fileID: 1327437332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1558599843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3274,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f86164fee9484214eb20f01f4bd590aa, type: 3}
+--- !u!1 &1973009365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7427064011981453966, guid: cd5f641b19fa02d4f9b42d5e564285d4, type: 3}
+  m_PrefabInstance: {fileID: 70496954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2125142045
 GameObject:
   m_ObjectHideFlags: 0
