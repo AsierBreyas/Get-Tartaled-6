@@ -132,8 +132,9 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("Ay me hiciste daño");
         currentHealth -= damage;
-        healthBar.UpdateHealthbar(currentHealth, maxHealth);
+        //healthBar.UpdateHealthbar(currentHealth, maxHealth);
         if (currentHealth <= 0)
         {
            if (horda != null)
