@@ -67,4 +67,17 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
                 mision.EnemigoMuerto();
         }
     }
+    public bool EstanLosRequisitosCompletados(string codigo)
+    {
+        foreach (Mision mision in seguimiento)
+        {
+            if (mision.GetCodigo() == codigo)
+                return mision.RevisarRequisitos();
+        }
+        return false;
+    }
+    public string GetMisionActual()
+    {
+        return seguimiento[misionActual].GetCodigo();
+    }
 }
