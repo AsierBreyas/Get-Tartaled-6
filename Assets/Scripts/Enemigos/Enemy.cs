@@ -141,7 +141,6 @@ public class Enemy : MonoBehaviour
                 // Animacion de enemigo muriendo
                 Invoke(nameof(DestroyEnemy), 0.5f);
             }
-        }
     }
 
     void DestroyEnemy()

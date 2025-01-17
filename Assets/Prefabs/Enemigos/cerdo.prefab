@@ -5028,7 +5028,7 @@ MonoBehaviour:
     m_Bits: 8
   currentHealth: 100
   maxHealth: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 4538182597646060188}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   timeBetweenAttacks: 5
@@ -5037,6 +5037,7 @@ MonoBehaviour:
   playerInSightRange: 0
   playerInAttackRange: 0
   enemyParticles: {fileID: 4015056199690591459}
+  horda: {fileID: 0}
 --- !u!136 &2923433449228165810
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5194,3 +5195,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3450407606190838684, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
   m_PrefabInstance: {fileID: 4536569897875349392}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4538182597646060188 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4502837121422604, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+  m_PrefabInstance: {fileID: 4536569897875349392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13088c65f22a47a4fa42e52c8a18f085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
