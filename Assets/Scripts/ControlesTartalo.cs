@@ -35,6 +35,7 @@ public class ControlesTartalo : MonoBehaviour
     Vector2 trasladoMirilla;
     Dialogue npcDialogo;
     bool puedeHablar;
+    Rigidbody rb;
 
 
     //Booleanos para los ataques
@@ -57,6 +58,7 @@ public class ControlesTartalo : MonoBehaviour
     [SerializeField] PlayerHealthbar healthbar;
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         Time.timeScale = 1;
         velocidad = velocidadBase;
         mirillaPosOriginal = mirillaPosicion.position;
@@ -150,15 +152,17 @@ public class ControlesTartalo : MonoBehaviour
     }
     void ProcesarMovimiento()
     {
-        float xOffSet = movimiento.x * velocidad * Time.deltaTime;
-        float zOffSet = movimiento.z * velocidad * Time.deltaTime;
+        float xOffSet = movimiento.x * velocidad;
+        float zOffSet = movimiento.z * velocidad;
         if (estaEnAtaque && !estoyCorriendo)
         {
             zOffSet /= 2;
             xOffSet /= 2;
         }
         Vector3 direccionMovimiento = new Vector3(playerRingPos.localPosition.x + xOffSet, playerRingPos.localPosition.y, playerRingPos.localPosition.z + zOffSet);
-        playerRingPos.localPosition = direccionMovimiento;
+        Vector3 direccionMovimientoNueva = new Vector3(xOffSet, 0, zOffSet);
+        //playerRingPos.localPosition = direccionMovimiento;
+        rb.linearVelocity = direccionMovimientoNueva; 
         Quaternion rotacion = Quaternion.LookRotation(direccionMovimiento);
         rotacion = Quaternion.RotateTowards(transform.rotation, rotacion, 360 * Time.fixedDeltaTime);
         transform.localRotation = Quaternion.Lerp(transform.localRotation, rotacion, velocidadRotacion);
