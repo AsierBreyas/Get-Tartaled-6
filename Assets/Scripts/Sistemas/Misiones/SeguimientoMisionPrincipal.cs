@@ -76,4 +76,8 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
         }
         return false;
     }
+    public string GetMisionActual()
+    {
+        return seguimiento[misionActual].GetCodigo();
+    }
 }

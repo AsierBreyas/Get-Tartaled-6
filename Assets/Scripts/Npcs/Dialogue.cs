@@ -26,6 +26,10 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (listOfDialogues.Length != currentDialogue + 1)
+        {
+            UpdateDialogues();
+        }
         if (isPlayerInRange && playerPulsedBoton)
         {
             if (!didDialogueStart)
@@ -129,5 +133,15 @@ public class Dialogue : MonoBehaviour
         }
         else
             speakerNameText.text = dialogueLines.hablador;
+    }
+    void UpdateDialogues()
+    {
+        if (listOfDialogues[currentDialogue + 1].misionCode != "")
+        {
+            if (FindAnyObjectByType<SeguimientoMisionPrincipal>().GetMisionActual() == listOfDialogues[currentDialogue + 1].misionCode)
+            {
+                setNextDialogue();
+            }
+        }
     }
 }
