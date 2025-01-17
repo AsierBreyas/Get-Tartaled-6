@@ -239,6 +239,12 @@ public class ControlesTartalo : MonoBehaviour
     {
         if (Arma.transform.rotation.eulerAngles.x >= 70f && Arma.transform.rotation.eulerAngles.x <= 75f)
         {
+            if (heGolpeado)
+            {
+                ProcesarDañosHechos();
+                //Damages
+                heGolpeado = false;
+            }
             estaEnAtaque = false;
             estaEnAtaqueFuerte = false;
             estaHaciendoMovimiento = false;
@@ -262,6 +268,12 @@ public class ControlesTartalo : MonoBehaviour
             //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles.y);
             if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 92f)
             {
+                if (heGolpeado)
+                {
+                    ProcesarDañosHechos();
+                    //Damages
+                    heGolpeado = false;
+                }
                 //Debug.Log("Ya no me sale :(");
                 estaEnAtaque = false;
                 estaEnAtaqueArea = false;

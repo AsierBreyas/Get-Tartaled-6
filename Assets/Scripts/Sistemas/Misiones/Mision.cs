@@ -1,3 +1,4 @@
+using UnityEngine;
 [System.Serializable]
 public class Mision
 {
@@ -28,7 +29,12 @@ public class Mision
     }
     public bool GetEstadoMision()
     {
+        Debug.Log(">:D");
         return completada;
+    }
+    public bool RevisarRequisitos()
+    {
+        return requisitosCompletados;
     }
     public bool EstaAcepatdaLaMision()
     {

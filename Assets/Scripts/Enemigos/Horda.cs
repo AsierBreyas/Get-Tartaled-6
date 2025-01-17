@@ -13,7 +13,10 @@ public class Horda : MonoBehaviour
     public void EnemigoMuerto()
     {
         misionManager.ActualizarEstadoMision(codigoMision);
-        if (misionManager.GetEstadoMision(codigoMision))
+        if (misionManager.RevisarRequisitos(codigoMision))
+        {
             misionManager.AvanzarMision(codigoMision);
+            Debug.Log("Jejejej doy pasitos");
+        }
     }
 }
