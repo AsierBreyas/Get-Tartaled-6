@@ -435,223 +435,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
   m_PrefabInstance: {fileID: 588314928}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &628130678
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 6593188034069236982}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.7
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.09
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70707643
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.006550937
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.70707643
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.006550937
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -1.062
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      propertyPath: m_Name
-      value: Zaloa (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 628130684}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 628130683}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 628130682}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 628130681}
-  m_SourcePrefab: {fileID: 100100000, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
 --- !u!4 &628130679 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-  m_PrefabInstance: {fileID: 628130678}
+  m_CorrespondingSourceObject: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+  m_PrefabInstance: {fileID: 7462503593579912124}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &628130680 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
-  m_PrefabInstance: {fileID: 628130678}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &628130681
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628130680}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 6.0292435, y: 2.228771, z: 3.6940482}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &628130682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628130680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f39545e4351aa64086815223202322b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueMark: {fileID: 588314930}
-  dialoguePanel: {fileID: 1470298800}
-  dialogueText: {fileID: 1633835382}
-  speakerNameText: {fileID: 1635301572}
-  listOfDialogues:
-  - isResume: 0
-    isTrigger: 1
-    misionCode: P-004
-    hablador: Zaloa
-    dialgos:
-    - hablador: 
-      texto: "\xA1\xBFTE PARECE NORMAL SEGUIRME A TODAS PARTES CAZURRO?!"
-    - hablador: 
-      texto: "D\xC9JAME EN PAZ PESADO, TE HE DICHO MIL Y UNA VECES QUE NO QUIERO
-        NADA CONTIGO"
-    - hablador: 
-      texto: "ADEM\xC1S EL OLOR A ESTIERCOL HACE QUE SE ME NUBLE LA VISTA"
-    - hablador: Baboso
-      texto: NO HAY NADIE EN ESTE PUEBLO QUE TE QUIERA TANTO COMO YO
-    - hablador: Tartalo
-      texto: "Si no dejas en paz a la chavala, te voy a ense\xF1ar lo que es una
-        mala opci\xF3n"
-    - hablador: 
-      texto: Gra-gracias... Espero que ya se de por vencido
-    - hablador: Tartalo
-      texto: "\xBFEres Zaloa la amiga de Izaro? La fui a buscar a su casa y Amo\xF1a
-        me dijo que no sabe d\xF3nde est\xE1."
-    - hablador: 
-      texto: Le deje una nota pero no la he visto. A lo mejor ha salido a por setas
-        otra vez...
-    - hablador: 
-      texto: "\xBFSoy yo o huele a quemado?"
-    - hablador: Tartalo
-      texto: Ahora que lo dices...
-    - hablador: Cerdos
-      texto: OIIIIINKKKKKKK
-  - isResume: 1
-    isTrigger: 0
-    misionCode: 
-    hablador: Zaloa
-    dialgos:
-    - hablador: 
-      texto: NOS ATACAAAAN
---- !u!54 &628130683
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628130680}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!136 &628130684
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628130680}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.49900818
-  m_Height: 1.66
-  m_Direction: 1
-  m_Center: {x: 0.030166626, y: 0.84426385, z: 0.029174805}
 --- !u!224 &678470699 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6966651003267811437, guid: cf75cb68630df7c4fa7735c2314ea044, type: 3}
@@ -1772,6 +1560,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6508468877604033937, guid: e91af1977bb392041b1f11aa0ea6e0d6, type: 3}
   m_PrefabInstance: {fileID: 8658843559128877449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7462503593579912124
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6593188034069236982}
+    m_Modifications:
+    - target: {fileID: 6371824067576403490, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: dialogueMark
+      value: 
+      objectReference: {fileID: 588314930}
+    - target: {fileID: 6371824067576403490, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1633835382}
+    - target: {fileID: 6371824067576403490, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 1470298800}
+    - target: {fileID: 6371824067576403490, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: speakerNameText
+      value: 
+      objectReference: {fileID: 1635301572}
+    - target: {fileID: 8078756924936124817, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_Name
+      value: Zaloa (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70707643
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.006550937
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70707643
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.006550937
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1.062
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
 --- !u!4 &7747519166564214945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9040617691697207492, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
