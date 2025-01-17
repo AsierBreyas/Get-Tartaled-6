@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 489335656072360630}
   - component: {fileID: 4015056199690591459}
   - component: {fileID: 1303685668595546691}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EscupeFuego
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4842,7 +4842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5561147376312705086}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cerdo
   m_TagString: Cerdo
   m_Icon: {fileID: 0}
@@ -4881,7 +4881,7 @@ GameObject:
   - component: {fileID: 3991627935254363725}
   - component: {fileID: 9210096633168735003}
   - component: {fileID: 2923433449228165810}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pig_01
   m_TagString: Cerdo
   m_Icon: {fileID: 0}
@@ -5072,9 +5072,25 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 310063493121924371, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 312884960283107207, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
       propertyPath: m_Name
       value: HealthbarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 312884960283107207, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 421140284973705569, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665147561583644710, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2378210729298134826, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5163,6 +5179,10 @@ PrefabInstance:
     - target: {fileID: 3450407606190838684, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325958637291691771, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
