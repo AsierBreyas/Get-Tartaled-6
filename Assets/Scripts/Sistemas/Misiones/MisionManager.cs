@@ -49,4 +49,16 @@ public class MisionManager : MonoBehaviour
             //Misiones secundaria
         }
     }
+    public bool RevisarRequisitos(string codigo)
+    {
+        if (codigo[0] == 'P')
+        {
+            return FindAnyObjectByType<SeguimientoMisionPrincipal>().EstanLosRequisitosCompletados(codigo);
+        }
+        else
+        {
+            //Misiones secundaria
+            return false;
+        }
+    }
 }

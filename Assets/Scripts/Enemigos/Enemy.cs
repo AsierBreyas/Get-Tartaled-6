@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
     // Particles for each enemy, in case of the pig, fire, in most cases, blood
     [SerializeField] ParticleSystem enemyParticles;
     [SerializeField] Horda horda;
+    bool dead;
 
     private void Awake()
     {
@@ -137,8 +138,11 @@ public class Enemy : MonoBehaviour
         //healthBar.UpdateHealthbar(currentHealth, maxHealth);
         if (currentHealth <= 0)
         {
-           if (horda != null)
-              horda.EnemigoMuerto();
+           if (horda != null && !dead)
+            {
+                dead = true;
+                horda.EnemigoMuerto();
+            }
            // Animacion de enemigo muriendo
            Invoke(nameof(DestroyEnemy), 0.5f);
         }
