@@ -140,6 +140,32 @@ MonoBehaviour:
     - hablador: 
       texto: "\xBFTodav\xEDa sigues aqu\xED? \xA1Yo que tu ir\xEDa yendo que se le
         van las vitaminas a los huevos!"
+  - isResume: 0
+    isTrigger: 1
+    misionCode: P-003
+    hablador: "Amo\xF1a"
+    dialgos:
+    - hablador: Tartalo
+      texto: "Amo\xF1a, aqu\xED tengo lo que me pediste."
+    - hablador: Tartalo
+      texto: "Aunque tu huerta ha sido arrasada por unos jabal\xEDs. "
+    - hablador: 
+      texto: "Santo cielo, tendr\xE9 que volver a plantar, \xBFSe sabe algo de la
+        peque\xF1a?"
+    - hablador: Tartalo
+      texto: Una tal Zaloa la ha llamado, no tengo ni idea de quien es
+    - hablador: 
+      texto: "Es una amiga suya, la he visto correr al otro lado de pueblo. Parec\xEDa
+        bastante agobiada."
+    - hablador: Tartalo
+      texto: "Ahora ire a preguntarle Amo\xF1a. "
+  - isResume: 1
+    isTrigger: 0
+    misionCode: 
+    hablador: "Amo\xF1a"
+    dialgos:
+    - hablador: 
+      texto: "\xBFSigues sin encontrarla? La vi yendo a la otra punta del pueblo"
 --- !u!65 &7694083009554585836
 BoxCollider:
   m_ObjectHideFlags: 0

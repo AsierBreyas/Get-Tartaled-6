@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_TerrainAutoUpgrade.meta
 guid: a9a160a9b198a8647a7e0e220403a5d1
+========
+guid: e0f93ac5b91eba14b9e7659ffc475e15
+>>>>>>>> desarrollo:Assets/Prefabs/Pueblo/Edificios.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

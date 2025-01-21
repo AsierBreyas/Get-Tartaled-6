@@ -5,7 +5,7 @@ public class MenuInicio : MonoBehaviour
 {
     public void CargarJuego()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Xabi");
     }
 
     public void CargarOpciones()

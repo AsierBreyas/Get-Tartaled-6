@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4067187662602362265}
   - component: {fileID: 4485985694107872759}
   - component: {fileID: 6577475435124302347}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lobo
   m_TagString: Lobo
   m_Icon: {fileID: 0}
@@ -30,9 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629982923405767758}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.1308, y: 3.1120415, z: 7.5820312}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5988688606995853326}
@@ -160,7 +160,7 @@ MonoBehaviour:
     m_Bits: 8
   currentHealth: 100
   maxHealth: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 5961214879588806249}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   timeBetweenAttacks: 2
@@ -169,6 +169,7 @@ MonoBehaviour:
   playerInSightRange: 0
   playerInAttackRange: 0
   enemyParticles: {fileID: 2287319820850606037}
+  horda: {fileID: 0}
 --- !u!54 &6577475435124302347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ GameObject:
   - component: {fileID: 2529215939086128926}
   - component: {fileID: 4222035446020604738}
   - component: {fileID: 179960316913937218}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +316,7 @@ GameObject:
   - component: {fileID: 3313872333228039122}
   - component: {fileID: 2287319820850606037}
   - component: {fileID: 7336681742339487119}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5149,9 +5150,25 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 9040617691697207492}
+    - target: {fileID: 310063493121924371, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 312884960283107207, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
       propertyPath: m_Name
       value: HealthbarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 312884960283107207, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 421140284973705569, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665147561583644710, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2378210729298134826, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5241,11 +5258,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7325958637291691771, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+--- !u!114 &5961214879588806249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4502837121422604, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+  m_PrefabInstance: {fileID: 5959812717873429349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13088c65f22a47a4fa42e52c8a18f085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &9031913497188690169 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3450407606190838684, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}

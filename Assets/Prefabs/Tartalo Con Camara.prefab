@@ -666,7 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea730659390ab343b0939a2b859bc6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadBase: 10
+  velocidadBase: 20
   playerRingPos: {fileID: 801198462831273854}
   velocidadRotacion: 1
   Arma: {fileID: 6288938071625955658}
@@ -700,11 +700,11 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
+  m_UseGravity: 1
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &6510137884680138174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,9 +742,9 @@ Transform:
   m_GameObject: {fileID: 7635902873767474998}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400, y: 3.2409086, z: 616.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4199490984158910637}
   - {fileID: 6436928082733923663}

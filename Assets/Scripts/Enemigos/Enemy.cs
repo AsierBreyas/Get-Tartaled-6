@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
 
     // Particles for each enemy, in case of the pig, fire, in most cases, blood
     [SerializeField] ParticleSystem enemyParticles;
+    [SerializeField] Horda horda;
+    bool dead;
 
     private void Awake()
     {
@@ -131,19 +133,18 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (this.gameObject.activeInHierarchy)
+        Debug.Log("Ay me hiciste da√±o");
+        currentHealth -= damage;
+        //healthBar.UpdateHealthbar(currentHealth, maxHealth);
+        if (currentHealth <= 0)
         {
-            currentHealth -= damage;
-            healthBar.UpdateHealthbar(currentHealth, maxHealth);
-            if (currentHealth <= 0)
+           if (horda != null && !dead)
             {
-                // Animacion de enemigo muriendo
-                Invoke(nameof(DestroyEnemy), 0.5f);
+                dead = true;
+                horda.EnemigoMuerto();
             }
-        }
-        else
-        {
-            Debug.Log("No existe");
+           // Animacion de enemigo muriendo
+           Invoke(nameof(DestroyEnemy), 0.5f);
         }
     }
 
@@ -160,9 +161,9 @@ public class Enemy : MonoBehaviour
 
         // Variables de la embestida
         float dashSpeed = 7f; // Velocidad de la embestida
-        float dashDuration = 0.3f; // DuraciÛn de la embestida
+        float dashDuration = 0.3f; // Duraci√≥n de la embestida
         float backwardSpeed = 5f; // Velocidad del retroceso
-        float backwardDuration = 0.2f; // DuraciÛn del retroceso
+        float backwardDuration = 0.2f; // Duraci√≥n del retroceso
 
         Vector3 dashDirection = (player.position - transform.position).normalized;
 

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 84835467775457782}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 154057765784698700}
   - component: {fileID: 133220132670490043}
   - component: {fileID: 2625429296718035735}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: jabali
   m_TagString: Lobo
   m_Icon: {fileID: 0}
@@ -66,10 +66,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411173081368385138}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.365936, y: 3.4120417, z: 4.69104}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2871325371512154201}
   - {fileID: 515530476870758244}
@@ -196,7 +196,7 @@ MonoBehaviour:
     m_Bits: 8
   currentHealth: 60
   maxHealth: 60
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 8641127187059417442}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   timeBetweenAttacks: 2
@@ -205,6 +205,7 @@ MonoBehaviour:
   playerInSightRange: 0
   playerInAttackRange: 0
   enemyParticles: {fileID: 1932014161553819071}
+  horda: {fileID: 0}
 --- !u!54 &2625429296718035735
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -243,7 +244,7 @@ GameObject:
   - component: {fileID: 5769916871618074309}
   - component: {fileID: 3378293408251106760}
   - component: {fileID: 8641127187059417442}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +351,7 @@ GameObject:
   - component: {fileID: 4186149031886730949}
   - component: {fileID: 7400901218836097629}
   - component: {fileID: 2097098629578730351}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +458,7 @@ GameObject:
   - component: {fileID: 1061951163783415132}
   - component: {fileID: 4649923986161758688}
   - component: {fileID: 5412974967587965271}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +533,7 @@ GameObject:
   - component: {fileID: 3923465212374215631}
   - component: {fileID: 1493721077743728770}
   - component: {fileID: 6424421426380131654}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +609,7 @@ GameObject:
   - component: {fileID: 4520024810079807820}
   - component: {fileID: 978367056959896100}
   - component: {fileID: 8505950914124491470}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthbarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +710,7 @@ GameObject:
   - component: {fileID: 515530476870758244}
   - component: {fileID: 1932014161553819071}
   - component: {fileID: 8335480000076966971}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
