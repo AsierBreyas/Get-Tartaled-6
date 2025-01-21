@@ -61,4 +61,8 @@ public class MisionManager : MonoBehaviour
             return false;
         }
     }
+    public string GetMisionPrincipalActual()
+    {
+        return FindAnyObjectByType<SeguimientoMisionPrincipal>().GetMisionActual();
+    }
 }
