@@ -855,6 +855,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lobo
       objectReference: {fileID: 0}
+    - target: {fileID: 3181356633609595955, guid: 45a8a22796bd93e44a1b059480d0b210, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3253383509073553628, guid: 45a8a22796bd93e44a1b059480d0b210, type: 3}
       propertyPath: player
       value: 
@@ -865,7 +869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4193107873107766111, guid: 45a8a22796bd93e44a1b059480d0b210, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.54
+      value: 4.14
       objectReference: {fileID: 0}
     - target: {fileID: 4193107873107766111, guid: 45a8a22796bd93e44a1b059480d0b210, type: 3}
       propertyPath: m_LocalPosition.z
@@ -910,6 +914,14 @@ PrefabInstance:
     - target: {fileID: 7171889407429488639, guid: 45a8a22796bd93e44a1b059480d0b210, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785201191782546062, guid: 45a8a22796bd93e44a1b059480d0b210, type: 3}
+      propertyPath: m_Height
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785201191782546062, guid: 45a8a22796bd93e44a1b059480d0b210, type: 3}
+      propertyPath: m_Center.x
+      value: -0.000104475024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
