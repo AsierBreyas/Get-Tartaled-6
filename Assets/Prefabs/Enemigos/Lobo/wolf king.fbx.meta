@@ -1,35 +1,9 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs/Enemigos/Lobo/wolf king.fbx.meta
 guid: 43aaecf498a63d847a52222c826c61eb
 ModelImporter:
   serializedVersion: 22200
-========
-guid: e9110389b19e5254280f6f02e0ec1d75
-ModelImporter:
-  serializedVersion: 21202
->>>>>>>> desarrollo:Assets/Hipernt/Pine Pack/Models/PlantFlower.fbx.meta
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-<<<<<<<< HEAD:Assets/Prefabs/Enemigos/Lobo/wolf king.fbx.meta
-      name: Image_0
-    second: {fileID: 2800000, guid: 1951fc50e33ebb54e9b54d87f47c89ca, type: 3}
-========
-      name: Tree_0Mat
-    second: {fileID: 2100000, guid: 5b313829fd73e6440b814c62b104f703, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tree_1Mat
-    second: {fileID: 2100000, guid: 6f8e83943fa297b41a414cd87efb488c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tree_2Mat
-    second: {fileID: 2100000, guid: e383d75a9a9721244a2fed7955a69a99, type: 2}
->>>>>>>> desarrollo:Assets/Hipernt/Pine Pack/Models/PlantFlower.fbx.meta
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -81,7 +55,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    optimizeBones: 0
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -125,22 +99,9 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-<<<<<<<< HEAD:Assets/Prefabs/Enemigos/Lobo/wolf king.fbx.meta
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
-========
->>>>>>>> desarrollo:Assets/Hipernt/Pine Pack/Models/PlantFlower.fbx.meta
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-<<<<<<<< HEAD:Assets/Prefabs/Enemigos/Lobo/wolf king.fbx.meta
-========
-AssetOrigin:
-  serializedVersion: 1
-  productId: 232166
-  packageName: Realistic Pine Tree Pack
-  packageVersion: 1.0.0
-  assetPath: Assets/Hipernt/Pine Pack/Models/PlantFlower.fbx
-  uploadId: 526775
->>>>>>>> desarrollo:Assets/Hipernt/Pine Pack/Models/PlantFlower.fbx.meta
