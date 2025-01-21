@@ -152,26 +152,27 @@ public class ControlesTartalo : MonoBehaviour
     }
     void ProcesarMovimiento()
     {
-        float xOffSet = movimiento.x * velocidad;
-        float zOffSet = movimiento.z * velocidad;
+        float xOffSet = movimiento.x * velocidad * Time.deltaTime;
+        float zOffSet = movimiento.z * velocidad * Time.deltaTime;
         if (estaEnAtaque && !estoyCorriendo)
         {
             zOffSet /= 2;
             xOffSet /= 2;
         }
-        Vector3 direccionMovimiento = new Vector3(playerRingPos.localPosition.x + xOffSet, playerRingPos.localPosition.y, playerRingPos.localPosition.z + zOffSet);
-        Vector3 direccionMovimientoNueva = new Vector3(xOffSet, 0, zOffSet);
-        //playerRingPos.localPosition = direccionMovimiento;
-        rb.linearVelocity = direccionMovimientoNueva * velocidad * Time.deltaTime;
-        if( direccionMovimientoNueva != Vector3.zero)
+        //Vector3 direccionMovimiento = new Vector3(playerRingPos.localPosition.x + xOffSet, playerRingPos.localPosition.y, playerRingPos.localPosition.z + zOffSet);
+        Vector3 direccionMovimientoNueva = new Vector3(xOffSet, 0f, zOffSet);
+        direccionMovimientoNueva.y = 0f;
+        rb.linearVelocity = direccionMovimientoNueva ;
+        if(direccionMovimientoNueva.magnitude > 0.1f)
         {
-            var relative = (transform.position + direccionMovimientoNueva) - transform.position;
-            var rot = Quaternion.LookRotation(relative, Vector3.up);
+            //var relative = (transform.position + direccionMovimientoNueva) - transform.position;
+            var rot = Quaternion.LookRotation(direccionMovimientoNueva);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, velocidadRotacion * Time.deltaTime);
-            //Quaternion rotacion = Quaternion.LookRotation(direccionMovimiento);
-            //rotacion = Quaternion.RotateTowards(transform.rotation, rotacion, 360 * Time.fixedDeltaTime);
-            //transform.localRotation = Quaternion.Lerp(transform.localRotation, rotacion, velocidadRotacion);
         }
+        //transform.rotation = rot;
+        //Quaternion rotacion = Quaternion.LookRotation(direccionMovimiento);
+        //rotacion = Quaternion.RotateTowards(transform.rotation, rotacion, 360 * Time.fixedDeltaTime);
+         //transform.localRotation = Quaternion.Lerp(transform.localRotation, rotacion, velocidadRotacion);
     }
     void ProcesarVelocidad()
     {
