@@ -1408,10 +1408,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1527656418946982829, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
-      propertyPath: pauseMenuUI
-      value: 
-      objectReference: {fileID: 845267134}
     - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 146.89067
@@ -1464,8 +1460,7 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 8222101330098017287}
-    m_RemovedComponents:
-    - {fileID: 1527656418946982829, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

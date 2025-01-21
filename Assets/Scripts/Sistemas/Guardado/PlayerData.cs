@@ -3,8 +3,10 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
+    // Datos a guardar
     public float currentHealth;
     public float[] position;
+    // Misiones aqui
 
     public PlayerData (ControlesTartalo controlesTartalo)
     {
