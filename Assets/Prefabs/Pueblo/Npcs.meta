@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Hipernt/Pine Pack/Documentation.meta
+guid: ebdfad7c562ff8b429bc05b53185bd49
+========
 guid: b9cb4f7827de45e459a6d0ab4f8759d8
+>>>>>>>> desarrollo:Assets/Prefabs/Pueblo/Npcs.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
