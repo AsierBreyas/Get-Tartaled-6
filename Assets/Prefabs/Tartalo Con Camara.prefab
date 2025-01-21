@@ -500,6 +500,7 @@ GameObject:
   - component: {fileID: 7757741211017508932}
   - component: {fileID: 8744620701653562732}
   - component: {fileID: 6510137884680138174}
+  - component: {fileID: 5981601992576664156}
   m_Layer: 3
   m_Name: Tartalo
   m_TagString: Player
@@ -717,6 +718,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b27fefe1e032a045aee6dc534e0297e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5981601992576664156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177790799072959281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3721c5d0b4ef06e4b80cd3134f28d4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 0}
 --- !u!1 &7635902873767474998
 GameObject:
   m_ObjectHideFlags: 0

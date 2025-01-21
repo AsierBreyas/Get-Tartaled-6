@@ -314,17 +314,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &307260735 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1527656418946982829, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
-  m_PrefabInstance: {fileID: 8989813358777607766}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3721c5d0b4ef06e4b80cd3134f28d4f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &678470699 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6966651003267811437, guid: cf75cb68630df7c4fa7735c2314ea044, type: 3}
@@ -339,17 +328,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &680665271 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5961214879588806249, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
-  m_PrefabInstance: {fileID: 8792880684202105853}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13088c65f22a47a4fa42e52c8a18f085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &748053536
@@ -917,6 +895,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.49
       objectReference: {fileID: 0}
+    - target: {fileID: 5981601992576664156, guid: e36b653f1888d594b85eda7ff8f44fe6, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 845267134}
     - target: {fileID: 7635902873767474998, guid: e36b653f1888d594b85eda7ff8f44fe6, type: 3}
       propertyPath: m_Name
       value: Tartalo Con Camara
@@ -1054,7 +1036,7 @@ PrefabInstance:
     - target: {fileID: 1769188823847107493, guid: 1fbb693887ccb414c848965d863d5e35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 307260735}
+      objectReference: {fileID: 0}
     - target: {fileID: 1769188823847107493, guid: 1fbb693887ccb414c848965d863d5e35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1074,7 +1056,7 @@ PrefabInstance:
     - target: {fileID: 6657707488766267767, guid: 1fbb693887ccb414c848965d863d5e35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 307260735}
+      objectReference: {fileID: 0}
     - target: {fileID: 6657707488766267767, guid: 1fbb693887ccb414c848965d863d5e35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MenuInicio
@@ -1352,46 +1334,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: lobo
       objectReference: {fileID: 0}
-    - target: {fileID: 1629982923405767758, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067187662602362265, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
-      propertyPath: m_Speed
-      value: 3.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4485985694107872759, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 8820982526169062496}
-    - target: {fileID: 4485985694107872759, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 680665271}
-    - target: {fileID: 4485985694107872759, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
-      propertyPath: maxHealth
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485985694107872759, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
-      propertyPath: currentHealth
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 5961214879588806249, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 8213204303728178885}
-    - target: {fileID: 5988944698749044945, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6260589666052859106, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
-      propertyPath: m_Name
-      value: HealthbarEnemyCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6577475435124302347, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8337456047344450639, guid: 7590cc6d8fae31d4c90545470015c59d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1514,7 +1464,8 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 8222101330098017287}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1527656418946982829, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

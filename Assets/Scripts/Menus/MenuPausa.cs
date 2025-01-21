@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
@@ -11,18 +12,16 @@ public class MenuPausa : MonoBehaviour
         SceneManager.LoadScene("MenuInicio");
     }
 
-    private void Update()
+    void OnPausa(InputValue value)
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        Debug.Log("boton de pausa");
+        if (GameIsPaused)
         {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            Resume();
+        }
+        else
+        {
+            Pause();
         }
     }
 
