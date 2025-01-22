@@ -7,8 +7,8 @@ ShaderIncludeImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 145808
-  packageName: Terrain Sample Asset Pack
-  packageVersion: 2.0.1
-  assetPath: Assets/TerrainSampleAssets/ShaderGraphs/CustomFunctions/CustomLighting.hlsl
-  uploadId: 511657
+  productId: 243519
+  packageName: Rocks and Vegetation Pack - URP and Built-In
+  packageVersion: 1.0
+  assetPath: Assets/Imported Assets/TerrainSampleAssets/ShaderGraphs/CustomFunctions/CustomLighting.hlsl
+  uploadId: 553804
