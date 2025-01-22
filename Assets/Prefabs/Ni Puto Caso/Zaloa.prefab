@@ -243,6 +243,13 @@ MonoBehaviour:
   dialogueText: {fileID: 0}
   speakerNameText: {fileID: 0}
   listOfDialogues:
+  - isResume: 1
+    isTrigger: 0
+    misionCode: 
+    hablador: Zaloa
+    dialgos:
+    - hablador: 
+      texto: Siempre igual...
   - isResume: 0
     isTrigger: 1
     misionCode: P-004
@@ -281,6 +288,13 @@ MonoBehaviour:
     dialgos:
     - hablador: 
       texto: NOS ATACAAAAN
+  - isResume: 1
+    isTrigger: 0
+    misionCode: P-006
+    hablador: Zaloa
+    dialgos:
+    - hablador: 
+      texto: Espero que Izaro este bien...
 --- !u!65 &3402353877009618186
 BoxCollider:
   m_ObjectHideFlags: 0
