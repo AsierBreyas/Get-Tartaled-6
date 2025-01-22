@@ -13,6 +13,7 @@ public class Horda : MonoBehaviour
     public void EnemigoMuerto()
     {
         misionManager.ActualizarEstadoMision(codigoMision);
+        Debug.Log("No hay mejor CC que la muerte");
         if (misionManager.RevisarRequisitos(codigoMision))
         {
             misionManager.AvanzarMision(codigoMision);

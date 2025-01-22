@@ -23,6 +23,7 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
         seguimiento.Add(new Mision("Llevale las sobras a amoña y preguntarle por la amiga", "Entregale la lechuga y el huevo a amoña", "P-003"));
         seguimiento.Add(new Mision("Busca a amiga de Izaro", "Explora el pueblo en busca de Zaloa", "P-004"));
         seguimiento.Add(new Mision("¡Protege la aldea!", "Acaba con los cerdos", "P-005"));
+        seguimiento[5].SetEnemigosAMatar(12, 0);
         seguimiento.Add(new Mision("Obten información sobre el ataque", "Los cerdos es raro que ataquen la aldea, alguien tiene que estar detrás de esto", "P-006"));
         seguimiento.Add(new Mision("Salva al cazador", "Derrota a los lobos que atacan al cazador", "P-007"));
         seguimiento.Add(new Mision("Busca al Basajaun", "Adentrate en el bosque para encontrar al hombre de los bosques", "P-008"));
