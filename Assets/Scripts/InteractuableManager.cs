@@ -21,6 +21,8 @@ public class InteractuableManager : MonoBehaviour
         {
             case ("Cubo"):
                 estaCogidoCubo = true;
+                Debug.Log("TENGO UN CUBO");
+                Destroy(objeto);
                 return false;
             case ("Agua"):
                 RellenarCubo();
@@ -34,9 +36,8 @@ public class InteractuableManager : MonoBehaviour
     }
     void RellenarCubo()
     {
+        Debug.Log("GLU GLU GLU");
         if (estaCogidoCubo)
-        {
             cubo.LlenarCubo();
-        }
     }
 }

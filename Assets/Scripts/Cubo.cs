@@ -7,6 +7,7 @@ public class Cubo : MonoBehaviour
     {
         if (estaLleno)
         {
+            Debug.Log("Fuego se quedo sin amigos");
             estaLleno = false;
             Destroy(fuego);
         }
