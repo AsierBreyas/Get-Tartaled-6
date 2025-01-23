@@ -3,17 +3,16 @@ using UnityEngine;
 public class Cubo : MonoBehaviour
 {
     bool estaLleno;
-    public void ApagarFuego()
+    public void ApagarFuego(GameObject fuego)
     {
-        //Jejejej apago el fuego
-        estaLleno = false;
+        if (estaLleno)
+        {
+            estaLleno = false;
+            Destroy(fuego);
+        }
     }
     public void LlenarCubo()
     {
         estaLleno = true;
-    }
-    public bool EstaLleno()
-    {
-        return estaLleno;
     }
 }
