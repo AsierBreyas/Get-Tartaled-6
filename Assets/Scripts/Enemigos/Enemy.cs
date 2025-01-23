@@ -118,7 +118,7 @@ public class Enemy : MonoBehaviour
             {
                 StartCoroutine(PerformDashAttack());
                 enemyParticles.Play();
-                //Debug.Log("Soy un lobo, pum te ataco");
+                Debug.Log("Soy un lobo, pum te ataco");
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
@@ -168,9 +168,9 @@ public class Enemy : MonoBehaviour
         agent.enabled = false;
 
         // Variables de la embestida
-        float dashSpeed = 7f; // Velocidad de la embestida
+        float dashSpeed = 10f; // Velocidad de la embestida
         float dashDuration = 0.3f; // Duración de la embestida
-        float backwardSpeed = 5f; // Velocidad del retroceso
+        float backwardSpeed = 7f; // Velocidad del retroceso
         float backwardDuration = 0.2f; // Duración del retroceso
 
         Vector3 dashDirection = (player.position - transform.position).normalized;
