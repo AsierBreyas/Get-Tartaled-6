@@ -61,4 +61,19 @@ public class MisionManager : MonoBehaviour
             return false;
         }
     }
+    public string GetMisionPrincipalActual()
+    {
+        return FindAnyObjectByType<SeguimientoMisionPrincipal>().GetMisionActual();
+    }
+    public bool EstaAceptadaLaMision(string codigo)
+    {
+        if(codigo[0] == 'P')
+        {
+            return FindAnyObjectByType<SeguimientoMisionPrincipal>().EstaMisionAceptada(codigo);
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

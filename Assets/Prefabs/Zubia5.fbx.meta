@@ -1,9 +1,32 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Hipernt/Pine Pack/Models/PlantFlower.fbx.meta
+guid: c1d206b2540840e4eb7bf88bd664696a
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree_0Mat
+    second: {fileID: 2100000, guid: 5b313829fd73e6440b814c62b104f703, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree_1Mat
+    second: {fileID: 2100000, guid: 6f8e83943fa297b41a414cd87efb488c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree_2Mat
+    second: {fileID: 2100000, guid: e383d75a9a9721244a2fed7955a69a99, type: 2}
+========
 guid: a69e22405eff29a43be9029e11bcf0fa
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects: {}
+>>>>>>>> desarrollo:Assets/Prefabs/Zubia5.fbx.meta
   materials:
     materialImportMode: 2
     materialName: 0
@@ -55,7 +78,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    optimizeBones: 1
+    optimizeBones: 0
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -99,9 +122,22 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+<<<<<<<< HEAD:Assets/Hipernt/Pine Pack/Models/PlantFlower.fbx.meta
+========
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
+>>>>>>>> desarrollo:Assets/Prefabs/Zubia5.fbx.meta
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<<< HEAD:Assets/Hipernt/Pine Pack/Models/PlantFlower.fbx.meta
+AssetOrigin:
+  serializedVersion: 1
+  productId: 232166
+  packageName: Realistic Pine Tree Pack
+  packageVersion: 1.0.0
+  assetPath: Assets/Hipernt/Pine Pack/Models/PlantFlower.fbx
+  uploadId: 526775
+========
+>>>>>>>> desarrollo:Assets/Prefabs/Zubia5.fbx.meta

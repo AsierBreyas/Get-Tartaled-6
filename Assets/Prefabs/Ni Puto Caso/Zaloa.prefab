@@ -1,5 +1,92 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1926405324931630205
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8887381290894697259}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70707643
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.006550937
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70707643
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.006550937
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_Name
+      value: DialogueMark
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+--- !u!1 &1619781556383365420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+  m_PrefabInstance: {fileID: 1926405324931630205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2103548343451247510 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+  m_PrefabInstance: {fileID: 1926405324931630205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8997324880743908544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,15 +109,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.7
+      value: 3321
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 152.00513
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.09
+      value: 2330
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62,11 +149,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_Name
-      value: Zaloa (1)
+      value: Zaloa
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2103548343451247510}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       insertIndex: -1
@@ -131,10 +221,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &6371824067576403490
 MonoBehaviour:
@@ -148,11 +238,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f39545e4351aa64086815223202322b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueMark: {fileID: 0}
+  dialogueMark: {fileID: 1619781556383365420}
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   speakerNameText: {fileID: 0}
   listOfDialogues:
+  - isResume: 1
+    isTrigger: 0
+    misionCode: 
+    hablador: Zaloa
+    dialgos:
+    - hablador: 
+      texto: Siempre igual...
   - isResume: 0
     isTrigger: 1
     misionCode: P-004
@@ -191,6 +288,13 @@ MonoBehaviour:
     dialgos:
     - hablador: 
       texto: NOS ATACAAAAN
+  - isResume: 1
+    isTrigger: 0
+    misionCode: P-006
+    hablador: Zaloa
+    dialgos:
+    - hablador: 
+      texto: Espero que Izaro este bien...
 --- !u!65 &3402353877009618186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -212,3 +316,8 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.0292435, y: 2.228771, z: 3.6940482}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &8887381290894697259 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
+  m_PrefabInstance: {fileID: 8997324880743908544}
+  m_PrefabAsset: {fileID: 0}

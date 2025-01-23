@@ -136,11 +136,14 @@ public class Dialogue : MonoBehaviour
     }
     void UpdateDialogues()
     {
-        if (listOfDialogues[currentDialogue + 1].misionCode != "")
+        if(listOfDialogues[currentDialogue + 1].misionCode != "")
         {
-            if (FindAnyObjectByType<SeguimientoMisionPrincipal>().GetMisionActual() == listOfDialogues[currentDialogue + 1].misionCode)
+            if (FindAnyObjectByType<MisionManager>().EstaAceptadaLaMision(listOfDialogues[currentDialogue + 1].misionCode))
             {
-                setNextDialogue();
+                if (FindAnyObjectByType<SeguimientoMisionPrincipal>().GetMisionActual() == listOfDialogues[currentDialogue + 1].misionCode)
+                {
+                    setNextDialogue();
+                }
             }
         }
     }

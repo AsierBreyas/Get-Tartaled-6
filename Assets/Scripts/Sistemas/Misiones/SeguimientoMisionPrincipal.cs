@@ -23,18 +23,17 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
         seguimiento.Add(new Mision("Llevale las sobras a amoña y preguntarle por la amiga", "Entregale la lechuga y el huevo a amoña", "P-003"));
         seguimiento.Add(new Mision("Busca a amiga de Izaro", "Explora el pueblo en busca de Zaloa", "P-004"));
         seguimiento.Add(new Mision("¡Protege la aldea!", "Acaba con los cerdos", "P-005"));
+        seguimiento[5].SetEnemigosAMatar(12, 0);
         seguimiento.Add(new Mision("Obten información sobre el ataque", "Los cerdos es raro que ataquen la aldea, alguien tiene que estar detrás de esto", "P-006"));
         seguimiento.Add(new Mision("Salva al cazador", "Derrota a los lobos que atacan al cazador", "P-007"));
+        seguimiento[7].SetEnemigosAMatar(5, 0);
         seguimiento.Add(new Mision("Busca al Basajaun", "Adentrate en el bosque para encontrar al hombre de los bosques", "P-008"));
         seguimiento.Add(new Mision("Extingue el fuego", "Apaga el fuego de los alrededores del bosque", "P-009"));
+        seguimiento[9].SetEnemigosAMatar(3, 0);
         seguimiento.Add(new Mision("Vuelve con Basajaun", "Has terminado con el recado, ya debería tener una respuesta", "P-010"));
         seguimiento.Add(new Mision("Ve a la cima del monte Itzal", "Es hora de pedirle explicaciones a tu hermano", "P-011"));
         seguimiento[misionActual].MisionAceptada();
 
-    }
-    public Mision obtenerMisionActual()
-    {
-        return seguimiento[misionActual];
     }
     public void AvanzarMision(string codigo)
     {
@@ -79,5 +78,14 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
     public string GetMisionActual()
     {
         return seguimiento[misionActual].GetCodigo();
+    }
+    public bool EstaMisionAceptada(string codigo)
+    {
+        foreach (Mision mision in seguimiento)
+        {
+            if (mision.GetCodigo() == codigo)
+                return mision.EstaAcepatdaLaMision();
+        }
+        return false;
     }
 }

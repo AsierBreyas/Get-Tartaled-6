@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
@@ -11,24 +12,23 @@ public class MenuPausa : MonoBehaviour
         SceneManager.LoadScene("MenuInicio");
     }
 
-    private void Update()
+    void OnPausa(InputValue value)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        Debug.Log("boton de pausa");
+        if (GameIsPaused)
         {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            Resume();
+        }
+        else
+        {
+            Pause();
         }
     }
 
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        Cursor.visible = false;
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -36,6 +36,7 @@ public class MenuPausa : MonoBehaviour
     private void Pause ()
     {
         pauseMenuUI.SetActive(true);
+        Cursor.visible = true;
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
