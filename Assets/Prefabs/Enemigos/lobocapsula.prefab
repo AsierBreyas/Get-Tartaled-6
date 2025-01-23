@@ -5150,6 +5150,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 9040617691697207492}
+    - target: {fileID: 119489899347194804, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 310063493121924371, guid: 5381e90d08a9d844fb31148e3875210c, type: 3}
       propertyPath: m_Layer
       value: 7

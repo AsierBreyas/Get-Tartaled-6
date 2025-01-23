@@ -4,8 +4,8 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
+    private Transform player;
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] Transform player;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
     [SerializeField] float currentHealth, maxHealth;
     [SerializeField] EnemyHealthBar healthBar;
@@ -30,7 +30,15 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Tartalo").transform;
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
+        {
+            player = playerObject.transform;
+        }
+        else
+        {
+            Debug.LogError("No se encontró un objeto con el tag 'Player' en la escena.");
+        }
         agent = GetComponent<NavMeshAgent>();
         healthBar = GetComponentInChildren<EnemyHealthBar>();
     }
