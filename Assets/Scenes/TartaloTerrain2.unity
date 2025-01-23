@@ -325,6 +325,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 266769903}
     m_Modifications:
+    - target: {fileID: 2632157547562054792, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632157547562054792, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632157547562054792, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3703917162392687001, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
       propertyPath: m_Name
       value: "Amo\xF1a"
@@ -525,7 +537,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1776621824}
-  - {fileID: 563772739}
+  - {fileID: 8194558746649832577}
   - {fileID: 8194558745958850783}
   - {fileID: 556786141}
   m_Father: {fileID: 0}
@@ -1265,221 +1277,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8887381290894697259, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
   m_PrefabInstance: {fileID: 3464138138411750479}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &563772738
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 266769903}
-    m_Modifications:
-    - target: {fileID: 3703917162392687001, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_Name
-      value: Basajaun
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 2000701238}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: dialoguePanel
-      value: 
-      objectReference: {fileID: 1429728454}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: speakerNameText
-      value: 
-      objectReference: {fileID: 674498509}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].hablador
-      value: Basajaun
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[1].hablador
-      value: Basajaun
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].hablador
-      value: Basajaun
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[3].hablador
-      value: Basajaun
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].misionCode
-      value: P-008
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].misionCode
-      value: P-010
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[0].texto
-      value: Estaba esperando tu llegado, Ciclope
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[1].texto
-      value: "\xBFQu\xE9 es lo que te trae por aqu\xED?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[2].texto
-      value: Hola Basajaun. He venido para saber el paradero de mi amiga y quien
-        ataco la aldea.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[3].texto
-      value: "Los \xFAnicos con poder para mandar sobre los animales son Mari y Akerbeltz."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[4].texto
-      value: "Para tu amiga, podr\xEDa pedir informaci\xF3n y para ello tendr\xEDa
-        que hablar con las critaturas del bosque"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[5].texto
-      value: "Mientras tanto, el fuego se ha expendido por el bosque. Ya que no puedo
-        ir, apagalo t\xFA."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[6].texto
-      value: "Te dejo el cubo que est\xE1 al lado de mi casa"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[1].dialgos.Array.data[0].texto
-      value: 'Date prisa, no vaya a ser que el fuego se expanda '
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].dialgos.Array.data[0].texto
-      value: Ya se donde esta tu amiga Izaro
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].dialgos.Array.data[1].texto
-      value: "Pero esta informaci\xF3n es muy valiosa. Necesito que me prometas que
-        en un futuro, me devolveras el favor."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].dialgos.Array.data[2].texto
-      value: "Est\xE1 bien, acepto. \xBFDonde esta Izaro?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].dialgos.Array.data[3].texto
-      value: Los pajaros me han dicho que ha sido tu hermano mayor.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].dialgos.Array.data[4].texto
-      value: "Esta en el pico del monte Itzal esperando a Akerbeltz. Y la cabra est\xE1
-        al llegar"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].dialgos.Array.data[5].texto
-      value: "Gracias Basajaun, no lo olvidar\xE9"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[3].dialgos.Array.data[0].texto
-      value: No hay tiempo que perder charlando, date vida Ciclope.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[0].hablador
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[2].hablador
-      value: Tartalo
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[3].hablador
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[6].hablador
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].dialgos.Array.data[0].hablador
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].dialgos.Array.data[1].hablador
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].dialgos.Array.data[2].hablador
-      value: Tartalo
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].dialgos.Array.data[3].hablador
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 96.420654
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 47.663284
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -62.44336
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
---- !u!4 &563772739 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-  m_PrefabInstance: {fileID: 563772738}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &626047701
 GameObject:
@@ -4286,10 +4083,96 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa9e4abdb7c438a47bccc8a96cd83d1e, type: 3}
+--- !u!1001 &7464533187664344247
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 266769903}
+    m_Modifications:
+    - target: {fileID: 1660147564390232102, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762843822159102984, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_Name
+      value: Basajaun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 96.420654
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 47.663284
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -62.44336
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036145749276093084, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036145749276093084, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065166212288070609, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 2000701238}
+    - target: {fileID: 3065166212288070609, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 1429728454}
+    - target: {fileID: 3065166212288070609, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+      propertyPath: speakerNameText
+      value: 
+      objectReference: {fileID: 674498509}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
 --- !u!4 &8194558745958850783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1456333035990669174, guid: 1530e41e21b944f44904bf71053ab3a7, type: 3}
   m_PrefabInstance: {fileID: 32297552879995906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8194558746649832577 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1965832142073768824, guid: 7099eaf51cc0b5344a9f6651a6301035, type: 3}
+  m_PrefabInstance: {fileID: 7464533187664344247}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
