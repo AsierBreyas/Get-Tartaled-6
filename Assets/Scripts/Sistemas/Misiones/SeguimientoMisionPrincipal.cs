@@ -29,6 +29,7 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
         seguimiento[7].SetEnemigosAMatar(5, 0);
         seguimiento.Add(new Mision("Busca al Basajaun", "Adentrate en el bosque para encontrar al hombre de los bosques", "P-008"));
         seguimiento.Add(new Mision("Extingue el fuego", "Apaga el fuego de los alrededores del bosque", "P-009"));
+        seguimiento[9].SetEnemigosAMatar(3, 0);
         seguimiento.Add(new Mision("Vuelve con Basajaun", "Has terminado con el recado, ya debería tener una respuesta", "P-010"));
         seguimiento.Add(new Mision("Ve a la cima del monte Itzal", "Es hora de pedirle explicaciones a tu hermano", "P-011"));
         seguimiento[misionActual].MisionAceptada();
