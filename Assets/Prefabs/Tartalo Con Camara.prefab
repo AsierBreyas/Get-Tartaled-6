@@ -374,11 +374,11 @@ Transform:
   m_GameObject: {fileID: 6891737504392170254}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: 5.3900146, y: 4.84, z: -3.289978}
+  m_LocalPosition: {x: 5.39, y: 4.84, z: -3.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4199490984158910637}
+  m_Father: {fileID: 801198462831273854}
   m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
 --- !u!20 &6141677702620606150
 Camera:
@@ -500,6 +500,7 @@ GameObject:
   - component: {fileID: 7757741211017508932}
   - component: {fileID: 8744620701653562732}
   - component: {fileID: 6510137884680138174}
+  - component: {fileID: 5981601992576664156}
   m_Layer: 3
   m_Name: Tartalo
   m_TagString: Player
@@ -523,7 +524,6 @@ Transform:
   - {fileID: 164789279789088464}
   - {fileID: 2671122694515655681}
   - {fileID: 1411881685471779794}
-  - {fileID: 6436928082733923663}
   m_Father: {fileID: 801198462831273854}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6498958849001193159
@@ -667,9 +667,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea730659390ab343b0939a2b859bc6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadBase: 2500
+  velocidadBase: 20
   playerRingPos: {fileID: 801198462831273854}
-  velocidadRotacion: 500
+  velocidadRotacion: 1
   Arma: {fileID: 6288938071625955658}
   posicionOtraMano: {fileID: 1411881685471779794}
   boloncho: {fileID: 2671122694515655681}
@@ -687,9 +687,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7177790799072959281}
   serializedVersion: 4
-  m_Mass: 25
-  m_Drag: 10
-  m_AngularDrag: 5
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -702,10 +702,10 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &6510137884680138174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,6 +718,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b27fefe1e032a045aee6dc534e0297e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5981601992576664156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177790799072959281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3721c5d0b4ef06e4b80cd3134f28d4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 0}
 --- !u!1 &7635902873767474998
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,9 +757,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4199490984158910637}
+  - {fileID: 6436928082733923663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
