@@ -58,6 +58,11 @@ public class ControlesTartalo : MonoBehaviour
     [SerializeField] float maxHealth = 100;
     public float currentHealth;
     [SerializeField] PlayerHealthbar healthbar;
+
+    //Sistema de estamina
+    [SerializeField]
+    float estaminaMaxima;
+    float estaminaActual;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
