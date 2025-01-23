@@ -54,7 +54,7 @@ public class ControlesTartalo : MonoBehaviour
 
     //Sistema de vida
     [SerializeField] float maxHealth = 100;
-    [SerializeField] float currentHealth;
+    public float currentHealth;
     [SerializeField] PlayerHealthbar healthbar;
     void Start()
     {
