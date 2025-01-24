@@ -43,12 +43,6 @@ public class Enemy : MonoBehaviour
         healthBar = GetComponentInChildren<EnemyHealthBar>();
     }
 
-    private void Start()
-    {
-        //health = maxHealth;
-        //healthBar.UpdateHealthBar(health, maxHealth);
-    }
-
     private void Update()
     {
         // Check for sight and attack range
@@ -170,9 +164,9 @@ public class Enemy : MonoBehaviour
         agent.enabled = false;
 
         // Variables de la embestida
-        float dashSpeed = 10f; // Velocidad de la embestida
+        float dashSpeed = 15f; // Velocidad de la embestida
         float dashDuration = 0.3f; // Duración de la embestida
-        float backwardSpeed = 7f; // Velocidad del retroceso
+        float backwardSpeed = 12f; // Velocidad del retroceso
         float backwardDuration = 0.2f; // Duración del retroceso
 
         Vector3 dashDirection = (player.position - transform.position).normalized;

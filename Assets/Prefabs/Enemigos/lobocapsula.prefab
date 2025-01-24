@@ -444,7 +444,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2.5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -479,10 +479,10 @@ MonoBehaviour:
   maxHealth: 60
   healthBar: {fileID: 6338679879872797786}
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
+  walkPointRange: 6
   timeBetweenAttacks: 2
   sightRange: 20
-  attackRange: 2
+  attackRange: 6
   playerInSightRange: 0
   playerInAttackRange: 0
   enemyParticles: {fileID: 1762328841377585157}
@@ -510,7 +510,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
