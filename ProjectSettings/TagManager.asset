@@ -8,6 +8,7 @@ TagManager:
   - Lobo
   - Cerdo
   - NPC
+  - Interactuable
   layers:
   - Default
   - TransparentFX
