@@ -432,8 +432,8 @@ PrefabInstance:
       value: cerdo
       objectReference: {fileID: 0}
     - target: {fileID: 3690625122342838440, guid: 5ceee14511c9c0347a9055fce5836ab7, type: 3}
-      propertyPath: m_Mass
-      value: 1
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4586237800676456240, guid: 5ceee14511c9c0347a9055fce5836ab7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -441,7 +441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4586237800676456240, guid: 5ceee14511c9c0347a9055fce5836ab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 152.00513
+      value: 152.76
       objectReference: {fileID: 0}
     - target: {fileID: 4586237800676456240, guid: 5ceee14511c9c0347a9055fce5836ab7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -484,8 +484,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8609781694256841338, guid: 5ceee14511c9c0347a9055fce5836ab7, type: 3}
-      propertyPath: attackRange
-      value: 5
+      propertyPath: playerInSightRange
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

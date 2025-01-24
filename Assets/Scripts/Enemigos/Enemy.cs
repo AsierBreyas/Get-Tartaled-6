@@ -110,7 +110,9 @@ public class Enemy : MonoBehaviour
             agent.SetDestination(transform.position);
         }
 
-        transform.LookAt(player);
+        // Ignoramos el eje y para que el cerdo mire recto a Tartalo y no gire ligeramente hacia arriba
+        Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
+        transform.LookAt(targetPosition);
 
         if (!alreadyAttacked)
         {
