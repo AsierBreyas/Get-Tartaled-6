@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 154057765784698700}
   - component: {fileID: 133220132670490043}
   - component: {fileID: 2625429296718035735}
-  - component: {fileID: -4895170590953613746}
+  - component: {fileID: 4930700642035326507}
   m_Layer: 7
   m_Name: jabali
   m_TagString: Lobo
@@ -194,8 +194,8 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  currentHealth: 60
-  maxHealth: 60
+  currentHealth: 20
+  maxHealth: 20
   healthBar: {fileID: 8641127187059417442}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
@@ -233,7 +233,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!136 &-4895170590953613746
+--- !u!136 &4930700642035326507
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
