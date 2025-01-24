@@ -1,3 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+Rock[[:space:]]9.fbx filter=lfs diff=lfs merge=lfs -text
+Rock[[:space:]]4.fbx filter=lfs diff=lfs merge=lfs -text
+Rock[[:space:]]6.fbx filter=lfs diff=lfs merge=lfs -text
 *.fbx filter=lfs diff=lfs merge=lfs -text
