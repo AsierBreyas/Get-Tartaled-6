@@ -53,6 +53,7 @@ public class ControlesTartalo : MonoBehaviour
     bool piedraEnMano;
     bool estaTirandoPiedra;
     bool heGolpeado;
+    bool aturdido;
 
     //Sistema de vida
     [SerializeField] float maxHealth = 100;
@@ -77,6 +78,7 @@ public class ControlesTartalo : MonoBehaviour
 
     void Update()
     {
+        ProcesarEstamina();
         if (!estaEnDefensa)
         {
             ProcesarVelocidad();
@@ -231,6 +233,23 @@ public class ControlesTartalo : MonoBehaviour
         estaTirandoPiedra = true;
         piedra.transform.position = posicionOtraMano.position;
 
+    }
+    void ProcesarEstamina()
+    {
+        if(estaminaActual <= 0){
+            aturdido = true;
+        }
+        else
+        {
+            if (estaHaciendoMovimiento)
+            {
+
+            }
+            else if(estaminaActual >= estaminaMaxima)
+            {
+
+            }
+        }
     }
     void GolpeNormal()
     {
