@@ -7,6 +7,7 @@ public class MenuPausa : MonoBehaviour
     public static bool GameIsPaused = false;
 
     [SerializeField] GameObject pauseMenuUI;
+
     public void MenuInicio()
     {
         SceneManager.LoadScene("MenuInicio");
