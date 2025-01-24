@@ -9,6 +9,8 @@ TagManager:
   - Cerdo
   - NPC
   - Interactuable
+  - PauseMenu
+  - Enemigo
   layers:
   - Default
   - TransparentFX

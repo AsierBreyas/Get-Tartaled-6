@@ -38,6 +38,7 @@ public class ControlesTartalo : MonoBehaviour
     Rigidbody rb;
     bool hayInteractuable;
     GameObject interactuable;
+    Enemy enemigoGolpear;
 
 
     //Booleanos para los ataques
@@ -399,27 +400,30 @@ public class ControlesTartalo : MonoBehaviour
         currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
     }
-    public void HeGolpeado()
+    public void HeGolpeado(Enemy enemigo)
     {
         heGolpeado = true;
+        enemigoGolpear = enemigo;
+        Debug.Log("PUM! TE HOSTIO");
+        
     }
     void ProcesarDañosHechos()
     {
-        Enemy enemy = FindFirstObjectByType<Enemy>();
-        if (enemy != null)
+        if (enemigoGolpear != null)
         {
             if (estaEnAtaqueNormal)
             {
-                enemy.TakeDamage(15f);
+                enemigoGolpear.TakeDamage(15f);
             }
             else if (estaEnAtaqueFuerte)
             {
-                enemy.TakeDamage(30f);
+                enemigoGolpear.TakeDamage(30f);
             }
             else if (estaEnAtaqueArea)
             {
-                enemy.TakeDamage(15f);
+                enemigoGolpear.TakeDamage(15f);
             }
         }
+        enemigoGolpear = null;
     }
 }
