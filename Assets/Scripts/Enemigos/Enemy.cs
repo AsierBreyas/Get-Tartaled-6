@@ -4,8 +4,8 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
+    private Transform player;
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] Transform player;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
     [SerializeField] float currentHealth, maxHealth;
     [SerializeField] EnemyHealthBar healthBar;
@@ -30,15 +30,17 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Tartalo").transform;
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
+        {
+            player = playerObject.transform;
+        }
+        else
+        {
+            Debug.LogError("No se encontró un objeto con el tag 'Player' en la escena.");
+        }
         agent = GetComponent<NavMeshAgent>();
         healthBar = GetComponentInChildren<EnemyHealthBar>();
-    }
-
-    private void Start()
-    {
-        //health = maxHealth;
-        //healthBar.UpdateHealthBar(health, maxHealth);
     }
 
     private void Update()
@@ -102,7 +104,9 @@ public class Enemy : MonoBehaviour
             agent.SetDestination(transform.position);
         }
 
-        transform.LookAt(player);
+        // Ignoramos el eje y para que el cerdo mire recto a Tartalo y no gire ligeramente hacia arriba
+        Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
+        transform.LookAt(targetPosition);
 
         if (!alreadyAttacked)
         {
@@ -110,7 +114,7 @@ public class Enemy : MonoBehaviour
             {
                 StartCoroutine(PerformDashAttack());
                 enemyParticles.Play();
-                //Debug.Log("Soy un lobo, pum te ataco");
+                Debug.Log("Soy un lobo, pum te ataco");
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
@@ -160,9 +164,9 @@ public class Enemy : MonoBehaviour
         agent.enabled = false;
 
         // Variables de la embestida
-        float dashSpeed = 7f; // Velocidad de la embestida
+        float dashSpeed = 15f; // Velocidad de la embestida
         float dashDuration = 0.3f; // Duración de la embestida
-        float backwardSpeed = 5f; // Velocidad del retroceso
+        float backwardSpeed = 12f; // Velocidad del retroceso
         float backwardDuration = 0.2f; // Duración del retroceso
 
         Vector3 dashDirection = (player.position - transform.position).normalized;
