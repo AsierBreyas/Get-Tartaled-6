@@ -36,6 +36,8 @@ public class ControlesTartalo : MonoBehaviour
     Dialogue npcDialogo;
     bool puedeHablar;
     Rigidbody rb;
+    bool hayInteractuable;
+    GameObject interactuable;
 
 
     //Booleanos para los ataques
@@ -54,7 +56,7 @@ public class ControlesTartalo : MonoBehaviour
 
     //Sistema de vida
     [SerializeField] float maxHealth = 100;
-    [SerializeField] float currentHealth;
+    public float currentHealth;
     [SerializeField] PlayerHealthbar healthbar;
     void Start()
     {
@@ -149,6 +151,8 @@ public class ControlesTartalo : MonoBehaviour
             npcDialogo.interactButtonPulsed();
             puedeHablar = false;
         }
+        else if (hayInteractuable)
+            hayInteractuable = FindAnyObjectByType<InteractuableManager>().ActivarInteractuable(interactuable.GetComponent<Interactuable>().GetNombre(), interactuable);
     }
     void ProcesarMovimiento()
     {
@@ -360,6 +364,11 @@ public class ControlesTartalo : MonoBehaviour
             npcDialogo = other.gameObject.GetComponent<Dialogue>();
             puedeHablar = true;
         }
+        else if(other.tag == "Interactuable")
+        {
+            hayInteractuable = true;
+            interactuable = other.gameObject;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -373,6 +382,11 @@ public class ControlesTartalo : MonoBehaviour
         {
             npcDialogo = null;
             puedeHablar = false;
+        }
+        else if (other.tag == "Interactuable")
+        {
+            hayInteractuable = false;
+            interactuable = null;
         }
     }
     public void puedeSeguirHablando()

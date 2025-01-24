@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.6354887
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.57627624
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
       propertyPath: m_Name
@@ -97,27 +97,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3321
+      value: -0.5793457
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 152.00513
+      value: 40.66841
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2330
+      value: 76.55664
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_LocalRotation.w
@@ -147,9 +147,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
       propertyPath: m_Name
       value: Zaloa
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5cddd1527d3b8e54e9d5c20cf2acba87, type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -243,6 +251,13 @@ MonoBehaviour:
   dialogueText: {fileID: 0}
   speakerNameText: {fileID: 0}
   listOfDialogues:
+  - isResume: 1
+    isTrigger: 0
+    misionCode: 
+    hablador: Zaloa
+    dialgos:
+    - hablador: 
+      texto: Siempre igual...
   - isResume: 0
     isTrigger: 1
     misionCode: P-004
@@ -281,6 +296,13 @@ MonoBehaviour:
     dialgos:
     - hablador: 
       texto: NOS ATACAAAAN
+  - isResume: 1
+    isTrigger: 0
+    misionCode: P-006
+    hablador: Zaloa
+    dialgos:
+    - hablador: 
+      texto: Espero que Izaro este bien...
 --- !u!65 &3402353877009618186
 BoxCollider:
   m_ObjectHideFlags: 0
