@@ -3,17 +3,25 @@ using UnityEngine;
 public class Cubo : MonoBehaviour
 {
     bool estaLleno;
-    public void ApagarFuego()
+    public void ApagarFuego(GameObject fuego)
     {
-        //Jejejej apago el fuego
-        estaLleno = false;
+        if (estaLleno)
+        {
+            estaLleno = false;
+            Destroy(fuego);
+            Interactuable intFuego = fuego.GetComponent<Interactuable>();
+            if (intFuego.EsDeMision())
+            {
+                Debug.Log("Fuego se quedo sin amigos");
+                MisionManager misionManager = FindAnyObjectByType<MisionManager>();
+                misionManager.ActualizarEstadoMision(intFuego.GetCodigoMision());
+                if (misionManager.RevisarRequisitos(intFuego.GetCodigoMision()))
+                    misionManager.AvanzarMision(intFuego.GetCodigoMision());
+            }
+        }
     }
     public void LlenarCubo()
     {
         estaLleno = true;
-    }
-    public bool EstaLleno()
-    {
-        return estaLleno;
     }
 }

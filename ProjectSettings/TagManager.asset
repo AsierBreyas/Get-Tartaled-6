@@ -8,7 +8,9 @@ TagManager:
   - Lobo
   - Cerdo
   - NPC
+  - Interactuable
   - PauseMenu
+  - Enemigo
   layers:
   - Default
   - TransparentFX

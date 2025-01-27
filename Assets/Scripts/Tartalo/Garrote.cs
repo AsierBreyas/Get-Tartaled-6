@@ -4,6 +4,9 @@ public class Garrote : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        FindFirstObjectByType<ControlesTartalo>().HeGolpeado();
+        if(other.gameObject.layer == 7)
+        {
+            FindFirstObjectByType<ControlesTartalo>().HeGolpeado(other.gameObject.GetComponent<Enemy>());
+        }
     }
 }
