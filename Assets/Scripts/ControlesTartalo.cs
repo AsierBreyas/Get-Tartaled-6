@@ -68,6 +68,8 @@ public class ControlesTartalo : MonoBehaviour
     float gastoEstamina;
     [SerializeField]
     float recuperaEstamina;
+    [SerializeField]
+    Slider barraEstamina;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -258,6 +260,7 @@ public class ControlesTartalo : MonoBehaviour
             else if(estaminaActual >= estaminaMaxima)
             {
                 estaminaActual = 100;
+                barraEstamina.enabled = false;
                 //Desaparecer barra de estamina
             }
         }
