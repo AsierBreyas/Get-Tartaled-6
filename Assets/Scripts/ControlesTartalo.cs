@@ -64,6 +64,10 @@ public class ControlesTartalo : MonoBehaviour
     [SerializeField]
     float estaminaMaxima;
     float estaminaActual;
+    [SerializeField]
+    float gastoEstamina;
+    [SerializeField]
+    float recuperaEstamina;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -199,6 +203,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaqueNormal = true;
         estaHaciendoMovimiento = true;
         Arma.transform.Rotate(new Vector3(-75, 0, 0));
+        estaminaActual -= gastoEstamina;
     }
     void ProcesarGolpeFuerte()
     {
@@ -206,6 +211,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaqueFuerte = true;
         estaHaciendoMovimiento = true;
         Arma.transform.Rotate(new Vector3(-75, 0, 0));
+        estaminaActual -= gastoEstamina * 3;
         //Debug.Log("MADA MADA");
     }
     void ProcesarAtaqueEnArea()
@@ -232,22 +238,27 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaque = true;
         estaTirandoPiedra = true;
         piedra.transform.position = posicionOtraMano.position;
-
+        estaminaActual -= gastoEstamina * 2;
     }
     void ProcesarEstamina()
     {
         if(estaminaActual <= 0){
             aturdido = true;
+            estaminaActual = 0;
         }
         else
         {
-            if (estaHaciendoMovimiento)
+            if (!estaHaciendoMovimiento)
             {
-
+                if (movimiento == Vector3.zero)
+                    estaminaActual += recuperaEstamina * 2;
+                else
+                    estaminaActual += recuperaEstamina;
             }
             else if(estaminaActual >= estaminaMaxima)
             {
-
+                estaminaActual = 100;
+                //Desaparecer barra de estamina
             }
         }
     }
@@ -300,6 +311,7 @@ public class ControlesTartalo : MonoBehaviour
     {
         if (botonDelAtaqueAreaMantenido)
         {
+            estaminaActual -= gastoEstamina * 1.5f;
             //Debug.Log("Dalta Faño");
         }
         else
@@ -345,7 +357,7 @@ public class ControlesTartalo : MonoBehaviour
     void TirarPiedra()
     {
         contadorPiedra += +Time.deltaTime * 1.5f;
-        if (!piedraEnMano)
+        if (!piedraEnMano || aturdido)
         {
             //Debug.Log(mirillaPosicion.position);
             boloncho.position = Camera.main.ScreenToWorldPoint(new Vector3(mirillaPosicion.position.x, mirillaPosicion.position.y, targetDistance));
@@ -365,6 +377,7 @@ public class ControlesTartalo : MonoBehaviour
                 else
                     trasladoMirilla = movimientoMirilla;
                 mirillaPosicion.position = trasladoMirilla;
+                estaminaActual -= gastoEstamina * 1.75f;
                 mirilla.enabled = true;
             }
         }
@@ -420,7 +433,13 @@ public class ControlesTartalo : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        if (estaEnDefensa)
+        {
+            currentHealth -= damage * 0.5f;
+            estaminaActual -= gastoEstamina * 3;
+        }
+        else
+            currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
     }
     public void HeGolpeado()
