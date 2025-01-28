@@ -4,6 +4,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class MenuConfiguracion : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class MenuConfiguracion : MonoBehaviour
 
     Resolution[] resolutions;
 
+    [SerializeField] GameObject _menuConfigFirst;
+
     private void Start()
     {
+        EventSystem.current.SetSelectedGameObject(_menuConfigFirst);
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();

@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class MenuPausa : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
     [SerializeField] GameObject pauseMenuUI;
+    [SerializeField] GameObject _pauseMenuFirst;
 
     public void MenuInicio()
     {
@@ -30,6 +32,7 @@ public class MenuPausa : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Cursor.visible = false;
+        EventSystem.current.SetSelectedGameObject(null);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -38,6 +41,7 @@ public class MenuPausa : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         Cursor.visible = true;
+        EventSystem.current.SetSelectedGameObject(_pauseMenuFirst);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
