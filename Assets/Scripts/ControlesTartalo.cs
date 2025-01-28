@@ -218,10 +218,10 @@ public class ControlesTartalo : MonoBehaviour
     }
     void ProcesarAtaqueNormal()
     {
-        estaminaActual -= gastoEstamina;
-        ActualizarBarraEstamina();
         if (!aturdido)
         {
+            estaminaActual -= gastoEstamina;
+            ActualizarBarraEstamina();
             estaEnAtaque = true;
             estaEnAtaqueNormal = true;
             estaHaciendoMovimiento = true;
@@ -230,10 +230,10 @@ public class ControlesTartalo : MonoBehaviour
     }
     void ProcesarGolpeFuerte()
     {
-        estaminaActual -= gastoEstamina * 3;
-        ActualizarBarraEstamina();
         if (!aturdido)
         {
+            estaminaActual -= gastoEstamina * 3;
+            ActualizarBarraEstamina();
             estaEnAtaque = true;
             estaEnAtaqueFuerte = true;
             estaHaciendoMovimiento = true;
@@ -345,7 +345,7 @@ public class ControlesTartalo : MonoBehaviour
             ActualizarBarraEstamina();
             //Debug.Log("Dalta Faño");
         }
-        if(!botonDelAtaqueAreaMantenido || aturdido)
+        if (!botonDelAtaqueAreaMantenido || aturdido)
         {
             //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles.y);
             if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 92f)
@@ -512,7 +512,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     void EstoyAturdido()
     {
-        if(estaminaActual < 0)
+        if (estaminaActual < 0)
         {
             Debug.Log("Me aturdi soy inutil");
             aturdido = true;
