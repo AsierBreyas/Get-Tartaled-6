@@ -224,6 +224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasGeneral
       objectReference: {fileID: 0}
+    - target: {fileID: 3730359607314370204, guid: cf75cb68630df7c4fa7735c2314ea044, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7979793862258021170, guid: cf75cb68630df7c4fa7735c2314ea044, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
