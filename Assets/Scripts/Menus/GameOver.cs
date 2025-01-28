@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class GameOver : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class GameOver : MonoBehaviour
     public void RecargarJuego()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Josu");
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
         gameOverCanvas.SetActive(false);
         healthbarCanvas.SetActive(true);
 

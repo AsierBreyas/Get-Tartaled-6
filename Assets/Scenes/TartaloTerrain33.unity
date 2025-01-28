@@ -1312,6 +1312,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.1354968
       objectReference: {fileID: 0}
+    - target: {fileID: 6510137884680138174, guid: e36b653f1888d594b85eda7ff8f44fe6, type: 3}
+      propertyPath: danioLobo
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7635902873767474998, guid: e36b653f1888d594b85eda7ff8f44fe6, type: 3}
       propertyPath: m_Name
       value: Tartalo Con Camara
@@ -1320,6 +1324,10 @@ PrefabInstance:
       propertyPath: pauseMenuUI
       value: 
       objectReference: {fileID: 199539851}
+    - target: {fileID: 7727849812846344334, guid: e36b653f1888d594b85eda7ff8f44fe6, type: 3}
+      propertyPath: gameOverMenu
+      value: 
+      objectReference: {fileID: 1186296082}
     - target: {fileID: 7727849812846344334, guid: e36b653f1888d594b85eda7ff8f44fe6, type: 3}
       propertyPath: _pauseMenuFirst
       value: 
@@ -2577,6 +2585,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 304849556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1112769813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3730359607314370204, guid: cf75cb68630df7c4fa7735c2314ea044, type: 3}
+  m_PrefabInstance: {fileID: 81571631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1154878510
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,6 +3793,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 304849556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1775346098
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 146.89067
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 81.15258
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1615611
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444699146776777812, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577598565504510063, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398640854434745474, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: generalCanvas
+      value: 
+      objectReference: {fileID: 1112769813}
+    - target: {fileID: 7398640854434745474, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 1186296082}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
 --- !u!4 &1776621824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
@@ -4716,3 +4794,4 @@ SceneRoots:
   - {fileID: 244346986}
   - {fileID: 1550974292}
   - {fileID: 105481244}
+  - {fileID: 1775346098}
