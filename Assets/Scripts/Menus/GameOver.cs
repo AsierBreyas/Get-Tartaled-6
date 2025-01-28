@@ -1,10 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameOver : MonoBehaviour
 {
     [SerializeField] GameObject gameOverCanvas;
     [SerializeField] GameObject healthbarCanvas;
+    [SerializeField] GameObject _gameoverMenuFirst;
+
+    private void Start()
+    {
+        EventSystem.current.SetSelectedGameObject(_gameoverMenuFirst);
+    }
     public void RecargarJuego()
     {
         Time.timeScale = 1;
