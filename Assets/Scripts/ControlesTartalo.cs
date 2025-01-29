@@ -60,6 +60,7 @@ public class ControlesTartalo : MonoBehaviour
     [SerializeField] float maxHealth = 100;
     public float currentHealth;
     [SerializeField] PlayerHealthbar healthbar;
+    [SerializeField] float recuperacionComer;
 
     //Sistema de estamina
     [SerializeField]
@@ -130,10 +131,13 @@ public class ControlesTartalo : MonoBehaviour
     }
     public void OnAtaqueNormal(InputValue value)
     {
-        botonDelAtaqueFuerteMantenido = value.isPressed;
-        //Debug.Log("PUM! Te pego");
-        if (!estaHaciendoMovimiento)
-            ProcesarAtaqueNormal();
+        if (!aturdido)
+        {
+            botonDelAtaqueFuerteMantenido = value.isPressed;
+            //Debug.Log("PUM! Te pego");
+            if (!estaHaciendoMovimiento)
+                ProcesarAtaqueNormal();
+        }
     }
     void OnAtaqueArea(InputValue value)
     {
@@ -201,9 +205,9 @@ public class ControlesTartalo : MonoBehaviour
             zOffSet /= 2;
             xOffSet /= 2;
         }
-        if (estoyCorriendo)
+        if (estoyCorriendo && (xOffSet !=0 || zOffSet != 0 ))
         {
-            estaminaActual -= gastoEstamina;
+            estaminaActual -= gastoEstamina * 0.1f;
             ActualizarBarraEstamina();
         }
         //Vector3 direccionMovimiento = new Vector3(playerRingPos.localPosition.x + xOffSet, playerRingPos.localPosition.y, playerRingPos.localPosition.z + zOffSet);
@@ -293,8 +297,6 @@ public class ControlesTartalo : MonoBehaviour
     void ProcesarEstamina()
     {
         EstoyAturdido();
-        if (estaHaciendoMovimiento)
-            Debug.Log("Alarmo");
         if (!estaHaciendoMovimiento && estaminaActual <= estaminaMaxima)
         {
             if (movimiento == Vector3.zero)
@@ -360,7 +362,7 @@ public class ControlesTartalo : MonoBehaviour
     {
         if (botonDelAtaqueAreaMantenido)
         {
-            estaminaActual -= gastoEstamina * 1.5f;
+            estaminaActual -= gastoEstamina * 0.2f;
             ActualizarBarraEstamina();
             //Debug.Log("Dalta Faño");
         }
@@ -427,7 +429,7 @@ public class ControlesTartalo : MonoBehaviour
                 else
                     trasladoMirilla = movimientoMirilla;
                 mirillaPosicion.position = trasladoMirilla;
-                estaminaActual -= gastoEstamina * 1.75f;
+                estaminaActual -= gastoEstamina * 0.2f;
                 ActualizarBarraEstamina();
                 mirilla.enabled = true;
             }
@@ -547,6 +549,30 @@ public class ControlesTartalo : MonoBehaviour
     }
     void ComerEnemigo()
     {
-
+        bool yaHeComido = false;
+        foreach(GameObject enemigo in enemigosCercanos)
+        {
+            Enemy enemigoSc = enemigo.GetComponent<Enemy>();
+            if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && !yaHeComido)
+            {
+                yaHeComido = true;
+                hayComestibleCerca = false;
+                RecuperarVida(recuperacionComer);
+                Debug.Log("NOM NOM NOM");
+            }
+            else if(enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && yaHeComido)
+            {
+                hayComestibleCerca = true;
+                Debug.Log("Bueno si no gomito");
+            }
+        }
+    }
+    void RecuperarVida(float recuperacion)
+    {
+        if (currentHealth + recuperacion > 100)
+            currentHealth = 100;
+        else
+            currentHealth += recuperacion;
+        healthbar.SetHealth(currentHealth);
     }
 }

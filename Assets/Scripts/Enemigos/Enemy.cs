@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     // Patroling
     [SerializeField] Vector3 walkPoint;
     bool walkPointSet;
-    [SerializeField]  float walkPointRange;
+    [SerializeField] float walkPointRange;
 
     // Attacking
     [SerializeField] float timeBetweenAttacks;
@@ -44,13 +44,16 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        // Check for sight and attack range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        if (!dead)
+        {
+            // Check for sight and attack range
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer();
+            if (!playerInSightRange && !playerInAttackRange) Patroling();
+            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+            if (playerInSightRange && playerInAttackRange) AttackPlayer();
+        }
     }
 
     void Patroling()
@@ -79,7 +82,7 @@ public class Enemy : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if(Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
             walkPointSet = true;
         }
@@ -107,7 +110,7 @@ public class Enemy : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            if (this.tag  == "Lobo")
+            if (this.tag == "Lobo")
             {
                 StartCoroutine(PerformDashAttack());
                 enemyParticles.Play();
@@ -134,18 +137,24 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("Ay me hiciste daño");
-        currentHealth -= damage;
-        //healthBar.UpdateHealthbar(currentHealth, maxHealth);
-        if (currentHealth <= 0)
+        if (!dead)
         {
-           if (horda != null && !dead)
+            Debug.Log("Ay me hiciste daño");
+            currentHealth -= damage;
+            //healthBar.UpdateHealthbar(currentHealth, maxHealth);
+            if (currentHealth <= 0)
             {
                 dead = true;
-                horda.EnemigoMuerto();
+                if (horda != null && !dead)
+                    horda.EnemigoMuerto();
+                // Animacion de enemigo muriendo
+                if (!isEdible)
+                {
+                    Debug.Log("Te provoco");
+                    Invoke(nameof(DestroyEnemy), 0.5f);
+                    this.transform.Rotate(0, 0, 90);
+                }
             }
-           // Animacion de enemigo muriendo
-           Invoke(nameof(DestroyEnemy), 0.5f);
         }
     }
 
@@ -188,5 +197,23 @@ public class Enemy : MonoBehaviour
         }
         // Reactivar el NavMeshAgent
         agent.enabled = true;
+    }
+    public bool BeEat()
+    {
+        if(dead && isEdible)
+        {
+            Invoke(nameof(DestroyEnemy), 0.5f);
+            //Particulas de ser comido
+            return true;
+        }
+        return false;
+    }
+    public bool GetIsEsdible()
+    {
+        return isEdible;
+    }
+    public bool IsDead()
+    {
+        return dead;
     }
 }

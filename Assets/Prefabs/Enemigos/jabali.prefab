@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 154057765784698700}
   - component: {fileID: 133220132670490043}
   - component: {fileID: 2625429296718035735}
+  - component: {fileID: 3133450582122406133}
   m_Layer: 7
   m_Name: jabali
   m_TagString: Lobo
@@ -206,6 +207,7 @@ MonoBehaviour:
   playerInAttackRange: 0
   enemyParticles: {fileID: 1932014161553819071}
   horda: {fileID: 0}
+  isEdible: 1
 --- !u!54 &2625429296718035735
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -233,6 +235,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!65 &3133450582122406133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411173081368385138}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 4.2000003, y: 2, z: 4.6000004}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3031204728556750623
 GameObject:
   m_ObjectHideFlags: 0
