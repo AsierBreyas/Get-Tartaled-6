@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 1787270413088090967}
   - component: {fileID: 3494198795200166435}
   - component: {fileID: 9187072636047405448}
+  - component: {fileID: 4062928557984739372}
   m_Layer: 5
   m_Name: ProfileBox
   m_TagString: Untagged
@@ -350,6 +351,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4062928557984739372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473735462248949822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d647777b2f7a147b39b6d573fb898e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameLabel: {fileID: 6327802588458918445}
+  deleteBtn: {fileID: 3965666954845536799}
+  loadBtn: {fileID: 2384805942067981416}
 --- !u!1 &6720244950167683025
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +379,7 @@ GameObject:
   - component: {fileID: 1970444808301267083}
   - component: {fileID: 2384805942067981416}
   m_Layer: 5
-  m_Name: Load Button (1)
+  m_Name: Load Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
