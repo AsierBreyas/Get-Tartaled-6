@@ -156,8 +156,8 @@ public class Enemy : MonoBehaviour
                 {
                     Debug.Log("Te provoco");
                     Invoke(nameof(DestroyEnemy), 0.5f);
+                }else
                     this.transform.Rotate(0, 0, 90);
-                }
             }
         }
     }

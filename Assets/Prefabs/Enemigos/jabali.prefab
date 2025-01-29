@@ -206,6 +206,7 @@ MonoBehaviour:
   playerInAttackRange: 0
   enemyParticles: {fileID: 1932014161553819071}
   horda: {fileID: 0}
+  isEdible: 1
 --- !u!54 &2625429296718035735
 Rigidbody:
   m_ObjectHideFlags: 0

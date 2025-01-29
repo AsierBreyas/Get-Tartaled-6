@@ -379,7 +379,7 @@ Transform:
   m_GameObject: {fileID: 7177790799072959281}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: -417.25, y: 0, z: -331.49997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea730659390ab343b0939a2b859bc6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadBase: 2500
+  velocidadBase: 5000
   playerRingPos: {fileID: 801198462831273854}
   velocidadRotacion: 500
   Arma: {fileID: 6288938071625955658}
