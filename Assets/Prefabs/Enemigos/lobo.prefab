@@ -4848,6 +4848,7 @@ GameObject:
   - component: {fileID: 5458789885384846964}
   - component: {fileID: 5912436022787711826}
   - component: {fileID: 3406400755593150783}
+  - component: {fileID: 6451990647982703326}
   m_Layer: 0
   m_Name: lobo
   m_TagString: Untagged
@@ -5029,6 +5030,28 @@ MonoBehaviour:
   playerInAttackRange: 0
   enemyParticles: {fileID: 6522606298159398936}
   horda: {fileID: 0}
+  isEdible: 1
+--- !u!65 &6451990647982703326
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434059459310534437}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0570133, y: 0.87144625, z: 2.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4771043625716722350
 PrefabInstance:
   m_ObjectHideFlags: 0

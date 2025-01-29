@@ -5167,6 +5167,7 @@ GameObject:
   - component: {fileID: 4657162883579704670}
   - component: {fileID: 6447954543184022828}
   - component: {fileID: 5058548126403576613}
+  - component: {fileID: 8825079510960633059}
   m_Layer: 7
   m_Name: cerdo
   m_TagString: Cerdo
@@ -5183,7 +5184,7 @@ Transform:
   m_GameObject: {fileID: 7402182223144520177}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3310.8281, y: 162.81316, z: 2564.871}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5325,6 +5326,7 @@ MonoBehaviour:
   playerInAttackRange: 0
   enemyParticles: {fileID: 4895538102474711982}
   horda: {fileID: 0}
+  isEdible: 0
 --- !u!136 &5058548126403576613
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5348,6 +5350,27 @@ CapsuleCollider:
   m_Height: 1.157924
   m_Direction: 1
   m_Center: {x: 0.00057315815, y: 0.578962, z: 0.0031602078}
+--- !u!65 &8825079510960633059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7402182223144520177}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7489673, y: 1.157924, z: 1.1503017}
+  m_Center: {x: 0.00057315826, y: 0.578962, z: 0.0031602085}
 --- !u!1 &7837837926553146448
 GameObject:
   m_ObjectHideFlags: 0

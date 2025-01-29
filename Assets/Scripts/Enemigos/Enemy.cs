@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] ParticleSystem enemyParticles;
     [SerializeField] Horda horda;
     bool dead;
+    [SerializeField] bool isEdible;
 
     private void Awake()
     {
@@ -185,7 +186,6 @@ public class Enemy : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
         // Reactivar el NavMeshAgent
         agent.enabled = true;
     }

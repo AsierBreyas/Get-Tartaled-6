@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -70,6 +71,9 @@ public class ControlesTartalo : MonoBehaviour
     float recuperaEstamina;
     [SerializeField]
     Slider barraEstamina;
+
+    List<GameObject> enemigosCercanos = new List<GameObject>();
+    bool hayComestibleCerca;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -133,14 +137,17 @@ public class ControlesTartalo : MonoBehaviour
     }
     void OnAtaqueArea(InputValue value)
     {
-        botonDelAtaqueAreaMantenido = value.isPressed;
-        //Debug.Log("AAAAAAAAAAAAAAAAAAA");
-        if (!estaHaciendoMovimiento)
-            ProcesarAtaqueEnArea();
+        if (!aturdido)
+        {
+            botonDelAtaqueAreaMantenido = value.isPressed;
+            //Debug.Log("AAAAAAAAAAAAAAAAAAA");
+            if (!estaHaciendoMovimiento)
+                ProcesarAtaqueEnArea();
+        }
     }
     void OnDefender(InputValue value)
     {
-        if (!estaEnAtaque)
+        if (!estaEnAtaque || !aturdido)
         {
             estaEnDefensa = value.isPressed;
             //Debug.Log("No puedes golpear lo que no puedes ver");
@@ -149,10 +156,13 @@ public class ControlesTartalo : MonoBehaviour
     }
     void OnTirarPiedra(InputValue input)
     {
-        piedraEnMano = input.isPressed;
-        if (tenemosPiedra && input.isPressed)
+        if (!aturdido)
         {
-            ProcesarTirada();
+            piedraEnMano = input.isPressed;
+            if (tenemosPiedra && input.isPressed)
+            {
+                ProcesarTirada();
+            }
         }
     }
     void OnMoverMirillaGamepad(InputValue value)
@@ -178,6 +188,9 @@ public class ControlesTartalo : MonoBehaviour
         }
         else if (hayInteractuable)
             hayInteractuable = FindAnyObjectByType<InteractuableManager>().ActivarInteractuable(interactuable.GetComponent<Interactuable>().GetNombre(), interactuable);
+        else if (hayComestibleCerca)
+            ComerEnemigo();
+
     }
     void ProcesarMovimiento()
     {
@@ -222,10 +235,13 @@ public class ControlesTartalo : MonoBehaviour
         {
             estaminaActual -= gastoEstamina;
             ActualizarBarraEstamina();
-            estaEnAtaque = true;
-            estaEnAtaqueNormal = true;
-            estaHaciendoMovimiento = true;
-            Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            if (!aturdido)
+            {
+                estaEnAtaque = true;
+                estaEnAtaqueNormal = true;
+                estaHaciendoMovimiento = true;
+                Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            }
         }
     }
     void ProcesarGolpeFuerte()
@@ -234,10 +250,13 @@ public class ControlesTartalo : MonoBehaviour
         {
             estaminaActual -= gastoEstamina * 3;
             ActualizarBarraEstamina();
-            estaEnAtaque = true;
-            estaEnAtaqueFuerte = true;
-            estaHaciendoMovimiento = true;
-            Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            if (!aturdido)
+            {
+                estaEnAtaque = true;
+                estaEnAtaqueFuerte = true;
+                estaHaciendoMovimiento = true;
+                Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            }
         }
         //Debug.Log("MADA MADA");
     }
@@ -457,6 +476,10 @@ public class ControlesTartalo : MonoBehaviour
             hayInteractuable = false;
             interactuable = null;
         }
+        else if (other.gameObject.layer == 7)
+        {
+            enemigosCercanos.Remove(other.gameObject);
+        }
     }
     public void puedeSeguirHablando()
     {
@@ -502,7 +525,6 @@ public class ControlesTartalo : MonoBehaviour
     }
     void ActualizarBarraEstamina()
     {
-        Debug.Log(estaminaActual);
         if (estaminaActual != estaminaMaxima)
             barraEstamina.enabled = true;
         else
@@ -518,5 +540,13 @@ public class ControlesTartalo : MonoBehaviour
             aturdido = true;
             estaminaActual = 0;
         }
+    }
+    public void AparecioComestible()
+    {
+        hayComestibleCerca = true;
+    }
+    void ComerEnemigo()
+    {
+
     }
 }
