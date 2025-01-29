@@ -12,7 +12,7 @@ public class MenuInicio : MonoBehaviour
     }
     public void CargarJuego()
     {
-        SceneManager.LoadScene("Xabi");
+        SceneManager.LoadScene("MenuPerfiles");
     }
 
     public void CargarOpciones()
