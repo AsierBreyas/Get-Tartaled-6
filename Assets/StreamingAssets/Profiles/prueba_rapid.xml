@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProfileData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <fileName>prueba_rapid.xml</fileName>
+  <name>prueba rapid</name>
+  <newGame>false</newGame>
+  <currentHealth>100</currentHealth>
+  <x>3189.07568</x>
+  <y>157.9989</y>
+  <z>2210.66138</z>
+</ProfileData>
