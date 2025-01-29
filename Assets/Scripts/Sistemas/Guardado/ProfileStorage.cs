@@ -9,7 +9,7 @@ public static class ProfileStorage
     private static string s_indexPath = Application.streamingAssetsPath + "/Profiles/__ProfileIndex__.xml";
     public static void CreateNewGame(string profileName)
     {
-        s_currentProfile = new ProfileData(profileName, true, 0, 0, 0);
+        s_currentProfile = new ProfileData(profileName, true, 0, 0, 0, 100);
 
         string path = Application.streamingAssetsPath + "/Profiles/" + s_currentProfile.fileName;
         SaveFile<ProfileData>(path, s_currentProfile);

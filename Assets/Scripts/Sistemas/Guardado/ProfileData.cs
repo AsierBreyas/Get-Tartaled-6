@@ -20,7 +20,7 @@ public class ProfileData
         this.y = this.x = this.z = 0;
     }
     
-    public ProfileData (string name, bool newGame, float x, float y, float z)
+    public ProfileData (string name, bool newGame, float x, float y, float z, float currentHealth)
     {
         this.fileName = name.Replace(" ", "_") + ".xml";
         this.name = name;
@@ -28,5 +28,6 @@ public class ProfileData
         this.x = x;
         this.y = y;
         this.z = z;
+        this.currentHealth = currentHealth;
     }
 }

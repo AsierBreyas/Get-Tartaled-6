@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
             float y = ProfileStorage.s_currentProfile.y;
             float z = ProfileStorage.s_currentProfile.z;
             Vector3 pos = new Vector3(x, y, z);
-            player.transform.Translate(pos);
+            player.transform.position = pos;
         }
     }
     public void ItsGameOver()
