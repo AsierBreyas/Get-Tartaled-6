@@ -191,10 +191,10 @@ public class ControlesTartalo : MonoBehaviour
             npcDialogo.interactButtonPulsed();
             puedeHablar = false;
         }
-        else if (hayInteractuable)
-            hayInteractuable = FindAnyObjectByType<InteractuableManager>().ActivarInteractuable(interactuable.GetComponent<Interactuable>().GetNombre(), interactuable);
         else if (hayComestibleCerca)
             ComerEnemigo();
+        else if (hayInteractuable)
+            hayInteractuable = FindAnyObjectByType<InteractuableManager>().ActivarInteractuable(interactuable.GetComponent<Interactuable>().GetNombre(), interactuable);
 
     }
     void ProcesarMovimiento()
@@ -444,7 +444,6 @@ public class ControlesTartalo : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OMG HIIIII");
         if (other.tag == "Roca" && !tenemosPiedra)
         {
             piedra = other.gameObject;
@@ -454,6 +453,11 @@ public class ControlesTartalo : MonoBehaviour
         {
             npcDialogo = other.gameObject.GetComponent<Dialogue>();
             puedeHablar = true;
+        }
+        else if (other.gameObject.layer == 7 && other.tag == "Interactuable")
+        {
+            Debug.Log("OMG HIIIII");
+            enemigosCercanos.Add(other.transform.parent.gameObject);
         }
         else if (other.tag == "Interactuable")
         {
@@ -474,14 +478,14 @@ public class ControlesTartalo : MonoBehaviour
             npcDialogo = null;
             puedeHablar = false;
         }
+        else if (other.gameObject.layer == 7)
+        {
+            enemigosCercanos.Remove(other.gameObject);
+        }
         else if (other.tag == "Interactuable")
         {
             hayInteractuable = false;
             interactuable = null;
-        }
-        else if (other.gameObject.layer == 7)
-        {
-            enemigosCercanos.Remove(other.gameObject);
         }
     }
     public void puedeSeguirHablando()
@@ -557,10 +561,13 @@ public class ControlesTartalo : MonoBehaviour
         foreach(GameObject enemigo in enemigosCercanos)
         {
             Enemy enemigoSc = enemigo.GetComponent<Enemy>();
+            Debug.Log(enemigo.GetComponent<Enemy>().GetIsEsdible());
             if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && !yaHeComido)
             {
                 yaHeComido = true;
                 hayComestibleCerca = false;
+                enemigoSc.BeEat();
+                enemigosCercanos.Remove(enemigo);
                 RecuperarVida(recuperacionComer);
                 Debug.Log("NOM NOM NOM");
             }

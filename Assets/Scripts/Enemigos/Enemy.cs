@@ -154,10 +154,14 @@ public class Enemy : MonoBehaviour
                 // Animacion de enemigo muriendo
                 if (!isEdible)
                 {
-                    Debug.Log("Te provoco");
                     Invoke(nameof(DestroyEnemy), 0.5f);
-                }else
+                }
+                else
+                {
+                    Debug.Log("Te provoco");
+                    FindAnyObjectByType<ControlesTartalo>().AparecioComestible();
                     this.transform.Rotate(0, 0, 90);
+                }
             }
         }
     }
@@ -202,15 +206,10 @@ public class Enemy : MonoBehaviour
         // Reactivar el NavMeshAgent
         agent.enabled = true;
     }
-    public bool BeEat()
+    public void BeEat()
     {
         if(dead && isEdible)
-        {
             Invoke(nameof(DestroyEnemy), 0.5f);
-            //Particulas de ser comido
-            return true;
-        }
-        return false;
     }
     public bool GetIsEsdible()
     {
