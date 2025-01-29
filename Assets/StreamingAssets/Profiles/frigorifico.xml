@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProfileData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <fileName>frigorifico.xml</fileName>
+  <name>frigorifico</name>
+  <newGame>false</newGame>
+  <currentHealth>100</currentHealth>
+  <x>3187.96631</x>
+  <y>156.349915</y>
+  <z>2213.104</z>
+</ProfileData>

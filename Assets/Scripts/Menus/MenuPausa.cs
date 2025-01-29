@@ -9,6 +9,7 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] GameObject pauseMenuUI;
     [SerializeField] GameObject _pauseMenuFirst;
+    [SerializeField] GameObject gameOverMenu;
 
     public void MenuInicio()
     {
@@ -22,7 +23,7 @@ public class MenuPausa : MonoBehaviour
         {
             Resume();
         }
-        else
+        else if (!GameIsPaused && !gameOverMenu.activeSelf)
         {
             Pause();
         }
