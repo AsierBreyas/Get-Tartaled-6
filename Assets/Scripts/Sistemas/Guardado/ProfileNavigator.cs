@@ -5,7 +5,7 @@ public class ProfileNavigator : MonoBehaviour
 {
     public void GoToNewGame()
     {
-        SceneManager.LoadScene("NuevoPerfil");
+        SceneManager.LoadScene("MenuNuevoPerfil");
     }
 
     public void GoToMenu()
