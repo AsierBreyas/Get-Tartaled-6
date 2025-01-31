@@ -1962,19 +1962,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1050351817}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2edb746ea3980f34f8258ad604e6ab4c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2987.63
+      value: 27.538574
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2edb746ea3980f34f8258ad604e6ab4c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 173.89113
+      value: -8.307236
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2edb746ea3980f34f8258ad604e6ab4c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2680.29
+      value: 12.361816
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2edb746ea3980f34f8258ad604e6ab4c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2013,6 +2013,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2edb746ea3980f34f8258ad604e6ab4c, type: 3}
+--- !u!4 &564602556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2edb746ea3980f34f8258ad604e6ab4c, type: 3}
+  m_PrefabInstance: {fileID: 564602555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &626047701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3357,6 +3362,8 @@ Transform:
   - {fileID: 189947258}
   - {fileID: 2127557989}
   - {fileID: 1941785359}
+  - {fileID: 564602556}
+  - {fileID: 1077424895}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1063551390
@@ -3458,11 +3465,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1050351817}
     m_Modifications:
     - target: {fileID: 2378725470289426191, guid: f5a4dcef26791274eb2240f28f2ed573, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1.4999999
       objectReference: {fileID: 0}
     - target: {fileID: 2378725470289426191, guid: f5a4dcef26791274eb2240f28f2ed573, type: 3}
       propertyPath: m_LocalScale.y
@@ -3470,19 +3477,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2378725470289426191, guid: f5a4dcef26791274eb2240f28f2ed573, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1.4999999
       objectReference: {fileID: 0}
     - target: {fileID: 2378725470289426191, guid: f5a4dcef26791274eb2240f28f2ed573, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 87.36542
+      value: -2872.7258
       objectReference: {fileID: 0}
     - target: {fileID: 2378725470289426191, guid: f5a4dcef26791274eb2240f28f2ed573, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 240
+      value: 57.801636
       objectReference: {fileID: 0}
     - target: {fileID: 2378725470289426191, guid: f5a4dcef26791274eb2240f28f2ed573, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2431.2532
+      value: -236.67505
       objectReference: {fileID: 0}
     - target: {fileID: 2378725470289426191, guid: f5a4dcef26791274eb2240f28f2ed573, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3525,6 +3532,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a4dcef26791274eb2240f28f2ed573, type: 3}
+--- !u!4 &1077424895 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2378725470289426191, guid: f5a4dcef26791274eb2240f28f2ed573, type: 3}
+  m_PrefabInstance: {fileID: 1077424894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1089455419
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,7 +4126,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 45ea163ccc0eff744b70be2184be445a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9478,6 +9490,4 @@ SceneRoots:
   - {fileID: 1050351817}
   - {fileID: 66837472}
   - {fileID: 375807781}
-  - {fileID: 564602555}
-  - {fileID: 1077424894}
   - {fileID: 2007209199}
