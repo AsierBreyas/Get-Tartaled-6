@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class MenuInicio : MonoBehaviour
 {
     [SerializeField] GameObject _menuFirst;
-    [SerializeField] GameObject loadingScreen;
-    [SerializeField] Slider loadingBarFill;
 
     private void Start()
     {
@@ -16,8 +14,7 @@ public class MenuInicio : MonoBehaviour
     }
     public void CargarJuego()
     {
-        //SceneManager.LoadScene("MenuPerfiles");
-        StartCoroutine(CargarJuegoAsync("MenuPerfiles"));
+        SceneManager.LoadScene("MenuPerfiles");
     }
 
     public void CargarOpciones()
@@ -30,21 +27,4 @@ public class MenuInicio : MonoBehaviour
         Debug.Log("Saliendo...");
         Application.Quit();
     }
-
-    IEnumerator CargarJuegoAsync(string sceneName)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-
-        loadingScreen.SetActive(true);
-
-        while (!operation.isDone)
-        {
-            float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
-
-            loadingBarFill.value = progressValue;
-
-            yield return null;
-        }
-    }
-
 }
