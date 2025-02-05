@@ -245,7 +245,7 @@ public class ControlesTartalo : MonoBehaviour
                 estaEnAtaque = true;
                 estaEnAtaqueNormal = true;
                 estaHaciendoMovimiento = true;
-                Arma.transform.Rotate(new Vector3(-75, 0, 0));
+                Arma.transform.Rotate(new Vector3(0, 0, -75));
             }
         }
     }
@@ -260,7 +260,7 @@ public class ControlesTartalo : MonoBehaviour
                 estaEnAtaque = true;
                 estaEnAtaqueFuerte = true;
                 estaHaciendoMovimiento = true;
-                Arma.transform.Rotate(new Vector3(-75, 0, 0));
+                Arma.transform.Rotate(new Vector3(0, 0, -75));
             }
         }
         //Debug.Log("MADA MADA");
@@ -270,7 +270,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaque = true;
         estaEnAtaqueArea = true;
         estaHaciendoMovimiento = true;
-        Arma.transform.Rotate(new Vector3(0, -60, 0));
+        Arma.transform.Rotate(new Vector3(-60, 0, 0));
 
     }
     void ProcesarDefensa()
@@ -278,7 +278,7 @@ public class ControlesTartalo : MonoBehaviour
         estaHaciendoMovimiento = true;
         if (contadorMovimientoDefensa == 0)
         {
-            Arma.transform.Rotate(new Vector3(0, 90, 0));
+            Arma.transform.Rotate(new Vector3(-90, 0, 0));
             contadorMovimientoDefensa++;
         }
 
@@ -316,8 +316,8 @@ public class ControlesTartalo : MonoBehaviour
     }
     void GolpeNormal()
     {
-        //Debug.Log("Rotacion de x: "+ Arma.transform.rotation.eulerAngles);
-        if (Arma.transform.rotation.eulerAngles.x >= 70f && Arma.transform.rotation.eulerAngles.x <= 75f)
+        Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
+        if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 145f)
         {
             if (heGolpeado)
             {
@@ -328,18 +328,18 @@ public class ControlesTartalo : MonoBehaviour
             estaEnAtaque = false;
             estaEnAtaqueNormal = false;
             estaHaciendoMovimiento = false;
-            Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            Arma.transform.Rotate(new Vector3(0, 0, -50));
             if (botonDelAtaqueFuerteMantenido)
                 ProcesarGolpeFuerte();
         }
         else
         {
-            Arma.transform.Rotate(new Vector3(75, 0, 0) * 3 * Time.deltaTime);
+            Arma.transform.Rotate(new Vector3(0, 0, 75) * 3 * Time.deltaTime);
         }
     }
     void GolpeFuerte()
     {
-        if (Arma.transform.rotation.eulerAngles.x >= 70f && Arma.transform.rotation.eulerAngles.x <= 75f)
+        if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 145f)
         {
             if (heGolpeado)
             {
@@ -350,27 +350,27 @@ public class ControlesTartalo : MonoBehaviour
             estaEnAtaque = false;
             estaEnAtaqueFuerte = false;
             estaHaciendoMovimiento = false;
-            Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            Arma.transform.Rotate(new Vector3(0, 0, -50));
             if (botonDelAtaqueFuerteMantenido && !aturdido)
                 ProcesarGolpeFuerte();
         }
         else
         {
-            Arma.transform.Rotate(new Vector3(75, 0, 0) * 6 * Time.deltaTime);
+            Arma.transform.Rotate(new Vector3(0, 0, 75) * 6 * Time.deltaTime);
         }
     }
     void AtaqueArea()
     {
         if (botonDelAtaqueAreaMantenido)
         {
-            estaminaActual -= gastoEstamina * 0.2f;
+            estaminaActual -= gastoEstamina * 0.15f;
             ActualizarBarraEstamina();
             //Debug.Log("Dalta Faño");
         }
         if (!botonDelAtaqueAreaMantenido || aturdido)
         {
-            //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles.y);
-            if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 92f)
+            Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
+            if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 105f)
             {
                 if (heGolpeado)
                 {
@@ -382,11 +382,11 @@ public class ControlesTartalo : MonoBehaviour
                 estaEnAtaque = false;
                 estaEnAtaqueArea = false;
                 estaHaciendoMovimiento = false;
-                Arma.transform.Rotate(new Vector3(0, -90, 0));
+                Arma.transform.Rotate(new Vector3(-90, 0, 0));
             }
             else
             {
-                Arma.transform.Rotate(new Vector3(0, 60, 0) * 10 * Time.deltaTime);
+                Arma.transform.Rotate(new Vector3(20, 0, 0) * 9 * Time.deltaTime);
             }
         }
     }
@@ -398,7 +398,7 @@ public class ControlesTartalo : MonoBehaviour
             estaHaciendoMovimiento = false;
             if (contadorMovimientoDefensa == 1)
             {
-                Arma.transform.Rotate(new Vector3(0, -90, 0));
+                Arma.transform.Rotate(new Vector3(-90, 0, 0));
                 contadorMovimientoDefensa--;
             }
         }
