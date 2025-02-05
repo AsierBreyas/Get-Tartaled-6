@@ -9,7 +9,6 @@ public class NewGame : MonoBehaviour
     [SerializeField] TMP_InputField profileInput;
     
     // Objetos para pantalla de carga
-    [SerializeField] GameObject otherCanvas;
     [SerializeField] Slider loadingBarFill;
     [SerializeField] GameObject loadingScreen;
 
@@ -25,7 +24,6 @@ public class NewGame : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
 
         loadingScreen.SetActive(true);
-        otherCanvas.SetActive(false);
 
         while (!operation.isDone)
         {

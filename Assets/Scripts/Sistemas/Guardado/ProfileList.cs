@@ -10,7 +10,6 @@ public class ProfileList : MonoBehaviour
     public GameObject profileUIBoxPrefab;
 
     // Objetos para pantalla de carga
-    [SerializeField] GameObject otherCanvas;
     [SerializeField] Slider loadingBarFill;
     [SerializeField] GameObject loadingScreen;
 
@@ -48,7 +47,6 @@ public class ProfileList : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
 
         loadingScreen.SetActive(true);
-        otherCanvas.SetActive(false);
 
         while (!operation.isDone)
         {
