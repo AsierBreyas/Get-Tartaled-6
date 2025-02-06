@@ -337,7 +337,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     void GolpeFuerte()
     {
-        if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 145f)
+        if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 155f)
         {
             if (heGolpeado)
             {
