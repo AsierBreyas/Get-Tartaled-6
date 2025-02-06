@@ -76,6 +76,7 @@ public class ControlesTartalo : MonoBehaviour
 
     List<GameObject> enemigosCercanos = new List<GameObject>();
     bool hayComestibleCerca;
+    float posicionY;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -90,6 +91,7 @@ public class ControlesTartalo : MonoBehaviour
         estaminaActual = estaminaMaxima;
         barraEstamina.value = estaminaActual;
         barraEstamina.enabled = false;
+        posicionY = this.transform.position.y;
     }
 
     void Update()
@@ -191,16 +193,16 @@ public class ControlesTartalo : MonoBehaviour
             npcDialogo.interactButtonPulsed();
             puedeHablar = false;
         }
-        else if (hayInteractuable)
-            hayInteractuable = FindAnyObjectByType<InteractuableManager>().ActivarInteractuable(interactuable.GetComponent<Interactuable>().GetNombre(), interactuable);
         else if (hayComestibleCerca)
             ComerEnemigo();
+        else if (hayInteractuable)
+            hayInteractuable = FindAnyObjectByType<InteractuableManager>().ActivarInteractuable(interactuable.GetComponent<Interactuable>().GetNombre(), interactuable);
 
     }
     void ProcesarMovimiento()
     {
-        float xOffSet = movimiento.x * velocidad * Time.deltaTime;
-        float zOffSet = movimiento.z * velocidad * Time.deltaTime;
+        float xOffSet = movimiento.x;
+        float zOffSet = movimiento.z;
         if (estaEnAtaque && !estoyCorriendo)
         {
             zOffSet /= 2;
@@ -208,23 +210,19 @@ public class ControlesTartalo : MonoBehaviour
         }
         if (estoyCorriendo && (xOffSet !=0 || zOffSet != 0 ))
         {
-            estaminaActual -= gastoEstamina * 0.1f;
+            estaminaActual -= gastoEstamina * 10f * Time.deltaTime;
             ActualizarBarraEstamina();
         }
-        //Vector3 direccionMovimiento = new Vector3(playerRingPos.localPosition.x + xOffSet, playerRingPos.localPosition.y, playerRingPos.localPosition.z + zOffSet);
+        Vector3 posicion = new Vector3(transform.position.x, posicionY, transform.position.z);
+        this.transform.position = posicion;
         Vector3 direccionMovimientoNueva = new Vector3(xOffSet, 0f, zOffSet);
-        direccionMovimientoNueva.y = 0f;
-        rb.linearVelocity = direccionMovimientoNueva;
         if (direccionMovimientoNueva.magnitude > 0.1f)
         {
-            //var relative = (transform.position + direccionMovimientoNueva) - transform.position;
-            var rot = Quaternion.LookRotation(direccionMovimientoNueva);
+            //rb.rotation = Quaternion.LookRotation(direccionMovimientoNueva);
+            var rot = Quaternion.LookRotation(direccionMovimientoNueva) * Quaternion.Euler(0, 30, 0);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, velocidadRotacion * Time.deltaTime);
+            rb.linearVelocity = -rb.transform.right * velocidad * Time.deltaTime;
         }
-        //transform.rotation = rot;
-        //Quaternion rotacion = Quaternion.LookRotation(direccionMovimiento);
-        //rotacion = Quaternion.RotateTowards(transform.rotation, rotacion, 360 * Time.fixedDeltaTime);
-        //transform.localRotation = Quaternion.Lerp(transform.localRotation, rotacion, velocidadRotacion);
     }
     void ProcesarVelocidad()
     {
@@ -245,7 +243,7 @@ public class ControlesTartalo : MonoBehaviour
                 estaEnAtaque = true;
                 estaEnAtaqueNormal = true;
                 estaHaciendoMovimiento = true;
-                Arma.transform.Rotate(new Vector3(-75, 0, 0));
+                Arma.transform.Rotate(new Vector3(0, 0, -75));
             }
         }
     }
@@ -260,7 +258,7 @@ public class ControlesTartalo : MonoBehaviour
                 estaEnAtaque = true;
                 estaEnAtaqueFuerte = true;
                 estaHaciendoMovimiento = true;
-                Arma.transform.Rotate(new Vector3(-75, 0, 0));
+                Arma.transform.Rotate(new Vector3(0, 0, -75));
             }
         }
         //Debug.Log("MADA MADA");
@@ -270,7 +268,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaque = true;
         estaEnAtaqueArea = true;
         estaHaciendoMovimiento = true;
-        Arma.transform.Rotate(new Vector3(0, -60, 0));
+        Arma.transform.Rotate(new Vector3(-60, 0, 0));
 
     }
     void ProcesarDefensa()
@@ -278,7 +276,7 @@ public class ControlesTartalo : MonoBehaviour
         estaHaciendoMovimiento = true;
         if (contadorMovimientoDefensa == 0)
         {
-            Arma.transform.Rotate(new Vector3(0, 90, 0));
+            Arma.transform.Rotate(new Vector3(-90, 0, 0));
             contadorMovimientoDefensa++;
         }
 
@@ -301,9 +299,9 @@ public class ControlesTartalo : MonoBehaviour
         if (!estaHaciendoMovimiento && estaminaActual <= estaminaMaxima)
         {
             if (movimiento == Vector3.zero)
-                estaminaActual += recuperaEstamina * 2;
+                estaminaActual += recuperaEstamina * 2 * Time.deltaTime;
             else
-                estaminaActual += recuperaEstamina;
+                estaminaActual += recuperaEstamina * Time.deltaTime;
             ActualizarBarraEstamina();
             if (estaminaActual > estaminaMaxima / 4)
                 aturdido = false;
@@ -316,8 +314,8 @@ public class ControlesTartalo : MonoBehaviour
     }
     void GolpeNormal()
     {
-        //Debug.Log("Rotacion de x: "+ Arma.transform.rotation.eulerAngles);
-        if (Arma.transform.rotation.eulerAngles.x >= 70f && Arma.transform.rotation.eulerAngles.x <= 75f)
+        //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
+        if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 145f)
         {
             if (heGolpeado)
             {
@@ -328,18 +326,18 @@ public class ControlesTartalo : MonoBehaviour
             estaEnAtaque = false;
             estaEnAtaqueNormal = false;
             estaHaciendoMovimiento = false;
-            Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            Arma.transform.Rotate(new Vector3(0, 0, -50));
             if (botonDelAtaqueFuerteMantenido)
                 ProcesarGolpeFuerte();
         }
         else
         {
-            Arma.transform.Rotate(new Vector3(75, 0, 0) * 3 * Time.deltaTime);
+            Arma.transform.Rotate(new Vector3(0, 0, 75) * 3 * Time.deltaTime);
         }
     }
     void GolpeFuerte()
     {
-        if (Arma.transform.rotation.eulerAngles.x >= 70f && Arma.transform.rotation.eulerAngles.x <= 75f)
+        if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 145f)
         {
             if (heGolpeado)
             {
@@ -350,27 +348,27 @@ public class ControlesTartalo : MonoBehaviour
             estaEnAtaque = false;
             estaEnAtaqueFuerte = false;
             estaHaciendoMovimiento = false;
-            Arma.transform.Rotate(new Vector3(-75, 0, 0));
+            Arma.transform.Rotate(new Vector3(0, 0, -50));
             if (botonDelAtaqueFuerteMantenido && !aturdido)
                 ProcesarGolpeFuerte();
         }
         else
         {
-            Arma.transform.Rotate(new Vector3(75, 0, 0) * 6 * Time.deltaTime);
+            Arma.transform.Rotate(new Vector3(0, 0, 75) * 6 * Time.deltaTime);
         }
     }
     void AtaqueArea()
     {
         if (botonDelAtaqueAreaMantenido)
         {
-            estaminaActual -= gastoEstamina * 0.2f;
+            estaminaActual -= gastoEstamina * 12f * Time.deltaTime;
             ActualizarBarraEstamina();
             //Debug.Log("Dalta Faño");
         }
         if (!botonDelAtaqueAreaMantenido || aturdido)
         {
-            //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles.y);
-            if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 92f)
+            //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
+            if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 105f)
             {
                 if (heGolpeado)
                 {
@@ -382,11 +380,11 @@ public class ControlesTartalo : MonoBehaviour
                 estaEnAtaque = false;
                 estaEnAtaqueArea = false;
                 estaHaciendoMovimiento = false;
-                Arma.transform.Rotate(new Vector3(0, -90, 0));
+                Arma.transform.Rotate(new Vector3(-90, 0, 0));
             }
             else
             {
-                Arma.transform.Rotate(new Vector3(0, 60, 0) * 10 * Time.deltaTime);
+                Arma.transform.Rotate(new Vector3(20, 0, 0) * 9 * Time.deltaTime);
             }
         }
     }
@@ -398,7 +396,7 @@ public class ControlesTartalo : MonoBehaviour
             estaHaciendoMovimiento = false;
             if (contadorMovimientoDefensa == 1)
             {
-                Arma.transform.Rotate(new Vector3(0, -90, 0));
+                Arma.transform.Rotate(new Vector3(-90, 0, 0));
                 contadorMovimientoDefensa--;
             }
         }
@@ -430,7 +428,7 @@ public class ControlesTartalo : MonoBehaviour
                 else
                     trasladoMirilla = movimientoMirilla;
                 mirillaPosicion.position = trasladoMirilla;
-                estaminaActual -= gastoEstamina * 0.2f;
+                estaminaActual -= gastoEstamina * 20f * Time.deltaTime;
                 ActualizarBarraEstamina();
                 mirilla.enabled = true;
             }
@@ -444,7 +442,6 @@ public class ControlesTartalo : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OMG HIIIII");
         if (other.tag == "Roca" && !tenemosPiedra)
         {
             piedra = other.gameObject;
@@ -454,6 +451,11 @@ public class ControlesTartalo : MonoBehaviour
         {
             npcDialogo = other.gameObject.GetComponent<Dialogue>();
             puedeHablar = true;
+        }
+        else if (other.gameObject.layer == 7 && other.tag == "Interactuable")
+        {
+            Debug.Log("OMG HIIIII");
+            enemigosCercanos.Add(other.transform.parent.gameObject);
         }
         else if (other.tag == "Interactuable")
         {
@@ -474,14 +476,14 @@ public class ControlesTartalo : MonoBehaviour
             npcDialogo = null;
             puedeHablar = false;
         }
+        else if (other.gameObject.layer == 7)
+        {
+            enemigosCercanos.Remove(other.gameObject);
+        }
         else if (other.tag == "Interactuable")
         {
             hayInteractuable = false;
             interactuable = null;
-        }
-        else if (other.gameObject.layer == 7)
-        {
-            enemigosCercanos.Remove(other.gameObject);
         }
     }
     public void puedeSeguirHablando()
@@ -557,10 +559,13 @@ public class ControlesTartalo : MonoBehaviour
         foreach(GameObject enemigo in enemigosCercanos)
         {
             Enemy enemigoSc = enemigo.GetComponent<Enemy>();
+            Debug.Log(enemigo.GetComponent<Enemy>().GetIsEsdible());
             if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && !yaHeComido)
             {
                 yaHeComido = true;
                 hayComestibleCerca = false;
+                enemigoSc.BeEat();
+                enemigosCercanos.Remove(enemigo);
                 RecuperarVida(recuperacionComer);
                 Debug.Log("NOM NOM NOM");
             }
