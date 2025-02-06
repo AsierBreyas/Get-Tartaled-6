@@ -76,6 +76,7 @@ public class ControlesTartalo : MonoBehaviour
 
     List<GameObject> enemigosCercanos = new List<GameObject>();
     bool hayComestibleCerca;
+    float posicionY;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -90,6 +91,7 @@ public class ControlesTartalo : MonoBehaviour
         estaminaActual = estaminaMaxima;
         barraEstamina.value = estaminaActual;
         barraEstamina.enabled = false;
+        posicionY = this.transform.position.y;
     }
 
     void Update()
@@ -199,8 +201,8 @@ public class ControlesTartalo : MonoBehaviour
     }
     void ProcesarMovimiento()
     {
-        float xOffSet = movimiento.x * velocidad * Time.deltaTime;
-        float zOffSet = movimiento.z * velocidad * Time.deltaTime;
+        float xOffSet = movimiento.x;
+        float zOffSet = movimiento.z;
         if (estaEnAtaque && !estoyCorriendo)
         {
             zOffSet /= 2;
@@ -208,23 +210,19 @@ public class ControlesTartalo : MonoBehaviour
         }
         if (estoyCorriendo && (xOffSet !=0 || zOffSet != 0 ))
         {
-            estaminaActual -= gastoEstamina * 0.1f;
+            estaminaActual -= gastoEstamina * 10f * Time.deltaTime;
             ActualizarBarraEstamina();
         }
-        //Vector3 direccionMovimiento = new Vector3(playerRingPos.localPosition.x + xOffSet, playerRingPos.localPosition.y, playerRingPos.localPosition.z + zOffSet);
+        Vector3 posicion = new Vector3(transform.position.x, posicionY, transform.position.z);
+        this.transform.position = posicion;
         Vector3 direccionMovimientoNueva = new Vector3(xOffSet, 0f, zOffSet);
-        direccionMovimientoNueva.y = 0f;
-        rb.linearVelocity = direccionMovimientoNueva;
         if (direccionMovimientoNueva.magnitude > 0.1f)
         {
             //rb.rotation = Quaternion.LookRotation(direccionMovimientoNueva);
-            var rot = Quaternion.LookRotation(direccionMovimientoNueva) * Quaternion.Euler(0,30,0);
+            var rot = Quaternion.LookRotation(direccionMovimientoNueva) * Quaternion.Euler(0, 30, 0);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, velocidadRotacion * Time.deltaTime);
+            rb.linearVelocity = -rb.transform.right * velocidad * Time.deltaTime;
         }
-        //transform.rotation = rot;
-        //Quaternion rotacion = Quaternion.LookRotation(direccionMovimiento);
-        //rotacion = Quaternion.RotateTowards(transform.rotation, rotacion, 360 * Time.fixedDeltaTime);
-        //transform.localRotation = Quaternion.Lerp(transform.localRotation, rotacion, velocidadRotacion);
     }
     void ProcesarVelocidad()
     {
@@ -301,9 +299,9 @@ public class ControlesTartalo : MonoBehaviour
         if (!estaHaciendoMovimiento && estaminaActual <= estaminaMaxima)
         {
             if (movimiento == Vector3.zero)
-                estaminaActual += recuperaEstamina * 2;
+                estaminaActual += recuperaEstamina * 2 * Time.deltaTime;
             else
-                estaminaActual += recuperaEstamina;
+                estaminaActual += recuperaEstamina * Time.deltaTime;
             ActualizarBarraEstamina();
             if (estaminaActual > estaminaMaxima / 4)
                 aturdido = false;
@@ -316,7 +314,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     void GolpeNormal()
     {
-        Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
+        //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
         if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 145f)
         {
             if (heGolpeado)
@@ -363,13 +361,13 @@ public class ControlesTartalo : MonoBehaviour
     {
         if (botonDelAtaqueAreaMantenido)
         {
-            estaminaActual -= gastoEstamina * 0.15f;
+            estaminaActual -= gastoEstamina * 12f * Time.deltaTime;
             ActualizarBarraEstamina();
             //Debug.Log("Dalta Faño");
         }
         if (!botonDelAtaqueAreaMantenido || aturdido)
         {
-            Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
+            //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
             if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 105f)
             {
                 if (heGolpeado)
@@ -430,7 +428,7 @@ public class ControlesTartalo : MonoBehaviour
                 else
                     trasladoMirilla = movimientoMirilla;
                 mirillaPosicion.position = trasladoMirilla;
-                estaminaActual -= gastoEstamina * 0.2f;
+                estaminaActual -= gastoEstamina * 20f * Time.deltaTime;
                 ActualizarBarraEstamina();
                 mirilla.enabled = true;
             }

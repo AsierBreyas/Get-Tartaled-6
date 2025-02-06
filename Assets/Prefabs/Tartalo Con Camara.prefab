@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 801198462831273854}
   m_Layer: 0
   m_Name: Tartalo Con Camara
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -395,15 +395,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -120.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
       propertyPath: m_LocalRotation.w
@@ -436,6 +436,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
       propertyPath: m_Name
       value: Tartalo v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4868051082415139541, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
       propertyPath: m_DirtyAABB
@@ -505,6 +509,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4342810730038541545}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6418356302892208365}
   m_SourcePrefab: {fileID: 100100000, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
 --- !u!4 &5885809741727370789 stripped
 Transform:
@@ -543,7 +550,7 @@ MonoBehaviour:
   recuperacionComer: 30
   estaminaMaxima: 100
   gastoEstamina: 5
-  recuperaEstamina: 0.1
+  recuperaEstamina: 20
   barraEstamina: {fileID: 0}
 --- !u!114 &7845506537863729161
 MonoBehaviour:
@@ -662,6 +669,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 1
+--- !u!114 &6418356302892208365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6549720853410600095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3721c5d0b4ef06e4b80cd3134f28d4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 0}
+  _pauseMenuFirst: {fileID: 0}
+  gameOverMenu: {fileID: 0}
 --- !u!1001 &8413004324708636095
 PrefabInstance:
   m_ObjectHideFlags: 0

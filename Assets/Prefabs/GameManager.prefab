@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 0}
   generalCanvas: {fileID: 0}
+  player: {fileID: 0}
