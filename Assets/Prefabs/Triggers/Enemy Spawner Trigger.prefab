@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1943653441043763259}
   - component: {fileID: 7125065752684897927}
   m_Layer: 0
-  m_Name: Trigger
+  m_Name: Enemy Spawner Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
