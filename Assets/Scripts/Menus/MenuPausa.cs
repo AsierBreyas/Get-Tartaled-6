@@ -33,7 +33,6 @@ public class MenuPausa : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Cursor.visible = false;
-        EventSystem.current.SetSelectedGameObject(null);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }

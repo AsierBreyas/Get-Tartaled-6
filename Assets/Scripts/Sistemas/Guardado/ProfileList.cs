@@ -1,11 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using UnityEngine.UI;
 
 public class ProfileList : MonoBehaviour
 {
     public Transform profilesHolder;
 
     public GameObject profileUIBoxPrefab;
+
+    // Objetos para pantalla de carga
+    [SerializeField] Slider loadingBarFill;
+    [SerializeField] GameObject loadingScreen;
 
     private void Start()
     {
@@ -18,14 +24,14 @@ public class ProfileList : MonoBehaviour
 
             uibox.nameLabel.text = profileName;
 
-            // Click load button
+            // Click boton de cargar
             uibox.loadBtn.onClick.AddListener(() =>
             {
                 ProfileStorage.LoadProfile(profileName);
-                SceneManager.LoadScene("TartaloTerrain2");
+                StartCoroutine(CargarJuegoAsync(2));
             });
 
-            // Click delete button
+            // Click boton de borrar
             uibox.deleteBtn.onClick.AddListener(() =>
             {
                 ProfileStorage.DeleteProfile(profileName);
@@ -33,6 +39,22 @@ public class ProfileList : MonoBehaviour
             });
 
             go.transform.SetParent(this.profilesHolder, false);
+        }
+    }
+
+    IEnumerator CargarJuegoAsync(int sceneId)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
+
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
+
+            loadingBarFill.value = progressValue;
+
+            yield return null;
         }
     }
 }
