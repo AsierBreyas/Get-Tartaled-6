@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ProfileList : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class ProfileList : MonoBehaviour
     // Objetos para pantalla de carga
     [SerializeField] Slider loadingBarFill;
     [SerializeField] GameObject loadingScreen;
+    [SerializeField] GameObject btn_NuevaPartida;
 
     private void Start()
     {
@@ -36,6 +38,7 @@ public class ProfileList : MonoBehaviour
             {
                 ProfileStorage.DeleteProfile(profileName);
                 Destroy(go);
+                EventSystem.current.SetSelectedGameObject(btn_NuevaPartida);
             });
 
             go.transform.SetParent(this.profilesHolder, false);
