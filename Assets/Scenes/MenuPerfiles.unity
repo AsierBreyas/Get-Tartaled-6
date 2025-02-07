@@ -597,6 +597,7 @@ MonoBehaviour:
   profileUIBoxPrefab: {fileID: 3473735462248949822, guid: db06d3eb135a33548b71d9e84fa42e2c, type: 3}
   loadingBarFill: {fileID: 485423100}
   loadingScreen: {fileID: 485423099}
+  btn_NuevaPartida: {fileID: 1356999998}
 --- !u!114 &1309189710
 MonoBehaviour:
   m_ObjectHideFlags: 0
