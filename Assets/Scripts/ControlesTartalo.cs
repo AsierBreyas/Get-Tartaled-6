@@ -219,7 +219,7 @@ public class ControlesTartalo : MonoBehaviour
         if (direccionMovimientoNueva.magnitude > 0.1f)
         {
             //rb.rotation = Quaternion.LookRotation(direccionMovimientoNueva);
-            var rot = Quaternion.LookRotation(direccionMovimientoNueva) * Quaternion.Euler(0, 30, 0);
+            var rot = Quaternion.LookRotation(direccionMovimientoNueva);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, velocidadRotacion * Time.deltaTime);
             rb.linearVelocity = -rb.transform.right * velocidad * 5 * Time.deltaTime;
         }
