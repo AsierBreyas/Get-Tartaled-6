@@ -6,8 +6,9 @@ public class MusicManager : MonoBehaviour
 {
     private static MusicManager instance;
     private AudioSource audioSource;
-    public AudioClip gameMusic;
-    public AudioMixerGroup audioMixer;
+    [SerializeField] AudioClip gameMusic;
+    [SerializeField] AudioClip menuMusic;
+    [SerializeField] AudioMixerGroup audioMixer;
 
     private void Awake()
     {
@@ -32,6 +33,14 @@ public class MusicManager : MonoBehaviour
             if (audioSource.clip != gameMusic)
             {
                 audioSource.clip = gameMusic;
+                audioSource.Play();
+            }
+        }
+        else if (scene.name == "MenuInicio")
+        {
+            if (audioSource.clip != menuMusic)
+            {
+                audioSource.clip = menuMusic;
                 audioSource.Play();
             }
         }
