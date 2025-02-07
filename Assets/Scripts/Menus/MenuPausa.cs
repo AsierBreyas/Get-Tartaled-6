@@ -8,7 +8,9 @@ public class MenuPausa : MonoBehaviour
     public static bool GameIsPaused = false;
 
     [SerializeField] GameObject pauseMenuUI;
+    [SerializeField] GameObject configMenuUI;
     [SerializeField] GameObject _pauseMenuFirst;
+    [SerializeField] GameObject _configMenuFirst;
     [SerializeField] GameObject gameOverMenu;
 
     public void MenuInicio()
@@ -32,6 +34,7 @@ public class MenuPausa : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        configMenuUI.SetActive(false);
         Cursor.visible = false;
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -44,5 +47,19 @@ public class MenuPausa : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(_pauseMenuFirst);
         Time.timeScale = 0f;
         GameIsPaused = true;
+    }
+
+    public void Config()
+    {
+        pauseMenuUI.SetActive(false);
+        configMenuUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(_configMenuFirst);
+    }
+
+    public void AtrasConfig()
+    {
+        pauseMenuUI.SetActive(true);
+        configMenuUI.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(_pauseMenuFirst);
     }
 }
