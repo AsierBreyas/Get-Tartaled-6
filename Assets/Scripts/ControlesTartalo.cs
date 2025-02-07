@@ -12,8 +12,8 @@ public class ControlesTartalo : MonoBehaviour
     float velocidadBase = 10f;
     float velocidad;
     bool estoyCorriendo;
-    [SerializeField]
-    Transform playerRingPos;
+    //[SerializeField]
+    //Transform playerRingPos;
     [SerializeField]
     float velocidadRotacion = 10f;
     [SerializeField]
