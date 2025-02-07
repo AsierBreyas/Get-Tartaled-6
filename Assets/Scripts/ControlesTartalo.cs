@@ -507,15 +507,19 @@ public class ControlesTartalo : MonoBehaviour
     }
     public void HeGolpeado(Enemy enemigo)
     {
-        heGolpeado = true;
-        enemigoGolpear = enemigo;
-        Debug.Log("PUM! TE HOSTIO");
+        if (enemigo != null)
+        {
+            heGolpeado = true;
+            enemigoGolpear = enemigo;
+            Debug.Log(enemigoGolpear);
+        }
         
     }
     void ProcesarDañosHechos()
     {
         if (enemigoGolpear != null)
         {
+            Debug.Log("He golpeado");
             if (estaEnAtaqueNormal)
             {
                 enemigoGolpear.TakeDamage(15f);
