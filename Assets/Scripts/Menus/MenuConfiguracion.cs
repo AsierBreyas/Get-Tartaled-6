@@ -12,7 +12,11 @@ public class MenuConfiguracion : MonoBehaviour
 
     public TMP_Dropdown resolutionDropdown;
 
-    Resolution[] resolutions;
+    private Resolution[] resolutions;
+    private List<Resolution> filteredResolutions;
+
+    private float currentRefreshRate;
+    private int currentResolutionIndex = 0;
 
     [SerializeField] GameObject _menuConfigFirst;
 
@@ -20,21 +24,27 @@ public class MenuConfiguracion : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(_menuConfigFirst);
         resolutions = Screen.resolutions;
+        filteredResolutions = new List<Resolution>();
 
         resolutionDropdown.ClearOptions();
-
-        List<string> options = new List<string>();
-
-        int currentResolutionIndex = 0;
+        currentRefreshRate = (float)Screen.currentResolution.refreshRateRatio.value;
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height + ", " + resolutions[i].refreshRateRatio + "Hz";
-            options.Add(option);
-
-            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+            if (resolutions[i].refreshRateRatio.value == currentRefreshRate)
             {
-                currentResolutionIndex = i;
+                filteredResolutions.Add(resolutions[i]);
+            }
+        }
+
+        List<string> options = new List<string>();
+        for (int i = 0; i < filteredResolutions.Count; i++)
+        {
+            string resolutionOption = filteredResolutions[i].width + "x" + filteredResolutions[i].height + " " + filteredResolutions[i].refreshRateRatio.value.ToString("0.##") + "Hz";
+            options.Add(resolutionOption);
+            if (filteredResolutions[i].width == Screen.width && filteredResolutions[i].height == Screen.height)
+            {
+                currentResolutionIndex = 1;
             }
         }
 
@@ -45,7 +55,7 @@ public class MenuConfiguracion : MonoBehaviour
 
     public void SetResolution (int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
+        Resolution resolution = filteredResolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
     public void SetVolume (float volume)
