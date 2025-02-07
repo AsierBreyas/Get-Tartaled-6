@@ -44,7 +44,7 @@ public class MenuConfiguracion : MonoBehaviour
             options.Add(resolutionOption);
             if (filteredResolutions[i].width == Screen.width && filteredResolutions[i].height == Screen.height)
             {
-                currentResolutionIndex = 1;
+                currentResolutionIndex = i;
             }
         }
 
