@@ -149,7 +149,7 @@ public class Enemy : MonoBehaviour
             if (currentHealth <= 0)
             {
                 dead = true;
-                if (horda != null && !dead)
+                if (horda != null)
                     horda.EnemigoMuerto();
                 // Animacion de enemigo muriendo
                 if (!isEdible)
@@ -160,7 +160,7 @@ public class Enemy : MonoBehaviour
                 {
                     Debug.Log("Te provoco");
                     FindAnyObjectByType<ControlesTartalo>().AparecioComestible();
-                    this.transform.Rotate(0, 0, 90);
+                    this.gameObject.transform.Rotate(0, 0, 90);
                 }
             }
         }
@@ -208,7 +208,7 @@ public class Enemy : MonoBehaviour
     }
     public void BeEat()
     {
-        if(dead && isEdible)
+        if (dead && isEdible)
             Invoke(nameof(DestroyEnemy), 0.5f);
     }
     public bool GetIsEsdible()
