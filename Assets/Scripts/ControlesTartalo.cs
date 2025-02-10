@@ -77,6 +77,7 @@ public class ControlesTartalo : MonoBehaviour
     List<GameObject> enemigosCercanos = new List<GameObject>();
     bool hayComestibleCerca;
     float posicionY;
+    Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -92,6 +93,8 @@ public class ControlesTartalo : MonoBehaviour
         barraEstamina.value = estaminaActual;
         barraEstamina.enabled = false;
         posicionY = this.transform.position.y;
+        animator = this.gameObject.GetComponent<Animator>();
+
     }
 
     void Update()
@@ -208,20 +211,27 @@ public class ControlesTartalo : MonoBehaviour
             zOffSet /= 2;
             xOffSet /= 2;
         }
-        if (estoyCorriendo && (xOffSet !=0 || zOffSet != 0 ))
+        if (estoyCorriendo && (xOffSet != 0 || zOffSet != 0))
         {
             estaminaActual -= gastoEstamina * 10f * Time.deltaTime;
             ActualizarBarraEstamina();
         }
+        if (xOffSet != 0 || zOffSet != 0)
+            animator.SetBool("isWalking", true);
+        else
+            animator.SetBool("isWalking", false);
+        animator.SetBool("isRunning", estoyCorriendo);
         Vector3 posicion = new Vector3(transform.position.x, posicionY, transform.position.z);
         this.transform.position = posicion;
         Vector3 direccionMovimientoNueva = new Vector3(xOffSet, 0f, zOffSet);
         if (direccionMovimientoNueva.magnitude > 0.1f)
         {
             //rb.rotation = Quaternion.LookRotation(direccionMovimientoNueva);
-            var rot = Quaternion.LookRotation(direccionMovimientoNueva) * Quaternion.Euler(0, 30, 0);
+            var rot = Quaternion.LookRotation(direccionMovimientoNueva);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, velocidadRotacion * Time.deltaTime);
-            rb.linearVelocity = -rb.transform.right * velocidad * 5 * Time.deltaTime;
+            //rb.linearVelocity = rb.transform.forward * velocidad * 5 * Time.deltaTime;
+            Debug.Log(rb.transform.forward * velocidad * 5 * Time.deltaTime);
+            rb.AddForce(rb.transform.forward * velocidad * 5 * Time.deltaTime);
         }
     }
     void ProcesarVelocidad()
@@ -319,7 +329,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             if (heGolpeado)
             {
-                ProcesarDañosHechos();
+                ProcesarDaï¿½osHechos();
                 //Damages
                 heGolpeado = false;
             }
@@ -341,7 +351,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             if (heGolpeado)
             {
-                ProcesarDañosHechos();
+                ProcesarDaï¿½osHechos();
                 //Damages
                 heGolpeado = false;
             }
@@ -363,7 +373,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             estaminaActual -= gastoEstamina * 12f * Time.deltaTime;
             ActualizarBarraEstamina();
-            //Debug.Log("Dalta Faño");
+            //Debug.Log("Dalta Faï¿½o");
         }
         if (!botonDelAtaqueAreaMantenido || aturdido)
         {
@@ -372,7 +382,7 @@ public class ControlesTartalo : MonoBehaviour
             {
                 if (heGolpeado)
                 {
-                    ProcesarDañosHechos();
+                    ProcesarDaï¿½osHechos();
                     //Damages
                     heGolpeado = false;
                 }
@@ -412,7 +422,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             //Debug.Log(mirillaPosicion.position);
             boloncho.position = Camera.main.ScreenToWorldPoint(new Vector3(mirillaPosicion.position.x, mirillaPosicion.position.y, targetDistance));
-            piedra.GetComponent<Proyectil>().añadirDestino(boloncho.position);
+            piedra.GetComponent<Proyectil>().aï¿½adirDestino(boloncho.position);
             estaHaciendoMovimiento = false;
             estaEnAtaque = false;
             estaTirandoPiedra = false;
@@ -515,7 +525,7 @@ public class ControlesTartalo : MonoBehaviour
         }
         
     }
-    void ProcesarDañosHechos()
+    void ProcesarDaï¿½osHechos()
     {
         if (enemigoGolpear != null)
         {

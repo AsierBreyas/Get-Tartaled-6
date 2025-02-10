@@ -697,6 +697,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tartalo v2
       objectReference: {fileID: 0}
+    - target: {fileID: 2855862748096248457, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855862748096248457, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855862748096248457, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5839071708516345071, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2962.5957
@@ -737,25 +749,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8616944084274879484, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: mirilla
+      value: 
+      objectReference: {fileID: 822319639}
+    - target: {fileID: 8616944084274879484, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 1859707924}
+    - target: {fileID: 8616944084274879484, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: barraEstamina
+      value: 
+      objectReference: {fileID: 1597902801}
+    - target: {fileID: 8616944084274879484, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: mirillaPosicion
+      value: 
+      objectReference: {fileID: 822319638}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5839071708516345071, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1799209207}
-    - targetCorrespondingSourceObject: {fileID: 5839071708516345071, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 588111367}
-    - targetCorrespondingSourceObject: {fileID: 5839071708516345071, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1854210748}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
---- !u!4 &236206005 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5839071708516345071, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-  m_PrefabInstance: {fileID: 236206004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &246052785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6776909121897445125, guid: ef1640ea3257fe048875b9c57d0d6ea6, type: 3}
@@ -2181,6 +2195,10 @@ PrefabInstance:
     - target: {fileID: 7635902873767474998, guid: e36b653f1888d594b85eda7ff8f44fe6, type: 3}
       propertyPath: m_Name
       value: Tartalo Con Camara
+      objectReference: {fileID: 0}
+    - target: {fileID: 7635902873767474998, guid: e36b653f1888d594b85eda7ff8f44fe6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8593660843196737936, guid: e36b653f1888d594b85eda7ff8f44fe6, type: 3}
       propertyPath: mirilla
@@ -9838,17 +9856,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ccc00784b8798145860866d980e3990, type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
-      value: 2772.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ccc00784b8798145860866d980e3990, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 259.8
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ccc00784b8798145860866d980e3990, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3311.4
-=======
       value: 2250.8418
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ccc00784b8798145860866d980e3990, type: 3}
@@ -9858,7 +9865,6 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6ccc00784b8798145860866d980e3990, type: 3}
       propertyPath: m_LocalPosition.z
       value: 2583.0706
->>>>>>> 6b472e215881b0dab0630e9dbfd1ba4f6e8f4853
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ccc00784b8798145860866d980e3990, type: 3}
       propertyPath: m_LocalRotation.w
