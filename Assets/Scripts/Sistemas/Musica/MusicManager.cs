@@ -15,12 +15,11 @@ public class MusicManager : MonoBehaviour
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            audioSource = GetComponent<AudioSource>();
-            audioMixer = GetComponent<AudioMixer>();
             SceneManager.sceneLoaded += OnSceneLoaded; // Suscribirse al cambio de escena
 
             LoadVolume();
