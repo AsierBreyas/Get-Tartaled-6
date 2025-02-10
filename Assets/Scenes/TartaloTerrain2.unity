@@ -635,6 +635,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tartalo v2
       objectReference: {fileID: 0}
+    - target: {fileID: 2855862748096248457, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855862748096248457, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855862748096248457, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5839071708516345071, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2962.5957
@@ -675,10 +687,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6782669173234763833, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8616944084274879484, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
       propertyPath: mirilla
       value: 
@@ -695,18 +703,6 @@ PrefabInstance:
       propertyPath: mirillaPosicion
       value: 
       objectReference: {fileID: 822319638}
-    - target: {fileID: 8641847182875374403, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.6267624
-      objectReference: {fileID: 0}
-    - target: {fileID: 8641847182875374403, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 14.947281
-      objectReference: {fileID: 0}
-    - target: {fileID: 8641847182875374403, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.0397854
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
