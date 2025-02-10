@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MenuConfiguracion : MonoBehaviour
 {
@@ -18,10 +18,16 @@ public class MenuConfiguracion : MonoBehaviour
     private float currentRefreshRate;
     private int currentResolutionIndex = 0;
 
+    private const string VolumeKey = "volume";
+    [SerializeField] Slider volumeSlider;
+
     [SerializeField] GameObject _menuConfigFirst;
 
     private void Start()
     {
+        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, -20f);
+        volumeSlider.value = savedVolume;
+        volumeSlider.onValueChanged.AddListener(SetVolume);
         EventSystem.current.SetSelectedGameObject(_menuConfigFirst);
         resolutions = Screen.resolutions;
         filteredResolutions = new List<Resolution>();
@@ -60,7 +66,9 @@ public class MenuConfiguracion : MonoBehaviour
     }
     public void SetVolume (float volume)
     {
-        audioMixer.SetFloat("volume", volume); 
+        audioMixer.SetFloat("volume", volume);
+        PlayerPrefs.SetFloat(VolumeKey, volume);
+        PlayerPrefs.Save();
     }
     
     public void Atras()
