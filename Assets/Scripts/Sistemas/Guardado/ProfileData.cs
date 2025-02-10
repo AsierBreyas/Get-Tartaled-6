@@ -13,7 +13,7 @@ public class ProfileData
 
     public ProfileData()
     {
-        this.fileName = "archivo.xml";
+        this.fileName = "archivo";
         this.name = "archivo";
         this.newGame = false;
 

@@ -1963,6 +1963,7 @@ MonoBehaviour:
   _menuFirst: {fileID: 1785865561}
   loadingBarFill: {fileID: 574076411}
   loadingScreen: {fileID: 574076410}
+  canvasMenuNuevoPerfil: {fileID: 1421263961}
 --- !u!4 &1894086145
 Transform:
   m_ObjectHideFlags: 0

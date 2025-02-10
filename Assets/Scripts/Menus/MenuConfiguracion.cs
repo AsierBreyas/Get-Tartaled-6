@@ -35,6 +35,11 @@ public class MenuConfiguracion : MonoBehaviour
         resolutionDropdown.ClearOptions();
         currentRefreshRate = (float)Screen.currentResolution.refreshRateRatio.value;
 
+        foreach (Resolution res in Screen.resolutions)
+        {
+            Debug.Log("Resolution: " + res.width + "x" + res.height + " " + res.refreshRateRatio.value + "Hz");
+        }
+
         for (int i = 0; i < resolutions.Length; i++)
         {
             if (resolutions[i].refreshRateRatio.value == currentRefreshRate)
