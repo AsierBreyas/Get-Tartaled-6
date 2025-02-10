@@ -13,8 +13,8 @@ public class ProfileData
 
     public ProfileData()
     {
-        this.fileName = "None.xml";
-        this.name = "None";
+        this.fileName = "archivo.xml";
+        this.name = "archivo";
         this.newGame = false;
 
         this.y = this.x = this.z = 0;
@@ -22,7 +22,7 @@ public class ProfileData
     
     public ProfileData (string name, bool newGame, float x, float y, float z, float currentHealth)
     {
-        this.fileName = name.Replace(" ", "_") + ".xml";
+        this.fileName = name.Replace(" ", "_");
         this.name = name;
         this.newGame = newGame;
         this.x = x;

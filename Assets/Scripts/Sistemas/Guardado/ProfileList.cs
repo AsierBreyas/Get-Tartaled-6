@@ -48,7 +48,7 @@ public class ProfileList : MonoBehaviour
 
     IEnumerator CargarJuegoAsync(int sceneId)
     {
-        loadingScreen.SetActive(true); // Activa la pantalla de carga
+        loadingScreen.SetActive(true);
         canvasPerfiles.SetActive(false);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
