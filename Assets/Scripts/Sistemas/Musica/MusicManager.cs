@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MusicManager : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class MusicManager : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] AudioClip gameMusic;
     [SerializeField] AudioClip menuMusic;
-    [SerializeField] AudioMixerGroup audioMixer;
+    [SerializeField] AudioMixer audioMixer;
+
+    private const string VolumeKey = "MusicVolume"; // Guardar el volumen
 
     private void Awake()
     {
@@ -17,8 +20,10 @@ public class MusicManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             audioSource = GetComponent<AudioSource>();
-            audioMixer = GetComponent<AudioMixerGroup>();
+            audioMixer = GetComponent<AudioMixer>();
             SceneManager.sceneLoaded += OnSceneLoaded; // Suscribirse al cambio de escena
+
+            LoadVolume();
         }
         else
         {
@@ -44,5 +49,11 @@ public class MusicManager : MonoBehaviour
                 audioSource.Play();
             }
         }
+    }
+
+    private void LoadVolume()
+    {
+        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, -20f); // Valor por defecto -20
+        audioMixer.SetFloat("volume", savedVolume);
     }
 }
