@@ -329,7 +329,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             if (heGolpeado)
             {
-                ProcesarDa�osHechos();
+                ProcesarDañosHechos();
                 //Damages
                 heGolpeado = false;
             }
@@ -351,7 +351,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             if (heGolpeado)
             {
-                ProcesarDa�osHechos();
+                ProcesarDañosHechos();
                 //Damages
                 heGolpeado = false;
             }
@@ -373,7 +373,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             estaminaActual -= gastoEstamina * 12f * Time.deltaTime;
             ActualizarBarraEstamina();
-            //Debug.Log("Dalta Fa�o");
+            //Debug.Log("Dalta Faño");
         }
         if (!botonDelAtaqueAreaMantenido || aturdido)
         {
@@ -382,7 +382,7 @@ public class ControlesTartalo : MonoBehaviour
             {
                 if (heGolpeado)
                 {
-                    ProcesarDa�osHechos();
+                    ProcesarDañosHechos();
                     //Damages
                     heGolpeado = false;
                 }
@@ -422,7 +422,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             //Debug.Log(mirillaPosicion.position);
             boloncho.position = Camera.main.ScreenToWorldPoint(new Vector3(mirillaPosicion.position.x, mirillaPosicion.position.y, targetDistance));
-            piedra.GetComponent<Proyectil>().a�adirDestino(boloncho.position);
+            piedra.GetComponent<Proyectil>().añadirDestino(boloncho.position);
             estaHaciendoMovimiento = false;
             estaEnAtaque = false;
             estaTirandoPiedra = false;
@@ -525,7 +525,7 @@ public class ControlesTartalo : MonoBehaviour
         }
         
     }
-    void ProcesarDa�osHechos()
+    void ProcesarDañosHechos()
     {
         if (enemigoGolpear != null)
         {
