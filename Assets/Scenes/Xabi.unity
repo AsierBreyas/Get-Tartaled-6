@@ -2446,6 +2446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TarMaloTPose
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 79c6ed8f8216e7645b65d34d3346c241, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ca8e939f5a762f140bea18390e4188da, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
