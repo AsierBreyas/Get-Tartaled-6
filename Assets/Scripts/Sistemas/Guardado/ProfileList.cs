@@ -14,6 +14,7 @@ public class ProfileList : MonoBehaviour
     [SerializeField] Slider loadingBarFill;
     [SerializeField] GameObject loadingScreen;
     [SerializeField] GameObject btn_NuevaPartida;
+    [SerializeField] GameObject canvasPerfiles;
 
     private void Start()
     {
@@ -47,17 +48,26 @@ public class ProfileList : MonoBehaviour
 
     IEnumerator CargarJuegoAsync(int sceneId)
     {
+        loadingScreen.SetActive(true); // Activa la pantalla de carga
+        canvasPerfiles.SetActive(false);
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
+        operation.allowSceneActivation = false; // Evita que la escena se active inmediatamente
 
-        loadingScreen.SetActive(true);
+        float timer = 0f;
 
-        while (!operation.isDone)
+        while (timer < 5f && operation.progress < 0.9f)
         {
             float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
-
             loadingBarFill.value = progressValue;
 
+            Debug.Log(operation.progress);
+
+            timer += Time.deltaTime;
             yield return null;
         }
+        Debug.Log("llegaste yuju");
+        operation.allowSceneActivation = true; // Activa la escena después de 5 segundos
     }
+
 }

@@ -598,6 +598,7 @@ MonoBehaviour:
   loadingBarFill: {fileID: 485423100}
   loadingScreen: {fileID: 485423099}
   btn_NuevaPartida: {fileID: 1356999998}
+  canvasPerfiles: {fileID: 1421263961}
 --- !u!114 &1309189710
 MonoBehaviour:
   m_ObjectHideFlags: 0
