@@ -35,16 +35,25 @@ public class MenuConfiguracion : MonoBehaviour
         resolutionDropdown.ClearOptions();
         currentRefreshRate = (float)Screen.currentResolution.refreshRateRatio.value;
 
-        foreach (Resolution res in Screen.resolutions)
-        {
-            Debug.Log("Resolution: " + res.width + "x" + res.height + " " + res.refreshRateRatio.value + "Hz");
-        }
+        Debug.Log("Current Refresh Rate: " + currentRefreshRate + "Hz");
 
         for (int i = 0; i < resolutions.Length; i++)
         {
             if (resolutions[i].refreshRateRatio.value == currentRefreshRate)
             {
                 filteredResolutions.Add(resolutions[i]);
+            }
+
+            if (filteredResolutions.Count == 0)
+            {
+                foreach (Resolution res in resolutions)
+                {
+                    bool exists = filteredResolutions.Exists(r => r.width == res.width && r.height == res.height);
+                    if (!exists)
+                    {
+                        filteredResolutions.Add(res);
+                    }
+                }
             }
         }
 
