@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6444699146776777812}
   - component: {fileID: 7398640854434745474}
+  - component: {fileID: 4005927307162021131}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,3 +48,18 @@ MonoBehaviour:
   gameOverCanvas: {fileID: 0}
   generalCanvas: {fileID: 0}
   player: {fileID: 0}
+--- !u!114 &4005927307162021131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6577598565504510063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be55bd5fdafbb0142b0a5f65a9941df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 48b6cb9e4bff84b44af94542b7812f19, type: 2}
+  resolutionDropdown: {fileID: 0}
+  _menuConfigFirst: {fileID: 0}

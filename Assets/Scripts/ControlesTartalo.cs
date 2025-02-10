@@ -12,8 +12,8 @@ public class ControlesTartalo : MonoBehaviour
     float velocidadBase = 10f;
     float velocidad;
     bool estoyCorriendo;
-    [SerializeField]
-    Transform playerRingPos;
+    //[SerializeField]
+    //Transform playerRingPos;
     [SerializeField]
     float velocidadRotacion = 10f;
     [SerializeField]
@@ -221,7 +221,7 @@ public class ControlesTartalo : MonoBehaviour
             //rb.rotation = Quaternion.LookRotation(direccionMovimientoNueva);
             var rot = Quaternion.LookRotation(direccionMovimientoNueva) * Quaternion.Euler(0, 30, 0);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, velocidadRotacion * Time.deltaTime);
-            rb.linearVelocity = -rb.transform.right * velocidad * Time.deltaTime;
+            rb.linearVelocity = -rb.transform.right * velocidad * 5 * Time.deltaTime;
         }
     }
     void ProcesarVelocidad()
@@ -337,7 +337,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     void GolpeFuerte()
     {
-        if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 145f)
+        if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 155f)
         {
             if (heGolpeado)
             {
@@ -452,12 +452,12 @@ public class ControlesTartalo : MonoBehaviour
             npcDialogo = other.gameObject.GetComponent<Dialogue>();
             puedeHablar = true;
         }
-        else if (other.gameObject.layer == 7 && other.tag == "Interactuable")
-        {
-            Debug.Log("OMG HIIIII");
+        else if (other.gameObject.layer == 7 && other.tag == "Interactuable" && !enemigosCercanos.Contains(other.transform.parent.gameObject))
+        { 
+            //Debug.Log("OMG HIIIII");
             enemigosCercanos.Add(other.transform.parent.gameObject);
         }
-        else if (other.tag == "Interactuable")
+        else if (other.tag == "Interactuable" && !enemigosCercanos.Contains(other.transform.parent.gameObject))
         {
             hayInteractuable = true;
             interactuable = other.gameObject;
@@ -476,7 +476,7 @@ public class ControlesTartalo : MonoBehaviour
             npcDialogo = null;
             puedeHablar = false;
         }
-        else if (other.gameObject.layer == 7)
+        else if (other.gameObject.layer == 7 && other.tag == "Interactuable")
         {
             enemigosCercanos.Remove(other.gameObject);
         }
@@ -507,15 +507,19 @@ public class ControlesTartalo : MonoBehaviour
     }
     public void HeGolpeado(Enemy enemigo)
     {
-        heGolpeado = true;
-        enemigoGolpear = enemigo;
-        Debug.Log("PUM! TE HOSTIO");
+        if (enemigo != null)
+        {
+            heGolpeado = true;
+            enemigoGolpear = enemigo;
+            Debug.Log(enemigoGolpear);
+        }
         
     }
     void ProcesarDañosHechos()
     {
         if (enemigoGolpear != null)
         {
+            Debug.Log("He golpeado");
             if (estaEnAtaqueNormal)
             {
                 enemigoGolpear.TakeDamage(15f);
@@ -556,16 +560,16 @@ public class ControlesTartalo : MonoBehaviour
     void ComerEnemigo()
     {
         bool yaHeComido = false;
+        GameObject enemigoComido = null;
         foreach(GameObject enemigo in enemigosCercanos)
         {
             Enemy enemigoSc = enemigo.GetComponent<Enemy>();
-            Debug.Log(enemigo.GetComponent<Enemy>().GetIsEsdible());
             if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && !yaHeComido)
             {
                 yaHeComido = true;
                 hayComestibleCerca = false;
                 enemigoSc.BeEat();
-                enemigosCercanos.Remove(enemigo);
+                enemigoComido = enemigo;
                 RecuperarVida(recuperacionComer);
                 Debug.Log("NOM NOM NOM");
             }
@@ -575,6 +579,8 @@ public class ControlesTartalo : MonoBehaviour
                 Debug.Log("Bueno si no gomito");
             }
         }
+        if(enemigoComido != null)
+            enemigosCercanos.Remove(enemigoComido);
     }
     void RecuperarVida(float recuperacion)
     {
