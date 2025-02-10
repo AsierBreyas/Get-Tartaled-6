@@ -52,11 +52,11 @@ public class ProfileList : MonoBehaviour
         canvasPerfiles.SetActive(false);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
-        operation.allowSceneActivation = false; // Evita que la escena se active inmediatamente
+        //operation.allowSceneActivation = false; // Evita que la escena se active inmediatamente
 
         float timer = 0f;
 
-        while (timer < 5f && operation.progress < 0.9f)
+        while (operation.progress < 0.9f)
         {
             float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
             loadingBarFill.value = progressValue;
