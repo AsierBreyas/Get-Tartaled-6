@@ -61,12 +61,9 @@ public class ProfileList : MonoBehaviour
             float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
             loadingBarFill.value = progressValue;
 
-            Debug.Log(operation.progress);
-
             timer += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("llegaste yuju");
         operation.allowSceneActivation = true; // Activa la escena después de 5 segundos
     }
 
