@@ -4954,6 +4954,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -3188361461409692109, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1676965405}
+    - target: {fileID: -3188361461409692109, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
       propertyPath: sightRange
       value: 20
       objectReference: {fileID: 0}
@@ -5015,7 +5019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5766587635824659093, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5878,6 +5882,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1676965405 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5564596420630538342, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
+  m_PrefabInstance: {fileID: 1296877504}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1689327408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6466,6 +6475,10 @@ PrefabInstance:
     - target: {fileID: 2919221287252850346, guid: 5ceee14511c9c0347a9055fce5836ab7, type: 3}
       propertyPath: m_Name
       value: cerdo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919221287252850346, guid: 5ceee14511c9c0347a9055fce5836ab7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4586237800676456240, guid: 5ceee14511c9c0347a9055fce5836ab7, type: 3}
       propertyPath: m_LocalPosition.x

@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
     bool dead;
     [SerializeField] bool isEdible;
 
+    //Animator
+    [SerializeField] Animator animator;
+
     private void Awake()
     {
         GameObject playerObject = GameObject.FindWithTag("Player");
@@ -49,6 +52,7 @@ public class Enemy : MonoBehaviour
         float scaleFactor = transform.localScale.x;
         sightRange *= scaleFactor;
         attackRange *= scaleFactor;
+        animator = GetComponent<Animator>();
     }
 
 
@@ -105,11 +109,13 @@ public class Enemy : MonoBehaviour
         if (agent.enabled)
         {
             agent.SetDestination(player.position);
+            animator.SetBool("isWalking", true);
         }
     }
 
     void AttackPlayer()
     {
+        animator.SetBool("isWalking", false);
         // Make sure enemy dosen't move
         if (agent.enabled)
         {
