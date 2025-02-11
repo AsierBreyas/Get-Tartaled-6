@@ -311,6 +311,8 @@ public class ControlesTartalo : MonoBehaviour
         {
             if (movimiento == Vector3.zero)
                 estaminaActual += recuperaEstamina * 2 * Time.deltaTime;
+            else if (aturdido)
+                estaminaActual += recuperaEstamina / 4 * Time.deltaTime;
             else
                 estaminaActual += recuperaEstamina * Time.deltaTime;
             ActualizarBarraEstamina();
