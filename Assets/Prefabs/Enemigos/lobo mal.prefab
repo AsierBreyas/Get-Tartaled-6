@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 9047902966132495210}
   - component: {fileID: -2126446247820192580}
   m_Layer: 7
-  m_Name: lobo
+  m_Name: lobo mal
   m_TagString: Lobo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
