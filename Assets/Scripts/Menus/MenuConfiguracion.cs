@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MenuConfiguracion : MonoBehaviour
 {
@@ -12,27 +12,43 @@ public class MenuConfiguracion : MonoBehaviour
 
     public TMP_Dropdown resolutionDropdown;
 
-    Resolution[] resolutions;
+    private Resolution[] resolutions;
+    private List<Resolution> filteredResolutions;
+
+    private float currentRefreshRate;
+    private int currentResolutionIndex = 0;
+
+    private const string VolumeKey = "volume";
+    [SerializeField] Slider volumeSlider;
 
     [SerializeField] GameObject _menuConfigFirst;
 
     private void Start()
     {
+        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, -20f);
+        volumeSlider.value = savedVolume;
+        volumeSlider.onValueChanged.AddListener(SetVolume);
         EventSystem.current.SetSelectedGameObject(_menuConfigFirst);
         resolutions = Screen.resolutions;
+        filteredResolutions = new List<Resolution>();
 
         resolutionDropdown.ClearOptions();
-
-        List<string> options = new List<string>();
-
-        int currentResolutionIndex = 0;
+        currentRefreshRate = (float)Screen.currentResolution.refreshRateRatio.value;
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height + ", " + resolutions[i].refreshRateRatio + "Hz";
-            options.Add(option);
+            if (resolutions[i].refreshRateRatio.value == currentRefreshRate)
+            {
+                filteredResolutions.Add(resolutions[i]);
+            }
+        }
 
-            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+        List<string> options = new List<string>();
+        for (int i = 0; i < filteredResolutions.Count; i++)
+        {
+            string resolutionOption = filteredResolutions[i].width + "x" + filteredResolutions[i].height + " " + filteredResolutions[i].refreshRateRatio.value.ToString("0.##") + "Hz";
+            options.Add(resolutionOption);
+            if (filteredResolutions[i].width == Screen.width && filteredResolutions[i].height == Screen.height)
             {
                 currentResolutionIndex = i;
             }
@@ -45,12 +61,14 @@ public class MenuConfiguracion : MonoBehaviour
 
     public void SetResolution (int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
+        Resolution resolution = filteredResolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
     public void SetVolume (float volume)
     {
-        audioMixer.SetFloat("volume", volume); 
+        audioMixer.SetFloat("volume", volume);
+        PlayerPrefs.SetFloat(VolumeKey, volume);
+        PlayerPrefs.Save();
     }
     
     public void Atras()
