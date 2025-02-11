@@ -1380,10 +1380,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8347221205978777541, guid: 735758a5a59157746a10acc1304f160a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 503a8e95a0a5f5d41a44cbaf60963a30, type: 2}
     - target: {fileID: 919132149155446097, guid: 735758a5a59157746a10acc1304f160a, type: 3}
       propertyPath: m_Name
       value: CasaArbol
       objectReference: {fileID: 0}
+    - target: {fileID: 6745302439343835087, guid: 735758a5a59157746a10acc1304f160a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 503a8e95a0a5f5d41a44cbaf60963a30, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
