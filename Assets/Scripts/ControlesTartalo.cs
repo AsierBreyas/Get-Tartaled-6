@@ -108,9 +108,9 @@ public class ControlesTartalo : MonoBehaviour
                 ProcesarMovimiento();
                 //if (estaEnAtaqueNormal)
                 //    GolpeNormal();
-                if (estaEnAtaqueFuerte)
-                    GolpeFuerte();
-                else if (estaEnAtaqueArea)
+                //if (estaEnAtaqueFuerte)
+                //    GolpeFuerte();
+                if (estaEnAtaqueArea)
                     AtaqueArea();
                 else if (estaTirandoPiedra)
                     TirarPiedra();
@@ -344,6 +344,10 @@ public class ControlesTartalo : MonoBehaviour
                 break;
         }
     }
+    public void MantenerCarga(string ataque)
+    {
+
+    }
     void GolpeNormal()
     {
         //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
@@ -363,25 +367,20 @@ public class ControlesTartalo : MonoBehaviour
     }
     void GolpeFuerte()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("AtaqueFuerte"))
+        if (heGolpeado)
         {
-            if (heGolpeado)
-            {
-                ProcesarDañosHechos();
-                //Damages
-                heGolpeado = false;
-            }
-            estaEnAtaque = false;
-            estaEnAtaqueFuerte = false;
-            estaHaciendoMovimiento = false;
-            animator.SetBool("AtaqueFuerte", false);
-            if (botonDelAtaqueFuerteMantenido && !aturdido)
-                ProcesarGolpeFuerte();
+            ProcesarDañosHechos();
+            //Damages
+            heGolpeado = false;
         }
+        estaEnAtaque = false;
+        estaEnAtaqueFuerte = false;
+        estaHaciendoMovimiento = false;
+        if (botonDelAtaqueFuerteMantenido && !aturdido)
+            ProcesarGolpeFuerte();
         else
-        {
-            //Arma.transform.Rotate(new Vector3(0, 0, 75) * 6 * Time.deltaTime);
-        }
+            animator.SetBool("AtaqueFuerte", false);
+        //Arma.transform.Rotate(new Vector3(0, 0, 75) * 6 * Time.deltaTime);
     }
     void AtaqueArea()
     {
