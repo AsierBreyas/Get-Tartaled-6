@@ -6006,7 +6006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ef0c64f554c80046b5a63684e6f58de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 884.3
+      value: 897.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ef0c64f554c80046b5a63684e6f58de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7453,7 +7453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 890.3
+      value: 903.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 808c22d15e6db1c458e8de5748fd2292, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7586,7 +7586,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
+  configMenuUI: {fileID: 0}
   _pauseMenuFirst: {fileID: 0}
+  _configMenuFirst: {fileID: 0}
   gameOverMenu: {fileID: 0}
 --- !u!54 &1476642827
 Rigidbody:
@@ -7718,7 +7720,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadBase: 5000
-  playerRingPos: {fileID: 0}
   velocidadRotacion: 500
   Arma: {fileID: 1050044566}
   posicionOtraMano: {fileID: 1862216140}
