@@ -111,17 +111,17 @@ public class ControlesTartalo : MonoBehaviour
                 //if (estaEnAtaqueFuerte)
                 //    GolpeFuerte();
                 if (estaEnAtaqueArea)
-                    AtaqueArea();
+                    CargaArea();
                 else if (estaTirandoPiedra)
                     TirarPiedra();
             }
             Defensa();
         }
-        if (!estaEnDefensa)
-        {
-            if (estaEnAtaqueArea)
-                AtaqueArea();
-        }
+        //if (!estaEnDefensa)
+        //{
+        //    if (estaEnAtaqueArea)
+        //        AtaqueArea();
+        //}
         if (currentHealth <= 0)
         {
             FindFirstObjectByType<GameManager>().ItsGameOver();
@@ -279,7 +279,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaque = true;
         estaEnAtaqueArea = true;
         estaHaciendoMovimiento = true;
-        Arma.transform.Rotate(new Vector3(-60, 0, 0));
+        animator.SetBool("CargaArea", true);
 
     }
     void ProcesarDefensa()
@@ -344,10 +344,6 @@ public class ControlesTartalo : MonoBehaviour
                 break;
         }
     }
-    public void MantenerCarga(string ataque)
-    {
-
-    }
     void GolpeNormal()
     {
         //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
@@ -382,7 +378,7 @@ public class ControlesTartalo : MonoBehaviour
             animator.SetBool("AtaqueFuerte", false);
         //Arma.transform.Rotate(new Vector3(0, 0, 75) * 6 * Time.deltaTime);
     }
-    void AtaqueArea()
+    void CargaArea()
     {
         if (botonDelAtaqueAreaMantenido)
         {
@@ -392,26 +388,24 @@ public class ControlesTartalo : MonoBehaviour
         }
         if (!botonDelAtaqueAreaMantenido || aturdido)
         {
-            //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
-            if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 105f)
-            {
-                if (heGolpeado)
-                {
-                    ProcesarDañosHechos();
-                    //Damages
-                    heGolpeado = false;
-                }
-                //Debug.Log("Ya no me sale :(");
-                estaEnAtaque = false;
-                estaEnAtaqueArea = false;
-                estaHaciendoMovimiento = false;
-                Arma.transform.Rotate(new Vector3(-90, 0, 0));
-            }
-            else
-            {
-                Arma.transform.Rotate(new Vector3(20, 0, 0) * 9 * Time.deltaTime);
-            }
+            estaEnAtaqueArea = false;
+            animator.SetBool("CargaArea", false);
+            animator.SetBool("AtaqueArea", true);
         }
+    }
+    void AtaqueArea()
+    {
+        if (heGolpeado)
+        {
+            ProcesarDañosHechos();
+            //Damages
+            heGolpeado = false;
+        }
+        //Debug.Log("Ya no me sale :(");
+        estaEnAtaque = false;
+        estaHaciendoMovimiento = false;
+        animator.SetBool("AtaqueArea", false);
+        Debug.Log("Judini");
     }
     void Defensa()
     {
