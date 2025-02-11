@@ -56,22 +56,13 @@ public class Enemy : MonoBehaviour
     {
         if (!dead)
         {
-            // Ver estado actual del enemigo en consola
-            Debug.Log($"Estado - Persiguiendo: {playerInSightRange}, Atacando: {playerInAttackRange}, Ya atacó: {alreadyAttacked}");
-
             // Check for sight and attack range
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
             if (!playerInSightRange && !playerInAttackRange) Patroling();
             if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-            if (playerInSightRange && playerInAttackRange)
-            {
-                if (!alreadyAttacked)
-                    AttackPlayer();
-                else if (agent.enabled) // IMPORTANTE: Si no está atacando, sigue persiguiendo
-                    ChasePlayer();
-            }
+            if (playerInSightRange && playerInAttackRange) AttackPlayer();
         }
     }
 
@@ -113,7 +104,6 @@ public class Enemy : MonoBehaviour
 
         if (agent.enabled)
         {
-            Debug.Log("Chasing Player...");
             agent.SetDestination(player.position);
         }
     }
@@ -155,19 +145,6 @@ public class Enemy : MonoBehaviour
     void ResetAttack()
     {
         alreadyAttacked = false;
-
-        // Reactivar el NavMeshAgent si se desactivó durante el ataque
-        if (!agent.enabled)
-        {
-            agent.enabled = true;
-        }
-
-        // Si el jugador sigue en rango, reanudar la persecución
-        if (Vector3.Distance(transform.position, player.position) <= sightRange)
-        {
-            Debug.Log("Reanudando persecución después de atacar");
-            ChasePlayer();
-        }
     }
 
 
@@ -223,7 +200,7 @@ public class Enemy : MonoBehaviour
         // Retroceso tras el ataque
         elapsedTime = 0f;
         Vector3 backwardDirection = -dashDirection;
-        float backwardSpeed = 12f;
+        float backwardSpeed = 60f;
         float backwardDuration = 0.2f;
 
         while (elapsedTime < backwardDuration)
@@ -236,12 +213,9 @@ public class Enemy : MonoBehaviour
         // Reactiva el NavMeshAgent con un pequeño delay
         agent.enabled = true;
         yield return new WaitForSeconds(0.1f); // Espera un instante para evitar bugs
-        agent.ResetPath(); // Borra cualquier destino anterior
-        Debug.Log("NavMeshAgent reactivado: " + agent.enabled);
 
         if (agent.enabled && Vector3.Distance(transform.position, player.position) <= sightRange)
         {
-            Debug.Log("Lobo vuelve a perseguir después del ataque");
             ChasePlayer();
         }
     }
