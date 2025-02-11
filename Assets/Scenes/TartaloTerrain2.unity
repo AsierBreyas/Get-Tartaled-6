@@ -387,6 +387,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7979793862258021170, guid: cf75cb68630df7c4fa7735c2314ea044, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8217550008193054531, guid: cf75cb68630df7c4fa7735c2314ea044, type: 3}
       propertyPath: m_Pivot.x
       value: 0

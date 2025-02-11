@@ -4847,6 +4847,7 @@ GameObject:
   - component: {fileID: 986067168886160223}
   - component: {fileID: 7521071296824933771}
   - component: {fileID: 9047902966132495210}
+  - component: {fileID: -2126446247820192580}
   m_Layer: 7
   m_Name: lobo
   m_TagString: Lobo
@@ -4973,6 +4974,7 @@ MonoBehaviour:
   playerInAttackRange: 0
   enemyParticles: {fileID: 8952476817761934882}
   horda: {fileID: 0}
+  isEdible: 0
 --- !u!65 &9047902966132495210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4994,6 +4996,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.050681, y: 6.255393, z: 6.484737}
   m_Center: {x: 0.024166822, y: 2.6276965, z: 0.41849732}
+--- !u!95 &-2126446247820192580
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8356254632154321156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 62b4c5505e5c0f24ba5e3de0a5ac1b87, type: 2}
+  m_Controller: {fileID: 9100000, guid: cdd55bde058294c4e9e88ad8a3d6acd4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8688579393323334040
 GameObject:
   m_ObjectHideFlags: 0
