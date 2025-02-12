@@ -57,6 +57,7 @@ public class ControlesTartalo : MonoBehaviour
     bool estaTirandoPiedra;
     bool heGolpeado;
     bool aturdido;
+    bool empezoAnimacion;
 
     //Sistema de vida
     [SerializeField] float maxHealth = 100;
@@ -528,10 +529,14 @@ public class ControlesTartalo : MonoBehaviour
             estaminaActual -= gastoEstamina * 3;
             ActualizarBarraEstamina();
         }
-        else if (aturdido)
-            currentHealth -= damage * 2f;
         else
-            currentHealth -= damage;
+        {
+            animator.SetTrigger("getHit");
+            if (aturdido)
+                currentHealth -= damage * 2f;
+            else
+                currentHealth -= damage;
+        }
         healthbar.SetHealth(currentHealth);
     }
     public void HeGolpeado(Enemy enemigo)
