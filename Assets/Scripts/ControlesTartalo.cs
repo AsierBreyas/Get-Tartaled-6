@@ -125,6 +125,7 @@ public class ControlesTartalo : MonoBehaviour
         //}
         if (currentHealth <= 0)
         {
+            animator.SetTrigger("isDead");
             FindFirstObjectByType<GameManager>().ItsGameOver();
         }
     }
