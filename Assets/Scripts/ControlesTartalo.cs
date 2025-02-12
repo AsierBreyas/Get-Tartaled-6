@@ -275,10 +275,6 @@ public class ControlesTartalo : MonoBehaviour
                 estaHaciendoMovimiento = true;
                 animator.SetBool("AtaqueFuerte", true);
             }
-            else
-            {
-                Debug.Log("Algo va bien");
-            }
         }
         //Debug.Log("MADA MADA");
     }
@@ -318,10 +314,10 @@ public class ControlesTartalo : MonoBehaviour
         EstoyAturdido();
         if (!estaHaciendoMovimiento && estaminaActual <= estaminaMaxima)
         {
-            if (movimiento == Vector3.zero)
-                estaminaActual += recuperaEstamina * 2 * Time.deltaTime;
-            else if (aturdido)
+            if (aturdido)
                 estaminaActual += recuperaEstamina / 4 * Time.deltaTime;
+            else if (movimiento == Vector3.zero)
+                estaminaActual += recuperaEstamina * 2 * Time.deltaTime;
             else
                 estaminaActual += recuperaEstamina * Time.deltaTime;
             ActualizarBarraEstamina();
@@ -384,10 +380,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaqueFuerte = false;
         estaHaciendoMovimiento = false;
         if (botonDelAtaqueFuerteMantenido && !aturdido)
-        {
             ProcesarGolpeFuerte();
-            Debug.Log("Y OTRA PUTA VEZ");
-        }
         else
             animator.SetBool("AtaqueFuerte", false);
         //Arma.transform.Rotate(new Vector3(0, 0, 75) * 6 * Time.deltaTime);
