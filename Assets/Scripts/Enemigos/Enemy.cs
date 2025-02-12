@@ -67,7 +67,8 @@ public class Enemy : MonoBehaviour
             if (!playerInSightRange && !playerInAttackRange) Patroling();
             if (playerInSightRange && !playerInAttackRange) ChasePlayer();
             if (playerInSightRange && playerInAttackRange) AttackPlayer();
-        }
+        }else
+            this.gameObject.transform.Rotate(new Vector3(0, 0, 90));
     }
 
     void Patroling()
@@ -176,7 +177,6 @@ public class Enemy : MonoBehaviour
                 {
                     Debug.Log("Te provoco");
                     FindAnyObjectByType<ControlesTartalo>().AparecioComestible();
-                    this.gameObject.transform.Rotate(0, 0, 90);
                 }
             }
         }

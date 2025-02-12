@@ -73,3 +73,9 @@ crashlytics-build.properties
 
 # Gaia generated files
 #/Assets/TerrainData/
+Assets/Prefabs/Enemigos/Tartxalo.meta
+Assets/Prefabs/Enemigos/Tartxalo/TarTPose.fbx.meta
+Assets/Prefabs/Enemigos/Tartxalo/TartxaAttack1.fbx.meta
+Assets/Prefabs/Enemigos/Tartxalo/TartxaDie.fbx.meta
+Assets/Prefabs/Enemigos/Tartxalo/TartxaGolpeado.fbx.meta
+Assets/Prefabs/Enemigos/Tartxalo/TartxaIdle.fbx.meta
