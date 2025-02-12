@@ -7,6 +7,6 @@ public class Multilanguage : MonoBehaviour
     {
         LocalizationManager.Read();
 
-        LocalizationManager.Language = "Espaniol";
+        LocalizationManager.Language = "Euskera";
     }
 }

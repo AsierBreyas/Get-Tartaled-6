@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 1074895257}
   - component: {fileID: 1074895259}
   - component: {fileID: 1074895258}
+  - component: {fileID: 1074895260}
   m_Layer: 5
   m_Name: txt_partidas
   m_TagString: Untagged
@@ -425,7 +426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Partidas
+  m_text: Partidak
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -504,6 +505,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074895256}
   m_CullTransparentMesh: 1
+--- !u!114 &1074895260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074895256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: MenuPerfiles.Partidas
 --- !u!1 &1309189705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1090,63 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1001 &1777796272
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 99648525371252830, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_Name
+      value: MultiLanguage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967904648672887713, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2978.2598
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967904648672887713, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 148.775
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967904648672887713, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1956.736
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967904648672887713, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967904648672887713, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967904648672887713, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967904648672887713, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967904648672887713, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967904648672887713, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967904648672887713, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4204696df9eb3a444aad930b624b1115, type: 3}
 --- !u!1 &1800735607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1291,7 @@ GameObject:
   - component: {fileID: 1848676311}
   - component: {fileID: 1848676313}
   - component: {fileID: 1848676312}
+  - component: {fileID: 1848676314}
   m_Layer: 5
   m_Name: txt_nuevapartida
   m_TagString: Untagged
@@ -1266,7 +1338,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nueva Partida
+  m_text: Partida Berria
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1345,6 +1417,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848676310}
   m_CullTransparentMesh: 1
+--- !u!114 &1848676314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848676310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: MenuPerfile.NuevaPartida
 --- !u!1 &1895584967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,6 +1441,7 @@ GameObject:
   - component: {fileID: 1895584968}
   - component: {fileID: 1895584970}
   - component: {fileID: 1895584969}
+  - component: {fileID: 1895584971}
   m_Layer: 5
   m_Name: txt_atras
   m_TagString: Untagged
@@ -1402,7 +1488,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Atras
+  m_text: Atzera
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1481,6 +1567,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895584967}
   m_CullTransparentMesh: 1
+--- !u!114 &1895584971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895584967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: MenuPerfiles.Atras
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1490,3 +1589,4 @@ SceneRoots:
   - {fileID: 828502272}
   - {fileID: 275533921}
   - {fileID: 485423098}
+  - {fileID: 1777796272}
