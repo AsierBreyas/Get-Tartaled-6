@@ -4849,8 +4849,9 @@ GameObject:
   - component: {fileID: 4611063294139820226}
   - component: {fileID: 8609781694256841338}
   - component: {fileID: 1550216210715302944}
+  - component: {fileID: 901854680865647205}
   m_Layer: 7
-  m_Name: cerdo
+  m_Name: cerdo mal
   m_TagString: Cerdo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5023,13 +5024,14 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 12
   timeBetweenAttacks: 5
-  sightRange: 30
+  sightRange: 75
   attackRange: 12
   playerInSightRange: 0
   playerInAttackRange: 0
   enemyParticles: {fileID: 4914644937389697336}
   horda: {fileID: 0}
   isEdible: 0
+  animator: {fileID: 901854680865647205}
 --- !u!136 &1550216210715302944
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5053,6 +5055,28 @@ CapsuleCollider:
   m_Height: 6.464432
   m_Direction: 1
   m_Center: {x: 0.0034389496, y: 3.232216, z: -0.19972754}
+--- !u!95 &901854680865647205
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919221287252850346}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: aabd2fd2dbd4ae14f969fdbe5c417f19, type: 2}
+  m_Controller: {fileID: 9100000, guid: 378da0247a2e5784683186a850010977, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8273717564550768199
 PrefabInstance:
   m_ObjectHideFlags: 0

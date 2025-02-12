@@ -14752,6 +14752,7 @@ MonoBehaviour:
   enemyParticles: {fileID: 1762328841377585157, guid: 48df8491a00bce249852aed889baac2c, type: 3}
   horda: {fileID: 0}
   isEdible: 0
+  animator: {fileID: 5564596420630538342}
 --- !u!1 &5787622580656439777
 GameObject:
   m_ObjectHideFlags: 0

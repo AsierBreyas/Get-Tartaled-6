@@ -77,6 +77,7 @@ public class Enemy : MonoBehaviour
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
+            animator.SetBool("isWalking", true);
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
@@ -140,7 +141,7 @@ public class Enemy : MonoBehaviour
             {
                 enemyParticles.Play();
 
-                //Debug.Log("Soy un cerdo, te escupo fuego!");
+                Debug.Log("Soy un cerdo, te escupo fuego!");
 
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
