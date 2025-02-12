@@ -106,22 +106,22 @@ public class ControlesTartalo : MonoBehaviour
             {
                 ProcesarVelocidad();
                 ProcesarMovimiento();
-                if (estaEnAtaqueNormal)
-                    GolpeNormal();
-                else if (estaEnAtaqueFuerte)
-                    GolpeFuerte();
-                else if (estaEnAtaqueArea)
-                    AtaqueArea();
+                //if (estaEnAtaqueNormal)
+                //    GolpeNormal();
+                //if (estaEnAtaqueFuerte)
+                //    GolpeFuerte();
+                if (estaEnAtaqueArea)
+                    CargaArea();
                 else if (estaTirandoPiedra)
                     TirarPiedra();
             }
             Defensa();
         }
-        if (!estaEnDefensa)
-        {
-            if (estaEnAtaqueArea)
-                AtaqueArea();
-        }
+        //if (!estaEnDefensa)
+        //{
+        //    if (estaEnAtaqueArea)
+        //        AtaqueArea();
+        //}
         if (currentHealth <= 0)
         {
             FindFirstObjectByType<GameManager>().ItsGameOver();
@@ -230,7 +230,7 @@ public class ControlesTartalo : MonoBehaviour
             var rot = Quaternion.LookRotation(direccionMovimientoNueva);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, velocidadRotacion * Time.deltaTime);
             //rb.linearVelocity = rb.transform.forward * velocidad * 5 * Time.deltaTime;
-            Debug.Log(rb.transform.forward * velocidad * 5 * Time.deltaTime);
+            //Debug.Log(rb.transform.forward * velocidad * 5 * Time.deltaTime);
             rb.AddForce(rb.transform.forward * velocidad * 5 * Time.deltaTime);
         }
     }
@@ -253,7 +253,8 @@ public class ControlesTartalo : MonoBehaviour
                 estaEnAtaque = true;
                 estaEnAtaqueNormal = true;
                 estaHaciendoMovimiento = true;
-                Arma.transform.Rotate(new Vector3(0, 0, -75));
+                //Arma.transform.Rotate(new Vector3(0, 0, -75));
+                animator.SetBool("AtaqueNormal", true);
             }
         }
     }
@@ -268,7 +269,11 @@ public class ControlesTartalo : MonoBehaviour
                 estaEnAtaque = true;
                 estaEnAtaqueFuerte = true;
                 estaHaciendoMovimiento = true;
-                Arma.transform.Rotate(new Vector3(0, 0, -75));
+                animator.SetBool("AtaqueFuerte", true);
+            }
+            else
+            {
+                Debug.Log("Algo va bien");
             }
         }
         //Debug.Log("MADA MADA");
@@ -278,7 +283,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaque = true;
         estaEnAtaqueArea = true;
         estaHaciendoMovimiento = true;
-        Arma.transform.Rotate(new Vector3(-60, 0, 0));
+        animator.SetBool("CargaArea", true);
 
     }
     void ProcesarDefensa()
@@ -310,6 +315,8 @@ public class ControlesTartalo : MonoBehaviour
         {
             if (movimiento == Vector3.zero)
                 estaminaActual += recuperaEstamina * 2 * Time.deltaTime;
+            else if (aturdido)
+                estaminaActual += recuperaEstamina / 4 * Time.deltaTime;
             else
                 estaminaActual += recuperaEstamina * Time.deltaTime;
             ActualizarBarraEstamina();
@@ -322,52 +329,65 @@ public class ControlesTartalo : MonoBehaviour
             barraEstamina.enabled = false;
         }
     }
+    public void AtaqueTerminado(string ataque)
+    {
+        switch (ataque)
+        {
+            case "ataque normal":
+                GolpeNormal();
+                break;
+            case "ataque fuerte":
+                GolpeFuerte();
+                break;
+            case "ataque area":
+                AtaqueArea();
+                break;
+            case "tirar piedra":
+                TirarPiedra();
+                break;
+            case "defender":
+                Defensa();
+                break;
+        }
+    }
     void GolpeNormal()
     {
         //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
-        if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 145f)
+        if (heGolpeado)
         {
-            if (heGolpeado)
-            {
-                ProcesarDañosHechos();
-                //Damages
-                heGolpeado = false;
-            }
-            estaEnAtaque = false;
-            estaEnAtaqueNormal = false;
-            estaHaciendoMovimiento = false;
-            Arma.transform.Rotate(new Vector3(0, 0, -50));
-            if (botonDelAtaqueFuerteMantenido)
-                ProcesarGolpeFuerte();
+            ProcesarDañosHechos();
+            //Damages
+            heGolpeado = false;
         }
-        else
-        {
-            Arma.transform.Rotate(new Vector3(0, 0, 75) * 3 * Time.deltaTime);
-        }
+        estaEnAtaque = false;
+        estaEnAtaqueNormal = false;
+        estaHaciendoMovimiento = false;
+        animator.SetBool("AtaqueNormal", false);
+        if (botonDelAtaqueFuerteMantenido && !aturdido)
+            ProcesarGolpeFuerte();
+        //Arma.transform.Rotate(new Vector3(0, 0, 75) * 3 * Time.deltaTime);
     }
     void GolpeFuerte()
     {
-        if (Arma.transform.rotation.eulerAngles.z >= 140f && Arma.transform.rotation.eulerAngles.z <= 155f)
+        if (heGolpeado)
         {
-            if (heGolpeado)
-            {
-                ProcesarDañosHechos();
-                //Damages
-                heGolpeado = false;
-            }
-            estaEnAtaque = false;
-            estaEnAtaqueFuerte = false;
-            estaHaciendoMovimiento = false;
-            Arma.transform.Rotate(new Vector3(0, 0, -50));
-            if (botonDelAtaqueFuerteMantenido && !aturdido)
-                ProcesarGolpeFuerte();
+            ProcesarDañosHechos();
+            //Damages
+            heGolpeado = false;
+        }
+        estaEnAtaque = false;
+        estaEnAtaqueFuerte = false;
+        estaHaciendoMovimiento = false;
+        if (botonDelAtaqueFuerteMantenido && !aturdido)
+        {
+            ProcesarGolpeFuerte();
+            Debug.Log("Y OTRA PUTA VEZ");
         }
         else
-        {
-            Arma.transform.Rotate(new Vector3(0, 0, 75) * 6 * Time.deltaTime);
-        }
+            animator.SetBool("AtaqueFuerte", false);
+        //Arma.transform.Rotate(new Vector3(0, 0, 75) * 6 * Time.deltaTime);
     }
-    void AtaqueArea()
+    void CargaArea()
     {
         if (botonDelAtaqueAreaMantenido)
         {
@@ -377,26 +397,23 @@ public class ControlesTartalo : MonoBehaviour
         }
         if (!botonDelAtaqueAreaMantenido || aturdido)
         {
-            //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
-            if (Arma.transform.rotation.eulerAngles.y >= 90f && Arma.transform.rotation.eulerAngles.y <= 105f)
-            {
-                if (heGolpeado)
-                {
-                    ProcesarDañosHechos();
-                    //Damages
-                    heGolpeado = false;
-                }
-                //Debug.Log("Ya no me sale :(");
-                estaEnAtaque = false;
-                estaEnAtaqueArea = false;
-                estaHaciendoMovimiento = false;
-                Arma.transform.Rotate(new Vector3(-90, 0, 0));
-            }
-            else
-            {
-                Arma.transform.Rotate(new Vector3(20, 0, 0) * 9 * Time.deltaTime);
-            }
+            estaEnAtaqueArea = false;
+            animator.SetBool("CargaArea", false);
+            animator.SetBool("AtaqueArea", true);
         }
+    }
+    void AtaqueArea()
+    {
+        if (heGolpeado)
+        {
+            ProcesarDañosHechos();
+            //Damages
+            heGolpeado = false;
+        }
+        //Debug.Log("Ya no me sale :(");
+        estaEnAtaque = false;
+        estaHaciendoMovimiento = false;
+        animator.SetBool("AtaqueArea", false);
     }
     void Defensa()
     {
@@ -463,7 +480,7 @@ public class ControlesTartalo : MonoBehaviour
             puedeHablar = true;
         }
         else if (other.gameObject.layer == 7 && other.tag == "Interactuable" && !enemigosCercanos.Contains(other.transform.parent.gameObject))
-        { 
+        {
             //Debug.Log("OMG HIIIII");
             enemigosCercanos.Add(other.transform.parent.gameObject);
         }
@@ -523,7 +540,7 @@ public class ControlesTartalo : MonoBehaviour
             enemigoGolpear = enemigo;
             Debug.Log(enemigoGolpear);
         }
-        
+
     }
     void ProcesarDañosHechos()
     {
@@ -561,6 +578,9 @@ public class ControlesTartalo : MonoBehaviour
             Debug.Log("Me aturdi soy inutil");
             aturdido = true;
             estaminaActual = 0;
+            barraEstamina.value = estaminaActual;
+            animator.SetBool("AtaqueFuerte", false);
+            animator.SetTrigger("isDizzy");
         }
     }
     public void AparecioComestible()
@@ -571,7 +591,7 @@ public class ControlesTartalo : MonoBehaviour
     {
         bool yaHeComido = false;
         GameObject enemigoComido = null;
-        foreach(GameObject enemigo in enemigosCercanos)
+        foreach (GameObject enemigo in enemigosCercanos)
         {
             Enemy enemigoSc = enemigo.GetComponent<Enemy>();
             if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && !yaHeComido)
@@ -583,13 +603,13 @@ public class ControlesTartalo : MonoBehaviour
                 RecuperarVida(recuperacionComer);
                 Debug.Log("NOM NOM NOM");
             }
-            else if(enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && yaHeComido)
+            else if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && yaHeComido)
             {
                 hayComestibleCerca = true;
                 Debug.Log("Bueno si no gomito");
             }
         }
-        if(enemigoComido != null)
+        if (enemigoComido != null)
             enemigosCercanos.Remove(enemigoComido);
     }
     void RecuperarVida(float recuperacion)
@@ -599,5 +619,11 @@ public class ControlesTartalo : MonoBehaviour
         else
             currentHealth += recuperacion;
         healthbar.SetHealth(currentHealth);
+    }
+
+    public void FinAturdir()
+    {
+        aturdido = false;
+        animator.ResetTrigger("isDizzy");
     }
 }
