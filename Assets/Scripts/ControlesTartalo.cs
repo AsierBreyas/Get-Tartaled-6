@@ -153,7 +153,10 @@ public class ControlesTartalo : MonoBehaviour
             botonDelAtaqueAreaMantenido = value.isPressed;
             //Debug.Log("AAAAAAAAAAAAAAAAAAA");
             if (!estaHaciendoMovimiento)
+            {
                 ProcesarAtaqueEnArea();
+                Debug.Log("Coña mala");
+            }
         }
     }
     void OnDefender(InputValue value)
@@ -399,7 +402,6 @@ public class ControlesTartalo : MonoBehaviour
         }
         if (!botonDelAtaqueAreaMantenido || aturdido)
         {
-            Debug.Log("Judini");
             estaCargandoAtaqueArea = false;
             animator.SetBool("CargaArea", false);
             animator.SetBool("AtaqueArea", true);
@@ -418,6 +420,7 @@ public class ControlesTartalo : MonoBehaviour
         estaHaciendoMovimiento = false;
         estaEnAtaqueArea = false;
         animator.SetBool("AtaqueArea", false);
+        Debug.Log(estaminaActual);
         EstoyAturdido();
     }
     void Defensa()
@@ -578,15 +581,19 @@ public class ControlesTartalo : MonoBehaviour
     }
     void EstoyAturdido()
     {
-        if (estaminaActual < 0)
+        if (estaminaActual <= 0)
         {
-            Debug.Log("Me aturdi soy inutil");
             aturdido = true;
             estaminaActual = 0;
             barraEstamina.value = estaminaActual;
             animator.SetBool("AtaqueFuerte", false);
-            if(!estaEnAtaqueArea || !estaTirandoPiedra)
+            if (estaEnAtaqueArea || estaTirandoPiedra)
+                Debug.Log("IX The Hanged man");
+            else
+            {
                 animator.SetTrigger("isDizzy");
+                Debug.Log("Me aturdi soy inutil");
+            }
         }
     }
     public void AparecioComestible()
