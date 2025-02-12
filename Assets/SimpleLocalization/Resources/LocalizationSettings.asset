@@ -20,4 +20,7 @@ MonoBehaviour:
   - Name: MenuConfig
     Id: 1977247341
     TextAsset: {fileID: 4900000, guid: f7478f8709a4a224d93e34e15b14ff53, type: 3}
+  - Name: MenuNuevoPerfil
+    Id: 324421711
+    TextAsset: {fileID: 4900000, guid: 0c150667cdf4a2342aefd584e3d7c848, type: 3}
   SaveFolder: {fileID: 102900000, guid: fbc5598fcedfd6249a6aa01c6753cc16, type: 3}
