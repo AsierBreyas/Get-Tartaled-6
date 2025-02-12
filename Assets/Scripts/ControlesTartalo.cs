@@ -202,7 +202,7 @@ public class ControlesTartalo : MonoBehaviour
             puedeHablar = false;
         }
         else if (hayComestibleCerca)
-            ComerEnemigo();
+            animator.SetTrigger("eat");
         else if (hayInteractuable)
             hayInteractuable = FindAnyObjectByType<InteractuableManager>().ActivarInteractuable(interactuable.GetComponent<Interactuable>().GetNombre(), interactuable);
 
@@ -478,12 +478,12 @@ public class ControlesTartalo : MonoBehaviour
         }
         else if (other.tag == "NPC")
         {
+            Debug.Log("OMG HIIIII");
             npcDialogo = other.gameObject.GetComponent<Dialogue>();
             puedeHablar = true;
         }
         else if (other.gameObject.layer == 7 && other.tag == "Interactuable" && !enemigosCercanos.Contains(other.transform.parent.gameObject))
         {
-            //Debug.Log("OMG HIIIII");
             enemigosCercanos.Add(other.transform.parent.gameObject);
         }
         else if (other.tag == "Interactuable" && !enemigosCercanos.Contains(other.transform.parent.gameObject))
