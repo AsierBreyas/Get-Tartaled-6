@@ -49,6 +49,7 @@ public class ControlesTartalo : MonoBehaviour
     bool estaEnAtaqueFuerte;
     bool botonDelAtaqueFuerteMantenido;
     bool botonDelAtaqueAreaMantenido;
+    bool estaCargandoAtaqueArea;
     bool estaEnAtaqueArea;
     bool estaEnDefensa;
     bool tenemosPiedra;
@@ -110,7 +111,7 @@ public class ControlesTartalo : MonoBehaviour
                 //    GolpeNormal();
                 //if (estaEnAtaqueFuerte)
                 //    GolpeFuerte();
-                if (estaEnAtaqueArea)
+                if (estaCargandoAtaqueArea)
                     CargaArea();
                 else if (estaTirandoPiedra)
                     TirarPiedra();
@@ -282,6 +283,7 @@ public class ControlesTartalo : MonoBehaviour
     {
         estaEnAtaque = true;
         estaEnAtaqueArea = true;
+        estaCargandoAtaqueArea = true;
         estaHaciendoMovimiento = true;
         animator.SetBool("CargaArea", true);
 
@@ -397,7 +399,8 @@ public class ControlesTartalo : MonoBehaviour
         }
         if (!botonDelAtaqueAreaMantenido || aturdido)
         {
-            estaEnAtaqueArea = false;
+            Debug.Log("Judini");
+            estaCargandoAtaqueArea = false;
             animator.SetBool("CargaArea", false);
             animator.SetBool("AtaqueArea", true);
         }
@@ -413,7 +416,9 @@ public class ControlesTartalo : MonoBehaviour
         //Debug.Log("Ya no me sale :(");
         estaEnAtaque = false;
         estaHaciendoMovimiento = false;
+        estaEnAtaqueArea = false;
         animator.SetBool("AtaqueArea", false);
+        EstoyAturdido();
     }
     void Defensa()
     {
@@ -580,7 +585,8 @@ public class ControlesTartalo : MonoBehaviour
             estaminaActual = 0;
             barraEstamina.value = estaminaActual;
             animator.SetBool("AtaqueFuerte", false);
-            animator.SetTrigger("isDizzy");
+            if(!estaEnAtaqueArea || !estaTirandoPiedra)
+                animator.SetTrigger("isDizzy");
         }
     }
     public void AparecioComestible()
