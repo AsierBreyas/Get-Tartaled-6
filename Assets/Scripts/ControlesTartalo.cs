@@ -271,6 +271,10 @@ public class ControlesTartalo : MonoBehaviour
                 estaHaciendoMovimiento = true;
                 animator.SetBool("AtaqueFuerte", true);
             }
+            else
+            {
+                Debug.Log("Algo va bien");
+            }
         }
         //Debug.Log("MADA MADA");
     }
@@ -375,7 +379,10 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaqueFuerte = false;
         estaHaciendoMovimiento = false;
         if (botonDelAtaqueFuerteMantenido && !aturdido)
+        {
             ProcesarGolpeFuerte();
+            Debug.Log("Y OTRA PUTA VEZ");
+        }
         else
             animator.SetBool("AtaqueFuerte", false);
         //Arma.transform.Rotate(new Vector3(0, 0, 75) * 6 * Time.deltaTime);
@@ -407,7 +414,6 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaque = false;
         estaHaciendoMovimiento = false;
         animator.SetBool("AtaqueArea", false);
-        Debug.Log("Judini");
     }
     void Defensa()
     {
@@ -572,6 +578,9 @@ public class ControlesTartalo : MonoBehaviour
             Debug.Log("Me aturdi soy inutil");
             aturdido = true;
             estaminaActual = 0;
+            barraEstamina.value = estaminaActual;
+            animator.SetBool("AtaqueFuerte", false);
+            animator.SetTrigger("isDizzy");
         }
     }
     public void AparecioComestible()
@@ -610,5 +619,11 @@ public class ControlesTartalo : MonoBehaviour
         else
             currentHealth += recuperacion;
         healthbar.SetHealth(currentHealth);
+    }
+
+    public void FinAturdir()
+    {
+        aturdido = false;
+        animator.ResetTrigger("isDizzy");
     }
 }
