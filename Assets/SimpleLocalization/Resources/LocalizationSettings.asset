@@ -23,6 +23,9 @@ MonoBehaviour:
   - Name: MenuNuevoPerfil
     Id: 324421711
     TextAsset: {fileID: 4900000, guid: 0c150667cdf4a2342aefd584e3d7c848, type: 3}
+  - Name: MenuPausa
+    Id: 1638373603
+    TextAsset: {fileID: 4900000, guid: a52d0fa1fe707e04aa4f0ec9e2c6e5a4, type: 3}
   - Name: MenuPerfiles
     Id: 1628571619
     TextAsset: {fileID: 4900000, guid: 98d739ad2ff936e4cb6a2a0191d953aa, type: 3}

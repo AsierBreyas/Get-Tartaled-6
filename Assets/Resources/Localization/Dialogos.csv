@@ -1,22 +1,22 @@
 Key,Spanish,Euskera
-Dialogo.Amonia.1,"Hola amoña, ¿has visto a Izaro?","Kaixo amoña, ikusi duzu Izaro? (froga)"
-Dialogo.Amonia.2,"Hola pequeñin, si te soy sincera le pedi que me trajese unas lechugas de la huerta y unos huevos de gallina",
-Dialogo.Amonia.3,Pero la verdad es que hace tiempo que se ha ido y todavía no ha vuelto.,
-Dialogo.Amonia.4,¿Sabes donde se encuentra? He soñado algo increíble y quiero contarselo,
-Dialogo.Amonia.5,Lo único que se es que sin huevos no puedo desayunar y sin lechuga no puedo hacer de comer,
-Dialogo.Amonia.6,¿Puedes ir a la huerta? Seguramente se haya entretenido con algo de ahí,
-Dialogo.Amonia.7,¡Hola Maria Angeles! ¿Qué tal la mañana?,
-Dialogo.Amonia.8,"Bueno, te lo encargo pequeñin que voy a darle palique a Jose Ignacio",
-Dialogo.Amonia.9,¿Todavía sigues aquí? ¡Yo que tu iría yendo que se le van las vitaminas a los huevos!,
-Dialogo.Amonia.10,"Amoña, aquí tengo lo que me pediste.",
-Dialogo.Amonia.11,Aunque tu huerta ha sido arrasada por unos jabalís. ,
-Dialogo.Amonia.12,"Santo cielo, tendré que volver a plantar, ¿Se sabe algo de la pequeña?",
-Dialogo.Amonia.13,"Una tal Zaloa la ha llamado, no tengo ni idea de quien es",
-Dialogo.Amonia.14,"Es una amiga suya, la he visto correr al otro lado de pueblo. Parecía bastante agobiada.",
-Dialogo.Amonia.15,Ahora ire a preguntarle Amoña. ,
-Dialogo.Amonia.16,¿Sigues sin encontrarla? La vi yendo a la otra punta del pueblo,
-Dialogo.Basajaun.1,"Estaba esperando tu llegado, Ciclope",Itxaroten ari nintzen. (froga)
-Dialogo.Basajaun.2,¿Qué es lo que te trae por aquí?,
+Dialogo.Amonia.1,"Hola amoña, ¿has visto a Izaro?","Kaixo amoña, ikusi al duzu Izaro?"
+Dialogo.Amonia.2,"Hola pequeñin, si te soy sincera le pedí que me trajese unas lechugas de la huerta y unos huevos de gallina","Kaixo, txikitxo, egia esaten badizut baratzeko letxugak eta oilo arrautzak ekartzeko eskatu nion."
+Dialogo.Amonia.3,Pero la verdad es que hace tiempo que se ha ido y todavía no ha vuelto.,"Baina, egia esan, aspaldi joan da eta oraindik ez da itzuli."
+Dialogo.Amonia.4,¿Sabes donde se encuentra? He soñado algo increíble y quiero contarselo,Ba al dakizu non dagoen? Zerbait sinestezina amestu dut eta kontatu egin nahi diot
+Dialogo.Amonia.5,Lo único que se es que sin huevos no puedo desayunar y sin lechuga no puedo hacer de comer,Gauza bakarra da arrautzarik gabe ezin dudala gosaldu eta letxugarik gabe ezin dudala janaririk egin
+Dialogo.Amonia.6,¿Puedes ir a la huerta? Seguramente se haya entretenido con algo de ahí,"Baratzera joan zaitezke? Seguru asko, zerbaitekin entretenitu da hor"
+Dialogo.Amonia.7,¡Hola Maria Angeles! ¿Qué tal la mañana?,Kaixo Maria Angeles! Zer moduz goiza?
+Dialogo.Amonia.8,"Bueno, te lo encargo pequeñin que voy a darle palique a Jose Ignacio","Beno, txikitxo enkargatzen dizut, Jose Ignaciori ziria sartuko diot eta."
+Dialogo.Amonia.9,¿Todavía sigues aquí? ¡Yo que tu iría yendo que se le van las vitaminas a los huevos!,Oraindik hemen zaude? Bitaminak arrautzetara joango zaizkio!
+Dialogo.Amonia.10,"Amoña, aquí tengo lo que me pediste.","Amoña, hemen daukat eskatu zenidana."
+Dialogo.Amonia.11,Aunque tu huerta ha sido arrasada por unos jabalís. ,Zure baratzea basurde batzuek suntsitu badute ere.
+Dialogo.Amonia.12,"Santo cielo, tendré que volver a plantar, ¿Se sabe algo de la pequeña?","Jainko maitea, berriro landatu beharko dut. Ba al dakizu ezer txikiari buruz?"
+Dialogo.Amonia.13,"Una tal Zaloa la ha llamado, no tengo ni idea de quien es","Zaloa delako batek deitu du, ez dakit nor den ere"
+Dialogo.Amonia.14,"Es una amiga suya, la he visto correr al otro lado de pueblo. Parecía bastante agobiada.","Bere lagun bat da, herritik kanpo korrika ikusi dut. Nahiko urdurituta zirudien."
+Dialogo.Amonia.15,Ahora ire a preguntarle Amoña. ,Orain joango naiz galdetzera Amoña.
+Dialogo.Amonia.16,¿Sigues sin encontrarla? La vi yendo a la otra punta del pueblo,Oraindik ez duk aurkitu? Herriko beste puntara joaten ikusi nuen
+Dialogo.Basajaun.1,"Estaba esperando tu llegado, Ciclope","Zure zain nengoen, Ziklope"
+Dialogo.Basajaun.2,¿Qué es lo que te trae por aquí?,Zerk ekarri zaitu hona?
 Dialogo.Basajaun.3,Hola Basajaun. He venido para saber el paradero de mi amiga y quien ataco la aldea.,
 Dialogo.Basajaun.4,Los únicos con poder para mandar sobre los animales son Mari y Akerbeltz.,
 Dialogo.Basajaun.5,"Para tu amiga, podría pedir información y para ello tendría que hablar con las critaturas del bosque",
@@ -36,7 +36,7 @@ Dialogo.Cazador.4,"Los cerdos atacando, lobos siendo agresivos... algo raro esta
 Dialogo.Cazador.5,"Hay alguien detrás de esto y de la desaparición de Izaro, ¿sabes algo al respecto?",
 Dialogo.Cazador.6,"La verdad es que no. Esta situacion supera mis conocimientos. Ya sabes quien conoce todo lo que ocurre en el bosque, ¿verdad?",
 Dialogo.Cazador.7,Tendré que hacerle una visita a Basajaun,
-Dialogo.Zaloa.1,Siempre igual...,Beti berdin... (froga)
+Dialogo.Zaloa.1,Siempre igual...,Beti berdin...
 Dialogo.Zaloa.2,¡¿TE PARECE NORMAL SEGUIRME A TODAS PARTES CAZURRO?!,
 Dialogo.Zaloa.3,"DÉJAME EN PAZ PESADO, TE HE DICHO MIL Y UNA VECES QUE NO QUIERO NADA CONTIGO",
 Dialogo.Zaloa.4,ADEMÁS EL OLOR A ESTIERCOL HACE QUE SE ME NUBLE LA VISTA,
