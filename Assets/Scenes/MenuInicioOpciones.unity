@@ -1692,6 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4830ee610709434458397b72a070df32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  languageDropdown: {fileID: 833035099}
 --- !u!1 &859807684
 GameObject:
   m_ObjectHideFlags: 0

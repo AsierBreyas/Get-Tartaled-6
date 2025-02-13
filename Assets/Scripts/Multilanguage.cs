@@ -7,6 +7,25 @@ public class Multilanguage : MonoBehaviour
     {
         LocalizationManager.Read();
 
-        LocalizationManager.Language = "Espaniol";
+        // Cargar el idioma guardado o establecer "Euskera" si no hay ninguno
+        if (PlayerPrefs.HasKey("SelectedLanguage"))
+        {
+            LocalizationManager.Language = PlayerPrefs.GetString("SelectedLanguage");
+        }
+        else
+        {
+            LocalizationManager.Language = "Euskera";
+            PlayerPrefs.SetString("SelectedLanguage", "Euskera");
+            PlayerPrefs.Save();
+        }
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("SelectedLanguage"))
+        {
+            string savedLanguage = PlayerPrefs.GetString("SelectedLanguage");
+            LocalizationManager.Language = savedLanguage;
+        }
     }
 }

@@ -19,6 +19,7 @@ public class MenuConfiguracion : MonoBehaviour
     private int currentResolutionIndex = 0;
 
     private const string VolumeKey = "volume";
+    private const string LanguageKey = "language";
     [SerializeField] Slider volumeSlider;
 
     [SerializeField] GameObject _menuConfigFirst;
