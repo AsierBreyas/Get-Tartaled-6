@@ -142,27 +142,27 @@ public class ControlesTartalo : MonoBehaviour
     }
     public void OnAtaqueNormal(InputValue value)
     {
-        if (!aturdido && !empezoAnimacion)
+        if (!aturdido)
         {
             botonDelAtaqueFuerteMantenido = value.isPressed;
             //Debug.Log("PUM! Te pego");
-            if (!estaHaciendoMovimiento)
+            if (!estaHaciendoMovimiento && !empezoAnimacion)
                 ProcesarAtaqueNormal();
         }
     }
     void OnAtaqueArea(InputValue value)
     {
-        if (!aturdido && !empezoAnimacion)
+        if (!aturdido)
         {
             botonDelAtaqueAreaMantenido = value.isPressed;
             //Debug.Log("AAAAAAAAAAAAAAAAAAA");
-            if (!estaHaciendoMovimiento)
+            if (!estaHaciendoMovimiento && !empezoAnimacion)
                 ProcesarAtaqueEnArea();
         }
     }
     void OnDefender(InputValue value)
     {
-        if (!estaEnAtaque && !aturdido && empezoAnimacion)
+        if (!estaEnAtaque && !aturdido)
         {
             estaEnDefensa = value.isPressed;
             //Debug.Log("No puedes golpear lo que no puedes ver");
@@ -386,7 +386,10 @@ public class ControlesTartalo : MonoBehaviour
         estaHaciendoMovimiento = false;
         empezoAnimacion = false;
         if (botonDelAtaqueFuerteMantenido && !aturdido)
+        {
             ProcesarGolpeFuerte();
+            Debug.Log("Termostato");
+        }
         else
             animator.SetBool("AtaqueFuerte", false);
         //Arma.transform.Rotate(new Vector3(0, 0, 75) * 6 * Time.deltaTime);
