@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -58,6 +59,7 @@ public class ControlesTartalo : MonoBehaviour
     bool heGolpeado;
     bool aturdido;
     bool empezoAnimacion;
+    bool recibioDañoRecientemente;
 
     //Sistema de vida
     [SerializeField] float maxHealth = 100;
@@ -140,7 +142,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     public void OnAtaqueNormal(InputValue value)
     {
-        if (!aturdido)
+        if (!aturdido && !empezoAnimacion)
         {
             botonDelAtaqueFuerteMantenido = value.isPressed;
             //Debug.Log("PUM! Te pego");
@@ -150,20 +152,17 @@ public class ControlesTartalo : MonoBehaviour
     }
     void OnAtaqueArea(InputValue value)
     {
-        if (!aturdido)
+        if (!aturdido && !empezoAnimacion)
         {
             botonDelAtaqueAreaMantenido = value.isPressed;
             //Debug.Log("AAAAAAAAAAAAAAAAAAA");
             if (!estaHaciendoMovimiento)
-            {
                 ProcesarAtaqueEnArea();
-                Debug.Log("Coña mala");
-            }
         }
     }
     void OnDefender(InputValue value)
     {
-        if (!estaEnAtaque || !aturdido)
+        if (!estaEnAtaque && !aturdido && empezoAnimacion)
         {
             estaEnDefensa = value.isPressed;
             //Debug.Log("No puedes golpear lo que no puedes ver");
@@ -172,7 +171,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     void OnTirarPiedra(InputValue input)
     {
-        if (!aturdido)
+        if (!aturdido && !empezoAnimacion)
         {
             piedraEnMano = input.isPressed;
             if (tenemosPiedra && input.isPressed)
@@ -202,7 +201,7 @@ public class ControlesTartalo : MonoBehaviour
             npcDialogo.interactButtonPulsed();
             puedeHablar = false;
         }
-        else if (hayComestibleCerca)
+        else if (hayComestibleCerca && !empezoAnimacion)
             animator.SetTrigger("eat");
         else if (hayInteractuable)
             hayInteractuable = FindAnyObjectByType<InteractuableManager>().ActivarInteractuable(interactuable.GetComponent<Interactuable>().GetNombre(), interactuable);
@@ -259,6 +258,7 @@ public class ControlesTartalo : MonoBehaviour
                 estaEnAtaque = true;
                 estaEnAtaqueNormal = true;
                 estaHaciendoMovimiento = true;
+                empezoAnimacion = true;
                 //Arma.transform.Rotate(new Vector3(0, 0, -75));
                 animator.SetBool("AtaqueNormal", true);
             }
@@ -275,6 +275,7 @@ public class ControlesTartalo : MonoBehaviour
                 estaEnAtaque = true;
                 estaEnAtaqueFuerte = true;
                 estaHaciendoMovimiento = true;
+                empezoAnimacion = true;
                 animator.SetBool("AtaqueFuerte", true);
             }
         }
@@ -286,6 +287,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaqueArea = true;
         estaCargandoAtaqueArea = true;
         estaHaciendoMovimiento = true;
+        empezoAnimacion = true;
         animator.SetBool("CargaArea", true);
 
     }
@@ -365,6 +367,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaque = false;
         estaEnAtaqueNormal = false;
         estaHaciendoMovimiento = false;
+        empezoAnimacion = false;
         animator.SetBool("AtaqueNormal", false);
         if (botonDelAtaqueFuerteMantenido && !aturdido)
             ProcesarGolpeFuerte();
@@ -381,6 +384,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaque = false;
         estaEnAtaqueFuerte = false;
         estaHaciendoMovimiento = false;
+        empezoAnimacion = false;
         if (botonDelAtaqueFuerteMantenido && !aturdido)
             ProcesarGolpeFuerte();
         else
@@ -414,6 +418,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaque = false;
         estaHaciendoMovimiento = false;
         estaEnAtaqueArea = false;
+        empezoAnimacion = false;
         animator.SetBool("AtaqueArea", false);
         Debug.Log(estaminaActual);
         EstoyAturdido();
@@ -531,7 +536,12 @@ public class ControlesTartalo : MonoBehaviour
         }
         else
         {
-            animator.SetTrigger("getHit");
+            if (!empezoAnimacion && !recibioDañoRecientemente)
+            {
+                animator.SetTrigger("getHit");
+                recibioDañoRecientemente = true;
+                StartCoroutine("CooldownAnimacionRecibirDaño");
+            }
             if (aturdido)
                 currentHealth -= damage * 2f;
             else
@@ -623,6 +633,7 @@ public class ControlesTartalo : MonoBehaviour
         }
         if (enemigoComido != null)
             enemigosCercanos.Remove(enemigoComido);
+
     }
     void RecuperarVida(float recuperacion)
     {
@@ -637,5 +648,11 @@ public class ControlesTartalo : MonoBehaviour
     {
         aturdido = false;
         animator.ResetTrigger("isDizzy");
+    }
+    IEnumerator CooldownAnimacionRecibirDaño()
+    {
+        yield return new WaitForSeconds(20f);
+        Debug.Log("Nos pegan");
+        recibioDañoRecientemente = false;
     }
 }
