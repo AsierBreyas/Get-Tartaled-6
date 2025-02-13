@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -83,6 +84,12 @@ public class ControlesTartalo : MonoBehaviour
     bool hayComestibleCerca;
     float posicionY;
     Animator animator;
+
+    //Efectos de sonido
+    private AudioSource audioSource;
+    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] AudioClip audioAndando;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -99,7 +106,7 @@ public class ControlesTartalo : MonoBehaviour
         barraEstamina.enabled = false;
         posicionY = this.transform.position.y;
         animator = this.gameObject.GetComponent<Animator>();
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -227,9 +234,15 @@ public class ControlesTartalo : MonoBehaviour
             ActualizarBarraEstamina();
         }
         if (xOffSet != 0 || zOffSet != 0)
+        {
             animator.SetBool("isWalking", true);
+        }
+
         else
+        {
             animator.SetBool("isWalking", false);
+        }
+            
         animator.SetBool("isRunning", estoyCorriendo);
         Vector3 posicion = new Vector3(transform.position.x, posicionY, transform.position.z);
         this.transform.position = posicion;
@@ -667,5 +680,13 @@ public class ControlesTartalo : MonoBehaviour
         yield return new WaitForSeconds(20f);
         Debug.Log("Nos pegan");
         recibioDañoRecientemente = false;
+    }
+
+    public void reproducirAudioAndando()
+    {
+        if (!audioSource.isPlaying)  // Evita superposición de sonidos
+        {
+            audioSource.PlayOneShot(audioAndando);
+        }
     }
 }
