@@ -42,14 +42,15 @@ public class Dialogue : MonoBehaviour
             {
                 StartDialogue();
             }
-            else if (dialogueText.text == dialogueLines.dialgos[lineIndex].texto)
+            else if (dialogueText.text == LocalizationManager.Localize(dialogueLines.dialgos[lineIndex].texto))
             {
                 NextDialogueLine();
             }
             else
             {
                 StopAllCoroutines();
-                dialogueText.text = dialogueLines.dialgos[lineIndex].texto;
+                dialogueText.text = LocalizationManager.Localize(dialogueLines.dialgos[lineIndex].texto);
+
             }
             FindAnyObjectByType<ControlesTartalo>().puedeSeguirHablando();
             playerPulsedBoton = false;
@@ -103,6 +104,7 @@ public class Dialogue : MonoBehaviour
         lineIndex++;
         if (lineIndex < dialogueLines.dialgos.Count)
         {
+            StopAllCoroutines();
             StartCoroutine(ShowLine());
         }
         else
