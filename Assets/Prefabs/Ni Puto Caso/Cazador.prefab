@@ -109,38 +109,34 @@ MonoBehaviour:
   - isResume: 1
     isTrigger: 0
     misionCode: 
-    hablador: Cazador
+    hablador: Hablador.Cazador
     dialgos:
     - hablador: 
-      texto: "Hoy creo que deber\xEDa tomarme un descanso. Ayer caze para alimentar
-        3 familias enteras"
+      texto: Dialogo.Cazador.1
   - isResume: 1
     isTrigger: 0
     misionCode: P-006
-    hablador: Cazador
+    hablador: Hablador.Cazador
     dialgos:
     - hablador: 
-      texto: "Oye grandull\xF3n, no te sobraran un par de manos para ayudarme, \xBFno?"
-    - hablador: Tartalo
-      texto: "\xA1Egurra ematera!"
+      texto: Dialogo.Cazador.2
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Cazador.3
   - isResume: 1
     isTrigger: 0
     misionCode: P-007
-    hablador: Cazador
+    hablador: Hablador.Cazador
     dialgos:
     - hablador: 
-      texto: "Es raro que los animales est\xE9n tan crispados en general."
+      texto: Dialogo.Cazador.4
     - hablador: 
-      texto: Los cerdos atacando, lobos siendo agresivos... algo raro esta pasando
-        en el bosque
+      texto: Dialogo.Cazador.5
     - hablador: Tartalo
-      texto: "Hay alguien detr\xE1s de esto y de la desaparici\xF3n de Izaro, \xBFsabes
-        algo al respecto?"
+      texto: Dialogo.Cazador.6
     - hablador: 
-      texto: "La verdad es que no. Esta situacion supera mis conocimientos. Ya sabes
-        quien conoce todo lo que ocurre en el bosque, \xBFverdad?"
+      texto: Dialogo.Cazador.7
     - hablador: Tartalo
-      texto: "Tendr\xE9 que hacerle una visita a Basajaun"
+      texto: Dialogo.Cazador.8
 --- !u!65 &8794103161968362700
 BoxCollider:
   m_ObjectHideFlags: 0

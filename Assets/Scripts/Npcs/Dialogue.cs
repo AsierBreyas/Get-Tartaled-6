@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
+using Assets.SimpleLocalization.Scripts;
 
 public class Dialogue : MonoBehaviour
 {
@@ -21,6 +21,12 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         dialogueLines = listOfDialogues[currentDialogue];
+        LocalizationManager.OnLocalizationChanged += UpdateLocalizedText;
+    }
+
+    void OnDestroy()
+    {
+        LocalizationManager.OnLocalizationChanged -= UpdateLocalizedText;
     }
 
     // Update is called once per frame
@@ -36,14 +42,15 @@ public class Dialogue : MonoBehaviour
             {
                 StartDialogue();
             }
-            else if (dialogueText.text == dialogueLines.dialgos[lineIndex].texto)
+            else if (dialogueText.text == LocalizationManager.Localize(dialogueLines.dialgos[lineIndex].texto))
             {
                 NextDialogueLine();
             }
             else
             {
                 StopAllCoroutines();
-                dialogueText.text = dialogueLines.dialgos[lineIndex].texto;
+                dialogueText.text = LocalizationManager.Localize(dialogueLines.dialgos[lineIndex].texto);
+
             }
             FindAnyObjectByType<ControlesTartalo>().puedeSeguirHablando();
             playerPulsedBoton = false;
@@ -83,7 +90,9 @@ public class Dialogue : MonoBehaviour
         dialogueText.text = string.Empty;
         SetSpeakerName();
 
-        foreach (char ch in dialogueLines.dialgos[lineIndex].texto)
+        string localizedText = LocalizationManager.Localize(dialogueLines.dialgos[lineIndex].texto);
+
+        foreach (char ch in localizedText)
         {
             dialogueText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);
@@ -95,6 +104,7 @@ public class Dialogue : MonoBehaviour
         lineIndex++;
         if (lineIndex < dialogueLines.dialgos.Count)
         {
+            StopAllCoroutines();
             StartCoroutine(ShowLine());
         }
         else
@@ -126,13 +136,11 @@ public class Dialogue : MonoBehaviour
     }
     public void SetSpeakerName()
     {
-        if (dialogueLines.dialgos[lineIndex].hablador != "" && dialogueLines.dialgos[lineIndex].hablador != dialogueLines.hablador)
-        {
-            //Debug.Log(dialogueLines.dialgos[lineIndex].hablador);
-            speakerNameText.text = dialogueLines.dialgos[lineIndex].hablador;
-        }
-        else
-            speakerNameText.text = dialogueLines.hablador;
+        string speakerKey = (dialogueLines.dialgos[lineIndex].hablador != "" && dialogueLines.dialgos[lineIndex].hablador != dialogueLines.hablador)
+            ? dialogueLines.dialgos[lineIndex].hablador
+            : dialogueLines.hablador;
+
+        speakerNameText.text = LocalizationManager.Localize(speakerKey);
     }
     void UpdateDialogues()
     {
@@ -145,6 +153,15 @@ public class Dialogue : MonoBehaviour
                     setNextDialogue();
                 }
             }
+        }
+    }
+
+    void UpdateLocalizedText()
+    {
+        if (didDialogueStart)
+        {
+            dialogueText.text = LocalizationManager.Localize(dialogueLines.dialgos[lineIndex].texto);
+            speakerNameText.text = LocalizationManager.Localize(dialogueLines.hablador);
         }
     }
 }

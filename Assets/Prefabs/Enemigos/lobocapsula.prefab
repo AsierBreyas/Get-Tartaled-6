@@ -350,7 +350,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.79, y: 4.79, z: 4.79}
+  m_LocalScale: {x: 9.53, y: 9.53, z: 9.53}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8489705628477871261}
@@ -444,7 +444,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8
+  m_Speed: 15
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -481,12 +481,13 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 6
   timeBetweenAttacks: 2
-  sightRange: 20
+  sightRange: 1000
   attackRange: 6
   playerInSightRange: 0
   playerInAttackRange: 0
   enemyParticles: {fileID: 1762328841377585157}
   horda: {fileID: 0}
+  isEdible: 0
 --- !u!54 &1015600269230059401
 Rigidbody:
   m_ObjectHideFlags: 0

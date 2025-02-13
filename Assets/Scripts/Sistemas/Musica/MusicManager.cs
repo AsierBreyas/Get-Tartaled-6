@@ -52,7 +52,7 @@ public class MusicManager : MonoBehaviour
 
     private void LoadVolume()
     {
-        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, -20f); // Valor por defecto -20
+        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, -20f); // Valor del volumen por defecto -20
         audioMixer.SetFloat("volume", savedVolume);
     }
 }
