@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 2f2ed07677f3f31478c00b9edf81d04d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: PielRopa
     second: {fileID: 2100000, guid: 223f5fe9b9f6d744b9b9cd333a96ab83, type: 2}
   materials:
