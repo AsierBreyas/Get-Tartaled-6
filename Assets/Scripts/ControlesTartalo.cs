@@ -60,6 +60,7 @@ public class ControlesTartalo : MonoBehaviour
     bool aturdido;
     bool empezoAnimacion;
     bool recibioDañoRecientemente;
+    bool estaComiendo;
 
     //Sistema de vida
     [SerializeField] float maxHealth = 100;
@@ -201,8 +202,12 @@ public class ControlesTartalo : MonoBehaviour
             npcDialogo.interactButtonPulsed();
             puedeHablar = false;
         }
-        else if (hayComestibleCerca && !empezoAnimacion)
+        else if (hayComestibleCerca && !empezoAnimacion && !estaComiendo)
+        {
             animator.SetTrigger("eat");
+            empezoAnimacion = true;
+            estaComiendo = true;
+        }
         else if (hayInteractuable)
             hayInteractuable = FindAnyObjectByType<InteractuableManager>().ActivarInteractuable(interactuable.GetComponent<Interactuable>().GetNombre(), interactuable);
 
@@ -283,12 +288,16 @@ public class ControlesTartalo : MonoBehaviour
     }
     void ProcesarAtaqueEnArea()
     {
-        estaEnAtaque = true;
-        estaEnAtaqueArea = true;
-        estaCargandoAtaqueArea = true;
-        estaHaciendoMovimiento = true;
-        empezoAnimacion = true;
-        animator.SetBool("CargaArea", true);
+        if (!estaHaciendoMovimiento || estaEnAtaqueArea)
+        {
+            estaEnAtaque = true;
+            estaEnAtaqueArea = true;
+            estaCargandoAtaqueArea = true;
+            empezoAnimacion = true;
+            estaHaciendoMovimiento = true;
+            animator.SetBool("CargaArea", true);
+
+        }
 
     }
     void ProcesarDefensa()
@@ -636,6 +645,7 @@ public class ControlesTartalo : MonoBehaviour
         }
         if (enemigoComido != null)
             enemigosCercanos.Remove(enemigoComido);
+        estaComiendo = false;
 
     }
     void RecuperarVida(float recuperacion)
