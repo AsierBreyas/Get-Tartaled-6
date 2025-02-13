@@ -14,8 +14,8 @@ public class DropdownIdioma : MonoBehaviour
                 PlayerPrefs.SetString("SelectedLanguage", "Euskera");
                 break;
             case 1:
-                LocalizationManager.Language = "Espaniol";
-                PlayerPrefs.SetString("SelectedLanguage", "Espaniol");
+                LocalizationManager.Language = "Spanish";
+                PlayerPrefs.SetString("SelectedLanguage", "Spanish");
                 break;
             default:
                 LocalizationManager.Language = "Euskera";

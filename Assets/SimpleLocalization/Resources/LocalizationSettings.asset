@@ -26,4 +26,7 @@ MonoBehaviour:
   - Name: MenuPerfiles
     Id: 1628571619
     TextAsset: {fileID: 4900000, guid: 98d739ad2ff936e4cb6a2a0191d953aa, type: 3}
+  - Name: Dialogos
+    Id: 903501356
+    TextAsset: {fileID: 4900000, guid: 9c42967fb88bb4b48919ac621d2ec2c0, type: 3}
   SaveFolder: {fileID: 102900000, guid: fbc5598fcedfd6249a6aa01c6753cc16, type: 3}

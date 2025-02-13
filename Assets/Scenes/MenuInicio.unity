@@ -475,7 +475,6 @@ GameObject:
   - component: {fileID: 356826543}
   - component: {fileID: 356826545}
   - component: {fileID: 356826544}
-  - component: {fileID: 356826547}
   - component: {fileID: 356826546}
   m_Layer: 5
   m_Name: txt_salir
@@ -615,19 +614,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LocalizationKey: Menu.Salir
---- !u!114 &356826547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356826542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LocalizationKey: 
 --- !u!1 &723276259
 GameObject:
   m_ObjectHideFlags: 0
