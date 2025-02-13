@@ -10653,6 +10653,14 @@ PrefabInstance:
       propertyPath: speakerNameText
       value: 
       objectReference: {fileID: 674498509}
+    - target: {fileID: 6371824067576403490, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: listOfDialogues.Array.data[0].hablador
+      value: Hablador.Zaloa
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371824067576403490, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
+      propertyPath: listOfDialogues.Array.data[0].dialgos.Array.data[0].texto
+      value: Dialogo.Zaloa.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8078756924936124817, guid: 36593bce14419ad46b93cfd8cdc6e812, type: 3}
       propertyPath: m_Name
       value: Zaloa
