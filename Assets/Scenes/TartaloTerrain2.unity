@@ -8081,6 +8081,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.1039
       objectReference: {fileID: 0}
+    - target: {fileID: 3111804495371985388, guid: 279c0b1fda3cb354aab3d33246dd2d96, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 3133849286550525540, guid: 279c0b1fda3cb354aab3d33246dd2d96, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
