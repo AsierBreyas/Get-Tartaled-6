@@ -57,6 +57,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6471019566764538304}
     m_Modifications:
+    - target: {fileID: -4994464954591908102, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
+      propertyPath: horda
+      value: 
+      objectReference: {fileID: 7270878767322668052}
+    - target: {fileID: -4994464954591908102, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
+      propertyPath: isEdible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2003016385484731514, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -131,6 +139,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6471019566764538304}
     m_Modifications:
+    - target: {fileID: -4994464954591908102, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
+      propertyPath: horda
+      value: 
+      objectReference: {fileID: 7270878767322668052}
+    - target: {fileID: -4994464954591908102, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
+      propertyPath: isEdible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2003016385484731514, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -205,6 +221,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6471019566764538304}
     m_Modifications:
+    - target: {fileID: -4994464954591908102, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
+      propertyPath: horda
+      value: 
+      objectReference: {fileID: 7270878767322668052}
+    - target: {fileID: -4994464954591908102, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
+      propertyPath: isEdible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2003016385484731514, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -279,6 +303,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6471019566764538304}
     m_Modifications:
+    - target: {fileID: -4994464954591908102, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
+      propertyPath: horda
+      value: 
+      objectReference: {fileID: 7270878767322668052}
+    - target: {fileID: -4994464954591908102, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
+      propertyPath: isEdible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2003016385484731514, guid: 8c59ffec20594ef4f943896e02e514a6, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
