@@ -146,8 +146,10 @@ public class ControlesTartalo : MonoBehaviour
         //}
         if (currentHealth <= 0)
         {
+            SfxManager.instance.ReproducirSonido(audioMuerte, 1f);
             animator.SetTrigger("isDead");
             FindFirstObjectByType<GameManager>().ItsGameOver();
+            currentHealth = 1;
         }
     }
     void OnMoverse(InputValue value)
@@ -571,6 +573,7 @@ public class ControlesTartalo : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+
         if (estaEnDefensa)
         {
             currentHealth -= damage * 0.5f;

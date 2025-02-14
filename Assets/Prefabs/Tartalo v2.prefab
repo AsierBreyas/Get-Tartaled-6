@@ -104,7 +104,7 @@ MonoBehaviour:
   audioAtaqueNormal: {fileID: 8300000, guid: 5e14492e237cc6f4b8d6a7fab166321b, type: 3}
   audioAtaqueFuerte: {fileID: 8300000, guid: a5b4d1fe206826e479b334ca914232ae, type: 3}
   audioAturdido: {fileID: 8300000, guid: 50bb78b366922d24ba9fcdda4a6fceb2, type: 3}
-  audioMuerte: {fileID: 8300000, guid: 9ddeb35d3799d854eb1c9cc38f2d280a, type: 3}
+  audioMuerte: {fileID: 8300000, guid: b77a3568843dc214aa7c5959ed0e40e0, type: 3}
   audioSerGolpeado: {fileID: 8300000, guid: b4c7f438e5fece54b92a95e038c01e45, type: 3}
   audioComer: {fileID: 8300000, guid: d92899a268cdc8946aab0b3caf5a7745, type: 3}
   audioGolpearEnemigo: {fileID: 8300000, guid: 3de22edc1b6d93f4c92f84b0fa42e856, type: 3}

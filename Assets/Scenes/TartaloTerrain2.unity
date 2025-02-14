@@ -640,6 +640,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4185373604052841982, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
+      propertyPath: danioLobo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185373604052841982, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
       propertyPath: danioFuegoCerdo
       value: 0.5
       objectReference: {fileID: 0}
@@ -1386,6 +1390,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 714779951}
+    - target: {fileID: 7398640854434745474, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: audioMuerte
+      value: 
+      objectReference: {fileID: 8300000, guid: b77a3568843dc214aa7c5959ed0e40e0, type: 3}
     - target: {fileID: 7398640854434745474, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
       propertyPath: generalCanvas
       value: 
@@ -4658,63 +4666,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231230b8fe03cfb47991c6eedf83af70, type: 3}
---- !u!1001 &1109615501
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4765424893100627594, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2985.4414
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765424893100627594, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 152.00511
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765424893100627594, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1963.5278
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765424893100627594, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765424893100627594, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765424893100627594, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765424893100627594, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765424893100627594, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765424893100627594, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765424893100627594, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5766587635824659093, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
-      propertyPath: m_Name
-      value: lobo prefab
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dcb67e3c786582a4d8800b4730b68149, type: 3}
 --- !u!1001 &1133108425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11732,4 +11683,3 @@ SceneRoots:
   - {fileID: 832004522}
   - {fileID: 1664462663}
   - {fileID: 1409707801}
-  - {fileID: 1109615501}
