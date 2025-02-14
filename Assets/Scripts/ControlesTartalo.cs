@@ -278,7 +278,7 @@ public class ControlesTartalo : MonoBehaviour
         if (!aturdido)
         {
             estaminaActual -= gastoEstamina;
-            SfxManager.instance.ReproducirSonido(audioAtaqueNormal, 1f);
+            //SfxManager.instance.ReproducirSonido(audioAtaqueNormal, 1f);
             ActualizarBarraEstamina();
             if (!aturdido)
             {
@@ -296,7 +296,7 @@ public class ControlesTartalo : MonoBehaviour
         if (!aturdido)
         {
             estaminaActual -= gastoEstamina * 3;
-            SfxManager.instance.ReproducirSonido(audioAtaqueFuerte, 1f);
+            //SfxManager.instance.ReproducirSonido(audioAtaqueFuerte, 1f);
             ActualizarBarraEstamina();
             if (!aturdido)
             {
@@ -582,7 +582,7 @@ public class ControlesTartalo : MonoBehaviour
             else
                 currentHealth -= damage;
         }
-        SfxManager.instance.ReproducirSonido(audioSerGolpeado, 1f);
+        //SfxManager.instance.ReproducirSonido(audioSerGolpeado, 1f);
         healthbar.SetHealth(currentHealth);
     }
     public void HeGolpeado(Enemy enemigo)
@@ -659,7 +659,7 @@ public class ControlesTartalo : MonoBehaviour
                 enemigoSc.BeEat();
                 enemigoComido = enemigo;
                 RecuperarVida(recuperacionComer);
-                SfxManager.instance.ReproducirSonido(audioComer, 1f);
+                //SfxManager.instance.ReproducirSonido(audioComer, 1f);
                 Debug.Log("NOM NOM NOM");
             }
             else if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && yaHeComido)
@@ -692,5 +692,45 @@ public class ControlesTartalo : MonoBehaviour
         yield return new WaitForSeconds(20f);
         Debug.Log("Nos pegan");
         recibioDañoRecientemente = false;
+    }
+
+    public void ReproducirAudioAndando()
+    {
+        SfxManager.instance.ReproducirSonido(audioAndando, 1f);
+    }
+
+    public void ReproducirAudioCorriendo()
+    {
+        SfxManager.instance.ReproducirSonido(audioCorriendo, 1f);
+    }
+
+    public void ReproducirAudioAtaqueNormal()
+    {
+        SfxManager.instance.ReproducirSonido(audioAtaqueNormal, 1f);
+    }
+
+    public void ReproducirAudioAtaqueFuerte()
+    {
+        SfxManager.instance.ReproducirSonido(audioAtaqueFuerte, 1f);
+    }
+
+    public void ReproducirAudioComer()
+    {
+        SfxManager.instance.ReproducirSonido(audioComer, 1f);
+    }
+
+    public void ReproducirAudioAturdido()
+    {
+        SfxManager.instance.ReproducirSonido(audioAturdido, 1f);
+    }
+
+    public void ReproducirAudioMuerte()
+    {
+        SfxManager.instance.ReproducirSonido(audioMuerte, 1f);
+    }
+
+    public void ReproducirSerGolpeado()
+    {
+        SfxManager.instance.ReproducirSonido(audioSerGolpeado, 1f);
     }
 }
