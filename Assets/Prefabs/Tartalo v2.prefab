@@ -98,6 +98,16 @@ MonoBehaviour:
   gastoEstamina: 5
   recuperaEstamina: 20
   barraEstamina: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 48b6cb9e4bff84b44af94542b7812f19, type: 2}
+  audioAndando: {fileID: 8300000, guid: 5d05dfad7c915744982f935222e47367, type: 3}
+  audioCorriendo: {fileID: 8300000, guid: f2e4bbe57e1ba544192821b225741984, type: 3}
+  audioAtaqueNormal: {fileID: 8300000, guid: 5e14492e237cc6f4b8d6a7fab166321b, type: 3}
+  audioAtaqueFuerte: {fileID: 8300000, guid: a5b4d1fe206826e479b334ca914232ae, type: 3}
+  audioAturdido: {fileID: 8300000, guid: 50bb78b366922d24ba9fcdda4a6fceb2, type: 3}
+  audioMuerte: {fileID: 8300000, guid: 9ddeb35d3799d854eb1c9cc38f2d280a, type: 3}
+  audioSerGolpeado: {fileID: 8300000, guid: b4c7f438e5fece54b92a95e038c01e45, type: 3}
+  audioComer: {fileID: 8300000, guid: aa1ff349bac612d4fa923820cffad8b9, type: 3}
+  audioGolpearEnemigo: {fileID: 8300000, guid: 3de22edc1b6d93f4c92f84b0fa42e856, type: 3}
 --- !u!114 &4185373604052841982
 MonoBehaviour:
   m_ObjectHideFlags: 0

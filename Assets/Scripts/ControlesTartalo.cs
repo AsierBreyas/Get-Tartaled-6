@@ -84,6 +84,7 @@ public class ControlesTartalo : MonoBehaviour
     bool hayComestibleCerca;
     float posicionY;
     Animator animator;
+    Garrote garrote;
 
     //Efectos de sonido
     private AudioSource sfxSource;
@@ -115,6 +116,7 @@ public class ControlesTartalo : MonoBehaviour
         posicionY = this.transform.position.y;
         animator = this.gameObject.GetComponent<Animator>();
         sfxSource = gameObject.GetComponent<AudioSource>();
+        garrote = FindAnyObjectByType<Garrote>();
     }
 
     void Update()
@@ -278,6 +280,7 @@ public class ControlesTartalo : MonoBehaviour
         if (!aturdido)
         {
             estaminaActual -= gastoEstamina;
+            garrote.EmpezarMovimiento();
             //SfxManager.instance.ReproducirSonido(audioAtaqueNormal, 1f);
             ActualizarBarraEstamina();
             if (!aturdido)
@@ -296,6 +299,7 @@ public class ControlesTartalo : MonoBehaviour
         if (!aturdido)
         {
             estaminaActual -= gastoEstamina * 3;
+            garrote.EmpezarMovimiento();
             //SfxManager.instance.ReproducirSonido(audioAtaqueFuerte, 1f);
             ActualizarBarraEstamina();
             if (!aturdido)
@@ -314,6 +318,7 @@ public class ControlesTartalo : MonoBehaviour
         if (!estaHaciendoMovimiento || estaEnAtaqueArea)
         {
             estaEnAtaque = true;
+            garrote.EmpezarMovimiento();
             estaEnAtaqueArea = true;
             estaCargandoAtaqueArea = true;
             empezoAnimacion = true;
@@ -400,6 +405,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaqueNormal = false;
         estaHaciendoMovimiento = false;
         empezoAnimacion = false;
+        garrote.TermineMovimiento();
         animator.SetBool("AtaqueNormal", false);
         if (botonDelAtaqueFuerteMantenido && !aturdido)
             ProcesarGolpeFuerte();
@@ -417,6 +423,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaqueFuerte = false;
         estaHaciendoMovimiento = false;
         empezoAnimacion = false;
+        garrote.TermineMovimiento();
         if (botonDelAtaqueFuerteMantenido && !aturdido)
         {
             ProcesarGolpeFuerte();
@@ -454,6 +461,7 @@ public class ControlesTartalo : MonoBehaviour
         estaHaciendoMovimiento = false;
         estaEnAtaqueArea = false;
         empezoAnimacion = false;
+        garrote.TermineMovimiento();
         animator.SetBool("AtaqueArea", false);
         Debug.Log(estaminaActual);
         EstoyAturdido();
@@ -589,6 +597,7 @@ public class ControlesTartalo : MonoBehaviour
     {
         if (enemigo != null)
         {
+            SfxManager.instance.ReproducirSonido(audioGolpearEnemigo, 1f);
             heGolpeado = true;
             enemigoGolpear = enemigo;
             Debug.Log(enemigoGolpear);

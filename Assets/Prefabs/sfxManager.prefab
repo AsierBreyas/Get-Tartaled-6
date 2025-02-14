@@ -142,3 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a980740471a77694ea67417a2b157c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxSourcePrefab: {fileID: 3887390874316857426}
