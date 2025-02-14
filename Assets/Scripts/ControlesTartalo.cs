@@ -86,9 +86,17 @@ public class ControlesTartalo : MonoBehaviour
     Animator animator;
 
     //Efectos de sonido
-    private AudioSource audioSource;
+    private AudioSource sfxSource;
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] AudioClip audioAndando;
+    [SerializeField] AudioClip audioCorriendo;
+    [SerializeField] AudioClip audioAtaqueNormal;
+    [SerializeField] AudioClip audioAtaqueFuerte;
+    [SerializeField] AudioClip audioAturdido;
+    [SerializeField] AudioClip audioMuerte;
+    [SerializeField] AudioClip audioSerGolpeado;
+    [SerializeField] AudioClip audioComer;
+    [SerializeField] AudioClip audioGolpearEnemigo;
 
     void Start()
     {
@@ -106,7 +114,7 @@ public class ControlesTartalo : MonoBehaviour
         barraEstamina.enabled = false;
         posicionY = this.transform.position.y;
         animator = this.gameObject.GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        sfxSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -270,6 +278,7 @@ public class ControlesTartalo : MonoBehaviour
         if (!aturdido)
         {
             estaminaActual -= gastoEstamina;
+            SfxManager.instance.ReproducirSonido(audioAtaqueNormal, 1f);
             ActualizarBarraEstamina();
             if (!aturdido)
             {
@@ -287,6 +296,7 @@ public class ControlesTartalo : MonoBehaviour
         if (!aturdido)
         {
             estaminaActual -= gastoEstamina * 3;
+            SfxManager.instance.ReproducirSonido(audioAtaqueFuerte, 1f);
             ActualizarBarraEstamina();
             if (!aturdido)
             {
@@ -572,6 +582,7 @@ public class ControlesTartalo : MonoBehaviour
             else
                 currentHealth -= damage;
         }
+        SfxManager.instance.ReproducirSonido(audioSerGolpeado, 1f);
         healthbar.SetHealth(currentHealth);
     }
     public void HeGolpeado(Enemy enemigo)
@@ -648,6 +659,7 @@ public class ControlesTartalo : MonoBehaviour
                 enemigoSc.BeEat();
                 enemigoComido = enemigo;
                 RecuperarVida(recuperacionComer);
+                SfxManager.instance.ReproducirSonido(audioComer, 1f);
                 Debug.Log("NOM NOM NOM");
             }
             else if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && yaHeComido)
@@ -680,13 +692,5 @@ public class ControlesTartalo : MonoBehaviour
         yield return new WaitForSeconds(20f);
         Debug.Log("Nos pegan");
         recibioDañoRecientemente = false;
-    }
-
-    public void reproducirAudioAndando()
-    {
-        if (!audioSource.isPlaying)  // Evita superposición de sonidos
-        {
-            audioSource.PlayOneShot(audioAndando);
-        }
     }
 }

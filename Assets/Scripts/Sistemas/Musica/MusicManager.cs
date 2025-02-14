@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MusicManager : MonoBehaviour
 {
     private static MusicManager instance;
-    private AudioSource audioSource;
+    private AudioSource musicSource;
     [SerializeField] AudioClip gameMusic;
     [SerializeField] AudioClip menuMusic;
     [SerializeField] AudioMixer audioMixer;
@@ -15,7 +15,7 @@ public class MusicManager : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
+        musicSource = GetComponent<AudioSource>();
         if (instance == null)
         {
             instance = this;
@@ -34,18 +34,18 @@ public class MusicManager : MonoBehaviour
     {
         if (scene.name == "TartaloTerrain2")
         {
-            if (audioSource.clip != gameMusic)
+            if (musicSource.clip != gameMusic)
             {
-                audioSource.clip = gameMusic;
-                audioSource.Play();
+                musicSource.clip = gameMusic;
+                musicSource.Play();
             }
         }
         else if (scene.name == "MenuInicio")
         {
-            if (audioSource.clip != menuMusic)
+            if (musicSource.clip != menuMusic)
             {
-                audioSource.clip = menuMusic;
-                audioSource.Play();
+                musicSource.clip = menuMusic;
+                musicSource.Play();
             }
         }
     }
