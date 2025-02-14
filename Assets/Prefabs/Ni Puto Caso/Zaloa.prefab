@@ -269,7 +269,7 @@ MonoBehaviour:
       texto: Dialogo.Zaloa.3
     - hablador: 
       texto: Dialogo.Zaloa.4
-    - hablador: Baboso
+    - hablador: Hablador.Baboso
       texto: Dialogo.Zaloa.5
     - hablador: Hablador.Tartalo
       texto: Dialogo.Zaloa.6
@@ -283,7 +283,7 @@ MonoBehaviour:
       texto: Dialogo.Zaloa.10
     - hablador: Hablador.Tartalo
       texto: Dialogo.Zaloa.11
-    - hablador: Cerdos
+    - hablador: Hablador.Cerdos
       texto: Dialogo.Zaloa.12
   - isResume: 1
     isTrigger: 0
