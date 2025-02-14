@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     GameObject elOtroLugar;
     [SerializeField]
     string misionRequerida;
@@ -13,19 +13,24 @@ public class Teleport : MonoBehaviour
     private void Start()
     {
         elOtroTeleport = elOtroLugar.GetComponent<Teleport>();
-        if (misionRequerida != "")
+        if (misionRequerida == "")
             puedePasar = true;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(misionRequerida != "" && !puedePasar)
+        if (other.tag == "Player")
         {
-            puedePasar = FindAnyObjectByType<MisionManager>().EstaAceptadaLaMision(misionRequerida);
-        }
-        if(other.tag == "Player" && !elOtroTeleport.EstoyTepeando() && puedePasar)
-        {
-            other.transform.position = elOtroLugar.transform.position;
-            estoyTepeando = true;
+            if (misionRequerida != "" && !puedePasar)
+            {
+                puedePasar = FindAnyObjectByType<MisionManager>().EstaAceptadaLaMision(misionRequerida);
+                Debug.Log("Mira funciono mal");
+                //if (puedePasar)
+            }
+            if (!elOtroTeleport.EstoyTepeando() && puedePasar)
+            {
+                other.transform.position = elOtroLugar.transform.position;
+                estoyTepeando = true;
+            }
         }
     }
     private void OnTriggerExit(Collider other)
