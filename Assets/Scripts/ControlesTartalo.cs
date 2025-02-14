@@ -671,6 +671,7 @@ public class ControlesTartalo : MonoBehaviour
         if (enemigoComido != null)
             enemigosCercanos.Remove(enemigoComido);
         estaComiendo = false;
+        empezoAnimacion = false;
 
     }
     void RecuperarVida(float recuperacion)

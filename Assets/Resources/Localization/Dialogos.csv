@@ -1,19 +1,19 @@
 Key,Spanish,Euskera
-Dialogo.Amonia.1,"Hola amoña, ¿has visto a Izaro?","Kaixo amoña, ikusi al duzu Izaro?"
+Dialogo.Amonia.1,"Hola Aitona, ¿has visto a Izaro?","Kaixo Aitona, ikusi al duzu Izaro?"
 Dialogo.Amonia.2,"Hola pequeñin, si te soy sincera le pedí que me trajese unas lechugas de la huerta y unos huevos de gallina","Kaixo, txikitxo, egia esaten badizut baratzeko letxugak eta oilo arrautzak ekartzeko eskatu nion."
 Dialogo.Amonia.3,Pero la verdad es que hace tiempo que se ha ido y todavía no ha vuelto.,"Baina, egia esan, aspaldi joan da eta oraindik ez da itzuli."
 Dialogo.Amonia.4,¿Sabes donde se encuentra? He soñado algo increíble y quiero contarselo,Ba al dakizu non dagoen? Zerbait sinestezina amestu dut eta kontatu egin nahi diot
 Dialogo.Amonia.5,Lo único que se es que sin huevos no puedo desayunar y sin lechuga no puedo hacer de comer,Gauza bakarra da arrautzarik gabe ezin dudala gosaldu eta letxugarik gabe ezin dudala janaririk egin
 Dialogo.Amonia.6,¿Puedes ir a la huerta? Seguramente se haya entretenido con algo de ahí,"Baratzera joan zaitezke? Seguru asko, zerbaitekin entretenitu da hor"
-Dialogo.Amonia.7,¡Hola Maria Angeles! ¿Qué tal la mañana?,Kaixo Maria Angeles! Zer moduz goiza?
+Dialogo.Amonia.7,¡Hola Joxe Mari! ¿Qué tal la mañana?,Kaixo Joxe Mari! Zer moduz goiza?
 Dialogo.Amonia.8,"Bueno, te lo encargo pequeñin que voy a darle palique a Jose Ignacio","Beno, txikitxo enkargatzen dizut, Jose Ignaciori ziria sartuko diot eta."
 Dialogo.Amonia.9,¿Todavía sigues aquí? ¡Yo que tu iría yendo que se le van las vitaminas a los huevos!,Oraindik hemen zaude? Bitaminak arrautzetara joango zaizkio!
-Dialogo.Amonia.10,"Amoña, aquí tengo lo que me pediste.","Amoña, hemen daukat eskatu zenidana."
+Dialogo.Amonia.10,"Aitona, aquí tengo lo que me pediste.","Aitona, hemen daukat eskatu zenidana."
 Dialogo.Amonia.11,Aunque tu huerta ha sido arrasada por unos jabalís. ,Zure baratzea basurde batzuek suntsitu badute ere.
 Dialogo.Amonia.12,"Santo cielo, tendré que volver a plantar, ¿Se sabe algo de la pequeña?","Jainko maitea, berriro landatu beharko dut. Ba al dakizu ezer txikiari buruz?"
 Dialogo.Amonia.13,"Una tal Zaloa la ha llamado, no tengo ni idea de quien es","Zaloa delako batek deitu du, ez dakit nor den ere"
 Dialogo.Amonia.14,"Es una amiga suya, la he visto correr al otro lado de pueblo. Parecía bastante agobiada.","Bere lagun bat da, herritik kanpo korrika ikusi dut. Nahiko urdurituta zirudien."
-Dialogo.Amonia.15,Ahora ire a preguntarle Amoña. ,Orain joango naiz galdetzera Amoña.
+Dialogo.Amonia.15,Ahora ire a preguntarle Aitona. ,Orain joango naiz galdetzera Aitona.
 Dialogo.Amonia.16,¿Sigues sin encontrarla? La vi yendo a la otra punta del pueblo,Oraindik ez duk aurkitu? Herriko beste puntara joaten ikusi nuen
 Dialogo.Basajaun.1,"Estaba esperando tu llegado, Ciclope","Zure zain nengoen, Ziklope"
 Dialogo.Basajaun.2,¿Qué es lo que te trae por aquí?,Zerk ekarri zaitu hona?
@@ -45,7 +45,7 @@ Dialogo.Zaloa.4,ADEMÁS EL OLOR A ESTIERCOL HACE QUE SE ME NUBLE LA VISTA,"GAINE
 Dialogo.Zaloa.5,NO HAY NADIE EN ESTE PUEBLO QUE TE QUIERA TANTO COMO YO,EZ DAGO INOR HERRI HONETAN NIK BEZAINBESTE MAITE ZAITUENIK
 Dialogo.Zaloa.6,"Si no dejas en paz a la chavala, te voy a enseñar lo que es una mala opción","Ez baduzu neska bakean uzten, aukera txarra zer den erakutsiko dizut"
 Dialogo.Zaloa.7,Gra-gracias... Espero que ya se de por vencido,Es-eskerrik asko... Berak amore ematea espero dut
-Dialogo.Zaloa.8,¿Eres Zaloa la amiga de Izaro? La fui a buscar a su casa y Amoña me dijo que no sabe dónde está.,"Zaloa zara, Izaroren laguna? Haren etxera joan nintzen haren bila, eta Amoñak esan zidan ez dakiela non dagoen."
+Dialogo.Zaloa.8,¿Eres Zaloa la amiga de Izaro? La fui a buscar a su casa y Aitona me dijo que no sabe dónde está.,"Zaloa zara, Izaroren laguna? Haren etxera joan nintzen haren bila, eta Aitonak esan zidan ez dakiela non dagoen."
 Dialogo.Zaloa.9,Le deje una nota pero no la he visto. A lo mejor ha salido a por setas otra vez...,"Ohar bat utzi diot, baina ez dut ikusi. Agian perretxiko bila atera da berriro..."
 Dialogo.Zaloa.10,¿Soy yo o huele a quemado?,Ni naiz ala erre-usaina dario?
 Dialogo.Zaloa.11,Ahora que lo dices...,Orain esaten duzula...
@@ -54,7 +54,9 @@ Dialogo.Zaloa.13,NOS ATACAAAAN,ERASOTZEN GAITUZTEEEE
 Dialogo.Zaloa.14,Espero que Izaro este bien...,Espero dut Izaro ondo egotea...
 Hablador.Tartalo,Tartalo,Tartalo
 Hablador.Zaloa,Zaloa,Zaloa
-Hablador.Amonia,Amoña,Amoña
+Hablador.Amonia,Aitona,Aitona
 Hablador.Cazador,Cazador,Ehiztaria
 Hablador.Basajaun,Basajaun,Basajaun
 Hablador.Aldeano,Aldeano,Nekazaria
+Hablador.Cerdos,Cerdos,Txerriak
+Hablador.Baboso,Baboso,Txerrikumea
