@@ -641,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4185373604052841982, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
       propertyPath: danioLobo
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4185373604052841982, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
       propertyPath: danioFuegoCerdo
@@ -1330,6 +1330,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4005927307162021131, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
+      propertyPath: sfxSlider
+      value: 
+      objectReference: {fileID: 7212030495226950883}
     - target: {fileID: 4005927307162021131, guid: 3dc0e312374788c44aeb4827075285ad, type: 3}
       propertyPath: volumeSlider
       value: 
@@ -4674,10 +4678,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2000756433955853795, guid: 49ef7234b8e68ef4dafb5e9ba3682ce8, type: 3}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5540470160706252467, guid: 49ef7234b8e68ef4dafb5e9ba3682ce8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 333.21494
@@ -4722,10 +4722,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 8570035122661728337, guid: 49ef7234b8e68ef4dafb5e9ba3682ce8, type: 3}
-      propertyPath: menuMusic
-      value: 
-      objectReference: {fileID: 8300000, guid: f0a172c6a9d86d24790d3bb45c2b0e95, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6264,6 +6260,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3887390874316857426, guid: 0f62650ef71882a4e9b025062787d998, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3439176332889076439, guid: 48b6cb9e4bff84b44af94542b7812f19, type: 2}
     - target: {fileID: 4683413679190308565, guid: 0f62650ef71882a4e9b025062787d998, type: 3}
       propertyPath: m_Name
       value: sfxManager
@@ -11446,13 +11446,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1888115891665517164, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
+      propertyPath: m_Value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888115891665517164, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888115891665517164, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888115891665517164, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 393712785}
+    - target: {fileID: 1888115891665517164, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998417742262850686, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
+      propertyPath: m_Value
+      value: 0.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 1998417742262850686, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
       propertyPath: m_MaxValue
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1998417742262850686, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
       propertyPath: m_MinValue
-      value: -80
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 1998417742262850686, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11482,6 +11506,17 @@ PrefabInstance:
 --- !u!114 &7212030495226950882 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1998417742262850686, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
+  m_PrefabInstance: {fileID: 7212030495226950881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7212030495226950883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1888115891665517164, guid: 799fd67e2519ccd4b812851ed03dfe74, type: 3}
   m_PrefabInstance: {fileID: 7212030495226950881}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

@@ -18,17 +18,28 @@ public class MenuConfiguracion : MonoBehaviour
     private float currentRefreshRate;
     private int currentResolutionIndex = 0;
 
-    private const string VolumeKey = "volume";
+    private const string MusicKey = "MusicVolume";
+    private const string SFXKey = "SFXVolume";
     private const string LanguageKey = "language";
     [SerializeField] Slider volumeSlider;
+    [SerializeField] Slider sfxSlider;
 
     [SerializeField] GameObject _menuConfigFirst;
 
     private void Start()
     {
-        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, -20f);
+        float savedVolume = PlayerPrefs.GetFloat(MusicKey, 1f);
+        float savedSFX = PlayerPrefs.GetFloat(SFXKey, 1f);
+
         volumeSlider.value = savedVolume;
+        sfxSlider.value = savedSFX;
+
+        SetVolume(savedVolume);
+        SetSFX(savedSFX);
+
         volumeSlider.onValueChanged.AddListener(SetVolume);
+        sfxSlider.onValueChanged.AddListener(SetSFX);
+
         EventSystem.current.SetSelectedGameObject(_menuConfigFirst);
         resolutions = Screen.resolutions;
         filteredResolutions = new List<Resolution>();
@@ -79,10 +90,19 @@ public class MenuConfiguracion : MonoBehaviour
         Resolution resolution = filteredResolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
-    public void SetVolume (float volume)
+    public void SetVolume (float musicVolume)
     {
-        audioMixer.SetFloat("volume", volume);
-        PlayerPrefs.SetFloat(VolumeKey, volume);
+        float volume = Mathf.Log10(Mathf.Max(musicVolume, 0.0001f)) * 20; // Evitar log(0)
+        audioMixer.SetFloat("MusicVolume", volume);
+        PlayerPrefs.SetFloat(MusicKey, musicVolume);
+        PlayerPrefs.Save();
+    }
+
+    public void SetSFX (float sfxVolume)
+    {
+        float volume = Mathf.Log10(Mathf.Max(sfxVolume, 0.0001f)) * 20; // Evitar log(0)
+        audioMixer.SetFloat("SFXVolume", volume);
+        PlayerPrefs.SetFloat(SFXKey, sfxVolume);
         PlayerPrefs.Save();
     }
     

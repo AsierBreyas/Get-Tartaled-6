@@ -1,27 +1,33 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-
 public class MusicManager : MonoBehaviour
 {
     private static MusicManager instance;
     private AudioSource musicSource;
+
     [SerializeField] AudioClip gameMusic;
     [SerializeField] AudioClip menuMusic;
     [SerializeField] AudioMixer audioMixer;
+    [SerializeField] AudioMixerGroup musicGroup;
 
     private const string VolumeKey = "MusicVolume"; // Guardar el volumen
 
     private void Awake()
     {
-        musicSource = GetComponent<AudioSource>();
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded; // Suscribirse al cambio de escena
 
+            musicSource = GetComponent<AudioSource>();
+
+            if (musicSource != null) 
+            { 
+                musicSource.outputAudioMixerGroup = musicGroup;
+            }
+            
             LoadVolume();
         }
         else
@@ -32,27 +38,21 @@ public class MusicManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "TartaloTerrain2")
+        if (scene.name == "TartaloTerrain2" && musicSource.clip != gameMusic)
         {
-            if (musicSource.clip != gameMusic)
-            {
-                musicSource.clip = gameMusic;
-                musicSource.Play();
-            }
+            musicSource.clip = gameMusic;
+            musicSource.Play();
         }
-        else if (scene.name == "MenuInicio")
+        else if (scene.name == "MenuInicio" && musicSource.clip != menuMusic)
         {
-            if (musicSource.clip != menuMusic)
-            {
-                musicSource.clip = menuMusic;
-                musicSource.Play();
-            }
+            musicSource.clip = menuMusic;
+            musicSource.Play();
         }
     }
 
     private void LoadVolume()
     {
         float savedVolume = PlayerPrefs.GetFloat(VolumeKey, -20f); // Valor del volumen por defecto -20
-        audioMixer.SetFloat("volume", savedVolume);
+        audioMixer.SetFloat("MusicVolume", savedVolume);
     }
 }
