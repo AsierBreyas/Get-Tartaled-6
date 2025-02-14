@@ -348,11 +348,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 304849556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &40967815 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3444301518105013810, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-  m_PrefabInstance: {fileID: 218797454}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &66837472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -608,103 +603,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8ac3dd4047e179c4683916ab6b8e2403, type: 3}
   m_PrefabInstance: {fileID: 189947257}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &218797454
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 266769903}
-    m_Modifications:
-    - target: {fileID: 802800345204944967, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3444301518105013810, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3703917162392687001, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_Name
-      value: "Amo\xF1a"
-      objectReference: {fileID: 0}
-    - target: {fileID: 3703917162392687001, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 2000701238}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: dialoguePanel
-      value: 
-      objectReference: {fileID: 1429728454}
-    - target: {fileID: 6644193146055704691, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: speakerNameText
-      value: 
-      objectReference: {fileID: 674498509}
-    - target: {fileID: 7694083009554585836, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_Size.x
-      value: 10.54737
-      objectReference: {fileID: 0}
-    - target: {fileID: 7694083009554585836, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_Size.z
-      value: 10.081627
-      objectReference: {fileID: 0}
-    - target: {fileID: 7694083009554585836, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_Center.x
-      value: -0.40000343
-      objectReference: {fileID: 0}
-    - target: {fileID: 7694083009554585836, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_Center.z
-      value: -3.400007
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -135
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 47.663284
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 55.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
 --- !u!1001 &236206004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -912,7 +810,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1776621824}
   - {fileID: 8194558746649832577}
   - {fileID: 8194558745958850783}
   - {fileID: 556786141}
@@ -6502,6 +6399,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1020189804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1587018726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
+  m_PrefabInstance: {fileID: 868344901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1587018727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e750b3786711f4eaf7b1c33e8b3d83, type: 3}
@@ -6578,7 +6480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ae3f229b0b6400145b7560e75c4ff9ea, type: 3}
       propertyPath: m_Name
-      value: Dwarf Idle
+      value: Aitona
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ae3f229b0b6400145b7560e75c4ff9ea, type: 3}
       propertyPath: m_TagString
@@ -6620,7 +6522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f39545e4351aa64086815223202322b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueMark: {fileID: 40967815}
+  dialogueMark: {fileID: 1587018726}
   dialoguePanel: {fileID: 1429728454}
   dialogueText: {fileID: 2000701238}
   speakerNameText: {fileID: 674498509}
@@ -7118,11 +7020,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1020189804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1776621824 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8194558746106024387, guid: b175659d6dea35c448a015bc0cb46628, type: 3}
-  m_PrefabInstance: {fileID: 218797454}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1784931449
 PrefabInstance:
   m_ObjectHideFlags: 0
