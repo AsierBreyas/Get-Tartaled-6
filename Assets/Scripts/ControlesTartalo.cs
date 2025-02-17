@@ -627,6 +627,9 @@ public class ControlesTartalo : MonoBehaviour
             barraEstamina.value = estaminaActual;
             animator.SetBool("AtaqueFuerte", false);
             if (estaEnAtaqueArea || estaTirandoPiedra)
+            {
+
+            }
             else
             {
                 animator.SetTrigger("isDizzy");
