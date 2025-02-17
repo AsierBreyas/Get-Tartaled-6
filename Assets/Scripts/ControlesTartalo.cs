@@ -429,7 +429,6 @@ public class ControlesTartalo : MonoBehaviour
         if (botonDelAtaqueFuerteMantenido && !aturdido)
         {
             ProcesarGolpeFuerte();
-            Debug.Log("Termostato");
         }
         else
             animator.SetBool("AtaqueFuerte", false);
@@ -545,7 +544,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Troste");
+        //Debug.Log("Troste");
         if (other.tag == "Roca" && tenemosPiedra)
         {
             piedra = null;

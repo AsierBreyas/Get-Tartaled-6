@@ -7,7 +7,11 @@ public class Garrote : MonoBehaviour
     {
         if(other.gameObject.layer == 7 && other.tag != "Interactuable" && estoyEnMovimiento)
         {
-            FindFirstObjectByType<ControlesTartalo>().HeGolpeado(other.gameObject.GetComponent<Enemy>());
+            if(other.gameObject.GetComponent<Tartxalo>() != null)
+            {
+                FindFirstObjectByType<ControlesTartalo>().HeGolpeado(other.gameObject.GetComponent<Enemy>());
+            }
+            Debug.Log("Fallo mas que una escopeta de feria");
         }
     }
     public void EmpezarMovimiento()
