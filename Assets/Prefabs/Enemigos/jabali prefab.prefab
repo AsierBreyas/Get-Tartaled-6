@@ -14751,7 +14751,7 @@ MonoBehaviour:
   playerInAttackRange: 0
   enemyParticles: {fileID: 986663535683424196}
   horda: {fileID: 0}
-  isEdible: 0
+  isEdible: 1
   animator: {fileID: 5564596420630538342}
 --- !u!1 &5787622580656439777
 GameObject:
