@@ -7,7 +7,8 @@ public class Tartxalo : MonoBehaviour
     private Transform player;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
-    [SerializeField] float currentHealth, maxHealth;
+    [SerializeField] float maxHealth;
+    float currentHealth;
     [SerializeField] EnemyHealthBar healthBar;
     // Attacking
     [SerializeField] float timeBetweenAttacks;
@@ -67,13 +68,13 @@ public class Tartxalo : MonoBehaviour
         if (agent.enabled)
         {
             agent.SetDestination(player.position);
-            animator.SetBool("isWalking", true);
+            animator.SetBool("IsWalking", true);
         }
     }
 
     void AttackPlayer()
     {
-        animator.SetBool("isWalking", false);
+        animator.SetBool("IsWalking", false);
         // Make sure enemy dosen't move
         if (agent.enabled)
         {
