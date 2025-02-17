@@ -126,7 +126,11 @@ public class Enemy : MonoBehaviour
 
         // Ignoramos el eje y para que el cerdo mire recto a Tartalo y no gire ligeramente hacia arriba
         Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
-        transform.LookAt(targetPosition);
+
+        if (Vector3.Distance(transform.forward, (targetPosition - transform.position).normalized) > 0.01f)
+        {
+            transform.LookAt(targetPosition);
+        }
 
         if (!alreadyAttacked)
         {
@@ -167,6 +171,7 @@ public class Enemy : MonoBehaviour
             if (currentHealth <= 0)
             {
                 dead = true;
+                agent.enabled = false;
                 if (horda != null)
                     horda.EnemigoMuerto();
                 // Animacion de enemigo muriendo
