@@ -133,14 +133,20 @@ public class Enemy : MonoBehaviour
             if (this.tag == "Lobo")
             {
                 StartCoroutine(PerformDashAttack());
-                enemyParticles.Play();
+                if (enemyParticles != null)
+                {
+                    enemyParticles.Play();
+                }
                 Debug.Log("Soy un lobo, pum te ataco");
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
             else if (this.tag == "Cerdo")
             {
-                enemyParticles.Play();
+                if (enemyParticles != null)
+                {
+                    enemyParticles.Play();
+                }
 
                 Debug.Log("Soy un cerdo, te escupo fuego!");
 

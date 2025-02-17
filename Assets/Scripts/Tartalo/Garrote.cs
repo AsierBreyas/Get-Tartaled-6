@@ -2,11 +2,20 @@ using UnityEngine;
 
 public class Garrote : MonoBehaviour
 {
+    bool estoyEnMovimiento;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 7 && other.tag != "Interactuable")
+        if(other.gameObject.layer == 7 && other.tag != "Interactuable" && estoyEnMovimiento)
         {
             FindFirstObjectByType<ControlesTartalo>().HeGolpeado(other.gameObject.GetComponent<Enemy>());
         }
+    }
+    public void EmpezarMovimiento()
+    {
+        estoyEnMovimiento = true;
+    }
+    public void TermineMovimiento()
+    {
+        estoyEnMovimiento = false;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -83,6 +84,21 @@ public class ControlesTartalo : MonoBehaviour
     bool hayComestibleCerca;
     float posicionY;
     Animator animator;
+    Garrote garrote;
+
+    //Efectos de sonido
+    private AudioSource sfxSource;
+    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] AudioClip audioAndando;
+    [SerializeField] AudioClip audioCorriendo;
+    [SerializeField] AudioClip audioAtaqueNormal;
+    [SerializeField] AudioClip audioAtaqueFuerte;
+    [SerializeField] AudioClip audioAturdido;
+    [SerializeField] AudioClip audioMuerte;
+    [SerializeField] AudioClip audioSerGolpeado;
+    [SerializeField] AudioClip audioComer;
+    [SerializeField] AudioClip audioGolpearEnemigo;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -99,7 +115,8 @@ public class ControlesTartalo : MonoBehaviour
         barraEstamina.enabled = false;
         posicionY = this.transform.position.y;
         animator = this.gameObject.GetComponent<Animator>();
-
+        sfxSource = gameObject.GetComponent<AudioSource>();
+        garrote = FindAnyObjectByType<Garrote>();
     }
 
     void Update()
@@ -129,8 +146,10 @@ public class ControlesTartalo : MonoBehaviour
         //}
         if (currentHealth <= 0)
         {
+            SfxManager.instance.ReproducirSonido(audioMuerte, 1f);
             animator.SetTrigger("isDead");
             FindFirstObjectByType<GameManager>().ItsGameOver();
+            currentHealth = 1;
         }
     }
     void OnMoverse(InputValue value)
@@ -227,9 +246,15 @@ public class ControlesTartalo : MonoBehaviour
             ActualizarBarraEstamina();
         }
         if (xOffSet != 0 || zOffSet != 0)
+        {
             animator.SetBool("isWalking", true);
+        }
+
         else
+        {
             animator.SetBool("isWalking", false);
+        }
+            
         animator.SetBool("isRunning", estoyCorriendo);
         Vector3 posicion = new Vector3(transform.position.x, posicionY, transform.position.z);
         this.transform.position = posicion;
@@ -257,6 +282,8 @@ public class ControlesTartalo : MonoBehaviour
         if (!aturdido)
         {
             estaminaActual -= gastoEstamina;
+            garrote.EmpezarMovimiento();
+            //SfxManager.instance.ReproducirSonido(audioAtaqueNormal, 1f);
             ActualizarBarraEstamina();
             if (!aturdido)
             {
@@ -274,6 +301,8 @@ public class ControlesTartalo : MonoBehaviour
         if (!aturdido)
         {
             estaminaActual -= gastoEstamina * 3;
+            garrote.EmpezarMovimiento();
+            //SfxManager.instance.ReproducirSonido(audioAtaqueFuerte, 1f);
             ActualizarBarraEstamina();
             if (!aturdido)
             {
@@ -291,6 +320,7 @@ public class ControlesTartalo : MonoBehaviour
         if (!estaHaciendoMovimiento || estaEnAtaqueArea)
         {
             estaEnAtaque = true;
+            garrote.EmpezarMovimiento();
             estaEnAtaqueArea = true;
             estaCargandoAtaqueArea = true;
             empezoAnimacion = true;
@@ -377,6 +407,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaqueNormal = false;
         estaHaciendoMovimiento = false;
         empezoAnimacion = false;
+        garrote.TermineMovimiento();
         animator.SetBool("AtaqueNormal", false);
         if (botonDelAtaqueFuerteMantenido && !aturdido)
             ProcesarGolpeFuerte();
@@ -394,6 +425,7 @@ public class ControlesTartalo : MonoBehaviour
         estaEnAtaqueFuerte = false;
         estaHaciendoMovimiento = false;
         empezoAnimacion = false;
+        garrote.TermineMovimiento();
         if (botonDelAtaqueFuerteMantenido && !aturdido)
         {
             ProcesarGolpeFuerte();
@@ -431,6 +463,7 @@ public class ControlesTartalo : MonoBehaviour
         estaHaciendoMovimiento = false;
         estaEnAtaqueArea = false;
         empezoAnimacion = false;
+        garrote.TermineMovimiento();
         animator.SetBool("AtaqueArea", false);
         Debug.Log(estaminaActual);
         EstoyAturdido();
@@ -540,6 +573,7 @@ public class ControlesTartalo : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+
         if (estaEnDefensa)
         {
             currentHealth -= damage * 0.5f;
@@ -559,12 +593,14 @@ public class ControlesTartalo : MonoBehaviour
             else
                 currentHealth -= damage;
         }
+        //SfxManager.instance.ReproducirSonido(audioSerGolpeado, 1f);
         healthbar.SetHealth(currentHealth);
     }
     public void HeGolpeado(Enemy enemigo)
     {
         if (enemigo != null)
         {
+            SfxManager.instance.ReproducirSonido(audioGolpearEnemigo, 1f);
             heGolpeado = true;
             enemigoGolpear = enemigo;
             Debug.Log(enemigoGolpear);
@@ -635,6 +671,7 @@ public class ControlesTartalo : MonoBehaviour
                 enemigoSc.BeEat();
                 enemigoComido = enemigo;
                 RecuperarVida(recuperacionComer);
+                //SfxManager.instance.ReproducirSonido(audioComer, 1f);
                 Debug.Log("NOM NOM NOM");
             }
             else if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && yaHeComido)
@@ -668,5 +705,45 @@ public class ControlesTartalo : MonoBehaviour
         yield return new WaitForSeconds(20f);
         Debug.Log("Nos pegan");
         recibioDañoRecientemente = false;
+    }
+
+    public void ReproducirAudioAndando()
+    {
+        SfxManager.instance.ReproducirSonido(audioAndando, 1f);
+    }
+
+    public void ReproducirAudioCorriendo()
+    {
+        SfxManager.instance.ReproducirSonido(audioCorriendo, 1f);
+    }
+
+    public void ReproducirAudioAtaqueNormal()
+    {
+        SfxManager.instance.ReproducirSonido(audioAtaqueNormal, 1f);
+    }
+
+    public void ReproducirAudioAtaqueFuerte()
+    {
+        SfxManager.instance.ReproducirSonido(audioAtaqueFuerte, 1f);
+    }
+
+    public void ReproducirAudioComer()
+    {
+        SfxManager.instance.ReproducirSonido(audioComer, 1f);
+    }
+
+    public void ReproducirAudioAturdido()
+    {
+        SfxManager.instance.ReproducirSonido(audioAturdido, 1f);
+    }
+
+    public void ReproducirAudioMuerte()
+    {
+        SfxManager.instance.ReproducirSonido(audioMuerte, 1f);
+    }
+
+    public void ReproducirSerGolpeado()
+    {
+        SfxManager.instance.ReproducirSonido(audioSerGolpeado, 1f);
     }
 }

@@ -208,6 +208,8 @@ MonoBehaviour:
   enemyParticles: {fileID: 1932014161553819071}
   horda: {fileID: 0}
   isEdible: 1
+  animator: {fileID: 0}
+  audioGolpearEnemigo: {fileID: 8300000, guid: 3de22edc1b6d93f4c92f84b0fa42e856, type: 3}
 --- !u!54 &2625429296718035735
 Rigidbody:
   m_ObjectHideFlags: 0
