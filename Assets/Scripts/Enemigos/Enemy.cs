@@ -67,8 +67,8 @@ public class Enemy : MonoBehaviour
             if (!playerInSightRange && !playerInAttackRange) Patroling();
             if (playerInSightRange && !playerInAttackRange) ChasePlayer();
             if (playerInSightRange && playerInAttackRange) AttackPlayer();
-        }else
-            this.gameObject.transform.Rotate(new Vector3(0, 0, 90));
+        }
+            
     }
 
     void Patroling()
@@ -126,7 +126,11 @@ public class Enemy : MonoBehaviour
 
         // Ignoramos el eje y para que el cerdo mire recto a Tartalo y no gire ligeramente hacia arriba
         Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
-        transform.LookAt(targetPosition);
+
+        if (Vector3.Distance(transform.forward, (targetPosition - transform.position).normalized) > 0.01f)
+        {
+            transform.LookAt(targetPosition);
+        }
 
         if (!alreadyAttacked)
         {
@@ -167,8 +171,27 @@ public class Enemy : MonoBehaviour
             if (currentHealth <= 0)
             {
                 dead = true;
-                if (horda != null)
-                    horda.EnemigoMuerto();
+                agent.enabled = false;
+                this.gameObject.transform.Rotate(new Vector3(0, 0, 90));
+                animator.SetBool("isWalking", false);
+
+                //Desactivar todos los colliders menos el trigger de comer, para que el cadaver no nos siga haciendo daño
+                Collider[] colliders = GetComponents<Collider>();
+                foreach (Collider col in colliders)
+                {
+                    if (!col.isTrigger)
+                    {
+                        col.enabled = false;
+                    }
+                }
+                Rigidbody rb = GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.constraints = RigidbodyConstraints.FreezeAll; //Congela todo movimiento y rotación por si acaso
+                    rb.linearVelocity = Vector3.zero;
+                    rb.angularVelocity = Vector3.zero;
+                }
+                horda.EnemigoMuerto();
                 // Animacion de enemigo muriendo
                 if (!isEdible)
                 {
