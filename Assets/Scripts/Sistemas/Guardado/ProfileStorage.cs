@@ -20,6 +20,9 @@ public static class ProfileStorage
 
         // Save the index
         SaveFile<ProfileIndex>(s_indexPath, index);
+
+        //Forzar la recarga inmediata del perfil desde el archivo
+        LoadProfile(s_currentProfile.fileName);
     }
 
     public static ProfileIndex GetProfileIndex()

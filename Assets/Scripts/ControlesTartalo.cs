@@ -118,6 +118,22 @@ public class ControlesTartalo : MonoBehaviour
         animator = this.gameObject.GetComponent<Animator>();
         sfxSource = gameObject.GetComponent<AudioSource>();
         garrote = FindAnyObjectByType<Garrote>();
+
+        if (ProfileStorage.s_currentProfile != null && !ProfileStorage.s_currentProfile.newGame)
+        {
+            Debug.Log("Moviendo jugador a posición guardada...");
+            transform.position = new Vector3(
+                ProfileStorage.s_currentProfile.x,
+                ProfileStorage.s_currentProfile.y,
+                ProfileStorage.s_currentProfile.z
+            );
+
+            //Debug.Log($"Jugador movido a: x={transform.position.x}, y={transform.position.y}, z={transform.position.z}");
+        }
+        else
+        {
+            Debug.Log("Nueva partida: posición inicial por defecto.");
+        }
     }
 
     void Update()

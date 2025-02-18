@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProfileData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <fileName>Tartalo</fileName>
-  <name>Tartalo</name>
-  <newGame>false</newGame>
+  <fileName>Tartalo8</fileName>
+  <name>Tartalo8</name>
+  <newGame>true</newGame>
   <currentHealth>100</currentHealth>
-  <x>2921.54956</x>
-  <y>152.005127</y>
-  <z>2666.29761</z>
+  <x>0</x>
+  <y>0</y>
+  <z>0</z>
 </ProfileData>

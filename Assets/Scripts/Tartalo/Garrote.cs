@@ -7,7 +7,6 @@ public class Garrote : MonoBehaviour
     {
         if (other.gameObject.layer == 7 && other.tag != "Interactuable" && estoyEnMovimiento)
         {
-            Debug.Log("Pasta de dientes");
             FindFirstObjectByType<ControlesTartalo>().HeGolpeado(other.gameObject);
             Debug.Log(other.GetComponent<Tartxalo>());
         }
