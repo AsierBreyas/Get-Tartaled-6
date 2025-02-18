@@ -20,7 +20,6 @@ public class MenuPausa : MonoBehaviour
 
     void OnPausa(InputValue value)
     {
-        Debug.Log("boton de pausa");
         if (GameIsPaused)
         {
             Resume();

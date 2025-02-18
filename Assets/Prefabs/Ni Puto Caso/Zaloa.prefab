@@ -254,55 +254,51 @@ MonoBehaviour:
   - isResume: 1
     isTrigger: 0
     misionCode: 
-    hablador: Zaloa
+    hablador: Hablador.Zaloa
     dialgos:
     - hablador: 
-      texto: Siempre igual...
+      texto: Dialogo.Zaloa.1
   - isResume: 0
     isTrigger: 1
     misionCode: P-004
-    hablador: Zaloa
+    hablador: Hablador.Zaloa
     dialgos:
     - hablador: 
-      texto: "\xA1\xBFTE PARECE NORMAL SEGUIRME A TODAS PARTES CAZURRO?!"
+      texto: Dialogo.Zaloa.2
     - hablador: 
-      texto: "D\xC9JAME EN PAZ PESADO, TE HE DICHO MIL Y UNA VECES QUE NO QUIERO
-        NADA CONTIGO"
+      texto: Dialogo.Zaloa.3
     - hablador: 
-      texto: "ADEM\xC1S EL OLOR A ESTIERCOL HACE QUE SE ME NUBLE LA VISTA"
-    - hablador: Baboso
-      texto: NO HAY NADIE EN ESTE PUEBLO QUE TE QUIERA TANTO COMO YO
-    - hablador: Tartalo
-      texto: "Si no dejas en paz a la chavala, te voy a ense\xF1ar lo que es una
-        mala opci\xF3n"
+      texto: Dialogo.Zaloa.4
+    - hablador: Hablador.Baboso
+      texto: Dialogo.Zaloa.5
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Zaloa.6
     - hablador: 
-      texto: Gra-gracias... Espero que ya se de por vencido
-    - hablador: Tartalo
-      texto: "\xBFEres Zaloa la amiga de Izaro? La fui a buscar a su casa y Amo\xF1a
-        me dijo que no sabe d\xF3nde est\xE1."
+      texto: Dialogo.Zaloa.7
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Zaloa.8
     - hablador: 
-      texto: Le deje una nota pero no la he visto. A lo mejor ha salido a por setas
-        otra vez...
+      texto: Dialogo.Zaloa.9
     - hablador: 
-      texto: "\xBFSoy yo o huele a quemado?"
-    - hablador: Tartalo
-      texto: Ahora que lo dices...
-    - hablador: Cerdos
-      texto: OIIIIINKKKKKKK
+      texto: Dialogo.Zaloa.10
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Zaloa.11
+    - hablador: Hablador.Cerdos
+      texto: Dialogo.Zaloa.12
   - isResume: 1
     isTrigger: 0
     misionCode: 
-    hablador: Zaloa
+    hablador: Hablador.Zaloa
     dialgos:
     - hablador: 
-      texto: NOS ATACAAAAN
+      texto: Dialogo.Zaloa.13
   - isResume: 1
     isTrigger: 0
     misionCode: P-006
-    hablador: Zaloa
+    hablador: Hablador.Zaloa
     dialgos:
     - hablador: 
-      texto: Espero que Izaro este bien...
+      texto: Dialogo.Zaloa.14
 --- !u!65 &3402353877009618186
 BoxCollider:
   m_ObjectHideFlags: 0

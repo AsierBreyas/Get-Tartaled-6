@@ -109,63 +109,55 @@ MonoBehaviour:
   - isResume: 0
     isTrigger: 1
     misionCode: P-000
-    hablador: "Amo\xF1a"
+    hablador: Hablador.Amonia
     dialgos:
-    - hablador: Tartalo
-      texto: "Hola amo\xF1a, \xBFhas visto a Izaro?"
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Amonia.1
     - hablador: 
-      texto: "Hola peque\xF1in, si te soy sincera le pedi que me trajese unas lechugas
-        de la huerta y unos huevos de gallina"
+      texto: Dialogo.Amonia.2
     - hablador: 
-      texto: "Pero la verdad es que hace tiempo que se ha ido y todav\xEDa no ha
-        vuelto."
-    - hablador: Tartalo
-      texto: "\xBFSabes donde se encuentra? He so\xF1ado algo incre\xEDble y quiero
-        contarselo"
+      texto: Dialogo.Amonia.3
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Amonia.4
     - hablador: 
-      texto: "Lo \xFAnico que se es que sin huevos no puedo desayunar y sin lechuga
-        no puedo hacer de comer"
+      texto: Dialogo.Amonia.5
     - hablador: 
-      texto: "\xBFPuedes ir a la huerta? Seguramente se haya entretenido con algo
-        de ah\xED"
-    - hablador: Aldeano
-      texto: "\xA1Hola Maria Angeles! \xBFQu\xE9 tal la ma\xF1ana?"
+      texto: Dialogo.Amonia.6
+    - hablador: Hablador.Aldeano
+      texto: Dialogo.Amonia.7
     - hablador: 
-      texto: "Bueno, te lo encargo peque\xF1in que voy a darle palique a Jose Ignacio"
+      texto: Dialogo.Amonia.8
   - isResume: 1
     isTrigger: 0
     misionCode: 
     hablador: "Amo\xF1a"
     dialgos:
     - hablador: 
-      texto: "\xBFTodav\xEDa sigues aqu\xED? \xA1Yo que tu ir\xEDa yendo que se le
-        van las vitaminas a los huevos!"
+      texto: Dialogo.Amonia.9
   - isResume: 0
     isTrigger: 1
     misionCode: P-003
     hablador: "Amo\xF1a"
     dialgos:
-    - hablador: Tartalo
-      texto: "Amo\xF1a, aqu\xED tengo lo que me pediste."
-    - hablador: Tartalo
-      texto: "Aunque tu huerta ha sido arrasada por unos jabal\xEDs. "
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Amonia.10
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Amonia.11
     - hablador: 
-      texto: "Santo cielo, tendr\xE9 que volver a plantar, \xBFSe sabe algo de la
-        peque\xF1a?"
+      texto: Dialogo.Amonia.12
     - hablador: Tartalo
-      texto: Una tal Zaloa la ha llamado, no tengo ni idea de quien es
+      texto: Dialogo.Amonia.13
     - hablador: 
-      texto: "Es una amiga suya, la he visto correr al otro lado de pueblo. Parec\xEDa
-        bastante agobiada."
-    - hablador: Tartalo
-      texto: "Ahora ire a preguntarle Amo\xF1a. "
+      texto: Dialogo.Amonia.14
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Amonia.15
   - isResume: 1
     isTrigger: 0
     misionCode: 
     hablador: "Amo\xF1a"
     dialgos:
     - hablador: 
-      texto: "\xBFSigues sin encontrarla? La vi yendo a la otra punta del pueblo"
+      texto: Dialogo.Amonia.16
 --- !u!65 &7694083009554585836
 BoxCollider:
   m_ObjectHideFlags: 0

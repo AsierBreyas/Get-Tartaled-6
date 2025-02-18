@@ -109,58 +109,53 @@ MonoBehaviour:
   - isResume: 0
     isTrigger: 1
     misionCode: P-008
-    hablador: Basajaun
+    hablador: Hablador.Basajaun
     dialgos:
     - hablador: 
-      texto: Estaba esperando tu llegado, Ciclope
+      texto: Dialogo.Basajaun.1
     - hablador: 
-      texto: "\xBFQu\xE9 es lo que te trae por aqu\xED?"
-    - hablador: Tartalo
-      texto: Hola Basajaun. He venido para saber el paradero de mi amiga y quien
-        ataco la aldea.
+      texto: Dialogo.Basajaun.2
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Basajaun.3
     - hablador: 
-      texto: "Los \xFAnicos con poder para mandar sobre los animales son Mari y Akerbeltz."
+      texto: Dialogo.Basajaun.4
     - hablador: 
-      texto: "Para tu amiga, podr\xEDa pedir informaci\xF3n y para ello tendr\xEDa
-        que hablar con las critaturas del bosque"
+      texto: Dialogo.Basajaun.5
     - hablador: 
-      texto: "Mientras tanto, el fuego se ha expendido por el bosque. Ya que no puedo
-        ir, apagalo t\xFA."
+      texto: Dialogo.Basajaun.6
     - hablador: 
-      texto: "Te dejo el cubo que est\xE1 al lado de mi casa"
+      texto: Dialogo.Basajaun.7
   - isResume: 1
     isTrigger: 0
     misionCode: 
     hablador: Basajaun
     dialgos:
     - hablador: 
-      texto: 'Date prisa, no vaya a ser que el fuego se expanda '
+      texto: Dialogo.Basajaun.8
   - isResume: 0
     isTrigger: 1
     misionCode: P-010
-    hablador: Basajaun
+    hablador: Hablador.Basajaun
     dialgos:
     - hablador: 
-      texto: Ya se donde esta tu amiga Izaro
+      texto: Dialogo.Basajaun.9
     - hablador: 
-      texto: "Pero esta informaci\xF3n es muy valiosa. Necesito que me prometas que
-        en un futuro, me devolveras el favor."
-    - hablador: Tartalo
-      texto: "Est\xE1 bien, acepto. \xBFDonde esta Izaro?"
+      texto: Dialogo.Basajaun.10
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Basajaun.11
     - hablador: 
-      texto: Los pajaros me han dicho que ha sido tu hermano mayor.
+      texto: Dialogo.Basajaun.12
     - hablador: 
-      texto: "Esta en el pico del monte Itzal esperando a Akerbeltz. Y la cabra est\xE1
-        al llegar"
-    - hablador: Tartalo
-      texto: "Gracias Basajaun, no lo olvidar\xE9"
+      texto: Dialogo.Basajaun.13
+    - hablador: Hablador.Tartalo
+      texto: Dialogo.Basajaun.14
   - isResume: 1
     isTrigger: 0
     misionCode: 
-    hablador: Basajaun
+    hablador: Hablador.Basajaun
     dialgos:
     - hablador: 
-      texto: No hay tiempo que perder charlando, date vida Ciclope.
+      texto: Dialogo.Basajaun.15
 --- !u!65 &1426786259334426416
 BoxCollider:
   m_ObjectHideFlags: 0

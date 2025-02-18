@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
     bool dead;
     [SerializeField] bool isEdible;
 
+    //Animator
+    [SerializeField] Animator animator;
+
     private void Awake()
     {
         GameObject playerObject = GameObject.FindWithTag("Player");
@@ -43,6 +46,15 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         healthBar = GetComponentInChildren<EnemyHealthBar>();
     }
+
+    private void Start()
+    {
+        float scaleFactor = transform.localScale.x;
+        sightRange *= scaleFactor;
+        attackRange *= scaleFactor;
+        animator = GetComponent<Animator>();
+    }
+
 
     private void Update()
     {
@@ -66,6 +78,7 @@ public class Enemy : MonoBehaviour
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
+            animator.SetBool("isWalking", true);
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
@@ -98,11 +111,13 @@ public class Enemy : MonoBehaviour
         if (agent.enabled)
         {
             agent.SetDestination(player.position);
+            animator.SetBool("isWalking", true);
         }
     }
 
     void AttackPlayer()
     {
+        animator.SetBool("isWalking", false);
         // Make sure enemy dosen't move
         if (agent.enabled)
         {
@@ -118,17 +133,19 @@ public class Enemy : MonoBehaviour
             if (this.tag == "Lobo")
             {
                 StartCoroutine(PerformDashAttack());
-                enemyParticles.Play();
-                Debug.Log("Soy un lobo, pum te ataco");
+                if (enemyParticles != null)
+                {
+                    enemyParticles.Play();
+                }
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
             else if (this.tag == "Cerdo")
             {
-                enemyParticles.Play();
-
-                //Debug.Log("Soy un cerdo, te escupo fuego!");
-
+                if (enemyParticles != null)
+                {
+                    enemyParticles.Play();
+                }
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
@@ -140,11 +157,11 @@ public class Enemy : MonoBehaviour
         alreadyAttacked = false;
     }
 
+
     public void TakeDamage(float damage)
     {
         if (!dead)
         {
-            Debug.Log("Ay me hiciste daño");
             currentHealth -= damage;
             //healthBar.UpdateHealthbar(currentHealth, maxHealth);
             if (currentHealth <= 0)
@@ -159,7 +176,6 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Te provoco");
                     FindAnyObjectByType<ControlesTartalo>().AparecioComestible();
                 }
             }
@@ -174,19 +190,13 @@ public class Enemy : MonoBehaviour
     // Corrutina para la embestida del lobo
     IEnumerator PerformDashAttack()
     {
-        // Desactivar temporalmente el NavMeshAgent
-        agent.enabled = false;
-
-        // Variables de la embestida
-        float dashSpeed = 15f; // Velocidad de la embestida
-        float dashDuration = 0.3f; // Duración de la embestida
-        float backwardSpeed = 12f; // Velocidad del retroceso
-        float backwardDuration = 0.2f; // Duración del retroceso
+        agent.enabled = false; // Desactiva el NavMeshAgent para moverse libremente
 
         Vector3 dashDirection = (player.position - transform.position).normalized;
-
-        // Embestida hacia el jugador
+        float dashSpeed = 70f;
+        float dashDuration = 0.3f;
         float elapsedTime = 0f;
+
         while (elapsedTime < dashDuration)
         {
             transform.position += dashDirection * dashSpeed * Time.deltaTime;
@@ -194,18 +204,29 @@ public class Enemy : MonoBehaviour
             yield return null;
         }
 
-        // Retroceso
+        // Retroceso tras el ataque
         elapsedTime = 0f;
         Vector3 backwardDirection = -dashDirection;
+        float backwardSpeed = 60f;
+        float backwardDuration = 0.2f;
+
         while (elapsedTime < backwardDuration)
         {
             transform.position += backwardDirection * backwardSpeed * Time.deltaTime;
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        // Reactivar el NavMeshAgent
+
+        // Reactiva el NavMeshAgent con un pequeño delay
         agent.enabled = true;
+        yield return new WaitForSeconds(0.1f); // Espera un instante para evitar bugs
+
+        if (agent.enabled && Vector3.Distance(transform.position, player.position) <= sightRange)
+        {
+            ChasePlayer();
+        }
     }
+
     public void BeEat()
     {
         if (dead && isEdible)

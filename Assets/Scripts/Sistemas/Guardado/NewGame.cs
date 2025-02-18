@@ -13,6 +13,7 @@ public class NewGame : MonoBehaviour
     // Objetos para pantalla de carga
     [SerializeField] Slider loadingBarFill;
     [SerializeField] GameObject loadingScreen;
+    [SerializeField] GameObject canvasMenuNuevoPerfil;
 
     private void Start()
     {
@@ -28,18 +29,24 @@ public class NewGame : MonoBehaviour
 
     IEnumerator CargarJuegoAsync(int sceneId)
     {
+        loadingScreen.SetActive(true); // Activa la pantalla de carga
+        canvasMenuNuevoPerfil.SetActive(false);
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
+        operation.allowSceneActivation = false; // Evita que la escena se active inmediatamente
 
-        loadingScreen.SetActive(true);
+        float timer = 0f;
 
-        while (!operation.isDone)
+        while (timer < 5f || operation.progress < 0.9f)
         {
             float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
-
             loadingBarFill.value = progressValue;
 
+            timer += Time.deltaTime;
             yield return null;
         }
+
+        operation.allowSceneActivation = true; // Activa la escena después de 5 segundos
     }
 
     public void Atras()
