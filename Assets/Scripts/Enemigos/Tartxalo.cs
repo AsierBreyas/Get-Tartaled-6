@@ -88,11 +88,14 @@ public class Tartxalo : MonoBehaviour
         if (!alreadyAttacked)
         {
             animator.SetTrigger("Attack");
-            arma.EmpeceElAtaque();
-            Debug.Log("Soy malo");
+            //Debug.Log("Soy malo");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+    }
+    void AttackStarted()
+    {
+        arma.EmpeceElAtaque();
     }
     void AttackFinished()
     {

@@ -42,6 +42,7 @@ public class ControlesTartalo : MonoBehaviour
     bool hayInteractuable;
     GameObject interactuable;
     Enemy enemigoGolpear;
+    Tartxalo tartxalo;
 
 
     //Booleanos para los ataques
@@ -254,7 +255,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             animator.SetBool("isWalking", false);
         }
-            
+
         animator.SetBool("isRunning", estoyCorriendo);
         Vector3 posicion = new Vector3(transform.position.x, posicionY, transform.position.z);
         this.transform.position = posicion;
@@ -595,22 +596,28 @@ public class ControlesTartalo : MonoBehaviour
         //SfxManager.instance.ReproducirSonido(audioSerGolpeado, 1f);
         healthbar.SetHealth(currentHealth);
     }
-    public void HeGolpeado(Enemy enemigo)
+    public void HeGolpeado(GameObject enemigo)
     {
         if (enemigo != null)
         {
-            SfxManager.instance.ReproducirSonido(audioGolpearEnemigo, 1f);
             heGolpeado = true;
-            enemigoGolpear = enemigo;
+            if (enemigo.GetComponent<Tartxalo>() != null)
+            {
+                tartxalo = enemigo.GetComponent<Tartxalo>();
+                Debug.Log("Pasta de dientes");
+            }
+            else
+                enemigoGolpear = enemigo.GetComponent<Enemy>();
             Debug.Log(enemigoGolpear);
+            SfxManager.instance.ReproducirSonido(audioGolpearEnemigo, 1f);
         }
 
     }
     void ProcesarDañosHechos()
     {
+        Debug.Log("He golpeado");
         if (enemigoGolpear != null)
         {
-            Debug.Log("He golpeado");
             if (estaEnAtaqueNormal)
             {
                 enemigoGolpear.TakeDamage(15f);
@@ -623,8 +630,24 @@ public class ControlesTartalo : MonoBehaviour
             {
                 enemigoGolpear.TakeDamage(15f);
             }
+            enemigoGolpear = null;
         }
-        enemigoGolpear = null;
+        else if (tartxalo != null)
+        {
+            if (estaEnAtaqueNormal)
+            {
+                tartxalo.TakeDamage(15f);
+            }
+            else if (estaEnAtaqueFuerte)
+            {
+                tartxalo.TakeDamage(30f);
+            }
+            else if (estaEnAtaqueArea)
+            {
+                tartxalo.TakeDamage(15f);
+            }
+            tartxalo = null;
+        }
     }
     void ActualizarBarraEstamina()
     {
