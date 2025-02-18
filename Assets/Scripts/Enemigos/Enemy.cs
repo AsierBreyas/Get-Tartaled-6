@@ -67,8 +67,8 @@ public class Enemy : MonoBehaviour
             if (!playerInSightRange && !playerInAttackRange) Patroling();
             if (playerInSightRange && !playerInAttackRange) ChasePlayer();
             if (playerInSightRange && playerInAttackRange) AttackPlayer();
-        }else
-            this.gameObject.transform.Rotate(new Vector3(0, 0, 90));
+        }
+            
     }
 
     void Patroling()
@@ -172,8 +172,16 @@ public class Enemy : MonoBehaviour
             {
                 dead = true;
                 agent.enabled = false;
-                if (horda != null)
-                    horda.EnemigoMuerto();
+                this.gameObject.transform.Rotate(new Vector3(0, 0, 90));
+                animator.SetBool("isWalking", false);
+                Rigidbody rb = GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.constraints = RigidbodyConstraints.FreezeAll; //Congela todo movimiento y rotación por si acaso
+                    rb.linearVelocity = Vector3.zero;
+                    rb.angularVelocity = Vector3.zero;
+                }
+                horda.EnemigoMuerto();
                 // Animacion de enemigo muriendo
                 if (!isEdible)
                 {

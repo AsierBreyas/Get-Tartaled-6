@@ -4119,34 +4119,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tartalo v2
       objectReference: {fileID: 0}
-    - target: {fileID: 3393875544989764954, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_Height
-      value: 32.098206
-      objectReference: {fileID: 0}
-    - target: {fileID: 3393875544989764954, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3393875544989764954, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_Center.x
-      value: -1.1960554
-      objectReference: {fileID: 0}
-    - target: {fileID: 3393875544989764954, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_Center.y
-      value: 18.14949
-      objectReference: {fileID: 0}
-    - target: {fileID: 3393875544989764954, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_Center.z
-      value: -0.13425684
-      objectReference: {fileID: 0}
-    - target: {fileID: 3393875544989764954, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185373604052841982, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: danioFuegoCerdo
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5839071708516345071, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2945
@@ -4207,10 +4179,6 @@ PrefabInstance:
       propertyPath: _configMenuFirst
       value: 
       objectReference: {fileID: 1200240607}
-    - target: {fileID: 8274240993813078917, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8616944084274879484, guid: c7aad1ef5b415e24fb26befe1dc0cfaf, type: 3}
       propertyPath: mirilla
       value: 
