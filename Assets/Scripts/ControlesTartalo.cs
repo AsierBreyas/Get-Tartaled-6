@@ -42,7 +42,6 @@ public class ControlesTartalo : MonoBehaviour
     bool hayInteractuable;
     GameObject interactuable;
     Enemy enemigoGolpear;
-    Tartxalo tartxalo;
 
 
     //Booleanos para los ataques
@@ -166,7 +165,6 @@ public class ControlesTartalo : MonoBehaviour
         if (!aturdido)
         {
             botonDelAtaqueFuerteMantenido = value.isPressed;
-            //Debug.Log("PUM! Te pego");
             if (!estaHaciendoMovimiento && !empezoAnimacion)
                 ProcesarAtaqueNormal();
         }
@@ -176,7 +174,6 @@ public class ControlesTartalo : MonoBehaviour
         if (!aturdido)
         {
             botonDelAtaqueAreaMantenido = value.isPressed;
-            //Debug.Log("AAAAAAAAAAAAAAAAAAA");
             if (!estaHaciendoMovimiento && !empezoAnimacion)
                 ProcesarAtaqueEnArea();
         }
@@ -186,7 +183,6 @@ public class ControlesTartalo : MonoBehaviour
         if (!estaEnAtaque && !aturdido)
         {
             estaEnDefensa = value.isPressed;
-            //Debug.Log("No puedes golpear lo que no puedes ver");
             ProcesarDefensa();
         }
     }
@@ -255,7 +251,7 @@ public class ControlesTartalo : MonoBehaviour
         {
             animator.SetBool("isWalking", false);
         }
-
+            
         animator.SetBool("isRunning", estoyCorriendo);
         Vector3 posicion = new Vector3(transform.position.x, posicionY, transform.position.z);
         this.transform.position = posicion;
@@ -266,7 +262,6 @@ public class ControlesTartalo : MonoBehaviour
             var rot = Quaternion.LookRotation(direccionMovimientoNueva);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, velocidadRotacion * Time.deltaTime);
             //rb.linearVelocity = rb.transform.forward * velocidad * 5 * Time.deltaTime;
-            //Debug.Log(rb.transform.forward * velocidad * 5 * Time.deltaTime);
             rb.AddForce(rb.transform.forward * velocidad * 5 * Time.deltaTime);
         }
     }
@@ -274,7 +269,6 @@ public class ControlesTartalo : MonoBehaviour
     {
         if (estoyCorriendo)
             velocidad = velocidadBase * 2;
-        //Debug.Log("Soy uno con el viento wiiiii");
         else
             velocidad = velocidadBase;
     }
@@ -314,7 +308,6 @@ public class ControlesTartalo : MonoBehaviour
                 animator.SetBool("AtaqueFuerte", true);
             }
         }
-        //Debug.Log("MADA MADA");
     }
     void ProcesarAtaqueEnArea()
     {
@@ -397,7 +390,6 @@ public class ControlesTartalo : MonoBehaviour
     }
     void GolpeNormal()
     {
-        //Debug.Log("Rotacion de x: " + Arma.transform.rotation.eulerAngles);
         if (heGolpeado)
         {
             ProcesarDañosHechos();
@@ -441,7 +433,6 @@ public class ControlesTartalo : MonoBehaviour
         {
             estaminaActual -= gastoEstamina * 12f * Time.deltaTime;
             ActualizarBarraEstamina();
-            //Debug.Log("Dalta Faño");
         }
         if (!botonDelAtaqueAreaMantenido || aturdido)
         {
@@ -458,21 +449,18 @@ public class ControlesTartalo : MonoBehaviour
             //Damages
             heGolpeado = false;
         }
-        //Debug.Log("Ya no me sale :(");
         estaEnAtaque = false;
         estaHaciendoMovimiento = false;
         estaEnAtaqueArea = false;
         empezoAnimacion = false;
         garrote.TermineMovimiento();
         animator.SetBool("AtaqueArea", false);
-        Debug.Log(estaminaActual);
         EstoyAturdido();
     }
     void Defensa()
     {
         if (!estaEnDefensa && estaHaciendoMovimiento && !estaEnAtaque)
         {
-            //Debug.Log("No more defensa");
             estaHaciendoMovimiento = false;
             if (contadorMovimientoDefensa == 1)
             {
@@ -482,7 +470,7 @@ public class ControlesTartalo : MonoBehaviour
         }
         else if (estaHaciendoMovimiento && !estaEnAtaque)
         {
-            //Debug.Log(">:D");
+            
         }
     }
     void TirarPiedra()
@@ -490,7 +478,6 @@ public class ControlesTartalo : MonoBehaviour
         contadorPiedra += +Time.deltaTime * 1.5f;
         if (!piedraEnMano || aturdido)
         {
-            //Debug.Log(mirillaPosicion.position);
             boloncho.position = Camera.main.ScreenToWorldPoint(new Vector3(mirillaPosicion.position.x, mirillaPosicion.position.y, targetDistance));
             piedra.GetComponent<Proyectil>().añadirDestino(boloncho.position);
             estaHaciendoMovimiento = false;
@@ -502,7 +489,6 @@ public class ControlesTartalo : MonoBehaviour
         {
             if (contadorPiedra > 1)
             {
-                //Debug.Log("Empezo mi tirania");
                 if (hayMando)
                     trasladoMirilla = new Vector2(mirillaPosicion.position.x + movimientoMirilla.x, mirillaPosicion.position.y + movimientoMirilla.y);
                 else
@@ -529,7 +515,6 @@ public class ControlesTartalo : MonoBehaviour
         }
         else if (other.tag == "NPC")
         {
-            Debug.Log("OMG HIIIII");
             npcDialogo = other.gameObject.GetComponent<Dialogue>();
             puedeHablar = true;
         }
@@ -545,7 +530,6 @@ public class ControlesTartalo : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        //Debug.Log("Troste");
         if (other.tag == "Roca" && tenemosPiedra)
         {
             piedra = null;
@@ -596,26 +580,18 @@ public class ControlesTartalo : MonoBehaviour
         //SfxManager.instance.ReproducirSonido(audioSerGolpeado, 1f);
         healthbar.SetHealth(currentHealth);
     }
-    public void HeGolpeado(GameObject enemigo)
+    public void HeGolpeado(Enemy enemigo)
     {
         if (enemigo != null)
         {
-            heGolpeado = true;
-            if (enemigo.GetComponent<Tartxalo>() != null)
-            {
-                tartxalo = enemigo.GetComponent<Tartxalo>();
-                Debug.Log("Pasta de dientes");
-            }
-            else
-                enemigoGolpear = enemigo.GetComponent<Enemy>();
-            Debug.Log(enemigoGolpear);
             SfxManager.instance.ReproducirSonido(audioGolpearEnemigo, 1f);
+            heGolpeado = true;
+            enemigoGolpear = enemigo;
         }
 
     }
     void ProcesarDañosHechos()
     {
-        Debug.Log("He golpeado");
         if (enemigoGolpear != null)
         {
             if (estaEnAtaqueNormal)
@@ -630,24 +606,8 @@ public class ControlesTartalo : MonoBehaviour
             {
                 enemigoGolpear.TakeDamage(15f);
             }
-            enemigoGolpear = null;
         }
-        else if (tartxalo != null)
-        {
-            if (estaEnAtaqueNormal)
-            {
-                tartxalo.TakeDamage(15f);
-            }
-            else if (estaEnAtaqueFuerte)
-            {
-                tartxalo.TakeDamage(30f);
-            }
-            else if (estaEnAtaqueArea)
-            {
-                tartxalo.TakeDamage(15f);
-            }
-            tartxalo = null;
-        }
+        enemigoGolpear = null;
     }
     void ActualizarBarraEstamina()
     {
@@ -667,11 +627,12 @@ public class ControlesTartalo : MonoBehaviour
             barraEstamina.value = estaminaActual;
             animator.SetBool("AtaqueFuerte", false);
             if (estaEnAtaqueArea || estaTirandoPiedra)
-                Debug.Log("IX The Hanged man");
+            {
+
+            }
             else
             {
                 animator.SetTrigger("isDizzy");
-                Debug.Log("Me aturdi soy inutil");
             }
         }
     }
@@ -693,13 +654,10 @@ public class ControlesTartalo : MonoBehaviour
                 enemigoSc.BeEat();
                 enemigoComido = enemigo;
                 RecuperarVida(recuperacionComer);
-                //SfxManager.instance.ReproducirSonido(audioComer, 1f);
-                Debug.Log("NOM NOM NOM");
             }
             else if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && yaHeComido)
             {
                 hayComestibleCerca = true;
-                Debug.Log("Bueno si no gomito");
             }
         }
         if (enemigoComido != null)
@@ -725,7 +683,6 @@ public class ControlesTartalo : MonoBehaviour
     IEnumerator CooldownAnimacionRecibirDaño()
     {
         yield return new WaitForSeconds(20f);
-        Debug.Log("Nos pegan");
         recibioDañoRecientemente = false;
     }
 

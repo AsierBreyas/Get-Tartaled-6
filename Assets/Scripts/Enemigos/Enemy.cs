@@ -137,7 +137,6 @@ public class Enemy : MonoBehaviour
                 {
                     enemyParticles.Play();
                 }
-                Debug.Log("Soy un lobo, pum te ataco");
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
@@ -147,9 +146,6 @@ public class Enemy : MonoBehaviour
                 {
                     enemyParticles.Play();
                 }
-
-                Debug.Log("Soy un cerdo, te escupo fuego!");
-
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
@@ -166,7 +162,6 @@ public class Enemy : MonoBehaviour
     {
         if (!dead)
         {
-            Debug.Log("Ay me hiciste daño");
             currentHealth -= damage;
             //healthBar.UpdateHealthbar(currentHealth, maxHealth);
             if (currentHealth <= 0)
@@ -181,7 +176,6 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Te provoco");
                     FindAnyObjectByType<ControlesTartalo>().AparecioComestible();
                 }
             }
