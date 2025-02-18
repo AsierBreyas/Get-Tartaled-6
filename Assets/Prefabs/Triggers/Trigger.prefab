@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1943653441043763259}
   - component: {fileID: 7125065752684897927}
   m_Layer: 0
-  m_Name: Enemy Spawner Trigger
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,10 +26,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940090064211435757}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.020234562, y: -0.21789303, z: -0.7106099}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 121}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.79504, y: 3.4358218, z: 9.1513195}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 79.29492, y: 3.4358218, z: 95.65137}
+  m_Center: {x: 21.75, y: 0, z: -1.25}
 --- !u!114 &7125065752684897927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,4 +69,5 @@ MonoBehaviour:
   codigoMision: 
   spawneaCosas: 0
   cosaQueSpawnear: {fileID: 0}
-  lugaresDondeSpawnear: []
+  lugaresDondeSpawnear:
+  - {fileID: 0}
