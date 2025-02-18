@@ -174,6 +174,16 @@ public class Enemy : MonoBehaviour
                 agent.enabled = false;
                 this.gameObject.transform.Rotate(new Vector3(0, 0, 90));
                 animator.SetBool("isWalking", false);
+
+                //Desactivar todos los colliders menos el trigger de comer, para que el cadaver no nos siga haciendo daño
+                Collider[] colliders = GetComponents<Collider>();
+                foreach (Collider col in colliders)
+                {
+                    if (!col.isTrigger)
+                    {
+                        col.enabled = false;
+                    }
+                }
                 Rigidbody rb = GetComponent<Rigidbody>();
                 if (rb != null)
                 {
