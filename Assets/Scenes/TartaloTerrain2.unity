@@ -12635,6 +12635,26 @@ PrefabInstance:
       propertyPath: listOfDialogues.Array.data[3].hablador
       value: Hablador.Amonia
       objectReference: {fileID: 0}
+    - target: {fileID: 7000948976455882812, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
+      propertyPath: m_Size.x
+      value: 6.760001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000948976455882812, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9437191
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000948976455882812, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
+      propertyPath: m_Size.z
+      value: 4.5626717
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000948976455882812, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
+      propertyPath: m_Center.y
+      value: 1.1283091
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000948976455882812, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
+      propertyPath: m_Center.z
+      value: 1.2536727
+      objectReference: {fileID: 0}
     - target: {fileID: 8212931206387154123, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -136.51978
