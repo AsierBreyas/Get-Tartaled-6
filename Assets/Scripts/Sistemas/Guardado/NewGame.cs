@@ -24,35 +24,28 @@ public class NewGame : MonoBehaviour
     {
         string profileName = this.profileInput.text;
         ProfileStorage.CreateNewGame(profileName);
+
+        // Mostrar pantalla de carga
+        loadingScreen.SetActive(true);
+        canvasMenuNuevoPerfil.SetActive(false);
+
+        // Cargar la escena de la cinemática
         StartCoroutine(CargarJuegoAsync(3));
-        Invoke("PasarCinematica", 10);
     }
 
     IEnumerator CargarJuegoAsync(int sceneId)
     {
-        loadingScreen.SetActive(true); // Activa la pantalla de carga
-        canvasMenuNuevoPerfil.SetActive(false);
-
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
-        operation.allowSceneActivation = false; // Evita que la escena se active inmediatamente
+        operation.allowSceneActivation = false; // Evita que se active antes de tiempo
 
-        float timer = 0f;
-
-        while (timer < 5f || operation.progress < 0.9f)
+        while (operation.progress < 0.9f)
         {
             float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
             loadingBarFill.value = progressValue;
-
-            timer += Time.deltaTime;
             yield return null;
         }
 
-        operation.allowSceneActivation = true; // Activa la escena después de 5 segundos
-    }
-
-    void PasarCinematica()
-    {
-        SceneManager.LoadScene(2);
+        operation.allowSceneActivation = true;
     }
 
     public void Atras()

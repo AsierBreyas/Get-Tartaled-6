@@ -48,6 +48,10 @@ public class MusicManager : MonoBehaviour
             musicSource.clip = menuMusic;
             musicSource.Play();
         }
+        else if (scene.name == "Xabi") 
+        { 
+            musicSource.Stop();
+        }
     }
 
     private void LoadVolume()
