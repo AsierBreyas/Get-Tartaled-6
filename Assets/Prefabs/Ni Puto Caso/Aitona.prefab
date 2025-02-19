@@ -224,14 +224,14 @@ MonoBehaviour:
   - isResume: 1
     isTrigger: 0
     misionCode: 
-    hablador: "Amo\xF1a"
+    hablador: Hablador.Amonia
     dialgos:
     - hablador: 
       texto: Dialogo.Amonia.9
   - isResume: 0
     isTrigger: 1
     misionCode: P-003
-    hablador: "Amo\xF1a"
+    hablador: Hablador.Amonia
     dialgos:
     - hablador: Hablador.Tartalo
       texto: Dialogo.Amonia.10
@@ -248,7 +248,7 @@ MonoBehaviour:
   - isResume: 1
     isTrigger: 0
     misionCode: 
-    hablador: "Amo\xF1a"
+    hablador: Hablador.Amonia
     dialgos:
     - hablador: 
       texto: Dialogo.Amonia.16
@@ -271,5 +271,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.76, y: 2, z: 7.07}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 6.760001, y: 3.719378, z: 7.070001}
+  m_Center: {x: 0, y: 0.859689, z: 0}

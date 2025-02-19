@@ -31,6 +31,14 @@ public class ProfileList : MonoBehaviour
             uibox.loadBtn.onClick.AddListener(() =>
             {
                 ProfileStorage.LoadProfile(profileName);
+
+                if (ProfileStorage.s_currentProfile == null)
+                {
+                    Debug.LogError("ERROR: El perfil no se cargó correctamente. No se iniciará la carga de la escena.");
+                    return;
+                }
+                Debug.Log($"Perfil cargado: {ProfileStorage.s_currentProfile.fileName}, Posición ({ProfileStorage.s_currentProfile.x}, {ProfileStorage.s_currentProfile.y}, {ProfileStorage.s_currentProfile.z})");
+
                 StartCoroutine(CargarJuegoAsync(2));
             });
 
@@ -56,7 +64,7 @@ public class ProfileList : MonoBehaviour
 
         float timer = 0f;
 
-        while (operation.progress < 0.9f)
+        while (!operation.isDone)
         {
             float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
             loadingBarFill.value = progressValue;
