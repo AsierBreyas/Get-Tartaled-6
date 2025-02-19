@@ -180,6 +180,7 @@ public class Enemy : MonoBehaviour
                     rb.angularVelocity = Vector3.zero;
                     rb.useGravity = false;
                 }
+                Debug.Log("enemigo muerto y supuestamente tumbado");
                 dead = true;
                 agent.enabled = false;
                 animator.SetBool("isWalking", false);

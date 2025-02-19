@@ -525,6 +525,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("OMG HIII");
         if (other.tag == "Roca" && !tenemosPiedra)
         {
             piedra = other.gameObject;
@@ -538,6 +539,7 @@ public class ControlesTartalo : MonoBehaviour
         else if (other.gameObject.layer == 7 && other.tag == "Interactuable" && !enemigosCercanos.Contains(other.transform.parent.gameObject))
         {
             enemigosCercanos.Add(other.transform.parent.gameObject);
+            SeFueComestible();
         }
         else if (other.tag == "Interactuable" && !enemigosCercanos.Contains(other.transform.parent.gameObject))
         {
@@ -547,6 +549,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log(other.gameObject.layer == 7 && other.tag == "Interactuable");
         if (other.tag == "Roca" && tenemosPiedra)
         {
             piedra = null;
@@ -559,7 +562,8 @@ public class ControlesTartalo : MonoBehaviour
         }
         else if (other.gameObject.layer == 7 && other.tag == "Interactuable")
         {
-            enemigosCercanos.Remove(other.gameObject);
+            enemigosCercanos.Remove(other.transform.parent.gameObject);
+            SeFueComestible();
         }
         else if (other.tag == "Interactuable")
         {
@@ -627,7 +631,8 @@ public class ControlesTartalo : MonoBehaviour
                 enemigoGolpear.TakeDamage(15f);
             }
             enemigoGolpear = null;
-        }else if (tartxalo != null)
+        }
+        else if (tartxalo != null)
         {
             if (estaEnAtaqueNormal)
             {
@@ -675,15 +680,34 @@ public class ControlesTartalo : MonoBehaviour
     {
         hayComestibleCerca = true;
     }
-    void ComerEnemigo()
+    void SeFueComestible()
+    {
+        bool hayComestible = false;
+        if (enemigosCercanos.Count != 0)
+        {
+            foreach (GameObject enemigo in enemigosCercanos)
+            {
+                if (enemigo.GetComponent<Enemy>().IsDead() && enemigo.GetComponent<Enemy>().GetIsEsdible())
+                {
+                    Debug.Log(enemigosCercanos.Count);
+                    hayComestible = true;
+                }
+            }
+        }
+        hayComestibleCerca = hayComestible;
+    }
+    public void ComerEnemigo()
     {
         bool yaHeComido = false;
         GameObject enemigoComido = null;
+        Debug.Log("Conteos enemigos" + enemigosCercanos.Count);
         foreach (GameObject enemigo in enemigosCercanos)
         {
             Enemy enemigoSc = enemigo.GetComponent<Enemy>();
+            Debug.Log(enemigoSc.IsDead());
             if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && !yaHeComido)
             {
+                Debug.Log("Llegue");
                 yaHeComido = true;
                 hayComestibleCerca = false;
                 enemigoSc.BeEat();
@@ -699,6 +723,8 @@ public class ControlesTartalo : MonoBehaviour
             enemigosCercanos.Remove(enemigoComido);
         estaComiendo = false;
         empezoAnimacion = false;
+        enemigoComido = null;
+        yaHeComido = false;
 
     }
     void RecuperarVida(float recuperacion)
