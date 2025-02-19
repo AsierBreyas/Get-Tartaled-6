@@ -11659,18 +11659,6 @@ PrefabInstance:
       propertyPath: speakerNameText
       value: 
       objectReference: {fileID: 674498509}
-    - target: {fileID: 4569438790495395070, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
-      propertyPath: listOfDialogues.Array.data[1].hablador
-      value: Hablador.Amonia
-      objectReference: {fileID: 0}
-    - target: {fileID: 4569438790495395070, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
-      propertyPath: listOfDialogues.Array.data[2].hablador
-      value: Hablador.Amonia
-      objectReference: {fileID: 0}
-    - target: {fileID: 4569438790495395070, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
-      propertyPath: listOfDialogues.Array.data[3].hablador
-      value: Hablador.Amonia
-      objectReference: {fileID: 0}
     - target: {fileID: 8212931206387154123, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -136.51978
