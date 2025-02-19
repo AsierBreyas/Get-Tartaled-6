@@ -469,10 +469,6 @@ public class ControlesTartalo : MonoBehaviour
                 contadorMovimientoDefensa--;
             }
         }
-        else if (estaHaciendoMovimiento && !estaEnAtaque)
-        {
-
-        }
     }
     void TirarPiedra()
     {
