@@ -216,40 +216,43 @@ public class Enemy : MonoBehaviour
     // Corrutina para la embestida del lobo
     IEnumerator PerformDashAttack()
     {
-        agent.enabled = false; // Desactiva el NavMeshAgent para moverse libremente
-
-        Vector3 dashDirection = (player.position - transform.position).normalized;
-        float dashSpeed = 70f;
-        float dashDuration = 0.3f;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < dashDuration)
+        if (!dead)
         {
-            transform.position += dashDirection * dashSpeed * Time.deltaTime;
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
+            agent.enabled = false; // Desactiva el NavMeshAgent para moverse libremente
 
-        // Retroceso tras el ataque
-        elapsedTime = 0f;
-        Vector3 backwardDirection = -dashDirection;
-        float backwardSpeed = 60f;
-        float backwardDuration = 0.2f;
+            Vector3 dashDirection = (player.position - transform.position).normalized;
+            float dashSpeed = 70f;
+            float dashDuration = 0.3f;
+            float elapsedTime = 0f;
 
-        while (elapsedTime < backwardDuration)
-        {
-            transform.position += backwardDirection * backwardSpeed * Time.deltaTime;
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
+            while (elapsedTime < dashDuration)
+            {
+                transform.position += dashDirection * dashSpeed * Time.deltaTime;
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
 
-        // Reactiva el NavMeshAgent con un pequeño delay
-        agent.enabled = true;
-        yield return new WaitForSeconds(0.1f); // Espera un instante para evitar bugs
+            // Retroceso tras el ataque
+            elapsedTime = 0f;
+            Vector3 backwardDirection = -dashDirection;
+            float backwardSpeed = 60f;
+            float backwardDuration = 0.2f;
 
-        if (agent.enabled && Vector3.Distance(transform.position, player.position) <= sightRange)
-        {
-            ChasePlayer();
+            while (elapsedTime < backwardDuration)
+            {
+                transform.position += backwardDirection * backwardSpeed * Time.deltaTime;
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            // Reactiva el NavMeshAgent con un pequeño delay
+            agent.enabled = true;
+            yield return new WaitForSeconds(0.1f); // Espera un instante para evitar bugs
+
+            if (agent.enabled && Vector3.Distance(transform.position, player.position) <= sightRange)
+            {
+                ChasePlayer();
+            }
         }
     }
 

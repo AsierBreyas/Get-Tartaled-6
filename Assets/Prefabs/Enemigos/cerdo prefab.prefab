@@ -17346,7 +17346,7 @@ MonoBehaviour:
   playerInAttackRange: 0
   enemyParticles: {fileID: 5341100649411627303}
   horda: {fileID: 0}
-  isEdible: 0
+  isEdible: 1
   animator: {fileID: 4104173926769476054}
 --- !u!136 &-1816239060130323256
 CapsuleCollider:

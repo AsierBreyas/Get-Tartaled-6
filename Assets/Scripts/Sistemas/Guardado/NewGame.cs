@@ -24,7 +24,8 @@ public class NewGame : MonoBehaviour
     {
         string profileName = this.profileInput.text;
         ProfileStorage.CreateNewGame(profileName);
-        StartCoroutine(CargarJuegoAsync(2));
+        StartCoroutine(CargarJuegoAsync(3));
+        Invoke("PasarCinematica", 10);
     }
 
     IEnumerator CargarJuegoAsync(int sceneId)
@@ -47,6 +48,11 @@ public class NewGame : MonoBehaviour
         }
 
         operation.allowSceneActivation = true; // Activa la escena después de 5 segundos
+    }
+
+    void PasarCinematica()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void Atras()
