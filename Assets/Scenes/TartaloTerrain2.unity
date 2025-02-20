@@ -6213,6 +6213,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258556, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_Size.x
+      value: 4.0475655
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258556, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_Size.z
+      value: 2.3252575
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258556, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_Center.x
+      value: -0.688392
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258556, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_Center.y
+      value: 0.9499998
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258556, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_Center.z
+      value: -0.5573666
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258557, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258557, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6956,6 +6984,22 @@ PrefabInstance:
     - target: {fileID: 8738153332942021459, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258556, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_Size.x
+      value: 0.2833769
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258556, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_Size.z
+      value: 2.4995558
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258556, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_Center.x
+      value: -0.8933069
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137400491906258556, guid: 0178856fcc975dd4797fcde54118aa92, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009782008
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
