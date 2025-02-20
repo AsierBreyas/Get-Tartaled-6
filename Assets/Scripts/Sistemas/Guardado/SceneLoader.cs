@@ -12,7 +12,7 @@ public class SceneLoader : MonoBehaviour
 
     private IEnumerator WaitForCinematicToEnd()
     {
-        yield return new WaitForSeconds(60); // Espera los 10 segundos de la cinemática
-        SceneManager.LoadScene(2); // Carga la escena del juego
+        yield return new WaitForSeconds(61);
+        SceneManager.LoadScene(2);
     }
 }
