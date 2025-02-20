@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Enemigos/Tartxalo/Abinationsold/Receiving An Uppercut.fbx.meta
+guid: 5384fe55ee596e2488e2af02cac99a9f
+========
 guid: fa716bcb7923664408efa9f7eb350c15
+>>>>>>>> 7fabaa4d0770a422b644b1845e507b511602aa97:Assets/Prefabs/Simbolos/PeineTextured.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []

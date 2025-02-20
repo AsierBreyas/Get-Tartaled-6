@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Enemigos/Tartxalo/Abinationsold/Standing Melee Run Jump Attack.fbx.meta
+guid: 0a5f1bd4a1f952146882303206cdf28d
+========
 guid: ae3f229b0b6400145b7560e75c4ff9ea
+>>>>>>>> 7fabaa4d0770a422b644b1845e507b511602aa97:Assets/Prefabs/Aitona/Dwarf Idle.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
