@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   danioLobo: 1
-  danioFuegoCerdo: 0.2
+  danioFuegoCerdo: 0.02
 --- !u!136 &8274240993813078917
 CapsuleCollider:
   m_ObjectHideFlags: 0

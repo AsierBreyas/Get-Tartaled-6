@@ -10253,8 +10253,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.617066, y: 1, z: 2.8081734}
-  m_Center: {x: -0.08182123, y: 0, z: -0.5806344}
+  m_Size: {x: 2.5787897, y: 1, z: 4.2176743}
+  m_Center: {x: -0.21214952, y: 0, z: -0.20002471}
 --- !u!1 &2937783945652078537
 GameObject:
   m_ObjectHideFlags: 0
@@ -14793,8 +14793,8 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  currentHealth: 60
-  maxHealth: 60
+  currentHealth: 30
+  maxHealth: 30
   healthBar: {fileID: 6338679879872797786, guid: 48df8491a00bce249852aed889baac2c, type: 3}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 1.5

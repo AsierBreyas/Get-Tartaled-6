@@ -170,6 +170,9 @@ public class Enemy : MonoBehaviour
             //healthBar.UpdateHealthbar(currentHealth, maxHealth);
             if (currentHealth <= 0)
             {
+                dead = true;
+                StopAllCoroutines();
+                animator.SetBool("isWalking", false);
                 this.gameObject.transform.Rotate(new Vector3(0, 0, 90));
 
                 Rigidbody rb = GetComponent<Rigidbody>();
@@ -180,10 +183,7 @@ public class Enemy : MonoBehaviour
                     rb.angularVelocity = Vector3.zero;
                     rb.useGravity = false;
                 }
-                Debug.Log("enemigo muerto y supuestamente tumbado");
-                dead = true;
                 agent.enabled = false;
-                animator.SetBool("isWalking", false);
 
                 //Desactivar todos los colliders menos el trigger de comer, para que el cadaver no nos siga haciendo daño
                 Collider[] colliders = GetComponents<Collider>();
@@ -227,6 +227,7 @@ public class Enemy : MonoBehaviour
 
             while (elapsedTime < dashDuration)
             {
+                if (dead) yield break;
                 transform.position += dashDirection * dashSpeed * Time.deltaTime;
                 elapsedTime += Time.deltaTime;
                 yield return null;
@@ -240,6 +241,7 @@ public class Enemy : MonoBehaviour
 
             while (elapsedTime < backwardDuration)
             {
+                if (dead) yield break;
                 transform.position += backwardDirection * backwardSpeed * Time.deltaTime;
                 elapsedTime += Time.deltaTime;
                 yield return null;
