@@ -11514,6 +11514,14 @@ PrefabInstance:
       propertyPath: speakerNameText
       value: 
       objectReference: {fileID: 674498509}
+    - target: {fileID: 7000948976455882812, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5492272
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000948976455882812, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
+      propertyPath: m_Center.y
+      value: 0.77461356
+      objectReference: {fileID: 0}
     - target: {fileID: 8212931206387154123, guid: 4e24895dfdad16e4d82a917cfc60b8a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -136.51978
