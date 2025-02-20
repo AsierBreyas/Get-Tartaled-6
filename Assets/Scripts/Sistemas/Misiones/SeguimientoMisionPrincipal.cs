@@ -37,7 +37,7 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
     }
     public void AvanzarMision(string codigo)
     {
-        Debug.Log(seguimiento[misionActual].GetCodigo());
+        //Debug.Log(seguimiento[misionActual].GetCodigo());
         if(seguimiento[misionActual].GetCodigo() == codigo)
         {
             seguimiento[misionActual].MisionCompletada();
@@ -47,7 +47,7 @@ public class SeguimientoMisionPrincipal : MonoBehaviour
                 seguimiento[misionActual].MisionAceptada();
             }
         }
-        Debug.Log(seguimiento[misionActual].GetNombre());
+        //Debug.Log(seguimiento[misionActual].GetNombre());
     }
     public bool GetEstadoMision(string codigo)
     {

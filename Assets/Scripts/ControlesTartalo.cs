@@ -121,7 +121,6 @@ public class ControlesTartalo : MonoBehaviour
 
         if (ProfileStorage.s_currentProfile != null && !ProfileStorage.s_currentProfile.newGame)
         {
-            Debug.Log("Moviendo jugador a posición guardada...");
             transform.position = new Vector3(
                 ProfileStorage.s_currentProfile.x,
                 ProfileStorage.s_currentProfile.y,
@@ -132,7 +131,7 @@ public class ControlesTartalo : MonoBehaviour
         }
         else
         {
-            Debug.Log("Nueva partida: posición inicial por defecto.");
+            //Debug.Log("Nueva partida: posición inicial por defecto.");
         }
     }
 
@@ -549,7 +548,7 @@ public class ControlesTartalo : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.gameObject.layer == 7 && other.tag == "Interactuable");
+        //Debug.Log(other.gameObject.layer == 7 && other.tag == "Interactuable");
         if (other.tag == "Roca" && tenemosPiedra)
         {
             piedra = null;
@@ -562,8 +561,15 @@ public class ControlesTartalo : MonoBehaviour
         }
         else if (other.gameObject.layer == 7 && other.tag == "Interactuable")
         {
-            enemigosCercanos.Remove(other.transform.parent.gameObject);
-            SeFueComestible();
+            // No eliminar si Tartalo está comiendo
+            if (!estaComiendo && enemigosCercanos.Contains(other.transform.parent.gameObject))
+            {
+                enemigosCercanos.Remove(other.transform.parent.gameObject);
+                if (other.transform.parent.gameObject != null) // Verifica que aún existe
+                {
+                    SeFueComestible();
+                }
+            }
         }
         else if (other.tag == "Interactuable")
         {
@@ -683,50 +689,79 @@ public class ControlesTartalo : MonoBehaviour
     void SeFueComestible()
     {
         bool hayComestible = false;
+        //Debug.Log("SeFueComestible() ejecutado. Enemigos cercanos: " + enemigosCercanos.Count);
         if (enemigosCercanos.Count != 0)
         {
             foreach (GameObject enemigo in enemigosCercanos)
             {
-                if (enemigo.GetComponent<Enemy>().IsDead() && enemigo.GetComponent<Enemy>().GetIsEsdible())
+                Enemy enemigoSc = enemigo.GetComponent<Enemy>();
+                //Debug.Log($"Enemigo {enemigo.name} - IsDead: {enemigoSc.IsDead()} - IsEdible: {enemigoSc.GetIsEsdible()}");
+
+                if (enemigoSc.IsDead() && enemigoSc.GetIsEsdible())
                 {
-                    Debug.Log(enemigosCercanos.Count);
+                    //Debug.Log($"{enemigo.name} es comestible.");
                     hayComestible = true;
                 }
             }
+        }
+        if (hayComestibleCerca != hayComestible)
+        {
+            //Debug.Log($"⚠️ hayComestibleCerca cambiado de {hayComestibleCerca} a {hayComestible}");
         }
         hayComestibleCerca = hayComestible;
     }
     public void ComerEnemigo()
     {
+        if (enemigosCercanos.Count == 0)
+        {
+            //Debug.Log("No hay enemigos para comer.");
+            return;
+        }
+
         bool yaHeComido = false;
         GameObject enemigoComido = null;
-        Debug.Log("Conteos enemigos" + enemigosCercanos.Count);
-        foreach (GameObject enemigo in enemigosCercanos)
+
+        //Recorremos la lista en reversa para eliminar sin errores
+        for (int i = enemigosCercanos.Count - 1; i >= 0; i--)
         {
-            Enemy enemigoSc = enemigo.GetComponent<Enemy>();
-            Debug.Log(enemigoSc.IsDead());
-            if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && !yaHeComido)
+            GameObject enemigo = enemigosCercanos[i];
+
+            if (enemigo != null) //Evita MissingReferenceException
             {
-                Debug.Log("Llegue");
-                yaHeComido = true;
-                hayComestibleCerca = false;
-                enemigoSc.BeEat();
-                enemigoComido = enemigo;
-                RecuperarVida(recuperacionComer);
-            }
-            else if (enemigoSc.GetIsEsdible() && enemigoSc.IsDead() && yaHeComido)
-            {
-                hayComestibleCerca = true;
+                Enemy enemigoSc = enemigo.GetComponent<Enemy>();
+
+                if (enemigoSc != null && enemigoSc.GetIsEsdible() && enemigoSc.IsDead())
+                {
+                    if (!yaHeComido)
+                    {
+                        //Comemos el primer enemigo válido
+                        yaHeComido = true;
+                        hayComestibleCerca = false;
+                        enemigoSc.BeEat();
+                        enemigoComido = enemigo;
+                        RecuperarVida(recuperacionComer);
+
+                        //Eliminamos el enemigo de la lista y destruimos el objeto
+                        enemigosCercanos.RemoveAt(i);
+                        Destroy(enemigo);
+                    }
+                    else
+                    {
+                        hayComestibleCerca = true;
+                    }
+                }
             }
         }
-        if (enemigoComido != null)
-            enemigosCercanos.Remove(enemigoComido);
+
+        SeFueComestible();
+
         estaComiendo = false;
         empezoAnimacion = false;
-        enemigoComido = null;
-        yaHeComido = false;
 
+        Debug.Log("estaEnAtaque: " + estaEnAtaque);
+        Debug.Log("estaComiendo: " + estaComiendo);
     }
+
     void RecuperarVida(float recuperacion)
     {
         if (currentHealth + recuperacion > 100)
@@ -734,6 +769,11 @@ public class ControlesTartalo : MonoBehaviour
         else
             currentHealth += recuperacion;
         healthbar.SetHealth(currentHealth);
+    }
+
+    public void TerminarComer()
+    {
+        estaComiendo = false;
     }
 
     public void FinAturdir()

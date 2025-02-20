@@ -164,52 +164,52 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (!dead)
+        if (dead || gameObject == null) return;
+
+        currentHealth -= damage;
+        //healthBar.UpdateHealthbar(currentHealth, maxHealth);
+        if (currentHealth <= 0)
         {
-            currentHealth -= damage;
-            //healthBar.UpdateHealthbar(currentHealth, maxHealth);
-            if (currentHealth <= 0)
+            dead = true;
+            StopAllCoroutines();
+            animator.SetBool("isWalking", false);
+            this.gameObject.transform.Rotate(new Vector3(0, 0, 90));
+
+            Rigidbody rb = GetComponent<Rigidbody>();
+            if (rb != null)
             {
-                dead = true;
-                StopAllCoroutines();
-                animator.SetBool("isWalking", false);
-                this.gameObject.transform.Rotate(new Vector3(0, 0, 90));
+                rb.constraints = RigidbodyConstraints.FreezeAll;
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                rb.useGravity = false;
+            }
+            agent.enabled = false;
 
-                Rigidbody rb = GetComponent<Rigidbody>();
-                if (rb != null)
+            //Desactivar todos los colliders menos el trigger de comer, para que el cadaver no nos siga haciendo daño
+            Collider[] colliders = GetComponents<Collider>();
+            foreach (Collider col in colliders)
+            {
+                if (!col.isTrigger)
                 {
-                    rb.constraints = RigidbodyConstraints.FreezeAll;
-                    rb.linearVelocity = Vector3.zero;
-                    rb.angularVelocity = Vector3.zero;
-                    rb.useGravity = false;
+                    col.enabled = false;
                 }
-                agent.enabled = false;
-
-                //Desactivar todos los colliders menos el trigger de comer, para que el cadaver no nos siga haciendo daño
-                Collider[] colliders = GetComponents<Collider>();
-                foreach (Collider col in colliders)
-                {
-                    if (!col.isTrigger)
-                    {
-                        col.enabled = false;
-                    }
-                }
-                horda.EnemigoMuerto();
-                // Animacion de enemigo muriendo
-                if (!isEdible)
-                {
-                    Invoke(nameof(DestroyEnemy), 0.5f);
-                }
-                else
-                {
-                    FindAnyObjectByType<ControlesTartalo>().AparecioComestible();
-                }
+            }
+            horda.EnemigoMuerto();
+            // Animacion de enemigo muriendo
+            if (!isEdible)
+            {
+                Invoke(nameof(DestroyEnemy), 0.5f);
+            }
+            else
+            {
+                FindAnyObjectByType<ControlesTartalo>().AparecioComestible();
             }
         }
     }
 
     void DestroyEnemy()
     {
+        Debug.Log("Destruyendo enemigo: " + gameObject.name);
         Destroy(gameObject);
     }
 
@@ -261,7 +261,15 @@ public class Enemy : MonoBehaviour
     public void BeEat()
     {
         if (dead && isEdible)
+        {
+            Debug.Log($"{gameObject.name} ha sido eliminado con BeEat().");
             Invoke(nameof(DestroyEnemy), 0.5f);
+        }
+        else
+        {
+            Debug.Log($"{gameObject.name} intentó ser comido pero no cumplía las condiciones.");
+        }
+            
     }
     public bool GetIsEsdible()
     {

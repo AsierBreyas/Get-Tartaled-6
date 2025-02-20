@@ -54340,7 +54340,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 4.7000003
+    m_StopTime: 4.733333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -107506,8 +107506,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 4.7
+  - time: 4.633333
     functionName: ComerEnemigo
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 4.733333
+    functionName: TerminarComer
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
