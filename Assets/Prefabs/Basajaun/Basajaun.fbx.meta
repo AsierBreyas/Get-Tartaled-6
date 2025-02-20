@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Enemigos/Tartxalo/Nirea/evil_one_eyed_giant_i_0209172203_texture.fbx.meta
+guid: bced8562b3a1f7446b4d66e6b738f1bb
+========
 guid: f640b4cfbeee6b34e97ac434ae0025ff
+>>>>>>>> 7fabaa4d0770a422b644b1845e507b511602aa97:Assets/Prefabs/Basajaun/Basajaun.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
